@@ -26,3 +26,6 @@ The FMT FIFO is a queue of instructions firmware writes to drive the controller.
 This file defines two data types: `reg2hw` and `hw2reg`. As the name suggest, `reg2hw` carries values from software-written registers down to hardware, and `hw2reg` carries values from hardware back up to software-readable registers.
 
 There are 5 key signals. `q` is the value software wrote, which hardware reads. `qe` pulses for one cycle when software writes a register - if `qe` is present, that register is a FIFO push, meaning firmware just pushed an entry for hardware to consume. `re` pulses for one cycle when software reads a register - if `re` is present, that register is a FIFO pop, meaning the act of firmware reading it automatically advances the FIFO. `d` is the value hardware drives into a register for firmware to read. `de` is present when hardware only updates that register conditionally - on an event, interrupt or counter increment - rather than every cycle.
+
+# Notes from i2c_core.sv
+Its a file that maps the sub modules and make a bridge between registers like reg2hw and hw2reg to communicate with sda and scl. it does so by using some submodules like i2c_fifos, i2c_bus_monitor, i2c_controller_fsm, i2c_target_fsm.
