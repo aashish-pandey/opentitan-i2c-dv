@@ -1,0 +1,1 @@
+typedef uvm_sequencer #(i2c_seq_item) i2c_sequencer;
