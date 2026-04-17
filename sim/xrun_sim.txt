@@ -1,0 +1,78 @@
+xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 13:55:49 EDT
+xrun
+	-R
+	-xmlibdirname xcelium.d
+	-log xrun_sim.log
+	-messages
+	-status
+	-svseed 1
+	+UVM_TESTNAME=i2c_smoke_test
+	+UVM_VERBOSITY=UVM_MEDIUM
+
+   User defined plus("+") options:
+	+UVM_VERBOSITY=UVM_MEDIUM
+
+Loading snapshot worklib.prim_secded_64_57_enc:sv .................... Done
+SVSEED set from command line: 1
+xcelium> source /opt/eda/cadence/XCELIUM2309/tools/xcelium/files/xmsimrc
+xcelium> source /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/additions/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+UVM_INFO /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh(412) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+CDNS-UVM-1.2 (23.09-s012)
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test i2c_smoke_test...
+SDI/Verilog Transaction Recording Facility Version 23.09-s012
+UVM_WARNING /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/reg/uvm_reg_map.svh(1314) @ 0: reporter [RegModel] map 'default_map' does not seem to be initialized correctly, check that the top register model is locked()
+UVM_FATAL @ 0: reporter@@default_parent_seq [SEQ] neither the item's sequencer nor dedicated sequencer has been supplied to start item in default_parent_seq
+UVM_INFO /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_catcher.svh(705) @ 0: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_server.svh(847) @ 0: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    3
+UVM_WARNING :    1
+UVM_ERROR :    0
+UVM_FATAL :    1
+** Report counts by id
+[RNTST]     1
+[RegModel]     1
+[SEQ]     1
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+
+Simulation complete via $finish(1) at time 0 FS + 47
+/opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh:135     $finish;
+xcelium> exit
+xmsim: Memory Usage - Final: 94.7M, Peak: 94.7M, Peak virtual: 143.2M
+xmsim: CPU Usage - 0.0s system + 0.1s user = 0.1s total (0.4s, 23.7% cpu)
+TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 13:55:49 EDT  (total: 00:00:00)
