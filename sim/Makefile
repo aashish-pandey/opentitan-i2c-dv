@@ -30,11 +30,14 @@ TEST ?= i2c_base_test
 .PHONY: compile sim clean 
 
 compile:
+	find ../prim/rtl -name "*.sv" > /tmp/prim_files.f
+	find ../prim_generic/rtl -name "*.sv" >> /tmp/prim_files.f
 	$(XRUN) $(UVM_ARGS) $(COMP_ARGS) \
+	-f /tmp/prim_files.f \
 	-f $(SIM_DIR)/filelist.f \
 	-elaborate \
 	-xmlibdirname xcelium.d \
-	-log xrun_elab.log \ 
+	-log xrun_elab.log \
 	-messages \
 	-status
 
