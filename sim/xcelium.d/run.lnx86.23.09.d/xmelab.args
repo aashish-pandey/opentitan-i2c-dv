@@ -1,0 +1,24 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-amsdlibdir
+./xcelium.d/AMSD
+-loadpli
+/opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/additions/sv/lib/libuvmpli.so:uvm_pli_boot
+-ACCESS
++rwc
+-XMLIBDIRNAME
+xcelium.d
+-no_analogsolver
+-MESSAGES
+-XLMODE
+./xcelium.d/run.lnx86.23.09.d
+-RUNMODE
+-CDSLIB
+./xcelium.d/run.lnx86.23.09.d/cds.lib
+-HDLVAR
+./xcelium.d/run.lnx86.23.09.d/hdl.var
+-WORK
+worklib
+-HASXLMODE
