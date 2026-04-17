@@ -30,8 +30,24 @@ TEST ?= i2c_base_test
 .PHONY: compile sim clean 
 
 compile:
-	find ../prim/rtl -name "*.sv" > /tmp/prim_files.f
-	find ../prim_generic/rtl -name "*.sv" >> /tmp/prim_files.f
+	find ../prim/rtl -name "*.sv" \
+	  ! -name "prim_lc_*.sv" \
+	  ! -name "prim_flash*.sv" \
+	  ! -name "prim_sha2*.sv" \
+	  ! -name "prim_prince.sv" \
+	  ! -name "prim_edn_req.sv" \
+	  ! -name "prim_trivium.sv" \
+	  ! -name "prim_ram_2p*.sv" \
+	  ! -name "prim_ram_1r1w*.sv" \
+	  ! -name "prim_rom_adv.sv" \
+	  ! -name "prim_gate_gen.sv" \
+	  > /tmp/prim_files.f
+	find ../prim_generic/rtl -name "*.sv" \
+	  ! -name "prim_flash*.sv" \
+	  ! -name "prim_generic_flash*.sv" \
+	  ! -name "prim_ram_1r1w.sv" \
+	  ! -name "prim_ram_2p.sv" \
+	  >> /tmp/prim_files.f
 	$(XRUN) $(UVM_ARGS) $(COMP_ARGS) \
 	-f /tmp/prim_files.f \
 	-f $(SIM_DIR)/filelist.f \
