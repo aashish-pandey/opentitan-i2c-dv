@@ -1,5 +1,5 @@
 xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 01:13:39 EDT
+TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 01:21:25 EDT
 xrun
 	-uvm
 	-uvmhome CDNS-1.2
@@ -212,7 +212,7 @@ xrun
 	-status
 Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2
 xmvlog: Memory Usage - Current physical: 24.0M, Current virtual: 45.9M
-xmvlog: CPU Usage - 0.0s system + 0.4s user = 0.4s total (0.9s, 45.3% cpu)
+xmvlog: CPU Usage - 0.1s system + 0.4s user = 0.5s total (1.0s, 46.7% cpu)
 file: ../prim/rtl/prim_util_pkg.sv
 	package worklib.prim_util_pkg:sv
 		errors: 0, warnings: 0
@@ -764,14 +764,8 @@ file: ../rtl/i2c.sv
 	module worklib.i2c:sv
 		errors: 0, warnings: 0
 file: ../tb/env/i2c_tb_pkg.sv
-        host_cfg.mode = HOST;
-                           |
-xmvlog: *W,ENUMERR (../tb/env/i2c_env.sv,24|27): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
-        target_cfg.mode = TARGET;
-                               |
-xmvlog: *W,ENUMERR (../tb/env/i2c_env.sv,30|31): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
 	package worklib.i2c_tb_pkg:sv
-		errors: 0, warnings: 2
+		errors: 0, warnings: 0
 file: ../tb/top/i2c_if.sv
 	interface worklib.i2c_if:sv
 		errors: 0, warnings: 0
@@ -784,8 +778,8 @@ xmvlog: *W,SPDUSD: Include directory ../tb/top given but not used.
 xmvlog: *W,SPDUSD: Include directory ../tb/sva given but not used.
 	Total errors/warnings found outside modules and primitives:
 		errors: 0, warnings: 4
-xmvlog: Memory Usage - Current physical: 30.3M, Current virtual: 53.3M
-xmvlog: CPU Usage - 0.0s system + 0.4s user = 0.5s total (1.2s, 40.5% cpu)
+xmvlog: Memory Usage - Current physical: 30.2M, Current virtual: 53.3M
+xmvlog: CPU Usage - 0.0s system + 0.4s user = 0.4s total (1.1s, 36.8% cpu)
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Top level design units:
@@ -912,25 +906,13 @@ xmvlog: CPU Usage - 0.0s system + 0.4s user = 0.5s total (1.2s, 40.5% cpu)
       .rdata_o   (inst_rdata[i]),
                            |
 xmelab: *W,CUVMPW (../prim/rtl/prim_ram_1p_adv.sv,166|27): port sizes differ in port connection(32/36) for the instance(prim_ram_1p_scr.u_prim_ram_1p_adv.gen_ram_inst[0]) .
-        vif.sda <= 0;
-          |
-xmelab: *E,WANOTL (../tb/agent/i2c_target_driver.sv,104|10): A net is not a legal lvalue in this context [9.3.1(IEEE)].
-        vif.sda <= 1;
-          |
-xmelab: *E,WANOTL (../tb/agent/i2c_target_driver.sv,110|10): A net is not a legal lvalue in this context [9.3.1(IEEE)].
-        vif.sda <= 1;
-          |
-xmelab: *E,WANOTL (../tb/agent/i2c_target_driver.sv,116|10): A net is not a legal lvalue in this context [9.3.1(IEEE)].
-        vif.sda <= val;
-          |
-xmelab: *E,WANOTL (../tb/agent/i2c_target_driver.sv,124|10): A net is not a legal lvalue in this context [9.3.1(IEEE)].
-        host_cfg.mode = HOST;
-                           |
-xmelab: *W,ENUMERR (../tb/env/i2c_env.sv,24|27): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
-        target_cfg.mode = TARGET;
-                               |
-xmelab: *W,ENUMERR (../tb/env/i2c_env.sv,30|31): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
-xmelab: Memory Usage - Final: 57.9M, Peak: 58.1M, Peak virtual: 130.5M
-xmelab: CPU Usage - 0.0s system + 0.3s user = 0.3s total (0.7s, 49.0% cpu)
+    assign dut_if.scl = (cio_scl_en_o) ? cio_scl_o : 1'b1;
+                      |
+xmelab: *E,ICDCBA (../tb/top/tb_top.sv,49|22): Illegal combination of driver and output clockvar to variable 'scl' detected (output clockvar found in clocking block at line 26 in file ../tb/top/i2c_if.sv).
+    assign dut_if.sda = (cio_sda_en_o) ? cio_sda_o : 1'b1;
+                      |
+xmelab: *E,ICDCBA (../tb/top/tb_top.sv,50|22): Illegal combination of driver and output clockvar to variable 'sda' detected (output clockvar found in clocking block at line 27 in file ../tb/top/i2c_if.sv).
+xmelab: Memory Usage - Final: 58.1M, Peak: 58.3M, Peak virtual: 130.5M
+xmelab: CPU Usage - 0.0s system + 0.2s user = 0.2s total (0.3s, 70.4% cpu)
 xrun: *E,ELBERR: Error (*E) or soft error (*SE) occurred during elaboration (status 1), exiting.
-TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 01:13:42 EDT  (total: 00:00:03)
+TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 01:21:28 EDT  (total: 00:00:03)
