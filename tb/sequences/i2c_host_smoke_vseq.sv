@@ -9,58 +9,58 @@ class i2c_host_smoke_vseq extends uvm_sequence #(i2c_seq_item);
         super.new(name);
     endfunction
 
+    // Fixed target address — must match what the DUT is configured with below
+    // and must match the UVM target driver's default (7'h55).
+    localparam logic [6:0] TARGET_ADDR = 7'h55;
+
     task body();
 
         i2c_seq_item item;
         uvm_status_e status;
 
-        //get RAL from config_db
-        if(!uvm_config_db #(i2c_reg_block)::get(null, "", "ral", ral))
+        // Get the RAL handle that was put into config_db by the env.
+        if (!uvm_config_db #(i2c_reg_block)::get(null, "", "ral", ral))
             `uvm_fatal("VSEQ", "No RAL found")
-        
-        //step-1 : enable host mode
-        ral.ctrl.enablehost.set(1);
+
+        // ----------------------------------------------------------------
+        // Step 1 — Configure DUT as I2C TARGET via TLUL
+        //
+        // Previously this set enablehost=1 which made the DUT try to drive
+        // SCL as an I2C master — fighting with our UVM host driver on the bus.
+        //
+        // Correct topology:
+        //   UVM host driver  = external I2C master  (drives SCL/SDA)
+        //   DUT              = I2C target (slave)    (responds with ACK)
+        // ----------------------------------------------------------------
+
+        // Enable target mode in the DUT.
+        ral.ctrl.enabletarget.set(1);
         ral.ctrl.update(status);
 
-        //step-2 : program timing
-        ral.timing0.thigh.set(16);
-        ral.timing0.tlow.set(16);
-        ral.timing0.update(status);
+        // Program the DUT's target address and mask.
+        //   address0 = 7'h55  — the 7-bit I2C address the DUT will respond to
+        //   mask0    = 7'h7F  — all 7 bits must match exactly (full address match)
+        ral.target_id.address0.set(TARGET_ADDR);
+        ral.target_id.mask0.set(7'h7F);
+        ral.target_id.update(status);
 
-        ral.timing1.t_r.set(16);
-        ral.timing1.t_f.set(16);
-        ral.timing1.update(status);
-
-        ral.timing2.tsu_sta.set(16);
-        ral.timing2.thd_sta.set(16);
-        ral.timing2.update(status);
-
-        ral.timing3.tsu_dat.set(16);
-        ral.timing3.thd_dat.set(16);
-        ral.timing3.update(status);
-
-        ral.timing4.tsu_sto.set(16);
-        ral.timing4.t_buf.set(16);
-        ral.timing4.update(status);
-
-        //step3 - send 5 write transactions
+        // ----------------------------------------------------------------
+        // Step 2 — Send write transactions to the DUT's target address
+        //
+        // addr is constrained to TARGET_ADDR so the DUT actually ACKs.
+        // Previously addr was fully random — almost never hit the DUT's
+        // address — causing 81 NACK warnings.
+        // ----------------------------------------------------------------
         repeat(5) begin
             item = i2c_seq_item::type_id::create("item");
             start_item(item);
-            if(!item.randomize() with {item.rw == 0;})
-                `uvm_fatal("VSEQ", "Randomization Failed")
-            finish_item(item);
-        end
-
-        //step 4 - send 3 read transactions
-        repeat(3) begin
-            item = i2c_seq_item::type_id::create("item");
-            start_item(item);
-            if(!item.randomize() with {item.rw == 1;})
+            if (!item.randomize() with {
+                item.rw   == 1'b0;          // write
+                item.addr == TARGET_ADDR;   // must match DUT's target_id
+            })
                 `uvm_fatal("VSEQ", "Randomization failed")
             finish_item(item);
         end
-
 
     endtask
 

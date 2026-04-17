@@ -27,9 +27,9 @@ module tb_top;
     prim_ram_1p_pkg::ram_1p_cfg_t ram_cfg_i;
     prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o;
 
-    //tie-off signals : Bus Interface
-    tlul_pkg::tl_h2d_t tl_i;
-    tlul_pkg::tl_d2h_t tl_o;
+    // TLUL bus interface — the UVM driver writes tl_i, the DUT drives tl_o.
+    // We use tlul_if so the UVM environment can access these signals.
+    tlul_if tlul_vif (.clk(clk));
 
     //Alerts
     prim_alert_pkg::alert_rx_t [i2c_reg_pkg::NumAlerts-1:0] alert_rx_i;
@@ -51,7 +51,6 @@ module tb_top;
     assign ram_cfg_i = 'b0;
     assign alert_rx_i = 'b0;
     assign racl_policies_i = 'b0;
-    assign tl_i = 'b0;
 
 
     //DUT instantiation
@@ -61,8 +60,10 @@ module tb_top;
         .ram_cfg_i              (ram_cfg_i),
         .ram_cfg_rsp_o          (ram_cfg_rsp_o),
 
-        .tl_i                   (tl_i),
-        .tl_o                   (tl_o),
+        // Connect the TL-UL bus — tlul_vif.h2d is driven by the UVM TLUL driver,
+        // tlul_vif.d2h is driven back by the DUT and read by the UVM driver.
+        .tl_i                   (tlul_vif.h2d),
+        .tl_o                   (tlul_vif.d2h),
 
         .alert_rx_i             (alert_rx_i),
         .alert_tx_o             (alert_tx_o),
@@ -101,7 +102,10 @@ module tb_top;
 
     //register interface in config_db and run test
     initial begin
-        uvm_config_db #(virtual i2c_if)::set(null, "uvm_test_top.*", "vif", dut_if);
+        uvm_config_db #(virtual i2c_if)::set(null, "uvm_test_top.*", "vif",      dut_if);
+        // Make the TLUL interface available to the TLUL driver via config_db.
+        // The driver looks it up by the key "tlul_vif" in its build_phase.
+        uvm_config_db #(virtual tlul_if)::set(null, "uvm_test_top.*", "tlul_vif", tlul_vif);
         run_test();
     end
 

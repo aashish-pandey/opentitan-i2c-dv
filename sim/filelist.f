@@ -29,4 +29,5 @@
 // Testbench
 ../tb/env/i2c_tb_pkg.sv
 ../tb/top/i2c_if.sv
+../tb/top/tlul_if.sv
 ../tb/top/tb_top.sv

@@ -2,6 +2,13 @@ package i2c_tb_pkg;
     import uvm_pkg::*;
     `include "uvm_macros.svh"
 
+    // TLUL agent — must be included before i2c_reg_adapter and i2c_env
+    // because both depend on tlul_seq_item and tlul_agent types.
+    `include "tlul_seq_item.sv"
+    `include "tlul_sequencer.sv"
+    `include "tlul_driver.sv"
+    `include "tlul_agent.sv"
+
     `include "i2c_reg_block.sv"
     `include "i2c_reg_adapter.sv"
     `include "i2c_seq_item.sv"
