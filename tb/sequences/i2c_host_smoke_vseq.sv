@@ -57,6 +57,12 @@ class i2c_host_smoke_vseq extends uvm_sequence #(i2c_seq_item);
         // Previously addr was fully random — almost never hit the DUT's
         // address — causing 81 NACK warnings.
         // ----------------------------------------------------------------
+        // Read FIFO status before transactions start — should show acqlvl=0
+        ral.target_fifo_status.read(status, , UVM_FRONTDOOR);
+        `uvm_info("VSEQ", $sformatf("PRE-TX target_fifo_status: acqlvl=%0d  txlvl=%0d",
+                  ral.target_fifo_status.acqlvl.get_mirrored_value(),
+                  ral.target_fifo_status.txlvl.get_mirrored_value()), UVM_NONE)
+
         `uvm_info("VSEQ", "Starting 5 I2C write transactions to address 0x55...", UVM_NONE)
         repeat(5) begin
             item = i2c_seq_item::type_id::create("item");
@@ -69,6 +75,13 @@ class i2c_host_smoke_vseq extends uvm_sequence #(i2c_seq_item);
             `uvm_info("VSEQ", $sformatf("Sending I2C WRITE  addr=0x%0h  data=%0p",
                       item.addr, item.data), UVM_NONE)
             finish_item(item);
+
+            // Read ACQ FIFO level after each transaction — if NACKs = FIFO full, acqlvl should grow
+            ral.target_fifo_status.read(status, , UVM_FRONTDOOR);
+            `uvm_info("VSEQ", $sformatf("POST-TX target_fifo_status: acqlvl=%0d  txlvl=%0d  (status=%s)",
+                      ral.target_fifo_status.acqlvl.get_mirrored_value(),
+                      ral.target_fifo_status.txlvl.get_mirrored_value(),
+                      status.name()), UVM_NONE)
         end
         `uvm_info("VSEQ", "All 5 I2C transactions dispatched.", UVM_NONE)
 
