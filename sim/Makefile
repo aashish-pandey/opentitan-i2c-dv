@@ -63,12 +63,18 @@ compile:
 	-messages \
 	-status
 
+SEED ?= 1
+
 sim:
-	$(XRUN) $(UVM_ARGS) $(COMP_ARGS) \
-	-f $(SIM_DIR)/filelist.f \
-	-run -uvmtest=$(TEST) \
+	$(XRUN) \
+	-R \
+	-xmlibdirname xcelium.d \
+	-log xrun_sim.log \
+	-messages \
+	-status \
+	-svseed $(SEED) \
 	+UVM_TESTNAME=$(TEST) \
-	+UVM_VERBOSITY=UVM_MEDIUM 
+	+UVM_VERBOSITY=UVM_MEDIUM
 
 clean:
 	rm -rf xrun.log xrun.key xcelium.d waves.vcd
