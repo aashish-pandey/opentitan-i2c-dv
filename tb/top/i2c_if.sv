@@ -1,15 +1,8 @@
 
 interface i2c_if (input logic clk, input logic rst_n);
 
-    // wand scl;
-    // wand sda;
-
-    // pullup(scl); //Passive pullup - overridden by any driver asserting 0
-    // pullup(sda); //Passive pullup - overridden by any driver asserting 0
-    wire scl_pull = 1'b1;
-    wire sda_pull = 1'b1;
-    assign scl = scl_pull;
-    assign sda = sda_pull;
+    logic scl;
+    logic sda;
     logic intr_fmt_threshold;
     logic intr_rx_threshold;
     logic intr_acq_threshold;
