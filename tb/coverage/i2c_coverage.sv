@@ -1,3 +1,5 @@
+import uvm_pkg::*;
+`include "uvm_macros.svh"
 class i2c_coverage extends uvm_subscriber #(i2c_seq_item);
     `uvm_component_utils(i2c_coverage)
 

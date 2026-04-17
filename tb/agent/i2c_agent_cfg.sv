@@ -1,3 +1,5 @@
+import uvm_pkg::*;
+`include "uvm_macros.svh"
 class i2c_agent_cfg extends uvm_object;
 
     `uvm_object_utils(i2c_agent_cfg)

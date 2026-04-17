@@ -1,3 +1,5 @@
+import uvm_pkg::*;
+`include "uvm_macros.svh"
 //RAL modeling of i2c
 class i2c_ctrl_reg extends uvm_reg;
 

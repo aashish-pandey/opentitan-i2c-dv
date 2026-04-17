@@ -1,3 +1,4 @@
+../tb/top/stub_pkgs.sv
 // RTL
 ../rtl/i2c_pkg.sv
 ../rtl/i2c_reg_pkg.sv

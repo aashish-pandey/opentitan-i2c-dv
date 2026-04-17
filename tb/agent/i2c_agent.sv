@@ -1,3 +1,5 @@
+import uvm_pkg::*;
+`include "uvm_macros.svh"
 class i2c_agent extends uvm_agent;
 
     i2c_host_driver h_drv;

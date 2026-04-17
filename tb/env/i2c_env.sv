@@ -1,3 +1,5 @@
+import uvm_pkg::*;
+`include "uvm_macros.svh"
 class i2c_env extends uvm_env;
 
     `uvm_component_utils(i2c_env)

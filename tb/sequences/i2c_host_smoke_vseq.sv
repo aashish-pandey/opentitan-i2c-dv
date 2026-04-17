@@ -1,3 +1,5 @@
+import uvm_pkg::*;
+`include "uvm_macros.svh"
 class i2c_host_smoke_vseq extends uvm_sequence #(i2c_seq_item);
     `uvm_object_utils(i2c_host_smoke_vseq)
 

@@ -1,3 +1,5 @@
+import uvm_pkg::*;
+`include "uvm_macros.svh"
 class i2c_intr_checker extends uvm_component;
 
     `uvm_component_utils(i2c_intr_checker)

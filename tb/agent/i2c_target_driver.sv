@@ -1,3 +1,5 @@
+import uvm_pkg::*;
+`include "uvm_macros.svh"
 class i2c_target_driver extends uvm_driver #(i2c_seq_item);
 
     `uvm_component_utils(i2c_target_driver)

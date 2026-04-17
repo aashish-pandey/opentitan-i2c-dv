@@ -1,3 +1,5 @@
+import uvm_pkg::*;
+`include "uvm_macros.svh"
 class i2c_base_test extends uvm_test;
 
     `uvm_component_utils(i2c_base_test)

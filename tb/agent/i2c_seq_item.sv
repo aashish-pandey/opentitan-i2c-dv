@@ -1,3 +1,5 @@
+import uvm_pkg::*;
+`include "uvm_macros.svh"
 class i2c_seq_item extends uvm_sequence_item;
 
     rand logic [6:0] addr;

@@ -1,3 +1,5 @@
+import uvm_pkg::*;
+`include "uvm_macros.svh"
 class i2c_monitor extends uvm_monitor;
     `uvm_component_utils(i2c_monitor)
 
