@@ -88,6 +88,8 @@ class i2c_host_driver extends uvm_driver#(i2c_seq_item);
         repeat(10) @(vif.driver_cb);
 
         // sample SDA - target should be pulling it low
+        $display("[I2C_HOST @%0t] ACK sample: sda=%0b  scl=%0b  (expect sda=0 for ACK)",
+                 $time, vif.monitor_cb.sda, vif.monitor_cb.scl);
         if(vif.monitor_cb.sda !== 1'b0)
             `uvm_warning("ACK", "NACK received or no response on SDA")
 

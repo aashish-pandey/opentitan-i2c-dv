@@ -34,15 +34,21 @@ class i2c_host_smoke_vseq extends uvm_sequence #(i2c_seq_item);
         // ----------------------------------------------------------------
 
         // Enable target mode in the DUT.
+        `uvm_info("VSEQ", "Writing CTRL.enabletarget=1 via TLUL...", UVM_NONE)
         ral.ctrl.enabletarget.set(1);
         ral.ctrl.update(status);
+        `uvm_info("VSEQ", $sformatf("CTRL update done — status=%s  ctrl_mirror=0x%0h",
+                  status.name(), ral.ctrl.get_mirrored_value()), UVM_NONE)
 
         // Program the DUT's target address and mask.
         //   address0 = 7'h55  — the 7-bit I2C address the DUT will respond to
         //   mask0    = 7'h7F  — all 7 bits must match exactly (full address match)
+        `uvm_info("VSEQ", "Writing TARGET_ID.address0=0x55 mask0=0x7F via TLUL...", UVM_NONE)
         ral.target_id.address0.set(TARGET_ADDR);
         ral.target_id.mask0.set(7'h7F);
         ral.target_id.update(status);
+        `uvm_info("VSEQ", $sformatf("TARGET_ID update done — status=%s  target_id_mirror=0x%0h",
+                  status.name(), ral.target_id.get_mirrored_value()), UVM_NONE)
 
         // ----------------------------------------------------------------
         // Step 2 — Send write transactions to the DUT's target address
@@ -51,16 +57,20 @@ class i2c_host_smoke_vseq extends uvm_sequence #(i2c_seq_item);
         // Previously addr was fully random — almost never hit the DUT's
         // address — causing 81 NACK warnings.
         // ----------------------------------------------------------------
+        `uvm_info("VSEQ", "Starting 5 I2C write transactions to address 0x55...", UVM_NONE)
         repeat(5) begin
             item = i2c_seq_item::type_id::create("item");
             start_item(item);
             if (!item.randomize() with {
-                item.rw   == 1'b0;          // write
-                item.addr == TARGET_ADDR;   // must match DUT's target_id
+                item.rw   == 1'b0;
+                item.addr == TARGET_ADDR;
             })
                 `uvm_fatal("VSEQ", "Randomization failed")
+            `uvm_info("VSEQ", $sformatf("Sending I2C WRITE  addr=0x%0h  data=%0p",
+                      item.addr, item.data), UVM_NONE)
             finish_item(item);
         end
+        `uvm_info("VSEQ", "All 5 I2C transactions dispatched.", UVM_NONE)
 
     endtask
 

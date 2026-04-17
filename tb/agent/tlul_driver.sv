@@ -87,6 +87,9 @@ class tlul_driver extends uvm_driver #(tlul_seq_item);
         while (!vif.d2h.d_valid)
             @(posedge vif.clk);
 
+        $display("[TLUL_DRV @%0t] WRITE addr=0x%0h  d_error=%0b  d_opcode=0x%0h",
+                 $time, req.addr, vif.d2h.d_error, vif.d2h.d_opcode);
+
         @(posedge vif.clk);
 
     endtask
@@ -127,6 +130,9 @@ class tlul_driver extends uvm_driver #(tlul_seq_item);
 
         // Capture read data back into the item so bus2reg can update the RAL mirror.
         req.data = vif.d2h.d_data;
+
+        $display("[TLUL_DRV @%0t] READ  addr=0x%0h  d_data=0x%0h  d_error=%0b  d_opcode=0x%0h",
+                 $time, req.addr, vif.d2h.d_data, vif.d2h.d_error, vif.d2h.d_opcode);
 
         @(posedge vif.clk);
 
