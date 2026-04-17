@@ -8,6 +8,8 @@
 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_flop_macros.sv
 ../prim/rtl/prim_fifo_assert.svh
 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_fifo_assert.svh
+../prim/rtl/prim_util_memload.svh
+/home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_util_memload.svh
 /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/uvm_macros.svh
 /opt-shared-v2/eda/cadence/XCELIUM2309/tools.lnx86/methodology/UVM/CDNS-1.2/sv/src/uvm_macros.svh
 /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/macros/uvm_version_defines.svh

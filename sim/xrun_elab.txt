@@ -1,5 +1,5 @@
 xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 00:43:29 EDT
+TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 00:45:31 EDT
 xrun
 	-uvm
 	-uvmhome CDNS-1.2
@@ -43,6 +43,9 @@ xrun
 		../prim/rtl/prim_secded_inv_64_57_enc.sv
 		../prim/rtl/prim_secded_inv_64_57_dec.sv
 		../prim/rtl/prim_secded_inv_39_32_dec.sv
+		../prim/rtl/prim_secded_inv_39_32_enc.sv
+		../prim_generic/rtl/prim_ram_1p.sv
+		../prim/rtl/prim_alert_sender.sv
 		../tlul/rtl/tlul_pkg.sv
 		../tlul/rtl/tlul_adapter_reg.sv
 		../tlul/rtl/tlul_cmd_intg_chk.sv
@@ -119,6 +122,15 @@ file: ../prim/rtl/prim_secded_inv_64_57_dec.sv
 file: ../prim/rtl/prim_secded_inv_39_32_dec.sv
 	module worklib.prim_secded_inv_39_32_dec:sv
 		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_inv_39_32_enc.sv
+	module worklib.prim_secded_inv_39_32_enc:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_ram_1p.sv
+	module worklib.prim_ram_1p:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_alert_sender.sv
+	module worklib.prim_alert_sender:sv
+		errors: 0, warnings: 0
 file: ../tlul/rtl/tlul_adapter_reg.sv
 	module worklib.tlul_adapter_reg:sv
 		errors: 0, warnings: 0
@@ -194,7 +206,7 @@ xmvlog: *W,SPDUSD: Include directory ../tb/sva given but not used.
 		cdns_assert2uvm_pkg
 		cdns_uvm_pkg
 		i2c_tb_pkg
-		$unit_0x685f63e3
+		$unit_0x1e30427e
 		prim_subreg_pkg
 		prim_mubi_pkg
 		top_pkg
@@ -212,17 +224,23 @@ xmvlog: *W,SPDUSD: Include directory ../tb/sva given but not used.
 		tlul_rsp_intg_chk
 		tb_top
 		Caching library 'worklib' ....... Done
-    prim_secded_inv_39_32_enc u_data_gen (
-                                       |
-xmelab: *E,CUVMUR (../tlul/rtl/tlul_cmd_intg_gen.sv,36|39): instance 'tlul_cmd_intg_gen.gen_data_intg.u_data_gen' of design unit 'prim_secded_inv_39_32_enc' is unresolved in 'worklib.tlul_cmd_intg_gen:sv'.
-  prim_secded_inv_39_32_enc u_data_gen (
-                                     |
-xmelab: *E,CUVMUR (../tlul/rtl/tlul_data_integ_enc.sv,17|37): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_rsp_intg_gen@tlul_rsp_intg_gen<module>.gen_data_intg.u_tlul_data_integ_enc@tlul_data_integ_enc<module>.u_data_gen' of design unit 'prim_secded_inv_39_32_enc' is unresolved in 'worklib.tlul_data_integ_enc:sv'.
-    ) u_mem (
-          |
-xmelab: *E,CUVMUR (../prim/rtl/prim_ram_1p_adv.sv,157|10): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_ram_1p@prim_ram_1p_adv<module>.gen_ram_inst[0].u_mem' of design unit 'prim_ram_1p' is unresolved in 'worklib.prim_ram_1p_adv:sv'.
-    ) u_prim_alert_sender (
-                        |
-xmelab: *E,CUVMUR (../rtl/i2c.sv,95|24): instance 'tb_top.dut@i2c<module>.gen_alert_tx[0].u_prim_alert_sender' of design unit 'prim_alert_sender' is unresolved in 'worklib.i2c:sv'.
+  ) u_prim_buf_ping (
+                  |
+xmelab: *E,CUVMUR (../prim/rtl/prim_alert_sender.sv,79|18): instance 'tb_top.dut@i2c<module>.gen_alert_tx[0].u_prim_alert_sender@prim_alert_sender<module>.u_prim_buf_ping' of design unit 'prim_sec_anchor_buf' is unresolved in 'worklib.prim_alert_sender:sv'.
+  ) u_decode_ping (
+                |
+xmelab: *E,CUVMUR (../prim/rtl/prim_alert_sender.sv,89|16): instance 'tb_top.dut@i2c<module>.gen_alert_tx[0].u_prim_alert_sender@prim_alert_sender<module>.u_decode_ping' of design unit 'prim_diff_decode' is unresolved in 'worklib.prim_alert_sender:sv'.
+  ) u_prim_buf_ack (
+                 |
+xmelab: *E,CUVMUR (../prim/rtl/prim_alert_sender.sv,106|17): instance 'tb_top.dut@i2c<module>.gen_alert_tx[0].u_prim_alert_sender@prim_alert_sender<module>.u_prim_buf_ack' of design unit 'prim_sec_anchor_buf' is unresolved in 'worklib.prim_alert_sender:sv'.
+  ) u_decode_ack (
+               |
+xmelab: *E,CUVMUR (../prim/rtl/prim_alert_sender.sv,116|15): instance 'tb_top.dut@i2c<module>.gen_alert_tx[0].u_prim_alert_sender@prim_alert_sender<module>.u_decode_ack' of design unit 'prim_diff_decode' is unresolved in 'worklib.prim_alert_sender:sv'.
+  ) u_prim_buf_in_req (
+                    |
+xmelab: *E,CUVMUR (../prim/rtl/prim_alert_sender.sv,162|20): instance 'tb_top.dut@i2c<module>.gen_alert_tx[0].u_prim_alert_sender@prim_alert_sender<module>.u_prim_buf_in_req' of design unit 'prim_sec_anchor_buf' is unresolved in 'worklib.prim_alert_sender:sv'.
+  ) u_prim_flop_alert (
+                    |
+xmelab: *E,CUVMUR (../prim/rtl/prim_alert_sender.sv,272|20): instance 'tb_top.dut@i2c<module>.gen_alert_tx[0].u_prim_alert_sender@prim_alert_sender<module>.u_prim_flop_alert' of design unit 'prim_sec_anchor_flop' is unresolved in 'worklib.prim_alert_sender:sv'.
 xrun: *E,ELBERR: Error (*E) or soft error (*SE) occurred during elaboration (status 1), exiting.
-TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 00:43:31 EDT  (total: 00:00:02)
+TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 00:45:33 EDT  (total: 00:00:02)

@@ -47,3 +47,6 @@
 1776398299 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_secded_inv_64_57_enc.sv
 1776398299 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_secded_inv_64_57_dec.sv
 1776398299 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_secded_inv_39_32_dec.sv
+1776398299 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_secded_inv_39_32_enc.sv
+1776401004 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim_generic/rtl/prim_ram_1p.sv
+1776398298 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_alert_sender.sv

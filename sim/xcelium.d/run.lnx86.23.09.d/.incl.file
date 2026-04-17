@@ -3,6 +3,7 @@
 ./prim_assert_sec_cm.svh
 ./prim_flop_macros.sv
 ./prim_fifo_assert.svh
+./prim_util_memload.svh
 ./uvm_macros.svh
 ../prim/rtl/uvm_macros.svh
 ../tlul/rtl/uvm_macros.svh

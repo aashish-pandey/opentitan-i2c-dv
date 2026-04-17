@@ -29,6 +29,9 @@
 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_secded_inv_64_57_enc.sv
 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_secded_inv_64_57_dec.sv
 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_secded_inv_39_32_dec.sv
+/home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_secded_inv_39_32_enc.sv
+/home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim_generic/rtl/prim_ram_1p.sv
+/home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_alert_sender.sv
 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/tlul/rtl/tlul_pkg.sv
 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/tlul/rtl/tlul_adapter_reg.sv
 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/tlul/rtl/tlul_cmd_intg_chk.sv
