@@ -714,12 +714,8 @@ module i2c_target_fsm import i2c_pkg::*;
       AddrAckWait : begin
         if (scl_i) begin
           // The controller is going too fast. Abandon the transaction.
-          $display("[TGT_FSM @%0t] AddrAckWait: SCL HIGH too early -> WaitForStop. tcount_q=%0d thd_dat=%0d",
-                   $time, tcount_q, thd_dat_i);
           state_d = WaitForStop;
         end else if (tcount_q == 20'd1) begin
-          $display("[TGT_FSM @%0t] AddrAckWait: tcount==1, proceeding to ACK. acq_depth=%0d",
-                   $time, acq_fifo_depth_i);
           if (!nack_addr_after_timeout_i) begin
             // Always ACK addresses in this mode.
             state_d = AddrAckSetup;
@@ -856,12 +852,8 @@ module i2c_target_fsm import i2c_pkg::*;
       AcquireAckWait : begin
         if (scl_i) begin
           // The controller is going too fast. Abandon the transaction.
-          $display("[TGT_FSM @%0t] AcquireAckWait: SCL HIGH too early -> WaitForStop (abandon). tcount_q=%0d thd_dat=%0d stretch_rx=%0b can_auto_ack=%0b acq_depth=%0d",
-                   $time, tcount_q, thd_dat_i, stretch_rx, can_auto_ack, acq_fifo_depth_i);
           state_d = WaitForStop;
         end else if (tcount_q == 20'd1) begin
-          $display("[TGT_FSM @%0t] AcquireAckWait: tcount==1, deciding. nack_q=%0b stretch_rx=%0b can_auto_ack=%0b acq_depth=%0d",
-                   $time, nack_transaction_q, stretch_rx, can_auto_ack, acq_fifo_depth_i);
           if (nack_transaction_q) begin
             state_d = WaitForStop;
           end else if (stretch_rx) begin
