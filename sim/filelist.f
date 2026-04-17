@@ -31,6 +31,10 @@
 ../prim/rtl/prim_secded_inv_64_57_dec.sv
 ../prim/rtl/prim_secded_inv_39_32_dec.sv
 
+../prim/rtl/prim_secded_inv_39_32_enc.sv
+../prim_generic/rtl/prim_ram_1p.sv
+../prim/rtl/prim_alert_sender.sv
+
 // TLUL
 ../tlul/rtl/tlul_pkg.sv
 ../tlul/rtl/tlul_adapter_reg.sv
