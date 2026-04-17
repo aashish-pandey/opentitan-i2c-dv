@@ -1,0 +1,545 @@
+xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun	23.09-s012: Started on Apr 16, 2026 at 23:38:38 EDT
+xrun
+	-uvm
+	-uvmhome CDNS-1.2
+	-sv
+	-access +rwc
+	-incdir ../rtl
+	-incdir ../tb/agent
+	-incdir ../tb/env
+	-incdir ../tb/sequences
+	-incdir ../tb/tests
+	-incdir ../tb/top
+	-incdir ../tb/coverage
+	-incdir ../tb/sva
+	-f ./filelist.f
+		../tb/top/stub_pkgs.sv
+		../rtl/i2c_pkg.sv
+		../rtl/i2c_reg_pkg.sv
+		../rtl/i2c_reg_top.sv
+		../rtl/i2c_fifos.sv
+		../rtl/i2c_fifo_sync_sram_adapter.sv
+		../rtl/i2c_bus_monitor.sv
+		../rtl/i2c_controller_fsm.sv
+		../rtl/i2c_target_fsm.sv
+		../rtl/i2c_core.sv
+		../rtl/i2c.sv
+		../tb/env/i2c_tb_pkg.sv
+		../tb/top/i2c_if.sv
+		../tb/top/tb_top.sv
+	-elaborate
+file: ../tb/env/i2c_tb_pkg.sv
+        host_cfg.mode = HOST;
+                           |
+xmvlog: *W,ENUMERR (../tb/env/i2c_env.sv,24|27): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
+        target_cfg.mode = TARGET;
+                               |
+xmvlog: *W,ENUMERR (../tb/env/i2c_env.sv,30|31): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
+	package worklib.i2c_tb_pkg:sv
+		errors: 0, warnings: 2
+file: ../tb/top/tb_top.sv
+	module worklib.tb_top:sv
+		errors: 0, warnings: 0
+xmvlog: *W,SPDUSD: Include directory ../rtl given but not used.
+xmvlog: *W,SPDUSD: Include directory ../tb/top given but not used.
+xmvlog: *W,SPDUSD: Include directory ../tb/sva given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 3
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+  tlul_cmd_intg_chk u_chk (
+                        |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,57|24): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_chk' of design unit 'tlul_cmd_intg_chk' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_prim_reg_we_check (
+                      |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,67|22): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_prim_reg_we_check' of design unit 'prim_reg_we_check' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_rsp_intg_gen (
+                 |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,93|17): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_rsp_intg_gen' of design unit 'tlul_rsp_intg_gen' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_reg_if (
+           |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,105|11): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_reg_if' of design unit 'tlul_adapter_reg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_state_fmt_threshold (
+                             |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,368|29): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_state_fmt_threshold' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_state_rx_threshold (
+                            |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,395|28): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_state_rx_threshold' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_state_acq_threshold (
+                             |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,422|29): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_state_acq_threshold' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_state_rx_overflow (
+                           |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,449|27): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_state_rx_overflow' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_state_controller_halt (
+                               |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,476|31): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_state_controller_halt' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_state_scl_interference (
+                                |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,503|32): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_state_scl_interference' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_state_sda_interference (
+                                |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,530|32): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_state_sda_interference' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_state_stretch_timeout (
+                               |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,557|31): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_state_stretch_timeout' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_state_sda_unstable (
+                            |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,584|28): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_state_sda_unstable' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_state_cmd_complete (
+                            |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,611|28): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_state_cmd_complete' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_state_tx_stretch (
+                          |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,638|26): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_state_tx_stretch' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_state_tx_threshold (
+                            |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,665|28): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_state_tx_threshold' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_state_acq_stretch (
+                           |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,692|27): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_state_acq_stretch' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_state_unexp_stop (
+                          |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,719|26): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_state_unexp_stop' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_state_host_timeout (
+                            |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,746|28): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_state_host_timeout' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_enable_fmt_threshold (
+                              |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,775|30): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_enable_fmt_threshold' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_enable_rx_threshold (
+                             |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,802|29): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_enable_rx_threshold' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_enable_acq_threshold (
+                              |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,829|30): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_enable_acq_threshold' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_enable_rx_overflow (
+                            |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,856|28): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_enable_rx_overflow' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_enable_controller_halt (
+                                |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,883|32): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_enable_controller_halt' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_enable_scl_interference (
+                                 |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,910|33): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_enable_scl_interference' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_enable_sda_interference (
+                                 |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,937|33): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_enable_sda_interference' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_enable_stretch_timeout (
+                                |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,964|32): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_enable_stretch_timeout' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_enable_sda_unstable (
+                             |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,991|29): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_enable_sda_unstable' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_enable_cmd_complete (
+                             |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1018|29): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_enable_cmd_complete' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_enable_tx_stretch (
+                           |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1045|27): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_enable_tx_stretch' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_enable_tx_threshold (
+                             |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1072|29): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_enable_tx_threshold' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_enable_acq_stretch (
+                            |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1099|28): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_enable_acq_stretch' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_enable_unexp_stop (
+                           |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1126|27): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_enable_unexp_stop' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_enable_host_timeout (
+                             |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1153|29): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_enable_host_timeout' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_test_fmt_threshold (
+                            |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1182|28): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_test_fmt_threshold' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_test_rx_threshold (
+                           |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1198|27): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_test_rx_threshold' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_test_acq_threshold (
+                            |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1214|28): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_test_acq_threshold' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_test_rx_overflow (
+                          |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1230|26): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_test_rx_overflow' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_test_controller_halt (
+                              |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1246|30): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_test_controller_halt' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_test_scl_interference (
+                               |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1262|31): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_test_scl_interference' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_test_sda_interference (
+                               |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1278|31): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_test_sda_interference' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_test_stretch_timeout (
+                              |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1294|30): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_test_stretch_timeout' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_test_sda_unstable (
+                           |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1310|27): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_test_sda_unstable' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_test_cmd_complete (
+                           |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1326|27): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_test_cmd_complete' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_test_tx_stretch (
+                         |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1342|25): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_test_tx_stretch' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_test_tx_threshold (
+                           |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1358|27): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_test_tx_threshold' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_test_acq_stretch (
+                          |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1374|26): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_test_acq_stretch' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_test_unexp_stop (
+                         |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1390|25): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_test_unexp_stop' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_intr_test_host_timeout (
+                           |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1406|27): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_intr_test_host_timeout' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_alert_test (
+               |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1426|15): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_alert_test' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_ctrl_enablehost (
+                    |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1447|20): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_ctrl_enablehost' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_ctrl_enabletarget (
+                      |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1474|22): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_ctrl_enabletarget' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_ctrl_llpbk (
+               |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1501|15): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_ctrl_llpbk' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_ctrl_nack_addr_after_timeout (
+                                 |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1528|33): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_ctrl_nack_addr_after_timeout' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_ctrl_ack_ctrl_en (
+                     |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1555|21): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_ctrl_ack_ctrl_en' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_ctrl_multi_controller_monitor_en (
+                                     |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1582|37): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_ctrl_multi_controller_monitor_en' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_ctrl_tx_stretch_ctrl_en (
+                            |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1609|28): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_ctrl_tx_stretch_ctrl_en' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_status_fmtfull (
+                   |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1635|19): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_status_fmtfull' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_status_rxfull (
+                  |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1650|18): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_status_rxfull' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_status_fmtempty (
+                    |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1665|20): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_status_fmtempty' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_status_hostidle (
+                    |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1680|20): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_status_hostidle' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_status_targetidle (
+                      |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1695|22): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_status_targetidle' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_status_rxempty (
+                   |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1710|19): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_status_rxempty' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_status_txfull (
+                  |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1725|18): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_status_txfull' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_status_acqfull (
+                   |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1740|19): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_status_acqfull' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_status_txempty (
+                   |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1755|19): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_status_txempty' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_status_acqempty (
+                    |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1770|20): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_status_acqempty' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_status_ack_ctrl_stretch (
+                            |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1785|28): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_status_ack_ctrl_stretch' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_rdata (
+          |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1801|10): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_rdata' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_fdata0_qe (
+              |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1820|14): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_fdata0_qe' of design unit 'prim_flop' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_fdata_fbyte (
+                |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1832|16): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_fdata_fbyte' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_fdata_start (
+                |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1860|16): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_fdata_start' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_fdata_stop (
+               |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1888|15): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_fdata_stop' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_fdata_readb (
+                |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1916|16): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_fdata_readb' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_fdata_rcont (
+                |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1944|16): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_fdata_rcont' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_fdata_nakok (
+                |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1972|16): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_fdata_nakok' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_fifo_ctrl0_qe (
+                  |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2001|18): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_fifo_ctrl0_qe' of design unit 'prim_flop' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_fifo_ctrl_rxrst (
+                    |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2013|20): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_fifo_ctrl_rxrst' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_fifo_ctrl_fmtrst (
+                     |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2041|21): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_fifo_ctrl_fmtrst' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_fifo_ctrl_acqrst (
+                     |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2069|21): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_fifo_ctrl_acqrst' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_fifo_ctrl_txrst (
+                    |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2097|20): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_fifo_ctrl_txrst' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_host_fifo_config0_qe (
+                         |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2126|25): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_host_fifo_config0_qe' of design unit 'prim_flop' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_host_fifo_config_rx_thresh (
+                               |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2138|31): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_host_fifo_config_rx_thresh' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_host_fifo_config_fmt_thresh (
+                                |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2166|32): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_host_fifo_config_fmt_thresh' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_target_fifo_config0_qe (
+                           |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2195|27): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_fifo_config0_qe' of design unit 'prim_flop' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_target_fifo_config_tx_thresh (
+                                 |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2207|33): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_fifo_config_tx_thresh' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_target_fifo_config_acq_thresh (
+                                  |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2235|34): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_fifo_config_acq_thresh' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_host_fifo_status_fmtlvl (
+                            |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2262|28): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_host_fifo_status_fmtlvl' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_host_fifo_status_rxlvl (
+                           |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2277|27): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_host_fifo_status_rxlvl' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_target_fifo_status_txlvl (
+                             |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2294|29): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_fifo_status_txlvl' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_target_fifo_status_acqlvl (
+                              |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2309|30): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_fifo_status_acqlvl' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_ovrd_txovrden (
+                  |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2329|18): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_ovrd_txovrden' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_ovrd_sclval (
+                |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2356|16): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_ovrd_sclval' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_ovrd_sdaval (
+                |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2383|16): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_ovrd_sdaval' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_val_scl_rx (
+               |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2409|15): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_val_scl_rx' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_val_sda_rx (
+               |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2424|15): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_val_sda_rx' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_timing0_thigh (
+                  |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2444|18): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_timing0_thigh' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_timing0_tlow (
+                 |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2471|17): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_timing0_tlow' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_timing1_t_r (
+                |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2500|16): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_timing1_t_r' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_timing1_t_f (
+                |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2527|16): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_timing1_t_f' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_timing2_tsu_sta (
+                    |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2556|20): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_timing2_tsu_sta' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_timing2_thd_sta (
+                    |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2583|20): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_timing2_thd_sta' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_timing3_tsu_dat (
+                    |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2612|20): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_timing3_tsu_dat' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_timing3_thd_dat (
+                    |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2639|20): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_timing3_thd_dat' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_timing4_tsu_sto (
+                    |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2668|20): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_timing4_tsu_sto' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_timing4_t_buf (
+                  |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2695|18): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_timing4_t_buf' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_timeout_ctrl_val (
+                     |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2724|21): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_timeout_ctrl_val' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_timeout_ctrl_mode (
+                      |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2751|22): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_timeout_ctrl_mode' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_timeout_ctrl_en (
+                    |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2778|20): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_timeout_ctrl_en' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_target_id_address0 (
+                       |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2807|23): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_id_address0' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_target_id_mask0 (
+                    |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2834|20): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_id_mask0' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_target_id_address1 (
+                       |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2861|23): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_id_address1' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_target_id_mask1 (
+                    |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2888|20): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_id_mask1' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_acqdata_abyte (
+                  |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2914|18): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_acqdata_abyte' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_acqdata_signal (
+                   |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2929|19): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_acqdata_signal' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_txdata0_qe (
+               |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2948|15): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_txdata0_qe' of design unit 'prim_flop' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_txdata (
+           |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2959|11): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_txdata' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_host_timeout_ctrl (
+                      |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2988|22): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_host_timeout_ctrl' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_target_timeout_ctrl_val (
+                            |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,3017|28): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_timeout_ctrl_val' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_target_timeout_ctrl_en (
+                           |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,3044|27): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_timeout_ctrl_en' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_target_nack_count (
+                      |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,3072|22): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_nack_count' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_target_ack_ctrl_nbytes (
+                           |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,3101|27): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_ack_ctrl_nbytes' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_target_ack_ctrl_nack (
+                         |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,3117|25): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_ack_ctrl_nack' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_acq_fifo_next_data (
+                       |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,3134|23): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_acq_fifo_next_data' of design unit 'prim_subreg_ext' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_host_nack_handler_timeout_val (
+                                  |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,3154|34): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_host_nack_handler_timeout_val' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_host_nack_handler_timeout_en (
+                                 |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,3181|33): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_host_nack_handler_timeout_en' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_controller_events_nack (
+                           |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,3210|27): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_controller_events_nack' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_controller_events_unhandled_nack_timeout (
+                                             |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,3237|45): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_controller_events_unhandled_nack_timeout' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_controller_events_bus_timeout (
+                                  |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,3264|34): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_controller_events_bus_timeout' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_controller_events_arbitration_lost (
+                                       |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,3291|39): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_controller_events_arbitration_lost' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_target_events_tx_pending (
+                             |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,3320|29): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_events_tx_pending' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_target_events_bus_timeout (
+                              |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,3347|30): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_events_bus_timeout' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_target_events_arbitration_lost (
+                                   |
+xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,3374|35): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_events_arbitration_lost' of design unit 'prim_subreg' is unresolved in 'worklib.i2c_reg_top:sv'.
+  ) u_inp_buf (
+            |
+xmelab: *E,CUVMUR (../rtl/i2c_fifo_sync_sram_adapter.sv,82|12): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_fmt_fifo_sram_adapter@i2c_fifo_sync_sram_adapter<module>.u_inp_buf' of design unit 'prim_fifo_sync' is unresolved in 'worklib.i2c_fifo_sync_sram_adapter:sv'.
+  ) u_oup_buf (
+            |
+xmelab: *E,CUVMUR (../rtl/i2c_fifo_sync_sram_adapter.sv,106|12): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_fmt_fifo_sram_adapter@i2c_fifo_sync_sram_adapter<module>.u_oup_buf' of design unit 'prim_fifo_sync' is unresolved in 'worklib.i2c_fifo_sync_sram_adapter:sv'.
+  ) u_sram_ptrs (
+              |
+xmelab: *E,CUVMUR (../rtl/i2c_fifo_sync_sram_adapter.sv,137|14): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_fmt_fifo_sram_adapter@i2c_fifo_sync_sram_adapter<module>.u_sram_ptrs' of design unit 'prim_fifo_sync_cnt' is unresolved in 'worklib.i2c_fifo_sync_sram_adapter:sv'.
+  ) u_inp_buf (
+            |
+xmelab: *E,CUVMUR (../rtl/i2c_fifo_sync_sram_adapter.sv,82|12): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_rx_fifo_sram_adapter@i2c_fifo_sync_sram_adapter<module>.u_inp_buf' of design unit 'prim_fifo_sync' is unresolved in 'worklib.i2c_fifo_sync_sram_adapter:sv'.
+  ) u_oup_buf (
+            |
+xmelab: *E,CUVMUR (../rtl/i2c_fifo_sync_sram_adapter.sv,106|12): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_rx_fifo_sram_adapter@i2c_fifo_sync_sram_adapter<module>.u_oup_buf' of design unit 'prim_fifo_sync' is unresolved in 'worklib.i2c_fifo_sync_sram_adapter:sv'.
+  ) u_sram_ptrs (
+              |
+xmelab: *E,CUVMUR (../rtl/i2c_fifo_sync_sram_adapter.sv,137|14): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_rx_fifo_sram_adapter@i2c_fifo_sync_sram_adapter<module>.u_sram_ptrs' of design unit 'prim_fifo_sync_cnt' is unresolved in 'worklib.i2c_fifo_sync_sram_adapter:sv'.
+  ) u_inp_buf (
+            |
+xmelab: *E,CUVMUR (../rtl/i2c_fifo_sync_sram_adapter.sv,82|12): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_tx_fifo_sram_adapter@i2c_fifo_sync_sram_adapter<module>.u_inp_buf' of design unit 'prim_fifo_sync' is unresolved in 'worklib.i2c_fifo_sync_sram_adapter:sv'.
+  ) u_oup_buf (
+            |
+xmelab: *E,CUVMUR (../rtl/i2c_fifo_sync_sram_adapter.sv,106|12): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_tx_fifo_sram_adapter@i2c_fifo_sync_sram_adapter<module>.u_oup_buf' of design unit 'prim_fifo_sync' is unresolved in 'worklib.i2c_fifo_sync_sram_adapter:sv'.
+  ) u_sram_ptrs (
+              |
+xmelab: *E,CUVMUR (../rtl/i2c_fifo_sync_sram_adapter.sv,137|14): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_tx_fifo_sram_adapter@i2c_fifo_sync_sram_adapter<module>.u_sram_ptrs' of design unit 'prim_fifo_sync_cnt' is unresolved in 'worklib.i2c_fifo_sync_sram_adapter:sv'.
+  ) u_inp_buf (
+            |
+xmelab: *E,CUVMUR (../rtl/i2c_fifo_sync_sram_adapter.sv,82|12): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_acq_fifo_sram_adapter@i2c_fifo_sync_sram_adapter<module>.u_inp_buf' of design unit 'prim_fifo_sync' is unresolved in 'worklib.i2c_fifo_sync_sram_adapter:sv'.
+  ) u_oup_buf (
+            |
+xmelab: *E,CUVMUR (../rtl/i2c_fifo_sync_sram_adapter.sv,106|12): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_acq_fifo_sram_adapter@i2c_fifo_sync_sram_adapter<module>.u_oup_buf' of design unit 'prim_fifo_sync' is unresolved in 'worklib.i2c_fifo_sync_sram_adapter:sv'.
+  ) u_sram_ptrs (
+              |
+xmelab: *E,CUVMUR (../rtl/i2c_fifo_sync_sram_adapter.sv,137|14): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_acq_fifo_sram_adapter@i2c_fifo_sync_sram_adapter<module>.u_sram_ptrs' of design unit 'prim_fifo_sync_cnt' is unresolved in 'worklib.i2c_fifo_sync_sram_adapter:sv'.
+  ) u_ram_arbiter (
+                |
+xmelab: *E,CUVMUR (../rtl/i2c_fifos.sv,241|16): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_ram_arbiter' of design unit 'prim_arbiter_tree' is unresolved in 'worklib.i2c_fifos:sv'.
+  ) u_ram_1p (
+           |
+xmelab: *E,CUVMUR (../rtl/i2c_fifos.sv,289|11): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_ram_1p' of design unit 'prim_ram_1p_adv' is unresolved in 'worklib.i2c_fifos:sv'.
+  ) u_i2c_sync_scl (
+                 |
+xmelab: *E,CUVMUR (../rtl/i2c_core.sv,440|17): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_i2c_sync_scl' of design unit 'prim_flop_2sync' is unresolved in 'worklib.i2c_core:sv'.
+  ) u_i2c_sync_sda (
+                 |
+xmelab: *E,CUVMUR (../rtl/i2c_core.sv,450|17): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_i2c_sync_sda' of design unit 'prim_flop_2sync' is unresolved in 'worklib.i2c_core:sv'.
+  ) intr_hw_fmt_threshold (
+                        |
+xmelab: *E,CUVMUR (../rtl/i2c_core.sv,641|24): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.intr_hw_fmt_threshold' of design unit 'prim_intr_hw' is unresolved in 'worklib.i2c_core:sv'.
+  ) intr_hw_rx_threshold (
+                       |
+xmelab: *E,CUVMUR (../rtl/i2c_core.sv,657|23): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.intr_hw_rx_threshold' of design unit 'prim_intr_hw' is unresolved in 'worklib.i2c_core:sv'.
+  ) intr_hw_acq_threshold (
+                        |
+xmelab: *E,CUVMUR (../rtl/i2c_core.sv,673|24): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.intr_hw_acq_threshold' of design unit 'prim_intr_hw' is unresolved in 'worklib.i2c_core:sv'.
+  prim_intr_hw #(.Width(1)) intr_hw_rx_overflow (
+                                              |
+xmelab: *E,CUVMUR (../rtl/i2c_core.sv,686|46): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.intr_hw_rx_overflow' of design unit 'prim_intr_hw' is unresolved in 'worklib.i2c_core:sv'.
+  ) intr_hw_controller_halt (
+                          |
+xmelab: *E,CUVMUR (../rtl/i2c_core.sv,702|26): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.intr_hw_controller_halt' of design unit 'prim_intr_hw' is unresolved in 'worklib.i2c_core:sv'.
+  prim_intr_hw #(.Width(1)) intr_hw_scl_interference (
+                                                   |
+xmelab: *E,CUVMUR (../rtl/i2c_core.sv,715|51): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.intr_hw_scl_interference' of design unit 'prim_intr_hw' is unresolved in 'worklib.i2c_core:sv'.
+  prim_intr_hw #(.Width(1)) intr_hw_sda_interference (
+                                                   |
+xmelab: *E,CUVMUR (../rtl/i2c_core.sv,728|51): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.intr_hw_sda_interference' of design unit 'prim_intr_hw' is unresolved in 'worklib.i2c_core:sv'.
+  prim_intr_hw #(.Width(1)) intr_hw_stretch_timeout (
+                                                  |
+xmelab: *E,CUVMUR (../rtl/i2c_core.sv,741|50): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.intr_hw_stretch_timeout' of design unit 'prim_intr_hw' is unresolved in 'worklib.i2c_core:sv'.
+  prim_intr_hw #(.Width(1)) intr_hw_sda_unstable (
+                                               |
+xmelab: *E,CUVMUR (../rtl/i2c_core.sv,754|47): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.intr_hw_sda_unstable' of design unit 'prim_intr_hw' is unresolved in 'worklib.i2c_core:sv'.
+  prim_intr_hw #(.Width(1)) intr_hw_cmd_complete (
+                                               |
+xmelab: *E,CUVMUR (../rtl/i2c_core.sv,767|47): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.intr_hw_cmd_complete' of design unit 'prim_intr_hw' is unresolved in 'worklib.i2c_core:sv'.
+  ) intr_hw_tx_stretch (
+                     |
+xmelab: *E,CUVMUR (../rtl/i2c_core.sv,783|21): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.intr_hw_tx_stretch' of design unit 'prim_intr_hw' is unresolved in 'worklib.i2c_core:sv'.
+  ) intr_hw_tx_threshold (
+                       |
+xmelab: *E,CUVMUR (../rtl/i2c_core.sv,799|23): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.intr_hw_tx_threshold' of design unit 'prim_intr_hw' is unresolved in 'worklib.i2c_core:sv'.
+  ) intr_hw_acq_overflow (
+                       |
+xmelab: *E,CUVMUR (../rtl/i2c_core.sv,815|23): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.intr_hw_acq_overflow' of design unit 'prim_intr_hw' is unresolved in 'worklib.i2c_core:sv'.
+  prim_intr_hw #(.Width(1)) intr_hw_unexp_stop (
+                                             |
+xmelab: *E,CUVMUR (../rtl/i2c_core.sv,828|45): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.intr_hw_unexp_stop' of design unit 'prim_intr_hw' is unresolved in 'worklib.i2c_core:sv'.
+  prim_intr_hw #(.Width(1)) intr_hw_host_timeout (
+                                               |
+xmelab: *E,CUVMUR (../rtl/i2c_core.sv,841|47): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.intr_hw_host_timeout' of design unit 'prim_intr_hw' is unresolved in 'worklib.i2c_core:sv'.
+xrun: *E,ELBERR: Error (*E) or soft error (*SE) occurred during elaboration (status 1), exiting.
+TOOL:	xrun	23.09-s012: Exiting on Apr 16, 2026 at 23:38:42 EDT  (total: 00:00:04)
