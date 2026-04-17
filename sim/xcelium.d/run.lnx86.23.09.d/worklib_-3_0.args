@@ -24,6 +24,7 @@
 ../tb/coverage
 -INCDIR
 ../tb/sva
+-STATUS
 -I_INCDIR
 /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src
 -DEFINE
