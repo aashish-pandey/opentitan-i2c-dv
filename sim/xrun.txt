@@ -1,0 +1,142 @@
+xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun	23.09-s012: Started on Apr 16, 2026 at 23:11:18 EDT
+xrun
+	-uvm
+	-uvmhome CDNS-1.2
+	-sv
+	-access +rwc
+	-incdir ../rtl
+	-incdir ../tb/agent
+	-incdir ../tb/env
+	-incdir ../tb/sequences
+	-incdir ../tb/tests
+	-incdir ../tb/top
+	-incdir ../tb/coverage
+	-incdir ../tb/sva
+	-f ./filelist.f
+		../tb/top/stub_pkgs.sv
+		../rtl/i2c_pkg.sv
+		../rtl/i2c_reg_pkg.sv
+		../rtl/i2c_reg_top.sv
+		../rtl/i2c_fifos.sv
+		../rtl/i2c_fifo_sync_sram_adapter.sv
+		../rtl/i2c_bus_monitor.sv
+		../rtl/i2c_controller_fsm.sv
+		../rtl/i2c_target_fsm.sv
+		../rtl/i2c_core.sv
+		../rtl/i2c.sv
+		../tb/env/i2c_tb_pkg.sv
+		../tb/top/i2c_if.sv
+		../tb/top/tb_top.sv
+	-elaborate
+file: ../tb/top/stub_pkgs.sv
+	package worklib.prim_mubi_pkg:sv
+		errors: 0, warnings: 0
+	package worklib.prim_subreg_pkg:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_reg_top.sv
+    .SwAccess(prim_subreg_pkg::SwAccessRC),
+                                        |
+xmvlog: *E,NOSYM (../rtl/i2c_reg_top.sv,3069|40): SwAccessRC could not be found in package prim_subreg_pkg.
+	module worklib.i2c_reg_top:sv
+		errors: 1, warnings: 0
+file: ../rtl/i2c_fifos.sv
+  `ASSERT_INIT(RamDepthSuffices_A, RamDepth >= 3 * FifoDepth + AcqFifoDepth)
+             |
+xmvlog: *E,NOTDIR (../rtl/i2c_fifos.sv,65|13): `ASSERT_INIT: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+  `ASSERT_INIT(RamDepthSuffices_A, RamDepth >= 3 * FifoDepth + AcqFifoDepth)
+              |
+xmvlog: *E,EXPENM (../rtl/i2c_fifos.sv,65|14): expecting the keyword 'endmodule' [12.1(IEEE)].
+  `ASSERT_INIT(RamWidthSuffices_A,
+             |
+xmvlog: *E,NOTDIR (../rtl/i2c_fifos.sv,68|13): `ASSERT_INIT: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+	module worklib.i2c_fifos:sv
+		errors: 3, warnings: 0
+file: ../rtl/i2c_fifo_sync_sram_adapter.sv
+  `ASSERT_INIT(MinimalSramFifoDepth_A, SramFifoDepth >= 1)
+             |
+xmvlog: *E,NOTDIR (../rtl/i2c_fifo_sync_sram_adapter.sv,61|13): `ASSERT_INIT: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+  `ASSERT_INIT(MinimalSramFifoDepth_A, SramFifoDepth >= 1)
+              |
+xmvlog: *E,EXPENM (../rtl/i2c_fifo_sync_sram_adapter.sv,61|14): expecting the keyword 'endmodule' [12.1(IEEE)].
+  `ASSERT_INIT(MinimalSramAw_A, SramAw >= SramPtrW)
+             |
+xmvlog: *E,NOTDIR (../rtl/i2c_fifo_sync_sram_adapter.sv,68|13): `ASSERT_INIT: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+	module worklib.i2c_fifo_sync_sram_adapter:sv
+		errors: 3, warnings: 0
+file: ../rtl/i2c_bus_monitor.sv
+	module worklib.i2c_bus_monitor:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_controller_fsm.sv
+	module worklib.i2c_controller_fsm:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_target_fsm.sv
+	module worklib.i2c_target_fsm:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_core.sv
+	module worklib.i2c_core:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c.sv
+	module worklib.i2c:sv
+		errors: 0, warnings: 0
+file: ../tb/env/i2c_tb_pkg.sv
+            `uvm_warn("ACK", "NACK received or no response on SDA")
+                    |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_host_driver.sv,92|20): `uvm_warn: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+            `uvm_warn("ACK", "NACK received or no response on SDA")
+                     |
+xmvlog: *E,NOTSTT (../tb/agent/i2c_host_driver.sv,92|21): expecting a statement [9(IEEE)].
+            `uvm_warn("ACK", "NACK received or no response on SDA")
+                           |
+xmvlog: *E,EXPRPA (../tb/agent/i2c_host_driver.sv,92|27): expecting a right parenthesis (')') [9.4(IEEE)].
+        i2c_agent_cfg host_cfg = i2c_agent_cfg::type_id::create("host_cfg");
+                             |
+xmvlog: *E,MISEXX (../tb/env/i2c_env.sv,21|29): expecting an '=' or '<=' sign in an assignment [9.2(IEEE)].
+        i2c_agent_cfg target_cfg = i2c_agent_cfg::type_id::create("target_cfg");
+                               |
+xmvlog: *E,MISEXX (../tb/env/i2c_env.sv,27|31): expecting an '=' or '<=' sign in an assignment [9.2(IEEE)].
+    i2c_operating_mode_cg   op_mode_cg;
+                        |
+xmvlog: *E,NOIPRT (../tb/coverage/i2c_coverage.sv,67|24): Unrecognized declaration 'i2c_operating_mode_cg' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
+    i2c_rd_wr_cg            rd_wr_cg;
+               |
+xmvlog: *E,NOIPRT (../tb/coverage/i2c_coverage.sv,68|15): Unrecognized declaration 'i2c_rd_wr_cg' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
+    i2c_interrupts_cg       intr_cg;
+                    |
+xmvlog: *E,NOIPRT (../tb/coverage/i2c_coverage.sv,69|20): Unrecognized declaration 'i2c_interrupts_cg' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
+    i2c_fifo_level_cg       fifo_cg;
+                    |
+xmvlog: *E,NOIPRT (../tb/coverage/i2c_coverage.sv,70|20): Unrecognized declaration 'i2c_fifo_level_cg' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
+        i2c_host_smoke_vseq vseq;
+                          |
+xmvlog: *E,NOIPRT (../tb/tests/i2c_smoke_test.sv,12|26): Unrecognized declaration 'i2c_host_smoke_vseq' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
+        i2c_host_smoke_vseq vseq;
+                          |
+xmvlog: *E,NOTINF (../tb/tests/i2c_smoke_test.sv,12|26): Interfaces are not allowed within tasks [SystemVerilog].
+        i2c_host_smoke_vseq vseq;
+                               |
+xmvlog: *E,ILLPDL (../tb/tests/i2c_smoke_test.sv,12|31): Mixing of ansi & non-ansi style port declaration is not legal.
+        phase.raise_objection(this);
+            |
+xmvlog: *E,EXPRPA (../tb/tests/i2c_smoke_test.sv,13|12): expecting a right parenthesis (')') [A.2.6(IEEE)].
+	package worklib.i2c_tb_pkg:sv
+		errors: 13, warnings: 0
+file: ../tb/top/i2c_if.sv
+	interface worklib.i2c_if:sv
+		errors: 0, warnings: 0
+file: ../tb/top/tb_top.sv
+        uvm_config_db #(virtual i2c_if)::set(null, "uvm_test_top.*", "vif", dut_if);
+                              |
+xmvlog: *W,PKGPARAM (../tb/top/tb_top.sv,101|30): Overriding package parameter is illegal according to the SystemVerilog LRM. This will lead to unexpected simulation results.
+        uvm_config_db #(virtual i2c_if)::set(null, "uvm_test_top.*", "vif", dut_if);
+                    |
+xmvlog: *E,NOPBIND (../tb/top/tb_top.sv,101|20): Package uvm_config_db could not be bound.
+	module worklib.tb_top:sv
+		errors: 1, warnings: 1
+xmvlog: *W,SPDUSD: Include directory ../rtl given but not used.
+xmvlog: *W,SPDUSD: Include directory ../tb/top given but not used.
+xmvlog: *W,SPDUSD: Include directory ../tb/sva given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 3
+xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
+TOOL:	xrun	23.09-s012: Exiting on Apr 16, 2026 at 23:11:19 EDT  (total: 00:00:01)
