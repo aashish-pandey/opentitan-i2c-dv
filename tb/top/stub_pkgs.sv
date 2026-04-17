@@ -1,12 +1,3 @@
-typedef enum logic [2:0] {
-    SwAccessRW  = 3'h0,
-    SwAccessRO  = 3'h1,
-    SwAccessWO  = 3'h2,
-    SwAccessW1C = 3'h3,
-    SwAccessW1S = 3'h4,
-    SwAccessW0C = 3'h5,
-    SwAccessRC  = 3'h6
-} sw_access_e;
 
 `define ASSERT_INIT(name, cond) \
     initial begin \
@@ -48,10 +39,19 @@ package prim_mubi_pkg;
 endpackage
 
 package prim_subreg_pkg;
-    typedef enum logic [1:0] {
-        SwAccessRW  = 2'h0,
-        SwAccessRO  = 2'h1,
-        SwAccessWO  = 2'h2,
-        SwAccessW1C = 2'h3
+    typedef enum logic [2:0] {
+        SwAccessRW  = 3'h0,
+        SwAccessRO  = 3'h1,
+        SwAccessWO  = 3'h2,
+        SwAccessW1C = 3'h3,
+        SwAccessW1S = 3'h4,
+        SwAccessW0C = 3'h5,
+        SwAccessRC  = 3'h6
     } sw_access_e;
+endpackage
+
+package prim_util_pkg;
+    function automatic integer vbits(input integer n);
+        vbits = (n <= 1) ? 1 : $clog2(n);
+    endfunction
 endpackage

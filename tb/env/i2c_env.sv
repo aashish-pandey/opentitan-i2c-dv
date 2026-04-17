@@ -20,13 +20,13 @@ class i2c_env extends uvm_env;
         super.build_phase(phase);
 
         //configure host agent
-        i2c_agent_cfg host_cfg = i2c_agent_cfg::type_id::create("host_cfg");
+        host_cfg = i2c_agent_cfg::type_id::create("host_cfg");
         host_cfg.mode = HOST;
         host_cfg.is_active = UVM_ACTIVE;
         uvm_config_db #(i2c_agent_cfg)::set(this, "host_agent*", "cfg", host_cfg);
 
         //configure target agent
-        i2c_agent_cfg target_cfg = i2c_agent_cfg::type_id::create("target_cfg");
+        target_cfg = i2c_agent_cfg::type_id::create("target_cfg");
         target_cfg.mode = TARGET;
         target_cfg.is_active = UVM_ACTIVE;
         uvm_config_db #(i2c_agent_cfg)::set(this, "target_agent*", "cfg", target_cfg);
