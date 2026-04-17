@@ -1,5 +1,5 @@
 xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun	23.09-s012: Started on Apr 16, 2026 at 23:21:46 EDT
+TOOL:	xrun	23.09-s012: Started on Apr 16, 2026 at 23:25:33 EDT
 xrun
 	-uvm
 	-uvmhome CDNS-1.2
@@ -30,8 +30,11 @@ xrun
 		../tb/top/tb_top.sv
 	-elaborate
 file: ../tb/top/stub_pkgs.sv
+    } tl_h2d_t;
+             |
+xmvlog: *E,DUPIDN (../tb/top/stub_pkgs.sv,34|13): identifier 'tl_h2d_t' previously declared [12.5(IEEE)].
 	package worklib.tlul_pkg:sv
-		errors: 0, warnings: 0
+		errors: 1, warnings: 0
 	package worklib.prim_ram_1p_pkg:sv
 		errors: 0, warnings: 0
 	package worklib.prim_alert_pkg:sv
@@ -44,27 +47,14 @@ file: ../tb/top/stub_pkgs.sv
 		errors: 0, warnings: 0
 	package worklib.prim_util_pkg:sv
 		errors: 0, warnings: 0
+	package worklib.top_pkg:sv
+		errors: 0, warnings: 0
 file: ../rtl/i2c_reg_top.sv
-    assign racl_role = top_racl_pkg::tlul_extract_racl_role_bits(tl_i.a_user.rsvd);
-                                                               |
-xmvlog: *E,NOSYM (../rtl/i2c_reg_top.sv,3406|63): tlul_extract_racl_role_bits could not be found in package top_racl_pkg.
-    assign racl_role = top_racl_pkg::tlul_extract_racl_role_bits(tl_i.a_user.rsvd);
-                                                               |
-xmvlog: *E,NOTFXX (../rtl/i2c_reg_top.sv,3406|63): Expecting a function name [10.3.3(IEEE)].
-  assign racl_error_o.request_address = top_pkg::TL_AW'(reg_addr);
-                                              |
-xmvlog: *E,NOPBIND (../rtl/i2c_reg_top.sv,3475|46): Package top_pkg could not be bound.
-    assign racl_error_o.ctn_uid     = top_racl_pkg::tlul_extract_ctn_uid_bits(tl_i.a_user.rsvd);
-                                                                            |
-xmvlog: *E,NOSYM (../rtl/i2c_reg_top.sv,3480|76): tlul_extract_ctn_uid_bits could not be found in package top_racl_pkg.
-    assign racl_error_o.ctn_uid     = top_racl_pkg::tlul_extract_ctn_uid_bits(tl_i.a_user.rsvd);
-                                                                            |
-xmvlog: *E,NOTFXX (../rtl/i2c_reg_top.sv,3480|76): Expecting a function name [10.3.3(IEEE)].
     assign racl_error_o.read_access = tl_i.a_opcode == tlul_pkg::Get;
                                                                    |
 xmvlog: *E,NOSYM (../rtl/i2c_reg_top.sv,3481|67): Get could not be found in package tlul_pkg.
 	module worklib.i2c_reg_top:sv
-		errors: 6, warnings: 0
+		errors: 1, warnings: 0
 file: ../rtl/i2c_fifos.sv
 	module worklib.i2c_fifos:sv
 		errors: 0, warnings: 0
@@ -78,18 +68,12 @@ file: ../rtl/i2c.sv
 	module worklib.i2c:sv
 		errors: 0, warnings: 0
 file: ../tb/env/i2c_tb_pkg.sv
-    cp_mode: coverpoint mode {
-                           |
-xmvlog: *E,UNDIDN (../tb/coverage/i2c_coverage.sv,5|27): 'mode': undeclared identifier [12.5(IEEE)].
-        bins host = {HOST};
-                        |
-xmvlog: *E,UNDIDN (../tb/coverage/i2c_coverage.sv,6|24): 'HOST': undeclared identifier [12.5(IEEE)].
+        bins host   = {HOST};
+                          |
+xmvlog: *E,UNDIDN (../tb/coverage/i2c_coverage.sv,6|26): 'HOST': undeclared identifier [12.5(IEEE)].
         bins target = {TARGET};
                             |
 xmvlog: *E,UNDIDN (../tb/coverage/i2c_coverage.sv,7|28): 'TARGET': undeclared identifier [12.5(IEEE)].
-    cp_rw: coverpoint rw{
-                       |
-xmvlog: *E,UNDIDN (../tb/coverage/i2c_coverage.sv,9|23): 'rw': undeclared identifier [12.5(IEEE)].
     cp_addr: coverpoint addr{
                            |
 xmvlog: *E,UNDIDN (../tb/coverage/i2c_coverage.sv,17|27): 'addr': undeclared identifier [12.5(IEEE)].
@@ -100,7 +84,7 @@ xmvlog: *E,UNDIDN (../tb/coverage/i2c_coverage.sv,20|23): 'rw': undeclared ident
                                      |
 xmvlog: *E,UNDIDN (../tb/coverage/i2c_coverage.sv,50|37): 'num_bytes': undeclared identifier [12.5(IEEE)].
 	package worklib.i2c_tb_pkg:sv
-		errors: 7, warnings: 0
+		errors: 5, warnings: 0
 file: ../tb/top/tb_top.sv
 import i2c_tb_pkg::*;
                 |
@@ -113,4 +97,4 @@ xmvlog: *W,SPDUSD: Include directory ../tb/sva given but not used.
 	Total errors/warnings found outside modules and primitives:
 		errors: 1, warnings: 3
 xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
-TOOL:	xrun	23.09-s012: Exiting on Apr 16, 2026 at 23:21:47 EDT  (total: 00:00:01)
+TOOL:	xrun	23.09-s012: Exiting on Apr 16, 2026 at 23:25:34 EDT  (total: 00:00:01)
