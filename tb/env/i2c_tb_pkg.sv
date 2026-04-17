@@ -3,6 +3,7 @@ package i2c_tb_pkg;
     `include "uvm_macros.svh"
 
     `include "i2c_reg_block.sv"
+    `include "i2c_reg_adapter.sv"
     `include "i2c_seq_item.sv"
     `include "i2c_agent_cfg.sv"
     `include "i2c_sequencer.sv"

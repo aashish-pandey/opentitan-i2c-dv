@@ -9,6 +9,7 @@ class i2c_env extends uvm_env;
     i2c_scoreboard scoreboard;
     i2c_intr_checker intr_checker;
     i2c_reg_block ral;
+    i2c_reg_adapter adapter;
 
     function new(string name="i2c_env", uvm_component parent);
         super.new(name, parent);
@@ -54,6 +55,9 @@ class i2c_env extends uvm_env;
 
         host_agent.mon.ap.connect(scoreboard.host_imp);
         target_agent.mon.ap.connect(scoreboard.target_imp);
+
+        adapter = i2c_reg_adapter::type_id::create("adapter");
+        ral.default_map.set_sequencer(host_agent.seq, adapter);
 
     endfunction
 

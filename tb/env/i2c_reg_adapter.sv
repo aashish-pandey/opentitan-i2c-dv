@@ -11,7 +11,8 @@ class i2c_reg_adapter extends uvm_reg_adapter;
         i2c_seq_item item = i2c_seq_item::type_id::create("item");
         item.rw = (rw.kind == UVM_WRITE) ? 0 : 1;
         item.addr = rw.addr;
-        item.data = rw.data;
+        item.data = new[1];
+        item.data[0] = rw.data[7:0];
         return item;
 
     endfunction
@@ -22,7 +23,7 @@ class i2c_reg_adapter extends uvm_reg_adapter;
         $cast(item, bus_item);
         rw.kind = item.rw ? UVM_READ : UVM_WRITE;
         rw.addr = item.addr;
-        rw.data = item.data;
+        rw.data = (item.data.size() > 0) ? item.data[0] : 0;
         rw.status = UVM_IS_OK;
 
     endfunction
