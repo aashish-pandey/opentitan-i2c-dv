@@ -44,6 +44,7 @@ class i2c_env extends uvm_env;
         //create ral
         ral = i2c_reg_block::type_id::create("ral");
         ral.build();
+        ral.lock_model();
         uvm_config_db #(i2c_reg_block)::set(this, "intr_checker*", "ral", ral);
         uvm_config_db #(i2c_reg_block)::set(null, "*", "ral", ral);
     endfunction
