@@ -879,5 +879,16 @@ module i2c_core import i2c_pkg::*;
     reg2hw.target_events.arbitration_lost.q
   };
 
+  ////////////////
+  // ASSERTIONS //
+  ////////////////
+
+  // TODO: Decide whether to keep this assertion. It is primarily checking the
+  // testbench, not the IP, due to the CDC cycle deletion.
+  // Check to make sure scl_i is never a single cycle glitch
+  //  `ASSERT(SclInputGlitch_A, $rose(scl_sync) |-> ##1 scl_sync)
+
+  `ASSERT_INIT(FifoDepthValid_A, FifoDepth > 0 && FifoDepthW <= MaxFifoDepthW)
+  `ASSERT_INIT(AcqFifoDepthValid_A, AcqFifoDepth > 0 && AcqFifoDepthW <= MaxFifoDepthW)
 
 endmodule

@@ -248,4 +248,19 @@ module i2c_fifo_sync_sram_adapter #(
   logic unused_sram_rvalid;
   assign unused_sram_rvalid = sram_rvalid_i;
 
+  // When we read from the SRAM in the previous cycle, we expect valid read data in this cycle.
+  `ASSUME(SramRvalidAfterRead_A, sram_read_in_prev_cyc_q |-> sram_rvalid_i)
+
+  // When we read from the SRAM in the previous cycle, the output buffer must be ready to store data
+  // in this cycle.
+  `ASSERT(OupBufWreadyAfterSramRead_A, sram_read_in_prev_cyc_q |-> oup_buf_wready)
+
+  // We must never write the SRAM when it is full.
+  `ASSERT(NoSramWriteWhenFull_A, sram_full |-> !sram_incr_wr_ptr)
+
+  // We must never read from the SRAM when it is empty.
+  `ASSERT(NoSramReadWhenEmpty_A, sram_empty |-> !sram_incr_rd_ptr)
+
+  // We must never be in an erroneous state (impossible without functional defects).
+  `ASSERT(NoErr_A, !err_o)
 endmodule

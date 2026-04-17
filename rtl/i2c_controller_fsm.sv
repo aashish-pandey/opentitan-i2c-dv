@@ -972,4 +972,22 @@ module i2c_controller_fsm import i2c_pkg::*;
   assign event_stretch_timeout_o = stretch_en && timeout_enable_i &&
                                    (stretch_idle_cnt > 31'(stretch_timeout_i));
 
+  // Make sure we never attempt to send a single cycle glitch
+  `ASSERT(SclOutputGlitch_A, $rose(scl_o) |-> ##1 scl_o)
+
+  // TODO: Handle the assertion below
+//  // I2C bus outputs
+//  always_ff @(posedge clk_i or negedge rst_ni) begin
+//    if (!rst_ni) begin
+//      scl_q <= 1'b1;
+//      sda_q <= 1'b1;
+//    end else begin
+//      scl_q <= scl_d;
+//      sda_q <= sda_d;
+//    end
+//  end
+//
+//  // Check that we don't change SCL and SDA in the same clock cycle in host mode.
+//  `ASSERT(SclSdaChangeNotSimultaneous_A, !(host_enable_i && (scl_d != scl_q) && (sda_d != sda_q)))
+
 endmodule

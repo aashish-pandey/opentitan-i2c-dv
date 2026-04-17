@@ -2,6 +2,8 @@
 // Licensed under the Apache License, Version 2.0, see LICENSE for details.
 // SPDX-License-Identifier: Apache-2.0
 
+`include "prim_assert.sv"
+
 module i2c_fifos
 import i2c_pkg::*;
 import i2c_reg_pkg::FifoDepth;
@@ -302,5 +304,19 @@ import i2c_reg_pkg::AcqFifoDepth;
     .alert_o  (/* unused */)
   );
   assign {ram_write, ram_addr, ram_wdata} = ram_arb_oup_data;
+
+  // For the FMT, ACQ, and TX FIFOs, we assume that a write request stays stable until it has been
+  // granted.  Put differently, we assume this module for those FIFOs will never see a write that
+  // would be dropped (e.g., because the FIFO is full).  This does not hold for the RX FIFO, for
+  // which `i2c_core` will register an overflow event if there is a wvalid without a wready.
+  `ASSUME(FmtWriteStableBeforeHandshake_A,
+          fmt_fifo_wvalid_i && !fmt_fifo_wready_o
+          |=> $stable(fmt_fifo_wvalid_i) && $stable(fmt_fifo_wdata_i))
+  `ASSUME(AcqWriteStableBeforeHandshake_A,
+          acq_fifo_wvalid_i && !acq_fifo_wready_o
+          |=> $stable(acq_fifo_wvalid_i) && $stable(acq_fifo_wdata_i))
+  `ASSUME(TxWriteStableBeforeHandshake_A,
+          tx_fifo_wvalid_i && !tx_fifo_wready_o
+          |=> $stable(tx_fifo_wvalid_i) && $stable(tx_fifo_wdata_i))
 
 endmodule
