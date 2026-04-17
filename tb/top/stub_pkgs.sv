@@ -24,3 +24,19 @@ package top_racl_pkg;
     typedef logic [3:0] racl_role_vec_t;
     typedef logic [3:0] racl_role_t;
 endpackage
+
+package prim_mubi_pkg;
+    typedef enum logic [3:0] {
+        MuBi4True  = 4'h6,
+        MuBi4False = 4'h9
+    } mubi4_t;
+endpackage
+
+package prim_subreg_pkg;
+    typedef enum logic [1:0] {
+        SwAccessRW  = 2'h0,
+        SwAccessRO  = 2'h1,
+        SwAccessWO  = 2'h2,
+        SwAccessW1C = 2'h3
+    } sw_access_e;
+endpackage
