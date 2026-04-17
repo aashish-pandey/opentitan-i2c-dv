@@ -1,5 +1,5 @@
 xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 00:35:05 EDT
+TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 00:43:29 EDT
 xrun
 	-uvm
 	-uvmhome CDNS-1.2
@@ -36,6 +36,13 @@ xrun
 		../prim/rtl/prim_fifo_sync_cnt.sv
 		../prim/rtl/prim_arbiter_tree.sv
 		../prim/rtl/prim_ram_1p_adv.sv
+		../prim_generic/rtl/prim_buf.sv
+		../prim_generic/rtl/prim_flop.sv
+		../prim_generic/rtl/prim_flop_2sync.sv
+		../prim/rtl/prim_onehot_check.sv
+		../prim/rtl/prim_secded_inv_64_57_enc.sv
+		../prim/rtl/prim_secded_inv_64_57_dec.sv
+		../prim/rtl/prim_secded_inv_39_32_dec.sv
 		../tlul/rtl/tlul_pkg.sv
 		../tlul/rtl/tlul_adapter_reg.sv
 		../tlul/rtl/tlul_cmd_intg_chk.sv
@@ -61,11 +68,101 @@ xrun
 	-elaborate
 	-xmlibdirname xcelium.d
 	-log xrun_elab.log
-file: ../tb/top/stub_pkgs.sv
-	package worklib.top_racl_pkg:sv
+file: ../prim/rtl/prim_subreg.sv
+	module worklib.prim_subreg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_subreg_arb.sv
+	module worklib.prim_subreg_arb:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_subreg_ext.sv
+	module worklib.prim_subreg_ext:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_subreg_shadow.sv
+	module worklib.prim_subreg_shadow:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_reg_we_check.sv
+	module worklib.prim_reg_we_check:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_intr_hw.sv
+	module worklib.prim_intr_hw:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_fifo_sync.sv
+	module worklib.prim_fifo_sync:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_fifo_sync_cnt.sv
+	module worklib.prim_fifo_sync_cnt:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_arbiter_tree.sv
+	module worklib.prim_arbiter_tree:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_ram_1p_adv.sv
+	module worklib.prim_ram_1p_adv:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_buf.sv
+	module worklib.prim_buf:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_flop.sv
+	module worklib.prim_flop:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_flop_2sync.sv
+	module worklib.prim_flop_2sync:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_onehot_check.sv
+	module worklib.prim_onehot_check:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_inv_64_57_enc.sv
+	module worklib.prim_secded_inv_64_57_enc:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_inv_64_57_dec.sv
+	module worklib.prim_secded_inv_64_57_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_inv_39_32_dec.sv
+	module worklib.prim_secded_inv_39_32_dec:sv
+		errors: 0, warnings: 0
+file: ../tlul/rtl/tlul_adapter_reg.sv
+	module worklib.tlul_adapter_reg:sv
+		errors: 0, warnings: 0
+file: ../tlul/rtl/tlul_cmd_intg_chk.sv
+	module worklib.tlul_cmd_intg_chk:sv
+		errors: 0, warnings: 0
+file: ../tlul/rtl/tlul_cmd_intg_gen.sv
+	module worklib.tlul_cmd_intg_gen:sv
+		errors: 0, warnings: 0
+file: ../tlul/rtl/tlul_rsp_intg_gen.sv
+	module worklib.tlul_rsp_intg_gen:sv
+		errors: 0, warnings: 0
+file: ../tlul/rtl/tlul_rsp_intg_chk.sv
+	module worklib.tlul_rsp_intg_chk:sv
+		errors: 0, warnings: 0
+file: ../tlul/rtl/tlul_err.sv
+	module worklib.tlul_err:sv
+		errors: 0, warnings: 0
+file: ../tlul/rtl/tlul_data_integ_dec.sv
+	module worklib.tlul_data_integ_dec:sv
+		errors: 0, warnings: 0
+file: ../tlul/rtl/tlul_data_integ_enc.sv
+	module worklib.tlul_data_integ_enc:sv
 		errors: 0, warnings: 0
 file: ../rtl/i2c_reg_top.sv
 	module worklib.i2c_reg_top:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_fifos.sv
+	module worklib.i2c_fifos:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_fifo_sync_sram_adapter.sv
+	module worklib.i2c_fifo_sync_sram_adapter:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_bus_monitor.sv
+	module worklib.i2c_bus_monitor:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_controller_fsm.sv
+	module worklib.i2c_controller_fsm:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_target_fsm.sv
+	module worklib.i2c_target_fsm:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_core.sv
+	module worklib.i2c_core:sv
 		errors: 0, warnings: 0
 file: ../rtl/i2c.sv
 	module worklib.i2c:sv
@@ -77,6 +174,9 @@ xmvlog: *W,ENUMERR (../tb/env/i2c_env.sv,24|27): This assignment is a violation 
         target_cfg.mode = TARGET;
                                |
 xmvlog: *W,ENUMERR (../tb/env/i2c_env.sv,30|31): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
+file: ../tb/top/i2c_if.sv
+	interface worklib.i2c_if:sv
+		errors: 0, warnings: 0
 file: ../tb/top/tb_top.sv
 	module worklib.tb_top:sv
 		errors: 0, warnings: 0
@@ -88,51 +188,41 @@ xmvlog: *W,SPDUSD: Include directory ../tb/sva given but not used.
 		errors: 0, warnings: 4
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
+	Top level design units:
+		uvm_pkg
+		cdns_uvmapi
+		cdns_assert2uvm_pkg
+		cdns_uvm_pkg
+		i2c_tb_pkg
+		$unit_0x685f63e3
+		prim_subreg_pkg
+		prim_mubi_pkg
+		top_pkg
+		prim_secded_pkg
+		tlul_pkg
+		prim_ram_1p_pkg
+		prim_alert_pkg
+		top_racl_pkg
+		i2c_reg_pkg
+		prim_util_pkg
+		i2c_pkg
+		prim_count_pkg
+		prim_subreg_shadow
+		tlul_cmd_intg_gen
+		tlul_rsp_intg_chk
+		tb_top
 		Caching library 'worklib' ....... Done
-  prim_secded_inv_64_57_enc u_cmd_gen (
-                                    |
-xmelab: *E,CUVMUR (../tlul/rtl/tlul_cmd_intg_gen.sv,24|36): instance 'tlul_cmd_intg_gen.u_cmd_gen' of design unit 'prim_secded_inv_64_57_enc' is unresolved in 'worklib.tlul_cmd_intg_gen:sv'.
-  prim_secded_inv_64_57_dec u_chk (
-                                |
-xmelab: *E,CUVMUR (../tlul/rtl/tlul_rsp_intg_chk.sv,25|32): instance 'tlul_rsp_intg_chk.u_chk' of design unit 'prim_secded_inv_64_57_dec' is unresolved in 'worklib.tlul_rsp_intg_chk:sv'.
-  prim_secded_inv_64_57_dec u_chk (
-                                |
-xmelab: *E,CUVMUR (../tlul/rtl/tlul_cmd_intg_chk.sv,24|32): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_chk@tlul_cmd_intg_chk<module>.u_chk' of design unit 'prim_secded_inv_64_57_dec' is unresolved in 'worklib.tlul_cmd_intg_chk:sv'.
-  prim_secded_inv_39_32_dec u_data_chk (
+    prim_secded_inv_39_32_enc u_data_gen (
+                                       |
+xmelab: *E,CUVMUR (../tlul/rtl/tlul_cmd_intg_gen.sv,36|39): instance 'tlul_cmd_intg_gen.gen_data_intg.u_data_gen' of design unit 'prim_secded_inv_39_32_enc' is unresolved in 'worklib.tlul_cmd_intg_gen:sv'.
+  prim_secded_inv_39_32_enc u_data_gen (
                                      |
-xmelab: *E,CUVMUR (../tlul/rtl/tlul_data_integ_dec.sv,18|37): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_chk@tlul_cmd_intg_chk<module>.u_tlul_data_integ_dec@tlul_data_integ_dec<module>.u_data_chk' of design unit 'prim_secded_inv_39_32_dec' is unresolved in 'worklib.tlul_data_integ_dec:sv'.
-  ) u_prim_buf (
-             |
-xmelab: *E,CUVMUR (../prim/rtl/prim_reg_we_check.sv,27|13): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_prim_reg_we_check@prim_reg_we_check<module>.u_prim_buf' of design unit 'prim_buf' is unresolved in 'worklib.prim_reg_we_check:sv'.
-  ) u_prim_onehot_check (
-                      |
-xmelab: *E,CUVMUR (../prim/rtl/prim_reg_we_check.sv,45|22): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_prim_reg_we_check@prim_reg_we_check<module>.u_prim_onehot_check' of design unit 'prim_onehot_check' is unresolved in 'worklib.prim_reg_we_check:sv'.
-  ) u_fdata0_qe (
-              |
-xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,1820|14): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_fdata0_qe' of design unit 'prim_flop' is unresolved in 'worklib.i2c_reg_top:sv'.
-  ) u_fifo_ctrl0_qe (
-                  |
-xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2001|18): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_fifo_ctrl0_qe' of design unit 'prim_flop' is unresolved in 'worklib.i2c_reg_top:sv'.
-  ) u_host_fifo_config0_qe (
-                         |
-xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2126|25): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_host_fifo_config0_qe' of design unit 'prim_flop' is unresolved in 'worklib.i2c_reg_top:sv'.
-  ) u_target_fifo_config0_qe (
-                           |
-xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2195|27): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_target_fifo_config0_qe' of design unit 'prim_flop' is unresolved in 'worklib.i2c_reg_top:sv'.
-  ) u_txdata0_qe (
-               |
-xmelab: *E,CUVMUR (../rtl/i2c_reg_top.sv,2948|15): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_txdata0_qe' of design unit 'prim_flop' is unresolved in 'worklib.i2c_reg_top:sv'.
-  ) u_req_d_buf (
-              |
-xmelab: *E,CUVMUR (../prim/rtl/prim_ram_1p_adv.sv,207|14): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_ram_1p@prim_ram_1p_adv<module>.u_req_d_buf' of design unit 'prim_buf' is unresolved in 'worklib.prim_ram_1p_adv:sv'.
-  ) u_write_d_buf (
-                |
-xmelab: *E,CUVMUR (../prim/rtl/prim_ram_1p_adv.sv,216|16): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_ram_1p@prim_ram_1p_adv<module>.u_write_d_buf' of design unit 'prim_buf' is unresolved in 'worklib.prim_ram_1p_adv:sv'.
-  ) u_i2c_sync_scl (
-                 |
-xmelab: *E,CUVMUR (../rtl/i2c_core.sv,440|17): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_i2c_sync_scl' of design unit 'prim_flop_2sync' is unresolved in 'worklib.i2c_core:sv'.
-  ) u_i2c_sync_sda (
-                 |
-xmelab: *E,CUVMUR (../rtl/i2c_core.sv,450|17): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_i2c_sync_sda' of design unit 'prim_flop_2sync' is unresolved in 'worklib.i2c_core:sv'.
+xmelab: *E,CUVMUR (../tlul/rtl/tlul_data_integ_enc.sv,17|37): instance 'tb_top.dut@i2c<module>.u_reg@i2c_reg_top<module>.u_rsp_intg_gen@tlul_rsp_intg_gen<module>.gen_data_intg.u_tlul_data_integ_enc@tlul_data_integ_enc<module>.u_data_gen' of design unit 'prim_secded_inv_39_32_enc' is unresolved in 'worklib.tlul_data_integ_enc:sv'.
+    ) u_mem (
+          |
+xmelab: *E,CUVMUR (../prim/rtl/prim_ram_1p_adv.sv,157|10): instance 'tb_top.dut@i2c<module>.i2c_core@i2c_core<module>.u_fifos@i2c_fifos<module>.u_ram_1p@prim_ram_1p_adv<module>.gen_ram_inst[0].u_mem' of design unit 'prim_ram_1p' is unresolved in 'worklib.prim_ram_1p_adv:sv'.
+    ) u_prim_alert_sender (
+                        |
+xmelab: *E,CUVMUR (../rtl/i2c.sv,95|24): instance 'tb_top.dut@i2c<module>.gen_alert_tx[0].u_prim_alert_sender' of design unit 'prim_alert_sender' is unresolved in 'worklib.i2c:sv'.
 xrun: *E,ELBERR: Error (*E) or soft error (*SE) occurred during elaboration (status 1), exiting.
-TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 00:35:06 EDT  (total: 00:00:01)
+TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 00:43:31 EDT  (total: 00:00:02)

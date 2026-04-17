@@ -40,3 +40,10 @@
 1776395869 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/tb/env/i2c_tb_pkg.sv
 1776395127 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/tb/top/i2c_if.sv
 1776395869 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/tb/top/tb_top.sv
+1776401004 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim_generic/rtl/prim_buf.sv
+1776401004 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim_generic/rtl/prim_flop.sv
+1776401004 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim_generic/rtl/prim_flop_2sync.sv
+1776398299 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_onehot_check.sv
+1776398299 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_secded_inv_64_57_enc.sv
+1776398299 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_secded_inv_64_57_dec.sv
+1776398299 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_secded_inv_39_32_dec.sv

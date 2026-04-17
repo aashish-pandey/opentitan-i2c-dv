@@ -51,6 +51,13 @@ UVM_PLI
 ../prim/rtl/prim_fifo_sync_cnt.sv
 ../prim/rtl/prim_arbiter_tree.sv
 ../prim/rtl/prim_ram_1p_adv.sv
+../prim_generic/rtl/prim_buf.sv
+../prim_generic/rtl/prim_flop.sv
+../prim_generic/rtl/prim_flop_2sync.sv
+../prim/rtl/prim_onehot_check.sv
+../prim/rtl/prim_secded_inv_64_57_enc.sv
+../prim/rtl/prim_secded_inv_64_57_dec.sv
+../prim/rtl/prim_secded_inv_39_32_dec.sv
 ../tlul/rtl/tlul_pkg.sv
 ../tlul/rtl/tlul_adapter_reg.sv
 ../tlul/rtl/tlul_cmd_intg_chk.sv
