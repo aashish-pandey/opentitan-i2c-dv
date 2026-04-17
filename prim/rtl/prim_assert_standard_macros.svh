@@ -28,7 +28,8 @@
   end                                                                                \
 `endif
 
-`define ASSERT_INIT_NET(__name, __prop)                                                   \
+`define ASSERT_INIT_NET(__name, __prop)                                              \
+`ifndef ASSERT_OFF                                                                   \
   initial begin                                                                      \
     // When a net is assigned with a value, the assignment is evaluated after        \
     // initial in Xcelium. Add 1ps delay to check value after the assignment is      \
@@ -39,6 +40,7 @@
         `ASSERT_ERROR(__name)                                                        \
       end                                                                            \
   end                                                                                \
+`endif                                                                               \
 
 `define ASSERT_FINAL(__name, __prop)                                         \
 `ifndef FPV_ON                                                               \
