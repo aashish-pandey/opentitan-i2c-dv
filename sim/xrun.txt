@@ -1,0 +1,84 @@
+xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun	23.09-s012: Started on Apr 16, 2026 at 23:42:00 EDT
+xrun
+	-uvm
+	-uvmhome CDNS-1.2
+	-sv
+	-access +rwc
+	-incdir ../rtl
+	-incdir ../tb/agent
+	-incdir ../tb/env
+	-incdir ../tb/sequences
+	-incdir ../tb/tests
+	-incdir ../tb/top
+	-incdir ../tb/coverage
+	-incdir ../tb/sva
+	-f ./filelist.f
+		../tb/top/stub_pkgs.sv
+		../rtl/i2c_pkg.sv
+		../rtl/i2c_reg_pkg.sv
+		../rtl/i2c_reg_top.sv
+		../rtl/i2c_fifos.sv
+		../rtl/i2c_fifo_sync_sram_adapter.sv
+		../rtl/i2c_bus_monitor.sv
+		../rtl/i2c_controller_fsm.sv
+		../rtl/i2c_target_fsm.sv
+		../rtl/i2c_core.sv
+		../rtl/i2c.sv
+		../tb/env/i2c_tb_pkg.sv
+		../tb/top/i2c_if.sv
+		../tb/top/tb_top.sv
+	-elaborate
+Recompiling... reason: file '../tb/top/stub_pkgs.sv' is newer than expected.
+	expected: Thu Apr 16 23:34:43 2026
+	actual:   Thu Apr 16 23:41:55 2026
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2
+file: ../tb/top/stub_pkgs.sv
+	package worklib.top_pkg:sv
+		errors: 0, warnings: 0
+module prim_subreg #(parameter int DW=1, parameter sw_access_e SwAccess=SwAccessRW, 
+                                                             |
+xmvlog: *E,SVNOTY (../tb/top/stub_pkgs.sv,94|61): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+module prim_subreg #(parameter int DW=1, parameter sw_access_e SwAccess=SwAccessRW, 
+                                                                      |
+xmvlog: *E,SVVMAP (../tb/top/stub_pkgs.sv,94|70): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
+	module worklib.prim_subreg:sv
+		errors: 2, warnings: 0
+	module worklib.prim_flop_2sync:sv
+		errors: 0, warnings: 0
+	module worklib.prim_intr_hw:sv
+		errors: 0, warnings: 0
+	module worklib.prim_fifo_sync:sv
+		errors: 0, warnings: 0
+	module worklib.prim_fifo_sync_cnt:sv
+		errors: 0, warnings: 0
+	module worklib.prim_arbiter_tree:sv
+		errors: 0, warnings: 0
+	module worklib.prim_ram_1p_adv:sv
+		errors: 0, warnings: 0
+	module worklib.tlul_cmd_intg_chk:sv
+		errors: 0, warnings: 0
+	module worklib.tlul_rsp_intg_gen:sv
+		errors: 0, warnings: 0
+	module worklib.tlul_adapter_reg:sv
+		errors: 0, warnings: 0
+	module worklib.prim_reg_we_check:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_reg_top.sv
+	module worklib.i2c_reg_top:sv
+		errors: 0, warnings: 0
+file: ../tb/env/i2c_tb_pkg.sv
+        host_cfg.mode = HOST;
+                           |
+xmvlog: *W,ENUMERR (../tb/env/i2c_env.sv,24|27): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
+        target_cfg.mode = TARGET;
+                               |
+xmvlog: *W,ENUMERR (../tb/env/i2c_env.sv,30|31): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
+file: ../tb/top/tb_top.sv
+xmvlog: *W,SPDUSD: Include directory ../rtl given but not used.
+xmvlog: *W,SPDUSD: Include directory ../tb/top given but not used.
+xmvlog: *W,SPDUSD: Include directory ../tb/sva given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 3
+xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
+TOOL:	xrun	23.09-s012: Exiting on Apr 16, 2026 at 23:42:01 EDT  (total: 00:00:01)
