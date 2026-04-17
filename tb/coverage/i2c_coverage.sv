@@ -1,19 +1,19 @@
 import uvm_pkg::*;
 `include "uvm_macros.svh"
 
-covergroup i2c_operating_mode_cg;
-    cp_mode: coverpoint mode {
-        bins host = {HOST};
+covergroup i2c_operating_mode_cg(ref i2c_agent_cfg::i2c_mode_e _mode, ref logic _rw);
+    cp_mode: coverpoint _mode {
+        bins host   = {HOST};
         bins target = {TARGET};
     }
-    cp_rw: coverpoint rw{
-        bins read = {1};
+    cp_rw: coverpoint _rw {
+        bins read  = {1};
         bins write = {0};
     }
     cx_mode_rw: cross cp_mode, cp_rw;
 endgroup
 
-covergroup i2c_rd_wr_cg;
+covergroup i2c_rd_wr_cg(ref i2c_agent_cfg::i2c_mode_e _mode, ref logic _rw);
     cp_addr: coverpoint addr{
         option.auto_bin_max = 4;
     }
@@ -25,7 +25,7 @@ covergroup i2c_rd_wr_cg;
     cx_addr_rw: cross cp_addr, cp_rw;
 endgroup
 
-covergroup i2c_interrupts_cg(virtual i2c_if vif);
+covergroup i2c_interrupts_cg(virtual i2c_if vif, ref i2c_agent_cfg::i2c_mode_e _mode, ref logic _rw);
 
     cp_fmt_threshold: coverpoint vif.intr_fmt_threshold{
         bins fired = {1};
@@ -45,7 +45,7 @@ covergroup i2c_interrupts_cg(virtual i2c_if vif);
     }
 endgroup
 
-covergroup i2c_fifo_level_cg;
+covergroup i2c_fifo_level_cg(ref i2c_agent_cfg::i2c_mode_e _mode, ref logic _rw);
 
     cp_num_bytes: coverpoint num_bytes{
         bins one = {1};
@@ -88,10 +88,10 @@ class i2c_coverage extends uvm_subscriber #(i2c_seq_item);
         if(!uvm_config_db #(virtual i2c_if)::get(this, "", "vif", vif))
             `uvm_fatal("COV", "No interface found")
         
-        op_mode_cg = new();
-        rd_wr_cg = new();
-        intr_cg = new(vif);
-        fifo_cg = new();
+        op_mode_cg = new(mode, rw);
+        rd_wr_cg = new(mode, rw);
+        intr_cg = new(vif, mode, rw);
+        fifo_cg = new(mode, rw);
 
     endfunction
 
