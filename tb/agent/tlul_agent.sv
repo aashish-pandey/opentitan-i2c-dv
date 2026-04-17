@@ -2,7 +2,7 @@
 `define TLUL_AGENT_SV
 class tlul_agent extends uvm_agent;
 
-    `uvm_component_utils(tlul_agent);
+    `uvm_component_utils(tlul_agent)
 
     tlul_sequencer seq;
     tlul_driver drv;
@@ -15,7 +15,7 @@ class tlul_agent extends uvm_agent;
 
         super.build_phase(phase);
         seq = tlul_sequencer::type_id::create("seq", this);
-        drv = tlul_sequencer::type_id::create("drv", this);
+        drv = tlul_driver::type_id::create("drv", this);  // was tlul_sequencer — wrong type
 
     endfunction
 

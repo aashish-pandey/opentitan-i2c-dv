@@ -17,7 +17,7 @@ Both channels uses ready/valid protocol:
 
 interface tlul_if (input logic clk);
 
-    import tlil_pkg::*; //brings in tl_h2d_t, tl_d2h_t, opcodes, etc.
+    import tlul_pkg::*; //brings in tl_h2d_t, tl_d2h_t, opcodes, etc.
 
     tl_h2d_t h2d;
     tl_d2h_t d2h;
