@@ -45,5 +45,15 @@ package top_racl_pkg;
     logic        valid;
     logic [31:0] addr;
     logic [3:0]  role;
+    logic [7:0]  ctn_uid;
   } racl_error_log_t;
+
+  function automatic racl_role_t tlul_extract_racl_role_bits(input logic [top_pkg::TL_AUW-1:0] rsvd);
+    return racl_role_t'(rsvd[3:0]);
+  endfunction
+
+  function automatic logic [7:0] tlul_extract_ctn_uid_bits(input logic [top_pkg::TL_AUW-1:0] rsvd);
+    return rsvd[11:4];
+  endfunction
+
 endpackage
