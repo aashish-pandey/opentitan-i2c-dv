@@ -29,7 +29,7 @@ class i2c_monitor extends uvm_monitor;
         logic [6:0] addr;
         logic rw;
         logic [7:0] d1;
-        logic [7:0] data[];
+        logic [7:0] data[$];
         logic stop_detected;
         i2c_seq_item req;
         req = i2c_seq_item::type_id::create("req");

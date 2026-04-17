@@ -36,7 +36,7 @@ class i2c_target_driver extends uvm_driver #(i2c_seq_item);
         wait_for_start();
 
         //receive address byte
-        addr_bytes = receive_byte();
+        receive_byte(addr_bytes);;
         address = addr_bytes[7:1];
         rw = addr_bytes[0];
 
@@ -53,8 +53,10 @@ class i2c_target_driver extends uvm_driver #(i2c_seq_item);
             //write - host sends dataa, we ACK each byte
             //loop until stop detected
             while(!got_stop)begin
-                receive_byte();
+                logic [7:0] temp_byte;
+                receive_byte(temp_byte);
                 send_ack();
+
 
                 @(posedge vif.scl);
                 if(vif.sda == 1)got_stop = 1;

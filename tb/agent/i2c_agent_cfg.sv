@@ -1,5 +1,7 @@
 import uvm_pkg::*;
 `include "uvm_macros.svh"
+
+typedef enum {HOST, TARGET} i2c_mode_e;
 class i2c_agent_cfg extends uvm_object;
 
     `uvm_object_utils(i2c_agent_cfg)

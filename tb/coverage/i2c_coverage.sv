@@ -1,7 +1,7 @@
 import uvm_pkg::*;
 `include "uvm_macros.svh"
 
-typedef enum {HOST, TARGET} i2c_mode_e;
+
 
 covergroup i2c_operating_mode_cg(ref i2c_mode_e _mode, ref logic _rw);
     cp_mode: coverpoint _mode {
