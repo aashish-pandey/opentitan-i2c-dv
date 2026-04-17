@@ -5,17 +5,15 @@
     end
     
 package tlul_pkg;
-    typedef struct packed { logic [31:0] a_address; logic [31:0] a_data; 
-        logic [3:0] a_mask; logic [2:0] a_opcode; logic a_valid; 
-        logic d_ready; } tl_h2d_t;
+ 
     typedef struct packed { logic [31:0] d_data; logic [1:0] d_opcode;
         logic d_valid; logic a_ready; logic d_error; } tl_d2h_t;
     // add to tlul_pkg:
-    typedef enum logic [2:0] {
-        PutFullData = 3'h0,
-        PutPartialData = 3'h1,
-        Get = 3'h4
-    } tl_a_op_e;
+    // typedef enum logic [2:0] {
+    //     PutFullData = 3'h0,
+    //     PutPartialData = 3'h1,
+    //     Get = 3'h4
+    // } tl_a_op_e;
     // also add a_user field to tl_h2d_t struct:
     typedef struct packed { 
         logic [31:0] rsvd; 
