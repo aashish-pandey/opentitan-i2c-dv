@@ -1,3 +1,6 @@
+import uvm_pkg::*;
+`include "uvm_macros.svh"
+import i2c_tb_pkg::*;
 `timescale 1ns/1ps
 
 module tb_top;

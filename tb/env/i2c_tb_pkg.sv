@@ -14,7 +14,7 @@ package i2c_tb_pkg;
     `include "i2c_intr_checker.sv"
     `include "i2c_env.sv"
     `include "i2c_coverage.sv"
+    `include "i2c_host_smoke_vseq.sv"
     `include "i2c_base_test.sv"
     `include "i2c_smoke_test.sv"
-    `include "i2c_host_smoke_vseq.sv"
 endpackage

@@ -89,7 +89,7 @@ class i2c_host_driver extends uvm_driver#(i2c_seq_item);
 
         // sample SDA - target should be pulling it low
         if(vif.monitor_cb.sda !== 1'b0)
-            `uvm_warn("ACK", "NACK received or no response on SDA")
+            `uvm_warning("ACK", "NACK received or no response on SDA")
 
         vif.driver_cb.scl <= 0;
         @(vif.driver_cb);

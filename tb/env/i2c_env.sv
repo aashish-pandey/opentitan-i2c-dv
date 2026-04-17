@@ -15,6 +15,8 @@ class i2c_env extends uvm_env;
     endfunction
 
     function void build_phase(uvm_phase phase);
+        i2c_agent_cfg host_cfg;
+        i2c_agent_cfg target_cfg;
         super.build_phase(phase);
 
         //configure host agent
