@@ -23,3 +23,27 @@ localparam int unsigned AlertSkewCycles = 1;
 localparam int SecVolatileRawUnlockEn = 0;
 
 endpackage
+
+package prim_ram_1p_pkg;
+  typedef struct packed {
+    logic [3:0] unused;
+  } ram_1p_cfg_t;
+
+  typedef struct packed {
+    logic [3:0] unused;
+  } ram_1p_cfg_rsp_t;
+endpackage
+
+package top_racl_pkg;
+  parameter int unsigned NrRaclPolicies = 1;
+  typedef logic [3:0] racl_role_t;
+  typedef logic [3:0] racl_policy_sel_t;
+  typedef racl_role_t  [NrRaclPolicies-1:0] racl_role_vec_t;
+  typedef racl_policy_sel_t [NrRaclPolicies-1:0] racl_policy_vec_t;
+
+  typedef struct packed {
+    logic        valid;
+    logic [31:0] addr;
+    logic [3:0]  role;
+  } racl_error_log_t;
+endpackage
