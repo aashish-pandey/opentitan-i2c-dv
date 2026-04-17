@@ -1,5 +1,5 @@
 xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 00:45:31 EDT
+TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 00:49:25 EDT
 xrun
 	-uvm
 	-uvmhome CDNS-1.2
@@ -15,37 +15,196 @@ xrun
 	-incdir ../tb/top
 	-incdir ../tb/coverage
 	-incdir ../tb/sva
+	-f /tmp/prim_files.f
+		../prim/rtl/prim_flop_macros.sv
+		../prim/rtl/prim_rom_adv.sv
+		../prim/rtl/prim_secded_64_57_enc.sv
+		../prim/rtl/prim_secded_inv_22_16_enc.sv
+		../prim/rtl/prim_util_pkg.sv
+		../prim/rtl/prim_mubi12_sync.sv
+		../prim/rtl/prim_secded_inv_hamming_39_32_enc.sv
+		../prim/rtl/prim_secded_39_32_enc.sv
+		../prim/rtl/prim_lc_or_hardened.sv
+		../prim/rtl/prim_sha2_32.sv
+		../prim/rtl/prim_mubi16_sender.sv
+		../prim/rtl/prim_clock_meas.sv
+		../prim/rtl/prim_blanker.sv
+		../prim/rtl/prim_multibit_sync.sv
+		../prim/rtl/prim_secded_hamming_39_32_enc.sv
+		../prim/rtl/prim_secded_inv_28_22_dec.sv
+		../prim/rtl/prim_ascon_pkg.sv
+		../prim/rtl/prim_mubi4_sender.sv
+		../prim/rtl/prim_lfsr.sv
+		../prim/rtl/prim_racl_error_arb.sv
+		../prim/rtl/prim_ram_2p_adv.sv
+		../prim/rtl/prim_secded_22_16_enc.sv
+		../prim/rtl/prim_secded_inv_28_22_enc.sv
+		../prim/rtl/prim_pad_wrapper_pkg.sv
+		../prim/rtl/prim_mubi4_sync.sv
+		../prim/rtl/prim_mubi20_sender.sv
+		../prim/rtl/prim_secded_inv_hamming_22_16_dec.sv
+		../prim/rtl/prim_secded_inv_hamming_76_68_enc.sv
+		../prim/rtl/prim_diff_decode.sv
+		../prim/rtl/prim_alert_pkg.sv
+		../prim/rtl/prim_sec_anchor_buf.sv
+		../prim/rtl/prim_secded_inv_22_16_dec.sv
+		../prim/rtl/prim_secded_72_64_enc.sv
+		../prim/rtl/prim_diff_encode.sv
+		../prim/rtl/prim_slicer.sv
+		../prim/rtl/prim_ram_1p_scr.sv
+		../prim/rtl/prim_xoshiro256pp.sv
+		../prim/rtl/prim_secded_inv_39_32_enc.sv
+		../prim/rtl/prim_edn_req.sv
+		../prim/rtl/prim_sync_reqack.sv
+		../prim/rtl/prim_keccak.sv
+		../prim/rtl/prim_mubi24_sender.sv
+		../prim/rtl/prim_count.sv
+		../prim/rtl/prim_sparse_fsm_flop.sv
+		../prim/rtl/prim_mubi24_sync.sv
+		../prim/rtl/prim_secded_inv_hamming_72_64_dec.sv
+		../prim/rtl/prim_dom_and_2share.sv
+		../prim/rtl/prim_ram_1p_adv.sv
+		../prim/rtl/prim_sec_anchor_flop.sv
+		../prim/rtl/prim_secded_inv_39_32_dec.sv
+		../prim/rtl/prim_prince.sv
+		../prim/rtl/prim_crc32.sv
+		../prim/rtl/prim_diff_to_alert.sv
+		../prim/rtl/prim_reg_we_check.sv
+		../prim/rtl/prim_esc_sender.sv
+		../prim/rtl/prim_clock_gating_sync.sv
+		../prim/rtl/prim_packer_fifo.sv
+		../prim/rtl/prim_trivium.sv
+		../prim/rtl/prim_secded_hamming_22_16_dec.sv
+		../prim/rtl/prim_secded_hamming_76_68_enc.sv
+		../prim/rtl/prim_secded_hamming_72_64_dec.sv
+		../prim/rtl/prim_max_tree.sv
+		../prim/rtl/prim_ascon_duplex.sv
+		../prim/rtl/prim_secded_inv_hamming_72_64_enc.sv
+		../prim/rtl/prim_subreg_arb.sv
+		../prim/rtl/prim_onehot_mux.sv
+		../prim/rtl/prim_fifo_async_sram_adapter.sv
+		../prim/rtl/prim_double_lfsr.sv
+		../prim/rtl/prim_ram_1r1w_adv.sv
+		../prim/rtl/prim_mubi12_dec.sv
+		../prim/rtl/prim_arbiter_tree_dup.sv
+		../prim/rtl/prim_subreg.sv
+		../prim/rtl/prim_secded_72_64_dec.sv
+		../prim/rtl/prim_mubi28_sync.sv
+		../prim/rtl/prim_leading_one_ppc.sv
+		../prim/rtl/prim_filter.sv
+		../prim/rtl/prim_ascon_round.sv
+		../prim/rtl/prim_intr_hw.sv
+		../prim/rtl/prim_sram_arbiter.sv
+		../prim/rtl/prim_alert_to_diff.sv
+		../prim/rtl/prim_mubi16_dec.sv
+		../prim/rtl/prim_mubi32_sync.sv
+		../prim/rtl/prim_subreg_pkg.sv
+		../prim/rtl/prim_mubi20_dec.sv
+		../prim/rtl/prim_onehot_check.sv
+		../prim/rtl/prim_filter_ctr.sv
+		../prim/rtl/prim_lc_combine.sv
+		../prim/rtl/prim_secded_inv_64_57_dec.sv
+		../prim/rtl/prim_mubi8_sync.sv
+		../prim/rtl/prim_fifo_sync_cnt.sv
+		../prim/rtl/prim_mubi24_dec.sv
+		../prim/rtl/prim_ascon_sbox.sv
+		../prim/rtl/prim_subreg_shadow.sv
+		../prim/rtl/prim_lc_sync.sv
+		../prim/rtl/prim_mubi32_dec.sv
+		../prim/rtl/prim_lc_dec.sv
+		../prim/rtl/prim_gf_mult.sv
+		../prim/rtl/prim_mubi4_dec.sv
+		../prim/rtl/prim_alert_receiver.sv
+		../prim/rtl/prim_secded_inv_hamming_22_16_enc.sv
+		../prim/rtl/prim_mubi16_sync.sv
+		../prim/rtl/prim_secded_inv_hamming_76_68_dec.sv
+		../prim/rtl/prim_secded_inv_hamming_39_32_dec.sv
+		../prim/rtl/prim_esc_receiver.sv
+		../prim/rtl/prim_esc_pkg.sv
+		../prim/rtl/prim_mubi8_sender.sv
+		../prim/rtl/prim_gate_gen.sv
+		../prim/rtl/prim_mubi8_dec.sv
+		../prim/rtl/prim_rst_sync.sv
+		../prim/rtl/prim_sync_slow_fast.sv
+		../prim/rtl/prim_secded_inv_72_64_dec.sv
+		../prim/rtl/prim_secded_hamming_22_16_enc.sv
+		../prim/rtl/prim_secded_inv_64_57_enc.sv
+		../prim/rtl/prim_mubi32_sender.sv
+		../prim/rtl/prim_ram_2p_async_adv.sv
+		../prim/rtl/prim_sha2_pad.sv
+		../prim/rtl/prim_mubi20_sync.sv
+		../prim/rtl/prim_fifo_async.sv
+		../prim/rtl/prim_secded_hamming_39_32_dec.sv
+		../prim/rtl/prim_alert_sender.sv
+		../prim/rtl/prim_fifo_sync.sv
+		../prim/rtl/prim_arbiter_tree.sv
+		../prim/rtl/prim_arbiter_ppc.sv
+		../prim/rtl/prim_clock_timeout.sv
+		../prim/rtl/prim_lc_and_hardened.sv
+		../prim/rtl/prim_assert.sv
+		../prim/rtl/prim_onehot_enc.sv
+		../prim/rtl/prim_secded_28_22_dec.sv
+		../prim/rtl/prim_mubi28_sender.sv
+		../prim/rtl/prim_mubi12_sender.sv
+		../prim/rtl/prim_mubi_pkg.sv
+		../prim/rtl/prim_count_pkg.sv
+		../prim/rtl/prim_cipher_pkg.sv
+		../prim/rtl/prim_reg_cdc.sv
+		../prim/rtl/prim_mubi28_dec.sv
+		../prim/rtl/prim_pkg.sv
+		../prim/rtl/prim_pulse_sync.sv
+		../prim/rtl/prim_arbiter_fixed.sv
+		../prim/rtl/prim_secded_28_22_enc.sv
+		../prim/rtl/prim_packer.sv
+		../prim/rtl/prim_msb_extend.sv
+		../prim/rtl/prim_reg_cdc_arb.sv
+		../prim/rtl/prim_secded_64_57_dec.sv
+		../prim/rtl/prim_secded_22_16_dec.sv
+		../prim/rtl/prim_sum_tree.sv
+		../prim/rtl/prim_secded_hamming_72_64_enc.sv
+		../prim/rtl/prim_secded_hamming_76_68_dec.sv
+		../prim/rtl/prim_subreg_ext.sv
+		../prim/rtl/prim_secded_inv_72_64_enc.sv
+		../prim/rtl/prim_fifo_async_simple.sv
+		../prim/rtl/prim_present.sv
+		../prim/rtl/prim_secded_39_32_dec.sv
+		../prim/rtl/prim_ram_1r1w_async_adv.sv
+		../prim/rtl/prim_trivium_pkg.sv
+		../prim/rtl/prim_secded_pkg.sv
+		../prim/rtl/prim_cdc_rand_delay.sv
+		../prim/rtl/prim_sha2_pkg.sv
+		../prim/rtl/prim_sync_reqack_data.sv
+		../prim/rtl/prim_lc_sender.sv
+		../prim/rtl/prim_sha2.sv
+		../prim/rtl/prim_subst_perm.sv
+		../prim/rtl/prim_edge_detector.sv
+		../prim_generic/rtl/prim_ram_1r1w.sv
+		../prim_generic/rtl/prim_and2.sv
+		../prim_generic/rtl/prim_usb_diff_rx.sv
+		../prim_generic/rtl/prim_flop_2sync.sv
+		../prim_generic/rtl/prim_pad_wrapper.sv
+		../prim_generic/rtl/prim_flop_en.sv
+		../prim_generic/rtl/prim_clock_gating.sv
+		../prim_generic/rtl/prim_pad_attr.sv
+		../prim_generic/rtl/prim_flash.sv
+		../prim_generic/rtl/prim_generic_flash_bank.sv
+		../prim_generic/rtl/prim_ram_2p_pkg.sv
+		../prim_generic/rtl/prim_clock_inv.sv
+		../prim_generic/rtl/prim_clock_div.sv
+		../prim_generic/rtl/prim_clock_buf.sv
+		../prim_generic/rtl/prim_rom_pkg.sv
+		../prim_generic/rtl/prim_xnor2.sv
+		../prim_generic/rtl/prim_clock_mux2.sv
+		../prim_generic/rtl/prim_ram_1p.sv
+		../prim_generic/rtl/prim_buf.sv
+		../prim_generic/rtl/prim_xor2.sv
+		../prim_generic/rtl/prim_flop.sv
+		../prim_generic/rtl/prim_ram_2p.sv
+		../prim_generic/rtl/prim_flop_no_rst.sv
+		../prim_generic/rtl/prim_rom.sv
+		../prim_generic/rtl/prim_ram_1p_pkg.sv
 	-f ./filelist.f
 		../tb/top/stub_pkgs.sv
-		../prim/rtl/prim_util_pkg.sv
-		../prim/rtl/prim_mubi_pkg.sv
-		../prim/rtl/prim_subreg_pkg.sv
-		../prim/rtl/prim_pkg.sv
-		../prim/rtl/prim_assert.sv
-		../prim/rtl/prim_count_pkg.sv
-		../prim/rtl/prim_secded_pkg.sv
-		../prim/rtl/prim_alert_pkg.sv
-		../prim/rtl/prim_esc_pkg.sv
-		../prim/rtl/prim_subreg.sv
-		../prim/rtl/prim_subreg_arb.sv
-		../prim/rtl/prim_subreg_ext.sv
-		../prim/rtl/prim_subreg_shadow.sv
-		../prim/rtl/prim_reg_we_check.sv
-		../prim/rtl/prim_intr_hw.sv
-		../prim/rtl/prim_fifo_sync.sv
-		../prim/rtl/prim_fifo_sync_cnt.sv
-		../prim/rtl/prim_arbiter_tree.sv
-		../prim/rtl/prim_ram_1p_adv.sv
-		../prim_generic/rtl/prim_buf.sv
-		../prim_generic/rtl/prim_flop.sv
-		../prim_generic/rtl/prim_flop_2sync.sv
-		../prim/rtl/prim_onehot_check.sv
-		../prim/rtl/prim_secded_inv_64_57_enc.sv
-		../prim/rtl/prim_secded_inv_64_57_dec.sv
-		../prim/rtl/prim_secded_inv_39_32_dec.sv
-		../prim/rtl/prim_secded_inv_39_32_enc.sv
-		../prim_generic/rtl/prim_ram_1p.sv
-		../prim/rtl/prim_alert_sender.sv
 		../tlul/rtl/tlul_pkg.sv
 		../tlul/rtl/tlul_adapter_reg.sv
 		../tlul/rtl/tlul_cmd_intg_chk.sv
@@ -71,65 +230,1106 @@ xrun
 	-elaborate
 	-xmlibdirname xcelium.d
 	-log xrun_elab.log
-file: ../prim/rtl/prim_subreg.sv
-	module worklib.prim_subreg:sv
+	-messages
+	-status
+file: ../prim/rtl/prim_flop_macros.sv
+file: ../prim/rtl/prim_rom_adv.sv
+module prim_rom_adv import prim_rom_pkg::*; #(
+                                      |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_rom_adv.sv,9|38): Package prim_rom_pkg could not be bound.
+  input rom_cfg_t          cfg_i
+                |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_rom_adv.sv,24|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+	module worklib.prim_rom_adv:sv
+		errors: 2, warnings: 0
+file: ../prim/rtl/prim_secded_64_57_enc.sv
+	module worklib.prim_secded_64_57_enc:sv
 		errors: 0, warnings: 0
-file: ../prim/rtl/prim_subreg_arb.sv
-	module worklib.prim_subreg_arb:sv
+file: ../prim/rtl/prim_secded_inv_22_16_enc.sv
+	module worklib.prim_secded_inv_22_16_enc:sv
 		errors: 0, warnings: 0
-file: ../prim/rtl/prim_subreg_ext.sv
-	module worklib.prim_subreg_ext:sv
+file: ../prim/rtl/prim_util_pkg.sv
+	package worklib.prim_util_pkg:sv
 		errors: 0, warnings: 0
-file: ../prim/rtl/prim_subreg_shadow.sv
-	module worklib.prim_subreg_shadow:sv
+file: ../prim/rtl/prim_mubi12_sync.sv
+	module worklib.prim_mubi12_sync:sv
 		errors: 0, warnings: 0
-file: ../prim/rtl/prim_reg_we_check.sv
-	module worklib.prim_reg_we_check:sv
+file: ../prim/rtl/prim_secded_inv_hamming_39_32_enc.sv
+	module worklib.prim_secded_inv_hamming_39_32_enc:sv
 		errors: 0, warnings: 0
-file: ../prim/rtl/prim_intr_hw.sv
-	module worklib.prim_intr_hw:sv
+file: ../prim/rtl/prim_secded_39_32_enc.sv
+	module worklib.prim_secded_39_32_enc:sv
 		errors: 0, warnings: 0
-file: ../prim/rtl/prim_fifo_sync.sv
-	module worklib.prim_fifo_sync:sv
+file: ../prim/rtl/prim_lc_or_hardened.sv
+  import lc_ctrl_pkg::*;
+                   |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_lc_or_hardened.sv,12|19): Package lc_ctrl_pkg could not be bound.
+  lc_tx_t ActVal = On
+        |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_or_hardened.sv,14|8): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  lc_tx_t ActVal = On
+               |
+xmvlog: *E,SVVMAP (../prim/rtl/prim_lc_or_hardened.sv,14|15): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
+  input  lc_tx_t lc_en_a_i,
+               |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_or_hardened.sv,19|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  lc_tx_t lc_en_b_i,
+               |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_or_hardened.sv,20|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output lc_tx_t lc_en_o
+               |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_or_hardened.sv,21|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  lc_tx_t [TxWidth-1:0] lc_en_a_copies;
+        |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_or_hardened.sv,33|8): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  lc_tx_t [TxWidth-1:0] lc_en_b_copies;
+        |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_or_hardened.sv,43|8): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+	module worklib.prim_lc_or_hardened:sv
+		errors: 8, warnings: 0
+file: ../prim/rtl/prim_sha2_32.sv
+module prim_sha2_32 import prim_sha2_pkg::*;
+                                       |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_sha2_32.sv,7|39): Package prim_sha2_pkg could not be bound.
+  input sha_word32_t wipe_v_i,
+                   |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_sha2_32.sv,15|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  sha_fifo32_t fifo_rdata_i,
+                    |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_sha2_32.sv,19|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input digest_mode_e       digest_mode_i,
+                    |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_sha2_32.sv,27|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  sha_word64_t [7:0] digest_i,
+                    |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_sha2_32.sv,31|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  sha_word64_t [7:0] digest_i,
+                                   |
+xmvlog: *E,EXPCORP (../prim/rtl/prim_sha2_32.sv,31|35): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output sha_word64_t [7:0] digest_o,         // use extended digest length
+                    |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_sha2_32.sv,33|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output sha_word64_t [7:0] digest_o,         // use extended digest length
+                                   |
+xmvlog: *E,EXPCORP (../prim/rtl/prim_sha2_32.sv,33|35): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  sha_fifo64_t  full_word;
+                        |
+xmvlog: *E,ILLPDL (../prim/rtl/prim_sha2_32.sv,39|24): Mixing of ansi & non-ansi style port declaration is not legal.
+  fifoctl_state_e fifo_st;
+                        |
+xmvlog: *E,ILLPDL (../prim/rtl/prim_sha2_32.sv,46|24): Mixing of ansi & non-ansi style port declaration is not legal.
+    sha_fifo64_t  word_buffer_d, word_buffer_q;
+               |
+xmvlog: *E,NOIPRT (../prim/rtl/prim_sha2_32.sv,57|15): Unrecognized declaration 'sha_fifo64_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
+    sha_fifo64_t  word_buffer_d, word_buffer_q;
+               |
+xmvlog: *E,NGITEM (../prim/rtl/prim_sha2_32.sv,57|15): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
+    digest_mode_e digest_mode_flag_d, digest_mode_flag_q;
+                |
+xmvlog: *E,NOIPRT (../prim/rtl/prim_sha2_32.sv,62|16): Unrecognized declaration 'digest_mode_e' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
+    digest_mode_e digest_mode_flag_d, digest_mode_flag_q;
+                |
+xmvlog: *E,NGITEM (../prim/rtl/prim_sha2_32.sv,62|16): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
+	module worklib.prim_sha2_32:sv
+		errors: 14, warnings: 0
+file: ../prim/rtl/prim_mubi16_sender.sv
+	module worklib.prim_mubi16_sender:sv
 		errors: 0, warnings: 0
-file: ../prim/rtl/prim_fifo_sync_cnt.sv
-	module worklib.prim_fifo_sync_cnt:sv
+file: ../prim/rtl/prim_clock_meas.sv
+	module worklib.prim_clock_meas:sv
 		errors: 0, warnings: 0
-file: ../prim/rtl/prim_arbiter_tree.sv
-	module worklib.prim_arbiter_tree:sv
+file: ../prim/rtl/prim_blanker.sv
+	module worklib.prim_blanker:sv
 		errors: 0, warnings: 0
-file: ../prim/rtl/prim_ram_1p_adv.sv
-	module worklib.prim_ram_1p_adv:sv
+file: ../prim/rtl/prim_multibit_sync.sv
+	module worklib.prim_multibit_sync:sv
 		errors: 0, warnings: 0
-file: ../prim_generic/rtl/prim_buf.sv
-	module worklib.prim_buf:sv
+file: ../prim/rtl/prim_secded_hamming_39_32_enc.sv
+	module worklib.prim_secded_hamming_39_32_enc:sv
 		errors: 0, warnings: 0
-file: ../prim_generic/rtl/prim_flop.sv
-	module worklib.prim_flop:sv
+file: ../prim/rtl/prim_secded_inv_28_22_dec.sv
+	module worklib.prim_secded_inv_28_22_dec:sv
 		errors: 0, warnings: 0
-file: ../prim_generic/rtl/prim_flop_2sync.sv
-	module worklib.prim_flop_2sync:sv
+file: ../prim/rtl/prim_ascon_pkg.sv
+	package worklib.prim_ascon_pkg:sv
 		errors: 0, warnings: 0
-file: ../prim/rtl/prim_onehot_check.sv
-	module worklib.prim_onehot_check:sv
+file: ../prim/rtl/prim_mubi4_sender.sv
+	module worklib.prim_mubi4_sender:sv
 		errors: 0, warnings: 0
-file: ../prim/rtl/prim_secded_inv_64_57_enc.sv
-	module worklib.prim_secded_inv_64_57_enc:sv
+file: ../prim/rtl/prim_lfsr.sv
+      assign sbox_out[k*4 +: 4] = prim_cipher_pkg::PRINCE_SBOX4[sbox_in];
+                                                |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_lfsr.sv,461|48): Package prim_cipher_pkg could not be bound.
+	module worklib.prim_lfsr:sv
+		errors: 1, warnings: 0
+file: ../prim/rtl/prim_racl_error_arb.sv
+	module worklib.prim_racl_error_arb:sv
 		errors: 0, warnings: 0
-file: ../prim/rtl/prim_secded_inv_64_57_dec.sv
-	module worklib.prim_secded_inv_64_57_dec:sv
+file: ../prim/rtl/prim_ram_2p_adv.sv
+module prim_ram_2p_adv import prim_ram_2p_pkg::*; #(
+                                            |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_ram_2p_adv.sv,18|44): Package prim_ram_2p_pkg could not be bound.
+  input ram_2p_cfg_t       cfg_i
+                   |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_ram_2p_adv.sv,58|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+	module worklib.prim_ram_2p_adv:sv
+		errors: 2, warnings: 0
+file: ../prim/rtl/prim_secded_22_16_enc.sv
+	module worklib.prim_secded_22_16_enc:sv
 		errors: 0, warnings: 0
-file: ../prim/rtl/prim_secded_inv_39_32_dec.sv
-	module worklib.prim_secded_inv_39_32_dec:sv
+file: ../prim/rtl/prim_secded_inv_28_22_enc.sv
+	module worklib.prim_secded_inv_28_22_enc:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_pad_wrapper_pkg.sv
+	package worklib.prim_pad_wrapper_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi4_sync.sv
+	module worklib.prim_mubi4_sync:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi20_sender.sv
+	module worklib.prim_mubi20_sender:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_inv_hamming_22_16_dec.sv
+	module worklib.prim_secded_inv_hamming_22_16_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_inv_hamming_76_68_enc.sv
+	module worklib.prim_secded_inv_hamming_76_68_enc:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_diff_decode.sv
+	module worklib.prim_diff_decode:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_alert_pkg.sv
+	package worklib.prim_alert_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_sec_anchor_buf.sv
+	module worklib.prim_sec_anchor_buf:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_inv_22_16_dec.sv
+	module worklib.prim_secded_inv_22_16_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_72_64_enc.sv
+	module worklib.prim_secded_72_64_enc:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_diff_encode.sv
+	module worklib.prim_diff_encode:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_slicer.sv
+	module worklib.prim_slicer:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_ram_1p_scr.sv
+	module worklib.prim_ram_1p_scr:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_xoshiro256pp.sv
+	module worklib.prim_xoshiro256pp:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_secded_inv_39_32_enc.sv
 	module worklib.prim_secded_inv_39_32_enc:sv
 		errors: 0, warnings: 0
-file: ../prim_generic/rtl/prim_ram_1p.sv
-	module worklib.prim_ram_1p:sv
+file: ../prim/rtl/prim_edn_req.sv
+  output edn_pkg::edn_req_t   edn_o,
+               |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_edn_req.sv,48|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output edn_pkg::edn_req_t   edn_o,
+                 |
+xmvlog: *E,ILLHIN (../prim/rtl/prim_edn_req.sv,48|17): illegal location for a hierarchical name (edn_pkg).
+  output edn_pkg::edn_req_t   edn_o,
+                                  |
+xmvlog: *E,EXPCORP (../prim/rtl/prim_edn_req.sv,48|34): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  input  edn_pkg::edn_rsp_t   edn_i
+               |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_edn_req.sv,49|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  edn_pkg::edn_rsp_t   edn_i
+                 |
+xmvlog: *E,ILLHIN (../prim/rtl/prim_edn_req.sv,49|17): illegal location for a hierarchical name (edn_pkg).
+  input  edn_pkg::edn_rsp_t   edn_i
+                                  |
+xmvlog: *E,EXPCORP (../prim/rtl/prim_edn_req.sv,49|34): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+	module worklib.prim_edn_req:sv
+		errors: 6, warnings: 0
+file: ../prim/rtl/prim_sync_reqack.sv
+	module worklib.prim_sync_reqack:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_keccak.sv
+	module worklib.prim_keccak:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi24_sender.sv
+	module worklib.prim_mubi24_sender:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_count.sv
+	module worklib.prim_count:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_sparse_fsm_flop.sv
+	module worklib.prim_sparse_fsm_flop:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi24_sync.sv
+	module worklib.prim_mubi24_sync:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_inv_hamming_72_64_dec.sv
+	module worklib.prim_secded_inv_hamming_72_64_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_dom_and_2share.sv
+	module worklib.prim_dom_and_2share:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_ram_1p_adv.sv
+	module worklib.prim_ram_1p_adv:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_sec_anchor_flop.sv
+	module worklib.prim_sec_anchor_flop:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_inv_39_32_dec.sv
+	module worklib.prim_secded_inv_39_32_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_prince.sv
+      k1_d       ^= prim_cipher_pkg::PRINCE_ALPHA_CONST[DataWidth-1:0];
+                                  |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,64|34): Package prim_cipher_pkg could not be bound.
+        k0_new_d ^= prim_cipher_pkg::PRINCE_ALPHA_CONST[DataWidth-1:0];
+                                  |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,78|34): Package prim_cipher_pkg could not be bound.
+    data_state_lo[0] ^= prim_cipher_pkg::PRINCE_ROUND_CONST[0][DataWidth-1:0];
+                                      |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,116|38): Package prim_cipher_pkg could not be bound.
+        data_state_round = prim_cipher_pkg::sbox4_64bit(data_state_lo[k-1],
+                                         |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,124|41): Package prim_cipher_pkg could not be bound.
+        data_state_round = prim_cipher_pkg::sbox4_64bit(data_state_lo[k-1],
+                                                      |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,124|54): Expecting a function name [10.3.3(IEEE)].
+        data_state_round = prim_cipher_pkg::prince_mult_prime_64bit(data_state_round);
+                                         |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,126|41): Package prim_cipher_pkg could not be bound.
+        data_state_round = prim_cipher_pkg::prince_mult_prime_64bit(data_state_round);
+                                                                  |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,126|66): Expecting a function name [10.3.3(IEEE)].
+        data_state_round = prim_cipher_pkg::prince_shiftrows_64bit(data_state_round,
+                                         |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,127|41): Package prim_cipher_pkg could not be bound.
+        data_state_round = prim_cipher_pkg::prince_shiftrows_64bit(data_state_round,
+                                                                 |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,127|65): Expecting a function name [10.3.3(IEEE)].
+        data_state_round = prim_cipher_pkg::sbox4_32bit(data_state_lo[k-1],
+                                         |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,132|41): Package prim_cipher_pkg could not be bound.
+        data_state_round = prim_cipher_pkg::sbox4_32bit(data_state_lo[k-1],
+                                                      |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,132|54): Expecting a function name [10.3.3(IEEE)].
+        data_state_round = prim_cipher_pkg::prince_mult_prime_32bit(data_state_round);
+                                         |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,134|41): Package prim_cipher_pkg could not be bound.
+        data_state_round = prim_cipher_pkg::prince_mult_prime_32bit(data_state_round);
+                                                                  |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,134|66): Expecting a function name [10.3.3(IEEE)].
+        data_state_round = prim_cipher_pkg::prince_shiftrows_32bit(data_state_round,
+                                         |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,135|41): Package prim_cipher_pkg could not be bound.
+        data_state_round = prim_cipher_pkg::prince_shiftrows_32bit(data_state_round,
+                                                                 |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,135|65): Expecting a function name [10.3.3(IEEE)].
+                            prim_cipher_pkg::PRINCE_ROUND_CONST[k][DataWidth-1:0];
+                                          |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,141|42): Package prim_cipher_pkg could not be bound.
+      data_state_middle_d = prim_cipher_pkg::sbox4_64bit(data_state_lo[NumRoundsHalf],
+                                          |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,154|42): Package prim_cipher_pkg could not be bound.
+      data_state_middle_d = prim_cipher_pkg::sbox4_64bit(data_state_lo[NumRoundsHalf],
+                                                       |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,154|55): Expecting a function name [10.3.3(IEEE)].
+      data_state_middle = prim_cipher_pkg::prince_mult_prime_64bit(data_state_middle_q);
+                                        |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,156|40): Package prim_cipher_pkg could not be bound.
+      data_state_middle = prim_cipher_pkg::prince_mult_prime_64bit(data_state_middle_q);
+                                                                 |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,156|65): Expecting a function name [10.3.3(IEEE)].
+      data_state_middle = prim_cipher_pkg::sbox4_64bit(data_state_middle,
+                                        |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,157|40): Package prim_cipher_pkg could not be bound.
+      data_state_middle = prim_cipher_pkg::sbox4_64bit(data_state_middle,
+                                                     |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,157|53): Expecting a function name [10.3.3(IEEE)].
+      data_state_middle_d = prim_cipher_pkg::sbox4_32bit(data_state_middle[NumRoundsHalf],
+                                          |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,162|42): Package prim_cipher_pkg could not be bound.
+      data_state_middle_d = prim_cipher_pkg::sbox4_32bit(data_state_middle[NumRoundsHalf],
+                                                       |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,162|55): Expecting a function name [10.3.3(IEEE)].
+      data_state_middle = prim_cipher_pkg::prince_mult_prime_32bit(data_state_middle_q);
+                                        |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,164|40): Package prim_cipher_pkg could not be bound.
+      data_state_middle = prim_cipher_pkg::prince_mult_prime_32bit(data_state_middle_q);
+                                                                 |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,164|65): Expecting a function name [10.3.3(IEEE)].
+      data_state_middle = prim_cipher_pkg::sbox4_32bit(data_state_middle,
+                                        |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,165|40): Package prim_cipher_pkg could not be bound.
+      data_state_middle = prim_cipher_pkg::sbox4_32bit(data_state_middle,
+                                                     |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,165|53): Expecting a function name [10.3.3(IEEE)].
+                             prim_cipher_pkg::PRINCE_ROUND_CONST[10-NumRoundsHalf+k][DataWidth-1:0];
+                                           |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,203|43): Package prim_cipher_pkg could not be bound.
+        data_state_bwd = prim_cipher_pkg::prince_shiftrows_64bit(data_state_xor1,
+                                       |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,208|39): Package prim_cipher_pkg could not be bound.
+        data_state_bwd = prim_cipher_pkg::prince_shiftrows_64bit(data_state_xor1,
+                                                               |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,208|63): Expecting a function name [10.3.3(IEEE)].
+        data_state_bwd = prim_cipher_pkg::prince_mult_prime_64bit(data_state_bwd);
+                                       |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,210|39): Package prim_cipher_pkg could not be bound.
+        data_state_bwd = prim_cipher_pkg::prince_mult_prime_64bit(data_state_bwd);
+                                                                |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,210|64): Expecting a function name [10.3.3(IEEE)].
+        data_state_hi[k] = prim_cipher_pkg::sbox4_64bit(data_state_bwd,
+                                         |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,211|41): Package prim_cipher_pkg could not be bound.
+        data_state_hi[k] = prim_cipher_pkg::sbox4_64bit(data_state_bwd,
+                                                      |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,211|54): Expecting a function name [10.3.3(IEEE)].
+        data_state_bwd = prim_cipher_pkg::prince_shiftrows_32bit(data_state_xor1,
+                                       |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,216|39): Package prim_cipher_pkg could not be bound.
+        data_state_bwd = prim_cipher_pkg::prince_shiftrows_32bit(data_state_xor1,
+                                                               |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,216|63): Expecting a function name [10.3.3(IEEE)].
+        data_state_bwd = prim_cipher_pkg::prince_mult_prime_32bit(data_state_bwd);
+                                       |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,218|39): Package prim_cipher_pkg could not be bound.
+        data_state_bwd = prim_cipher_pkg::prince_mult_prime_32bit(data_state_bwd);
+                                                                |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,218|64): Expecting a function name [10.3.3(IEEE)].
+        data_state_hi[k] = prim_cipher_pkg::sbox4_32bit(data_state_bwd,
+                                         |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,219|41): Package prim_cipher_pkg could not be bound.
+        data_state_hi[k] = prim_cipher_pkg::sbox4_32bit(data_state_bwd,
+                                                      |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_prince.sv,219|54): Expecting a function name [10.3.3(IEEE)].
+              prim_cipher_pkg::PRINCE_ROUND_CONST[11][DataWidth-1:0];
+                            |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_prince.sv,228|28): Package prim_cipher_pkg could not be bound.
+	module worklib.prim_prince:sv
+		errors: 42, warnings: 0
+file: ../prim/rtl/prim_crc32.sv
+	module worklib.prim_crc32:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_diff_to_alert.sv
+	module worklib.prim_diff_to_alert:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_reg_we_check.sv
+	module worklib.prim_reg_we_check:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_esc_sender.sv
+	module worklib.prim_esc_sender:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_clock_gating_sync.sv
+	module worklib.prim_clock_gating_sync:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_packer_fifo.sv
+	module worklib.prim_packer_fifo:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_trivium.sv
+module prim_trivium import prim_trivium_pkg::*;
+                                          |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_trivium.sv,59|42): Package prim_trivium_pkg could not be bound.
+  parameter seed_type_e  SeedType = SeedTypeStateFull, // Reseeding interface selection, see
+                      |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_trivium.sv,67|22): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  parameter seed_type_e  SeedType = SeedTypeStateFull, // Reseeding interface selection, see
+                                |
+xmvlog: *E,SVVMAP (../prim/rtl/prim_trivium.sv,67|32): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
+  parameter trivium_lfsr_seed_t RndCnstTriviumLfsrSeed = RndCnstTriviumLfsrSeedDefault,
+                              |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_trivium.sv,74|30): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  parameter trivium_lfsr_seed_t RndCnstTriviumLfsrSeed = RndCnstTriviumLfsrSeedDefault,
+                                                     |
+xmvlog: *E,SVVMAP (../prim/rtl/prim_trivium.sv,74|53): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
+	module worklib.prim_trivium:sv
+		errors: 5, warnings: 0
+file: ../prim/rtl/prim_secded_hamming_22_16_dec.sv
+	module worklib.prim_secded_hamming_22_16_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_hamming_76_68_enc.sv
+	module worklib.prim_secded_hamming_76_68_enc:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_hamming_72_64_dec.sv
+	module worklib.prim_secded_hamming_72_64_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_max_tree.sv
+	module worklib.prim_max_tree:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_ascon_duplex.sv
+	module worklib.prim_ascon_duplex:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_inv_hamming_72_64_enc.sv
+	module worklib.prim_secded_inv_hamming_72_64_enc:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_subreg_arb.sv
+	module worklib.prim_subreg_arb:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_onehot_mux.sv
+	module worklib.prim_onehot_mux:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_fifo_async_sram_adapter.sv
+	module worklib.prim_fifo_async_sram_adapter:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_double_lfsr.sv
+	module worklib.prim_double_lfsr:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_ram_1r1w_adv.sv
+module prim_ram_1r1w_adv import prim_ram_2p_pkg::*; #(
+                                              |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_ram_1r1w_adv.sv,18|46): Package prim_ram_2p_pkg could not be bound.
+  input  ram_2p_cfg_t      cfg_i,
+                    |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_ram_1r1w_adv.sv,53|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output ram_2p_cfg_rsp_t  cfg_rsp_o
+                        |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_ram_1r1w_adv.sv,54|24): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+	module worklib.prim_ram_1r1w_adv:sv
+		errors: 3, warnings: 0
+file: ../prim/rtl/prim_mubi12_dec.sv
+	module worklib.prim_mubi12_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_arbiter_tree_dup.sv
+	module worklib.prim_arbiter_tree_dup:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_subreg.sv
+	module worklib.prim_subreg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_72_64_dec.sv
+	module worklib.prim_secded_72_64_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi28_sync.sv
+	module worklib.prim_mubi28_sync:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_leading_one_ppc.sv
+	module worklib.prim_leading_one_ppc:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_filter.sv
+	module worklib.prim_filter:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_ascon_round.sv
+	module worklib.prim_ascon_round:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_intr_hw.sv
+	module worklib.prim_intr_hw:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_sram_arbiter.sv
+	module worklib.prim_sram_arbiter:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_alert_to_diff.sv
+	module worklib.prim_alert_to_diff:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi16_dec.sv
+	module worklib.prim_mubi16_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi32_sync.sv
+	module worklib.prim_mubi32_sync:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_subreg_pkg.sv
+	package worklib.prim_subreg_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi20_dec.sv
+	module worklib.prim_mubi20_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_onehot_check.sv
+	module worklib.prim_onehot_check:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_filter_ctr.sv
+	module worklib.prim_filter_ctr:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_lc_combine.sv
+  input  lc_ctrl_pkg::lc_tx_t lc_en_a_i,
+                   |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_combine.sv,15|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  lc_ctrl_pkg::lc_tx_t lc_en_a_i,
+                     |
+xmvlog: *E,ILLHIN (../prim/rtl/prim_lc_combine.sv,15|21): illegal location for a hierarchical name (lc_ctrl_pkg).
+  input  lc_ctrl_pkg::lc_tx_t lc_en_a_i,
+                                      |
+xmvlog: *E,EXPCORP (../prim/rtl/prim_lc_combine.sv,15|38): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  input  lc_ctrl_pkg::lc_tx_t lc_en_b_i,
+                   |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_combine.sv,16|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  lc_ctrl_pkg::lc_tx_t lc_en_b_i,
+                     |
+xmvlog: *E,ILLHIN (../prim/rtl/prim_lc_combine.sv,16|21): illegal location for a hierarchical name (lc_ctrl_pkg).
+  input  lc_ctrl_pkg::lc_tx_t lc_en_b_i,
+                                      |
+xmvlog: *E,EXPCORP (../prim/rtl/prim_lc_combine.sv,16|38): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output lc_ctrl_pkg::lc_tx_t lc_en_o
+                   |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_combine.sv,17|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output lc_ctrl_pkg::lc_tx_t lc_en_o
+                     |
+xmvlog: *E,ILLHIN (../prim/rtl/prim_lc_combine.sv,17|21): illegal location for a hierarchical name (lc_ctrl_pkg).
+  output lc_ctrl_pkg::lc_tx_t lc_en_o
+                                    |
+xmvlog: *E,EXPCORP (../prim/rtl/prim_lc_combine.sv,17|36): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  localparam lc_ctrl_pkg::lc_tx_t ActiveValue = (ActiveLow) ? lc_ctrl_pkg::Off : lc_ctrl_pkg::On;
+                       |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_combine.sv,22|23): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  localparam lc_ctrl_pkg::lc_tx_t ActiveValue = (ActiveLow) ? lc_ctrl_pkg::Off : lc_ctrl_pkg::On;
+                         |
+xmvlog: *E,ILLHIN (../prim/rtl/prim_lc_combine.sv,22|25): illegal location for a hierarchical name (lc_ctrl_pkg).
+  localparam lc_ctrl_pkg::lc_tx_t ActiveValue = (ActiveLow) ? lc_ctrl_pkg::Off : lc_ctrl_pkg::On;
+                                            |
+xmvlog: *E,SVAEXP (../prim/rtl/prim_lc_combine.sv,22|44): Localparam declarations require a parameter assignment. 6.20.1, Syntax 6-6 (IEEE).
+	module worklib.prim_lc_combine:sv
+		errors: 12, warnings: 0
+file: ../prim/rtl/prim_secded_inv_64_57_dec.sv
+	module worklib.prim_secded_inv_64_57_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi8_sync.sv
+	module worklib.prim_mubi8_sync:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_fifo_sync_cnt.sv
+	module worklib.prim_fifo_sync_cnt:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi24_dec.sv
+	module worklib.prim_mubi24_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_ascon_sbox.sv
+	module worklib.prim_ascon_sbox:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_subreg_shadow.sv
+	module worklib.prim_subreg_shadow:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_lc_sync.sv
+  input  lc_ctrl_pkg::lc_tx_t                 lc_en_i,
+                   |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_sync.sv,29|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  lc_ctrl_pkg::lc_tx_t                 lc_en_i,
+                     |
+xmvlog: *E,ILLHIN (../prim/rtl/prim_lc_sync.sv,29|21): illegal location for a hierarchical name (lc_ctrl_pkg).
+  input  lc_ctrl_pkg::lc_tx_t                 lc_en_i,
+                                                    |
+xmvlog: *E,EXPCORP (../prim/rtl/prim_lc_sync.sv,29|52): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output lc_ctrl_pkg::lc_tx_t [NumCopies-1:0] lc_en_o
+                   |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_sync.sv,30|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output lc_ctrl_pkg::lc_tx_t [NumCopies-1:0] lc_en_o
+                     |
+xmvlog: *E,ILLHIN (../prim/rtl/prim_lc_sync.sv,30|21): illegal location for a hierarchical name (lc_ctrl_pkg).
+  output lc_ctrl_pkg::lc_tx_t [NumCopies-1:0] lc_en_o
+                                                    |
+xmvlog: *E,EXPCORP (../prim/rtl/prim_lc_sync.sv,30|52): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  localparam lc_ctrl_pkg::lc_tx_t LcResetValue = (ResetValueIsOn) ? lc_ctrl_pkg::On :
+                       |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_sync.sv,33|23): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  localparam lc_ctrl_pkg::lc_tx_t LcResetValue = (ResetValueIsOn) ? lc_ctrl_pkg::On :
+                         |
+xmvlog: *E,ILLHIN (../prim/rtl/prim_lc_sync.sv,33|25): illegal location for a hierarchical name (lc_ctrl_pkg).
+  localparam lc_ctrl_pkg::lc_tx_t LcResetValue = (ResetValueIsOn) ? lc_ctrl_pkg::On :
+                                             |
+xmvlog: *E,SVAEXP (../prim/rtl/prim_lc_sync.sv,33|45): Localparam declarations require a parameter assignment. 6.20.1, Syntax 6-6 (IEEE).
+      lc_ctrl_pkg::lc_tx_t lc_en_in_sva_q;
+                |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_sync.sv,66|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+    lc_ctrl_pkg::lc_tx_t unused_logic;
+              |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_sync.sv,82|14): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+	module worklib.prim_lc_sync:sv
+		errors: 11, warnings: 0
+file: ../prim/rtl/prim_mubi32_dec.sv
+	module worklib.prim_mubi32_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_lc_dec.sv
+  import lc_ctrl_pkg::*;
+                   |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_lc_dec.sv,9|19): Package lc_ctrl_pkg could not be bound.
+  input  lc_tx_t lc_en_i,
+               |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_dec.sv,11|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+	module worklib.prim_lc_dec:sv
+		errors: 2, warnings: 0
+file: ../prim/rtl/prim_gf_mult.sv
+	module worklib.prim_gf_mult:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi4_dec.sv
+	module worklib.prim_mubi4_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_alert_receiver.sv
+	module worklib.prim_alert_receiver:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_inv_hamming_22_16_enc.sv
+	module worklib.prim_secded_inv_hamming_22_16_enc:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi16_sync.sv
+	module worklib.prim_mubi16_sync:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_inv_hamming_76_68_dec.sv
+	module worklib.prim_secded_inv_hamming_76_68_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_inv_hamming_39_32_dec.sv
+	module worklib.prim_secded_inv_hamming_39_32_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_esc_receiver.sv
+	module worklib.prim_esc_receiver:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_esc_pkg.sv
+	package worklib.prim_esc_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi8_sender.sv
+	module worklib.prim_mubi8_sender:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_gate_gen.sv
+      assign inner_data[l+1] = prim_cipher_pkg::sbox4_32bit({inner_data[l][1:0],
+                                             |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_gate_gen.sv,84|45): Package prim_cipher_pkg could not be bound.
+      assign inner_data[l+1] = prim_cipher_pkg::sbox4_32bit({inner_data[l][1:0],
+                                                          |
+xmvlog: *E,NOTFXX (../prim/rtl/prim_gate_gen.sv,84|58): Expecting a function name [10.3.3(IEEE)].
+	module worklib.prim_gate_gen:sv
+		errors: 2, warnings: 0
+file: ../prim/rtl/prim_mubi8_dec.sv
+	module worklib.prim_mubi8_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_rst_sync.sv
+	module worklib.prim_rst_sync:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_sync_slow_fast.sv
+	module worklib.prim_sync_slow_fast:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_inv_72_64_dec.sv
+	module worklib.prim_secded_inv_72_64_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_hamming_22_16_enc.sv
+	module worklib.prim_secded_hamming_22_16_enc:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_inv_64_57_enc.sv
+	module worklib.prim_secded_inv_64_57_enc:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi32_sender.sv
+	module worklib.prim_mubi32_sender:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_ram_2p_async_adv.sv
+module prim_ram_2p_async_adv import prim_ram_2p_pkg::*; #(
+                                                  |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_ram_2p_async_adv.sv,18|50): Package prim_ram_2p_pkg could not be bound.
+  input  ram_2p_cfg_t      cfg_i,
+                    |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_ram_2p_async_adv.sv,61|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output ram_2p_cfg_rsp_t  cfg_rsp_o
+                        |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_ram_2p_async_adv.sv,62|24): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+	module worklib.prim_ram_2p_async_adv:sv
+		errors: 3, warnings: 0
+file: ../prim/rtl/prim_sha2_pad.sv
+module prim_sha2_pad import prim_sha2_pkg::*;
+                                        |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_sha2_pad.sv,9|40): Package prim_sha2_pkg could not be bound.
+  input  sha_fifo64_t   fifo_rdata_i,
+                    |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_sha2_pad.sv,18|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output sha_word64_t   shaf_rdata_o,
+                    |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_sha2_pad.sv,22|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input digest_mode_e   digest_mode_i,
+                    |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_sha2_pad.sv,28|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  digest_mode_e digest_mode_flag_d,  digest_mode_flag_q;
+                                 |
+xmvlog: *E,ILLPDL (../prim/rtl/prim_sha2_pad.sv,44|33): Mixing of ansi & non-ansi style port declaration is not legal.
+	module worklib.prim_sha2_pad:sv
+		errors: 5, warnings: 0
+file: ../prim/rtl/prim_mubi20_sync.sv
+	module worklib.prim_mubi20_sync:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_fifo_async.sv
+	module worklib.prim_fifo_async:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_hamming_39_32_dec.sv
+	module worklib.prim_secded_hamming_39_32_dec:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_alert_sender.sv
 	module worklib.prim_alert_sender:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_fifo_sync.sv
+	module worklib.prim_fifo_sync:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_arbiter_tree.sv
+	module worklib.prim_arbiter_tree:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_arbiter_ppc.sv
+	module worklib.prim_arbiter_ppc:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_clock_timeout.sv
+	module worklib.prim_clock_timeout:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_lc_and_hardened.sv
+  import lc_ctrl_pkg::*;
+                   |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_lc_and_hardened.sv,12|19): Package lc_ctrl_pkg could not be bound.
+  lc_tx_t ActVal = On
+        |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_and_hardened.sv,14|8): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  lc_tx_t ActVal = On
+               |
+xmvlog: *E,SVVMAP (../prim/rtl/prim_lc_and_hardened.sv,14|15): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
+  input  lc_tx_t lc_en_a_i,
+               |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_and_hardened.sv,19|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  lc_tx_t lc_en_b_i,
+               |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_and_hardened.sv,20|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output lc_tx_t lc_en_o
+               |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_and_hardened.sv,21|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  lc_tx_t [TxWidth-1:0] lc_en_a_copies;
+        |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_and_hardened.sv,26|8): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  lc_tx_t [TxWidth-1:0] lc_en_b_copies;
+        |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_and_hardened.sv,36|8): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+	module worklib.prim_lc_and_hardened:sv
+		errors: 8, warnings: 0
+file: ../prim/rtl/prim_onehot_enc.sv
+	module worklib.prim_onehot_enc:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_28_22_dec.sv
+	module worklib.prim_secded_28_22_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi28_sender.sv
+	module worklib.prim_mubi28_sender:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi12_sender.sv
+	module worklib.prim_mubi12_sender:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi_pkg.sv
+	package worklib.prim_mubi_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_count_pkg.sv
+	package worklib.prim_count_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_cipher_pkg.sv
+	package worklib.prim_cipher_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_reg_cdc.sv
+	module worklib.prim_reg_cdc:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi28_dec.sv
+	module worklib.prim_mubi28_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_pkg.sv
+	package worklib.prim_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_pulse_sync.sv
+	module worklib.prim_pulse_sync:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_arbiter_fixed.sv
+	module worklib.prim_arbiter_fixed:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_28_22_enc.sv
+	module worklib.prim_secded_28_22_enc:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_packer.sv
+	module worklib.prim_packer:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_msb_extend.sv
+	module worklib.prim_msb_extend:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_reg_cdc_arb.sv
+	module worklib.prim_reg_cdc_arb:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_64_57_dec.sv
+	module worklib.prim_secded_64_57_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_22_16_dec.sv
+	module worklib.prim_secded_22_16_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_sum_tree.sv
+	module worklib.prim_sum_tree:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_hamming_72_64_enc.sv
+	module worklib.prim_secded_hamming_72_64_enc:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_hamming_76_68_dec.sv
+	module worklib.prim_secded_hamming_76_68_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_subreg_ext.sv
+	module worklib.prim_subreg_ext:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_inv_72_64_enc.sv
+	module worklib.prim_secded_inv_72_64_enc:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_fifo_async_simple.sv
+	module worklib.prim_fifo_async_simple:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_present.sv
+	module worklib.prim_present:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_39_32_dec.sv
+	module worklib.prim_secded_39_32_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_ram_1r1w_async_adv.sv
+module prim_ram_1r1w_async_adv import prim_ram_2p_pkg::*; #(
+                                                    |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_ram_1r1w_async_adv.sv,18|52): Package prim_ram_2p_pkg could not be bound.
+  input  ram_2p_cfg_t      cfg_i,
+                    |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_ram_1r1w_async_adv.sv,56|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output ram_2p_cfg_rsp_t  cfg_rsp_o
+                        |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_ram_1r1w_async_adv.sv,57|24): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+	module worklib.prim_ram_1r1w_async_adv:sv
+		errors: 3, warnings: 0
+file: ../prim/rtl/prim_trivium_pkg.sv
+	package worklib.prim_trivium_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_pkg.sv
+	package worklib.prim_secded_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_cdc_rand_delay.sv
+	module worklib.prim_cdc_rand_delay:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_sha2_pkg.sv
+	package worklib.prim_sha2_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_sync_reqack_data.sv
+	module worklib.prim_sync_reqack_data:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_lc_sender.sv
+  input  lc_ctrl_pkg::lc_tx_t lc_en_i,
+                   |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_sender.sv,24|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  lc_ctrl_pkg::lc_tx_t lc_en_i,
+                     |
+xmvlog: *E,ILLHIN (../prim/rtl/prim_lc_sender.sv,24|21): illegal location for a hierarchical name (lc_ctrl_pkg).
+  input  lc_ctrl_pkg::lc_tx_t lc_en_i,
+                                    |
+xmvlog: *E,EXPCORP (../prim/rtl/prim_lc_sender.sv,24|36): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output lc_ctrl_pkg::lc_tx_t lc_en_o
+                   |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_sender.sv,25|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output lc_ctrl_pkg::lc_tx_t lc_en_o
+                     |
+xmvlog: *E,ILLHIN (../prim/rtl/prim_lc_sender.sv,25|21): illegal location for a hierarchical name (lc_ctrl_pkg).
+  output lc_ctrl_pkg::lc_tx_t lc_en_o
+                                    |
+xmvlog: *E,EXPCORP (../prim/rtl/prim_lc_sender.sv,25|36): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  localparam lc_ctrl_pkg::lc_tx_t ResetValue = (ResetValueIsOn) ? lc_ctrl_pkg::On :
+                       |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_sender.sv,28|23): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  localparam lc_ctrl_pkg::lc_tx_t ResetValue = (ResetValueIsOn) ? lc_ctrl_pkg::On :
+                         |
+xmvlog: *E,ILLHIN (../prim/rtl/prim_lc_sender.sv,28|25): illegal location for a hierarchical name (lc_ctrl_pkg).
+  localparam lc_ctrl_pkg::lc_tx_t ResetValue = (ResetValueIsOn) ? lc_ctrl_pkg::On :
+                                           |
+xmvlog: *E,SVAEXP (../prim/rtl/prim_lc_sender.sv,28|43): Localparam declarations require a parameter assignment. 6.20.1, Syntax 6-6 (IEEE).
+    lc_ctrl_pkg::lc_tx_t unused_logic;
+              |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_lc_sender.sv,56|14): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+	module worklib.prim_lc_sender:sv
+		errors: 10, warnings: 0
+file: ../prim/rtl/prim_sha2.sv
+	module worklib.prim_sha2:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_subst_perm.sv
+	module worklib.prim_subst_perm:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_edge_detector.sv
+	module worklib.prim_edge_detector:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_ram_1r1w.sv
+module prim_ram_1r1w import prim_ram_2p_pkg::*; #(
+                                          |
+xmvlog: *E,NOPBIND (../prim_generic/rtl/prim_ram_1r1w.sv,9|42): Package prim_ram_2p_pkg could not be bound.
+  input  ram_2p_cfg_t      cfg_i,
+                    |
+xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_ram_1r1w.sv,33|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output ram_2p_cfg_rsp_t  cfg_rsp_o
+                        |
+xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_ram_1r1w.sv,34|24): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+	module worklib.prim_ram_1r1w:sv
+		errors: 3, warnings: 0
+file: ../prim_generic/rtl/prim_and2.sv
+	module worklib.prim_and2:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_usb_diff_rx.sv
+	module worklib.prim_usb_diff_rx:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_flop_2sync.sv
+	module worklib.prim_flop_2sync:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_pad_wrapper.sv
+	module worklib.prim_pad_wrapper:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_flop_en.sv
+	module worklib.prim_flop_en:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_clock_gating.sv
+	module worklib.prim_clock_gating:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_pad_attr.sv
+	module worklib.prim_pad_attr:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_flash.sv
+  input flash_phy_pkg::flash_phy_prim_flash_req_t [NumBanks-1:0] flash_req_i,
+                    |
+xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_flash.sv,20|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input flash_phy_pkg::flash_phy_prim_flash_req_t [NumBanks-1:0] flash_req_i,
+                      |
+xmvlog: *E,ILLHIN (../prim_generic/rtl/prim_flash.sv,20|22): illegal location for a hierarchical name (flash_phy_pkg).
+  input flash_phy_pkg::flash_phy_prim_flash_req_t [NumBanks-1:0] flash_req_i,
+                                                                           |
+xmvlog: *E,EXPCORP (../prim_generic/rtl/prim_flash.sv,20|75): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output flash_phy_pkg::flash_phy_prim_flash_rsp_t [NumBanks-1:0] flash_rsp_o,
+                     |
+xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_flash.sv,21|21): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output flash_phy_pkg::flash_phy_prim_flash_rsp_t [NumBanks-1:0] flash_rsp_o,
+                       |
+xmvlog: *E,ILLHIN (../prim_generic/rtl/prim_flash.sv,21|23): illegal location for a hierarchical name (flash_phy_pkg).
+  output flash_phy_pkg::flash_phy_prim_flash_rsp_t [NumBanks-1:0] flash_rsp_o,
+                                                                            |
+xmvlog: *E,EXPCORP (../prim_generic/rtl/prim_flash.sv,21|76): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+xmvlog: *E,DLCSMD: Dependent checksum verilog_package worklib.prim_mubi_pkg:sv (VST) doesn't match with the checksum that's in the header of: verilog_package worklib.tlul_pkg:sv (VST).
+xmvlog: *E,DLCSMD: Dependent checksum verilog_package worklib.prim_mubi_pkg:sv (VST) doesn't match with the checksum that's in the header of: verilog_package worklib.tlul_pkg:sv (VST).
+  input tlul_pkg::tl_h2d_t tl_i,
+               |
+xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_flash.sv,40|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input tlul_pkg::tl_h2d_t tl_i,
+                 |
+xmvlog: *E,ILLHIN (../prim_generic/rtl/prim_flash.sv,40|17): illegal location for a hierarchical name (tlul_pkg).
+  input tlul_pkg::tl_h2d_t tl_i,
+                              |
+xmvlog: *E,EXPCORP (../prim_generic/rtl/prim_flash.sv,40|30): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+xmvlog: *E,DLCSMD: Dependent checksum verilog_package worklib.prim_mubi_pkg:sv (VST) doesn't match with the checksum that's in the header of: verilog_package worklib.tlul_pkg:sv (VST).
+xmvlog: *E,DLCSMD: Dependent checksum verilog_package worklib.prim_mubi_pkg:sv (VST) doesn't match with the checksum that's in the header of: verilog_package worklib.tlul_pkg:sv (VST).
+  output tlul_pkg::tl_d2h_t tl_o,
+                |
+xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_flash.sv,41|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output tlul_pkg::tl_d2h_t tl_o,
+                  |
+xmvlog: *E,ILLHIN (../prim_generic/rtl/prim_flash.sv,41|18): illegal location for a hierarchical name (tlul_pkg).
+  output tlul_pkg::tl_d2h_t tl_o,
+                               |
+xmvlog: *E,EXPCORP (../prim_generic/rtl/prim_flash.sv,41|31): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  input ast_pkg::ast_obs_ctrl_t obs_ctrl_i,
+              |
+xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_flash.sv,43|14): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input ast_pkg::ast_obs_ctrl_t obs_ctrl_i,
+                |
+xmvlog: *E,ILLHIN (../prim_generic/rtl/prim_flash.sv,43|16): illegal location for a hierarchical name (ast_pkg).
+  input ast_pkg::ast_obs_ctrl_t obs_ctrl_i,
+                                         |
+xmvlog: *E,EXPCORP (../prim_generic/rtl/prim_flash.sv,43|41): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  flash_ctrl_reg_pkg::flash_ctrl_prim_reg2hw_t reg2hw;
+                   |
+xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_flash.sv,116|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  flash_ctrl_reg_pkg::flash_ctrl_prim_hw2reg_t hw2reg;
+                   |
+xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_flash.sv,117|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+	module worklib.prim_flash:sv
+		errors: 21, warnings: 0
+file: ../prim_generic/rtl/prim_generic_flash_bank.sv
+  input flash_ctrl_top_specific_pkg::flash_prog_e prog_type_i,
+                                  |
+xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_generic_flash_bank.sv,27|34): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input flash_ctrl_top_specific_pkg::flash_prog_e prog_type_i,
+                                    |
+xmvlog: *E,ILLHIN (../prim_generic/rtl/prim_generic_flash_bank.sv,27|36): illegal location for a hierarchical name (flash_ctrl_top_specific_pkg).
+  input flash_ctrl_top_specific_pkg::flash_prog_e prog_type_i,
+                                                            |
+xmvlog: *E,EXPCORP (../prim_generic/rtl/prim_generic_flash_bank.sv,27|60): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  input flash_ctrl_top_specific_pkg::flash_part_e part_i,
+                                  |
+xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_generic_flash_bank.sv,33|34): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input flash_ctrl_top_specific_pkg::flash_part_e part_i,
+                                    |
+xmvlog: *E,ILLHIN (../prim_generic/rtl/prim_generic_flash_bank.sv,33|36): illegal location for a hierarchical name (flash_ctrl_top_specific_pkg).
+  input flash_ctrl_top_specific_pkg::flash_part_e part_i,
+                                                       |
+xmvlog: *E,EXPCORP (../prim_generic/rtl/prim_generic_flash_bank.sv,33|55): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  flash_ctrl_top_specific_pkg::flash_part_e mem_part;
+                            |
+xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_generic_flash_bank.sv,104|28): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+    flash_ctrl_top_specific_pkg::flash_prog_e prog_type;
+                              |
+xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_generic_flash_bank.sv,113|30): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+    flash_ctrl_top_specific_pkg::flash_prog_e prog_type;
+                                |
+xmvlog: *E,ILLHIN (../prim_generic/rtl/prim_generic_flash_bank.sv,113|32): illegal location for a hierarchical name (flash_ctrl_top_specific_pkg).
+    flash_ctrl_top_specific_pkg::flash_prog_e prog_type;
+                                                      |
+xmvlog: *E,SVEXTK (../prim_generic/rtl/prim_generic_flash_bank.sv,113|54): expecting a ',' or ';' after 'variable_identifier variable_dimension' (in a struct/union member declaration).
+    flash_ctrl_top_specific_pkg::flash_part_e part;
+                              |
+xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_generic_flash_bank.sv,117|30): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+    flash_ctrl_top_specific_pkg::flash_part_e part;
+                                |
+xmvlog: *E,ILLHIN (../prim_generic/rtl/prim_generic_flash_bank.sv,117|32): illegal location for a hierarchical name (flash_ctrl_top_specific_pkg).
+    flash_ctrl_top_specific_pkg::flash_part_e part;
+                                                 |
+xmvlog: *E,SVEXTK (../prim_generic/rtl/prim_generic_flash_bank.sv,117|49): expecting a ',' or ';' after 'variable_identifier variable_dimension' (in a struct/union member declaration).
+  cmd_payload_t cmd_d, cmd_q;
+                    |
+xmvlog: *E,ILLPDL (../prim_generic/rtl/prim_generic_flash_bank.sv,122|20): Mixing of ansi & non-ansi style port declaration is not legal.
+  flash_ctrl_top_specific_pkg::flash_part_e rd_part_q;
+                            |
+xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_generic_flash_bank.sv,219|28): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  flash_ctrl_top_specific_pkg::flash_prog_e unused_prog_type;
+                            |
+xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_generic_flash_bank.sv,456|28): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+	module worklib.prim_generic_flash_bank:sv
+		errors: 16, warnings: 0
+file: ../prim_generic/rtl/prim_ram_2p_pkg.sv
+	package worklib.prim_ram_2p_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_clock_inv.sv
+	module worklib.prim_clock_inv:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_clock_div.sv
+	module worklib.prim_clock_div:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_clock_buf.sv
+	module worklib.prim_clock_buf:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_rom_pkg.sv
+	package worklib.prim_rom_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_xnor2.sv
+	module worklib.prim_xnor2:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_clock_mux2.sv
+	module worklib.prim_clock_mux2:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_ram_1p.sv
+	module worklib.prim_ram_1p:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_buf.sv
+	module worklib.prim_buf:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_xor2.sv
+	module worklib.prim_xor2:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_flop.sv
+	module worklib.prim_flop:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_ram_2p.sv
+	module worklib.prim_ram_2p:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_flop_no_rst.sv
+	module worklib.prim_flop_no_rst:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_rom.sv
+	module worklib.prim_rom:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_ram_1p_pkg.sv
+	package worklib.prim_ram_1p_pkg:sv
+		errors: 0, warnings: 0
+file: ../tb/top/stub_pkgs.sv
+	package worklib.top_pkg:sv
+		errors: 0, warnings: 0
+package prim_ram_1p_pkg;
+                      |
+xmvlog: *W,RECOME (../tb/top/stub_pkgs.sv,27|22): recompiling design unit worklib.prim_ram_1p_pkg:sv.
+	First compiled from line 6 of ../prim_generic/rtl/prim_ram_1p_pkg.sv.
+	package worklib.prim_ram_1p_pkg:sv
+		errors: 0, warnings: 1
+	package worklib.top_racl_pkg:sv
+		errors: 0, warnings: 0
+file: ../tlul/rtl/tlul_pkg.sv
+	package worklib.tlul_pkg:sv
 		errors: 0, warnings: 0
 file: ../tlul/rtl/tlul_adapter_reg.sv
 	module worklib.tlul_adapter_reg:sv
@@ -154,6 +1354,12 @@ file: ../tlul/rtl/tlul_data_integ_dec.sv
 		errors: 0, warnings: 0
 file: ../tlul/rtl/tlul_data_integ_enc.sv
 	module worklib.tlul_data_integ_enc:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_pkg.sv
+	package worklib.i2c_pkg:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_reg_pkg.sv
+	package worklib.i2c_reg_pkg:sv
 		errors: 0, warnings: 0
 file: ../rtl/i2c_reg_top.sv
 	module worklib.i2c_reg_top:sv
@@ -186,6 +1392,8 @@ xmvlog: *W,ENUMERR (../tb/env/i2c_env.sv,24|27): This assignment is a violation 
         target_cfg.mode = TARGET;
                                |
 xmvlog: *W,ENUMERR (../tb/env/i2c_env.sv,30|31): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
+	package worklib.i2c_tb_pkg:sv
+		errors: 0, warnings: 2
 file: ../tb/top/i2c_if.sv
 	interface worklib.i2c_if:sv
 		errors: 0, warnings: 0
@@ -198,49 +1406,7 @@ xmvlog: *W,SPDUSD: Include directory ../tb/top given but not used.
 xmvlog: *W,SPDUSD: Include directory ../tb/sva given but not used.
 	Total errors/warnings found outside modules and primitives:
 		errors: 0, warnings: 4
-		Caching library 'worklib' ....... Done
-	Elaborating the design hierarchy:
-	Top level design units:
-		uvm_pkg
-		cdns_uvmapi
-		cdns_assert2uvm_pkg
-		cdns_uvm_pkg
-		i2c_tb_pkg
-		$unit_0x1e30427e
-		prim_subreg_pkg
-		prim_mubi_pkg
-		top_pkg
-		prim_secded_pkg
-		tlul_pkg
-		prim_ram_1p_pkg
-		prim_alert_pkg
-		top_racl_pkg
-		i2c_reg_pkg
-		prim_util_pkg
-		i2c_pkg
-		prim_count_pkg
-		prim_subreg_shadow
-		tlul_cmd_intg_gen
-		tlul_rsp_intg_chk
-		tb_top
-		Caching library 'worklib' ....... Done
-  ) u_prim_buf_ping (
-                  |
-xmelab: *E,CUVMUR (../prim/rtl/prim_alert_sender.sv,79|18): instance 'tb_top.dut@i2c<module>.gen_alert_tx[0].u_prim_alert_sender@prim_alert_sender<module>.u_prim_buf_ping' of design unit 'prim_sec_anchor_buf' is unresolved in 'worklib.prim_alert_sender:sv'.
-  ) u_decode_ping (
-                |
-xmelab: *E,CUVMUR (../prim/rtl/prim_alert_sender.sv,89|16): instance 'tb_top.dut@i2c<module>.gen_alert_tx[0].u_prim_alert_sender@prim_alert_sender<module>.u_decode_ping' of design unit 'prim_diff_decode' is unresolved in 'worklib.prim_alert_sender:sv'.
-  ) u_prim_buf_ack (
-                 |
-xmelab: *E,CUVMUR (../prim/rtl/prim_alert_sender.sv,106|17): instance 'tb_top.dut@i2c<module>.gen_alert_tx[0].u_prim_alert_sender@prim_alert_sender<module>.u_prim_buf_ack' of design unit 'prim_sec_anchor_buf' is unresolved in 'worklib.prim_alert_sender:sv'.
-  ) u_decode_ack (
-               |
-xmelab: *E,CUVMUR (../prim/rtl/prim_alert_sender.sv,116|15): instance 'tb_top.dut@i2c<module>.gen_alert_tx[0].u_prim_alert_sender@prim_alert_sender<module>.u_decode_ack' of design unit 'prim_diff_decode' is unresolved in 'worklib.prim_alert_sender:sv'.
-  ) u_prim_buf_in_req (
-                    |
-xmelab: *E,CUVMUR (../prim/rtl/prim_alert_sender.sv,162|20): instance 'tb_top.dut@i2c<module>.gen_alert_tx[0].u_prim_alert_sender@prim_alert_sender<module>.u_prim_buf_in_req' of design unit 'prim_sec_anchor_buf' is unresolved in 'worklib.prim_alert_sender:sv'.
-  ) u_prim_flop_alert (
-                    |
-xmelab: *E,CUVMUR (../prim/rtl/prim_alert_sender.sv,272|20): instance 'tb_top.dut@i2c<module>.gen_alert_tx[0].u_prim_alert_sender@prim_alert_sender<module>.u_prim_flop_alert' of design unit 'prim_sec_anchor_flop' is unresolved in 'worklib.prim_alert_sender:sv'.
-xrun: *E,ELBERR: Error (*E) or soft error (*SE) occurred during elaboration (status 1), exiting.
-TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 00:45:33 EDT  (total: 00:00:02)
+xmvlog: Memory Usage - Current physical: 31.1M, Current virtual: 54.7M
+xmvlog: CPU Usage - 0.1s system + 0.6s user = 0.6s total (1.7s, 37.6% cpu)
+xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
+TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 00:49:28 EDT  (total: 00:00:03)

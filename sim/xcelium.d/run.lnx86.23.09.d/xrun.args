@@ -29,9 +29,13 @@ CDNS-1.2
 -incdir
 ../tb/sva
 -f
+/tmp/prim_files.f
+-f
 ./filelist.f
 -elaborate
 -xmlibdirname
 xcelium.d
 -log
 xrun_elab.log
+-messages
+-status
