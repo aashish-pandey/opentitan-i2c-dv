@@ -45,6 +45,7 @@ class i2c_env extends uvm_env;
         ral = i2c_reg_block::type_id::create("ral");
         ral.build();
         uvm_config_db #(i2c_reg_block)::set(this, "intr_checker*", "ral", ral);
+        uvm_config_db #(i2c_reg_block)::set(null, "*", "ral", ral);
     endfunction
 
     function void connect_phase(uvm_phase phase);
