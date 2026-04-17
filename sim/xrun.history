@@ -1,0 +1,1 @@
+s1(16Apr2026:22:57:56):  xrun -uvm -uvmhome CDNS-1.2 -sv -access +rwc -incdir ../rtl -incdir ../tb/agent -incdir ../tb/env -incdir ../tb/sequences -incdir ../tb/tests -incdir ../tb/top -incdir ../tb/coverage -incdir ../tb/sva -f ./filelist.f -elaborate 

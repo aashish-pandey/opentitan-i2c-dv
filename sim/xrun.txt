@@ -1,0 +1,564 @@
+xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun	23.09-s012: Started on Apr 16, 2026 at 22:57:56 EDT
+xrun
+	-uvm
+	-uvmhome CDNS-1.2
+	-sv
+	-access +rwc
+	-incdir ../rtl
+	-incdir ../tb/agent
+	-incdir ../tb/env
+	-incdir ../tb/sequences
+	-incdir ../tb/tests
+	-incdir ../tb/top
+	-incdir ../tb/coverage
+	-incdir ../tb/sva
+	-f ./filelist.f
+		../rtl/i2c_pkg.sv
+		../rtl/i2c_reg_pkg.sv
+		../rtl/i2c_reg_top.sv
+		../rtl/i2c_fifos.sv
+		../rtl/i2c_fifo_sync_sram_adapter.sv
+		../rtl/i2c_bus_monitor.sv
+		../rtl/i2c_controller_fsm.sv
+		../rtl/i2c_target_fsm.sv
+		../rtl/i2c_core.sv
+		../rtl/i2c.sv
+		../tb/env/i2c_reg_block.sv
+		../tb/agent/i2c_seq_item.sv
+		../tb/agent/i2c_host_driver.sv
+		../tb/agent/i2c_target_driver.sv
+		../tb/agent/i2c_monitor.sv
+		../tb/agent/i2c_sequencer.sv
+		../tb/agent/i2c_agent_cfg.sv
+		../tb/agent/i2c_agent.sv
+		../tb/env/i2c_scoreboard.sv
+		../tb/env/i2c_intr_checker.sv
+		../tb/env/i2c_env.sv
+		../tb/coverage/i2c_coverage.sv
+		../tb/tests/i2c_base_test.sv
+		../tb/tests/i2c_smoke_test.sv
+		../tb/sequences/i2c_host_smoke_vseq.sv
+		../tb/top/i2c_if.sv
+		../tb/top/tb_top.sv
+	-elaborate
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2
+file: ../rtl/i2c_pkg.sv
+	package worklib.i2c_pkg:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_reg_pkg.sv
+	package worklib.i2c_reg_pkg:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_reg_top.sv
+    parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[i2c_reg_pkg::NumRegs] =
+                         |
+xmvlog: *E,SVNOTY (../rtl/i2c_reg_top.sv,12|25): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+    parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[i2c_reg_pkg::NumRegs] =
+                           |
+xmvlog: *E,ILLHIN (../rtl/i2c_reg_top.sv,12|27): illegal location for a hierarchical name (top_racl_pkg).
+    parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[i2c_reg_pkg::NumRegs] =
+                                                             |
+xmvlog: *E,SVVMAP (../rtl/i2c_reg_top.sv,12|61): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
+    parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[i2c_reg_pkg::NumRegs] =
+                                                              |
+xmvlog: *E,SVARPY (../rtl/i2c_reg_top.sv,12|62): Array parameter requires explicit element datatype.
+    parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[i2c_reg_pkg::NumRegs] =
+                                                                           |
+xmvlog: *E,ILLHIN (../rtl/i2c_reg_top.sv,12|75): illegal location for a hierarchical name (i2c_reg_pkg).
+    parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[i2c_reg_pkg::NumRegs] =
+                                                                                   |
+xmvlog: *E,SVVMAP (../rtl/i2c_reg_top.sv,12|83): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
+  input  tlul_pkg::tl_h2d_t tl_i,
+                |
+xmvlog: *E,SVNOTY (../rtl/i2c_reg_top.sv,17|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  tlul_pkg::tl_h2d_t tl_i,
+                  |
+xmvlog: *E,ILLHIN (../rtl/i2c_reg_top.sv,17|18): illegal location for a hierarchical name (tlul_pkg).
+  input  tlul_pkg::tl_h2d_t tl_i,
+                               |
+xmvlog: *E,EXPCORP (../rtl/i2c_reg_top.sv,17|31): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output tlul_pkg::tl_d2h_t tl_o,
+                |
+xmvlog: *E,SVNOTY (../rtl/i2c_reg_top.sv,18|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output tlul_pkg::tl_d2h_t tl_o,
+                  |
+xmvlog: *E,ILLHIN (../rtl/i2c_reg_top.sv,18|18): illegal location for a hierarchical name (tlul_pkg).
+  output tlul_pkg::tl_d2h_t tl_o,
+                               |
+xmvlog: *E,EXPCORP (../rtl/i2c_reg_top.sv,18|31): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  input  top_racl_pkg::racl_policy_vec_t racl_policies_i,
+                    |
+xmvlog: *E,SVNOTY (../rtl/i2c_reg_top.sv,24|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  top_racl_pkg::racl_policy_vec_t racl_policies_i,
+                      |
+xmvlog: *E,ILLHIN (../rtl/i2c_reg_top.sv,24|22): illegal location for a hierarchical name (top_racl_pkg).
+  input  top_racl_pkg::racl_policy_vec_t racl_policies_i,
+                                                       |
+xmvlog: *E,EXPCORP (../rtl/i2c_reg_top.sv,24|55): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output top_racl_pkg::racl_error_log_t  racl_error_o,
+                    |
+xmvlog: *E,SVNOTY (../rtl/i2c_reg_top.sv,25|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output top_racl_pkg::racl_error_log_t  racl_error_o,
+                      |
+xmvlog: *E,ILLHIN (../rtl/i2c_reg_top.sv,25|22): illegal location for a hierarchical name (top_racl_pkg).
+  output top_racl_pkg::racl_error_log_t  racl_error_o,
+                                                    |
+xmvlog: *E,EXPCORP (../rtl/i2c_reg_top.sv,25|52): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  tlul_pkg::tl_h2d_t tl_reg_h2d;
+         |
+xmvlog: *E,SVNOTY (../rtl/i2c_reg_top.sv,51|9): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  tlul_pkg::tl_d2h_t tl_reg_d2h;
+         |
+xmvlog: *E,SVNOTY (../rtl/i2c_reg_top.sv,52|9): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  tlul_pkg::tl_d2h_t tl_o_pre;
+         |
+xmvlog: *E,SVNOTY (../rtl/i2c_reg_top.sv,89|9): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  top_racl_pkg::racl_role_vec_t racl_role_vec;
+             |
+xmvlog: *E,SVNOTY (../rtl/i2c_reg_top.sv,3398|13): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  top_racl_pkg::racl_role_t racl_role;
+             |
+xmvlog: *E,SVNOTY (../rtl/i2c_reg_top.sv,3399|13): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+	module worklib.i2c_reg_top:sv
+		errors: 23, warnings: 0
+file: ../rtl/i2c_fifos.sv
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                       |
+xmvlog: *E,SVNOTY (../rtl/i2c_fifos.sv,15|23): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                         |
+xmvlog: *E,ILLHIN (../rtl/i2c_fifos.sv,15|25): illegal location for a hierarchical name (prim_ram_1p_pkg).
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                                                   |
+xmvlog: *E,EXPCORP (../rtl/i2c_fifos.sv,15|51): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                       |
+xmvlog: *E,SVNOTY (../rtl/i2c_fifos.sv,16|23): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                         |
+xmvlog: *E,ILLHIN (../rtl/i2c_fifos.sv,16|25): illegal location for a hierarchical name (prim_ram_1p_pkg).
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                                                       |
+xmvlog: *E,EXPCORP (../rtl/i2c_fifos.sv,16|55): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  `ASSERT_INIT(RamDepthSuffices_A, RamDepth >= 3 * FifoDepth + AcqFifoDepth)
+             |
+xmvlog: *E,NOTDIR (../rtl/i2c_fifos.sv,65|13): `ASSERT_INIT: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+  `ASSERT_INIT(RamDepthSuffices_A, RamDepth >= 3 * FifoDepth + AcqFifoDepth)
+              |
+xmvlog: *E,EXPENM (../rtl/i2c_fifos.sv,65|14): expecting the keyword 'endmodule' [12.1(IEEE)].
+  `ASSERT_INIT(RamWidthSuffices_A,
+             |
+xmvlog: *E,NOTDIR (../rtl/i2c_fifos.sv,68|13): `ASSERT_INIT: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+	module worklib.i2c_fifos:sv
+		errors: 9, warnings: 0
+file: ../rtl/i2c_fifo_sync_sram_adapter.sv
+  `ASSERT_INIT(MinimalSramFifoDepth_A, SramFifoDepth >= 1)
+             |
+xmvlog: *E,NOTDIR (../rtl/i2c_fifo_sync_sram_adapter.sv,61|13): `ASSERT_INIT: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+  `ASSERT_INIT(MinimalSramFifoDepth_A, SramFifoDepth >= 1)
+              |
+xmvlog: *E,EXPENM (../rtl/i2c_fifo_sync_sram_adapter.sv,61|14): expecting the keyword 'endmodule' [12.1(IEEE)].
+  `ASSERT_INIT(MinimalSramAw_A, SramAw >= SramPtrW)
+             |
+xmvlog: *E,NOTDIR (../rtl/i2c_fifo_sync_sram_adapter.sv,68|13): `ASSERT_INIT: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+	module worklib.i2c_fifo_sync_sram_adapter:sv
+		errors: 3, warnings: 0
+file: ../rtl/i2c_bus_monitor.sv
+	module worklib.i2c_bus_monitor:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_controller_fsm.sv
+	module worklib.i2c_controller_fsm:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_target_fsm.sv
+	module worklib.i2c_target_fsm:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_core.sv
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                       |
+xmvlog: *E,SVNOTY (../rtl/i2c_core.sv,13|23): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                         |
+xmvlog: *E,ILLHIN (../rtl/i2c_core.sv,13|25): illegal location for a hierarchical name (prim_ram_1p_pkg).
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                                                   |
+xmvlog: *E,EXPCORP (../rtl/i2c_core.sv,13|51): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                       |
+xmvlog: *E,SVNOTY (../rtl/i2c_core.sv,14|23): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                         |
+xmvlog: *E,ILLHIN (../rtl/i2c_core.sv,14|25): illegal location for a hierarchical name (prim_ram_1p_pkg).
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                                                       |
+xmvlog: *E,EXPCORP (../rtl/i2c_core.sv,14|55): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+	module worklib.i2c_core:sv
+		errors: 6, warnings: 0
+file: ../rtl/i2c.sv
+  parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[NumRegs] = '{NumRegs{0}}
+                       |
+xmvlog: *E,SVNOTY (../rtl/i2c.sv,16|23): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[NumRegs] = '{NumRegs{0}}
+                         |
+xmvlog: *E,ILLHIN (../rtl/i2c.sv,16|25): illegal location for a hierarchical name (top_racl_pkg).
+  parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[NumRegs] = '{NumRegs{0}}
+                                                           |
+xmvlog: *E,SVVMAP (../rtl/i2c.sv,16|59): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
+  parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[NumRegs] = '{NumRegs{0}}
+                                                            |
+xmvlog: *E,SVARPY (../rtl/i2c.sv,16|60): Array parameter requires explicit element datatype.
+  parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[NumRegs] = '{NumRegs{0}}
+                                                                    |
+xmvlog: *E,SVVMAP (../rtl/i2c.sv,16|68): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                       |
+xmvlog: *E,SVNOTY (../rtl/i2c.sv,20|23): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                         |
+xmvlog: *E,ILLHIN (../rtl/i2c.sv,20|25): illegal location for a hierarchical name (prim_ram_1p_pkg).
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                                                   |
+xmvlog: *E,EXPCORP (../rtl/i2c.sv,20|51): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                       |
+xmvlog: *E,SVNOTY (../rtl/i2c.sv,21|23): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                         |
+xmvlog: *E,ILLHIN (../rtl/i2c.sv,21|25): illegal location for a hierarchical name (prim_ram_1p_pkg).
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                                                       |
+xmvlog: *E,EXPCORP (../rtl/i2c.sv,21|55): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  input  tlul_pkg::tl_h2d_t tl_i,
+                |
+xmvlog: *E,SVNOTY (../rtl/i2c.sv,24|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  tlul_pkg::tl_h2d_t tl_i,
+                  |
+xmvlog: *E,ILLHIN (../rtl/i2c.sv,24|18): illegal location for a hierarchical name (tlul_pkg).
+  input  tlul_pkg::tl_h2d_t tl_i,
+                               |
+xmvlog: *E,EXPCORP (../rtl/i2c.sv,24|31): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output tlul_pkg::tl_d2h_t tl_o,
+                |
+xmvlog: *E,SVNOTY (../rtl/i2c.sv,25|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output tlul_pkg::tl_d2h_t tl_o,
+                  |
+xmvlog: *E,ILLHIN (../rtl/i2c.sv,25|18): illegal location for a hierarchical name (tlul_pkg).
+  output tlul_pkg::tl_d2h_t tl_o,
+                               |
+xmvlog: *E,EXPCORP (../rtl/i2c.sv,25|31): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  input  prim_alert_pkg::alert_rx_t [NumAlerts-1:0] alert_rx_i,
+                      |
+xmvlog: *E,SVNOTY (../rtl/i2c.sv,28|22): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  prim_alert_pkg::alert_rx_t [NumAlerts-1:0] alert_rx_i,
+                        |
+xmvlog: *E,ILLHIN (../rtl/i2c.sv,28|24): illegal location for a hierarchical name (prim_alert_pkg).
+  input  prim_alert_pkg::alert_rx_t [NumAlerts-1:0] alert_rx_i,
+                                                             |
+xmvlog: *E,EXPCORP (../rtl/i2c.sv,28|61): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output prim_alert_pkg::alert_tx_t [NumAlerts-1:0] alert_tx_o,
+                      |
+xmvlog: *E,SVNOTY (../rtl/i2c.sv,29|22): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output prim_alert_pkg::alert_tx_t [NumAlerts-1:0] alert_tx_o,
+                        |
+xmvlog: *E,ILLHIN (../rtl/i2c.sv,29|24): illegal location for a hierarchical name (prim_alert_pkg).
+  output prim_alert_pkg::alert_tx_t [NumAlerts-1:0] alert_tx_o,
+                                                             |
+xmvlog: *E,EXPCORP (../rtl/i2c.sv,29|61): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  input  top_racl_pkg::racl_policy_vec_t racl_policies_i,
+                    |
+xmvlog: *E,SVNOTY (../rtl/i2c.sv,32|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  top_racl_pkg::racl_policy_vec_t racl_policies_i,
+                      |
+xmvlog: *E,ILLHIN (../rtl/i2c.sv,32|22): illegal location for a hierarchical name (top_racl_pkg).
+  input  top_racl_pkg::racl_policy_vec_t racl_policies_i,
+                                                       |
+xmvlog: *E,EXPCORP (../rtl/i2c.sv,32|55): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output top_racl_pkg::racl_error_log_t  racl_error_o,
+                    |
+xmvlog: *E,SVNOTY (../rtl/i2c.sv,33|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output top_racl_pkg::racl_error_log_t  racl_error_o,
+                      |
+xmvlog: *E,ILLHIN (../rtl/i2c.sv,33|22): illegal location for a hierarchical name (top_racl_pkg).
+  output top_racl_pkg::racl_error_log_t  racl_error_o,
+                                                    |
+xmvlog: *E,EXPCORP (../rtl/i2c.sv,33|52): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+	module worklib.i2c:sv
+		errors: 29, warnings: 0
+file: ../tb/env/i2c_reg_block.sv
+class i2c_ctrl_reg extends uvm_reg;
+                                 |
+xmvlog: *E,SVNOTY (../tb/env/i2c_reg_block.sv,2|33): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+    `uvm_object_utils(i2c_ctrl_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,4|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_ctrl_reg)
+                     |
+xmvlog: *E,EXPENC (../tb/env/i2c_reg_block.sv,4|21): Expecting the keyword 'endclass'.
+    function new(string name = "i2c_ctrl_reg");
+               |
+xmvlog: *E,NEWOIC (../tb/env/i2c_reg_block.sv,15|15): The class constructor method 'new' is only allowed within a class declaration.
+        super.new(name, 32, UVM_NO_COVERAGE);
+            |
+xmvlog: *E,CLSSPX (../tb/env/i2c_reg_block.sv,16|12): 'super' can only be used within a class scope that derives from a base class.
+endclass
+       |
+xmvlog: *E,MPANDC (../tb/env/i2c_reg_block.sv,40|7): expecting the keyword 'module', 'macromodule', 'primitive', 'connectmodule','connect', 'discipline' or 'nature' [A.1].
+    `uvm_object_utils(i2c_intr_state_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,44|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_intr_enable_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,107|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_intr_test_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,168|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_status_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,230|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_timing0_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,280|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_timing1_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,303|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_timing2_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,326|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_timing3_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,348|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_timing4_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,371|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_fdata_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,394|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_rdata_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,429|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_fifo_ctrl_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,448|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_host_fifo_config_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,479|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_target_fifo_config_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,502|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_host_fifo_status_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,525|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_target_fifo_status_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,549|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_target_id_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,573|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_timeout_ctrl_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,602|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_host_timeout_ctrl_reg)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,628|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils(i2c_reg_block)
+                    |
+xmvlog: *E,NOTDIR (../tb/env/i2c_reg_block.sv,647|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+file: ../tb/agent/i2c_seq_item.sv
+    `uvm_object_utils_begin(i2c_seq_item)
+                          |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_seq_item.sv,9|26): `uvm_object_utils_begin: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+        `uvm_field_int(addr, UVM_ALL_ON)
+                     |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_seq_item.sv,10|21): `uvm_field_int: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+        `uvm_field_int(rw, UVM_ALL_ON)
+                     |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_seq_item.sv,11|21): `uvm_field_int: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+        `uvm_field_array_int(data, UVM_ALL_ON)
+                           |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_seq_item.sv,12|27): `uvm_field_array_int: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+        `uvm_field_int(num_bytes, UVM_ALL_ON)
+                     |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_seq_item.sv,13|21): `uvm_field_int: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+        `uvm_field_int(no_stop, UVM_ALL_ON)
+                     |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_seq_item.sv,14|21): `uvm_field_int: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_object_utils_end
+                        |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_seq_item.sv,15|24): `uvm_object_utils_end: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+file: ../tb/agent/i2c_host_driver.sv
+    `uvm_component_utils(i2c_host_driver)
+                       |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_host_driver.sv,3|23): `uvm_component_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+            `uvm_fatal("NO_VIF", "No virtual interface found")
+                     |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_host_driver.sv,14|21): `uvm_fatal: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+            `uvm_warn("ACK", "NACK received or no response on SDA")
+                    |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_host_driver.sv,90|20): `uvm_warn: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+file: ../tb/agent/i2c_target_driver.sv
+    `uvm_component_utils(i2c_target_driver)
+                       |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_target_driver.sv,3|23): `uvm_component_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+            `uvm_fatal("NO_VIF", "No interface handler found")
+                     |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_target_driver.sv,15|21): `uvm_fatal: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+file: ../tb/agent/i2c_monitor.sv
+    `uvm_component_utils(i2c_monitor)
+                       |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_monitor.sv,2|23): `uvm_component_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+            `uvm_fatal("MON", "No interface handle found")
+                     |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_monitor.sv,15|21): `uvm_fatal: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+file: ../tb/agent/i2c_sequencer.sv
+file: ../tb/agent/i2c_agent_cfg.sv
+    `uvm_object_utils(i2c_agent_cfg)
+                    |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_agent_cfg.sv,3|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+file: ../tb/agent/i2c_agent.sv
+    `uvm_component_utils(i2c_agent)
+                       |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_agent.sv,9|23): `uvm_component_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+            `uvm_fatal("NO_CFG", "No agent config found")
+                     |
+xmvlog: *E,NOTDIR (../tb/agent/i2c_agent.sv,19|21): `uvm_fatal: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+file: ../tb/env/i2c_scoreboard.sv
+`uvm_analysis_imp_decl(_host)
+                     |
+xmvlog: *E,NOTDIR (../tb/env/i2c_scoreboard.sv,1|21): `uvm_analysis_imp_decl: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+`uvm_analysis_imp_decl(_target)
+                     |
+xmvlog: *E,NOTDIR (../tb/env/i2c_scoreboard.sv,2|21): `uvm_analysis_imp_decl: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+    `uvm_component_utils(i2c_scoreboard)
+                       |
+xmvlog: *E,NOTDIR (../tb/env/i2c_scoreboard.sv,8|23): `uvm_component_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+        `uvm_info("SCB", $sformatf("PASS: %0d FAIL: %0d", pass_count, fail_count), UVM_NONE)
+                |
+xmvlog: *E,NOTDIR (../tb/env/i2c_scoreboard.sv,52|16): `uvm_info: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+            `uvm_error("SCB", "Test Failed")
+                     |
+xmvlog: *E,NOTDIR (../tb/env/i2c_scoreboard.sv,54|21): `uvm_error: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+file: ../tb/env/i2c_intr_checker.sv
+    `uvm_component_utils(i2c_intr_checker)
+                       |
+xmvlog: *E,NOTDIR (../tb/env/i2c_intr_checker.sv,3|23): `uvm_component_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+            `uvm_fatal("INTR", "No interface handler found")
+                     |
+xmvlog: *E,NOTDIR (../tb/env/i2c_intr_checker.sv,16|21): `uvm_fatal: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+            `uvm_fatal("INTR", "No RAL handle found")
+                     |
+xmvlog: *E,NOTDIR (../tb/env/i2c_intr_checker.sv,18|21): `uvm_fatal: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+                        `uvm_error("INTR", "fmt_threshold fired but INTR_STATE bit not set")
+                                 |
+xmvlog: *E,NOTDIR (../tb/env/i2c_intr_checker.sv,34|33): `uvm_error: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+                        `uvm_info("INTR", "fmt_threshold interrupt verified", UVM_MEDIUM)
+                                |
+xmvlog: *E,NOTDIR (../tb/env/i2c_intr_checker.sv,36|32): `uvm_info: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+                        `uvm_error("INTR", "fmt_threshold did not clear after W1C write")
+                                 |
+xmvlog: *E,NOTDIR (../tb/env/i2c_intr_checker.sv,44|33): `uvm_error: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+                        `uvm_error("INTR", "rx_threshold fired but INTR_STATE bit is not set")
+                                 |
+xmvlog: *E,NOTDIR (../tb/env/i2c_intr_checker.sv,58|33): `uvm_error: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+                        `uvm_info("INTR", "rx_threshold interrupt verified", UVM_MEDIUM)
+                                |
+xmvlog: *E,NOTDIR (../tb/env/i2c_intr_checker.sv,60|32): `uvm_info: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+                        `uvm_error("INTR", "rx_threshold did not clear after W1C write")
+                                 |
+xmvlog: *E,NOTDIR (../tb/env/i2c_intr_checker.sv,66|33): `uvm_error: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+                        `uvm_error("INTR", "rx_overflow interrupt fired but INTR_STATE bit is not set")
+                                 |
+xmvlog: *E,NOTDIR (../tb/env/i2c_intr_checker.sv,79|33): `uvm_error: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+                        `uvm_info("INTR", "rx_overflow interrupt verified", UVM_MEDIUM)
+                                |
+xmvlog: *E,NOTDIR (../tb/env/i2c_intr_checker.sv,81|32): `uvm_info: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+                        `uvm_error("INTR", "rx_overflow did not clear after W1C write")
+                                 |
+xmvlog: *E,NOTDIR (../tb/env/i2c_intr_checker.sv,88|33): `uvm_error: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+                        `uvm_error("INTR", "cmd_complete interrupt fired but INTR_STATE bit is not set")
+                                 |
+xmvlog: *E,NOTDIR (../tb/env/i2c_intr_checker.sv,99|33): `uvm_error: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+                        `uvm_info("INTR", "cmd_complete interrupt verified", UVM_MEDIUM)
+                                |
+xmvlog: *E,NOTDIR (../tb/env/i2c_intr_checker.sv,101|32): `uvm_info: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+                        `uvm_error("INTR", "cmd_complete did not clear after W1C write")
+                                 |
+xmvlog: *E,NOTDIR (../tb/env/i2c_intr_checker.sv,107|33): `uvm_error: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+file: ../tb/env/i2c_env.sv
+    `uvm_component_utils(i2c_env)
+                       |
+xmvlog: *E,NOTDIR (../tb/env/i2c_env.sv,3|23): `uvm_component_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+file: ../tb/coverage/i2c_coverage.sv
+    `uvm_component_utils(i2c_coverage)
+                       |
+xmvlog: *E,NOTDIR (../tb/coverage/i2c_coverage.sv,2|23): `uvm_component_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+            `uvm_fatal("COV", "No interface found")
+                     |
+xmvlog: *E,NOTDIR (../tb/coverage/i2c_coverage.sv,85|21): `uvm_fatal: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+file: ../tb/tests/i2c_base_test.sv
+    `uvm_component_utils(i2c_base_test)
+                       |
+xmvlog: *E,NOTDIR (../tb/tests/i2c_base_test.sv,3|23): `uvm_component_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+file: ../tb/tests/i2c_smoke_test.sv
+    `uvm_component_utils(i2c_smoke_test)
+                       |
+xmvlog: *E,NOTDIR (../tb/tests/i2c_smoke_test.sv,3|23): `uvm_component_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+file: ../tb/sequences/i2c_host_smoke_vseq.sv
+    `uvm_object_utils(i2c_host_smoke_vseq)
+                    |
+xmvlog: *E,NOTDIR (../tb/sequences/i2c_host_smoke_vseq.sv,2|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+            `uvm_fatal("VSEQ", "No RAL found")
+                     |
+xmvlog: *E,NOTDIR (../tb/sequences/i2c_host_smoke_vseq.sv,17|21): `uvm_fatal: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+                `uvm_fatal("VSEQ", "Randomization Failed")
+                         |
+xmvlog: *E,NOTDIR (../tb/sequences/i2c_host_smoke_vseq.sv,49|25): `uvm_fatal: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+                `uvm_fatal("VSEQ", "Randomization failed")
+                         |
+xmvlog: *E,NOTDIR (../tb/sequences/i2c_host_smoke_vseq.sv,58|25): `uvm_fatal: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+file: ../tb/top/i2c_if.sv
+    pullup(scl); //Passive pullup - overridden by any driver asserting 0
+         |
+xmvlog: *E,INFINS (../tb/top/i2c_if.sv,6|9): Module, interface, program block instances and primitives are not allowed within interface, program block or checker definitions '[SystemVerilog]'.
+    pullup(sda); //Passive pullup - overridden by any driver asserting 0
+         |
+xmvlog: *E,INFINS (../tb/top/i2c_if.sv,7|9): Module, interface, program block instances and primitives are not allowed within interface, program block or checker definitions '[SystemVerilog]'.
+	interface worklib.i2c_if:sv
+		errors: 2, warnings: 0
+file: ../tb/top/tb_top.sv
+    prim_ram_1p_pkg::ram_1p_cfg_t ram_cfg_i;
+                  |
+xmvlog: *E,SVNOTY (../tb/top/tb_top.sv,24|18): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+    prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o;
+                  |
+xmvlog: *E,SVNOTY (../tb/top/tb_top.sv,25|18): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+    tlul_pkg::tl_h2d_t tl_i;
+           |
+xmvlog: *E,SVNOTY (../tb/top/tb_top.sv,28|11): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+    tlul_pkg::tl_d2h_t tl_o;
+           |
+xmvlog: *E,SVNOTY (../tb/top/tb_top.sv,29|11): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+    prim_alert_pkg::alert_rx_t [i2c_reg_pkg::NumAlerts-1:0] alert_rx_i;
+                 |
+xmvlog: *E,SVNOTY (../tb/top/tb_top.sv,32|17): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+    prim_alert_pkg::alert_tx_t [i2c_reg_pkg::NumAlerts-1:0] alert_tx_o;
+                 |
+xmvlog: *E,SVNOTY (../tb/top/tb_top.sv,33|17): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+    top_racl_pkg::racl_policy_vec_t racl_policies_i;
+               |
+xmvlog: *E,SVNOTY (../tb/top/tb_top.sv,36|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+    top_racl_pkg::racl_error_log_t racl_error_o;
+               |
+xmvlog: *E,SVNOTY (../tb/top/tb_top.sv,37|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+	module worklib.tb_top:sv
+		errors: 8, warnings: 0
+xmvlog: *W,SPDUSD: Include directory ../rtl given but not used.
+xmvlog: *W,SPDUSD: Include directory ../tb/agent given but not used.
+xmvlog: *W,SPDUSD: Include directory ../tb/env given but not used.
+xmvlog: *W,SPDUSD: Include directory ../tb/sequences given but not used.
+xmvlog: *W,SPDUSD: Include directory ../tb/tests given but not used.
+xmvlog: *W,SPDUSD: Include directory ../tb/top given but not used.
+xmvlog: *W,SPDUSD: Include directory ../tb/coverage given but not used.
+xmvlog: *W,SPDUSD: Include directory ../tb/sva given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 72, warnings: 8
+xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
+TOOL:	xrun	23.09-s012: Exiting on Apr 16, 2026 at 22:58:00 EDT  (total: 00:00:04)
