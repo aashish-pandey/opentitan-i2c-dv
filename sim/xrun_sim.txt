@@ -1,5 +1,5 @@
 xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 13:55:49 EDT
+TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 14:08:46 EDT
 xrun
 	-R
 	-xmlibdirname xcelium.d
@@ -42,7 +42,6 @@ CDNS-UVM-1.2 (23.09-s012)
 
 UVM_INFO @ 0: reporter [RNTST] Running test i2c_smoke_test...
 SDI/Verilog Transaction Recording Facility Version 23.09-s012
-UVM_WARNING /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/reg/uvm_reg_map.svh(1314) @ 0: reporter [RegModel] map 'default_map' does not seem to be initialized correctly, check that the top register model is locked()
 UVM_FATAL @ 0: reporter@@default_parent_seq [SEQ] neither the item's sequencer nor dedicated sequencer has been supplied to start item in default_parent_seq
 UVM_INFO /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_catcher.svh(705) @ 0: reporter [UVM/REPORT/CATCHER] 
 --- UVM Report catcher Summary ---
@@ -60,12 +59,11 @@ UVM_INFO /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base
 
 ** Report counts by severity
 UVM_INFO :    3
-UVM_WARNING :    1
+UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    1
 ** Report counts by id
 [RNTST]     1
-[RegModel]     1
 [SEQ]     1
 [UVM/RELNOTES]     1
 [UVM/REPORT/CATCHER]     1
@@ -73,6 +71,6 @@ UVM_FATAL :    1
 Simulation complete via $finish(1) at time 0 FS + 47
 /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh:135     $finish;
 xcelium> exit
-xmsim: Memory Usage - Final: 94.7M, Peak: 94.7M, Peak virtual: 143.2M
-xmsim: CPU Usage - 0.0s system + 0.1s user = 0.1s total (0.4s, 23.7% cpu)
-TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 13:55:49 EDT  (total: 00:00:00)
+xmsim: Memory Usage - Final: 94.5M, Peak: 94.5M, Peak virtual: 143.2M
+xmsim: CPU Usage - 0.3s system + 0.3s user = 0.6s total (1.2s, 47.4% cpu)
+TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 14:08:48 EDT  (total: 00:00:02)
