@@ -20,8 +20,8 @@ class i2c_host_driver extends uvm_driver#(i2c_seq_item);
         i2c_seq_item req;
 
         //release bus at start
-        vif.driver_cb.scl <= 1;
-        vif.driver_cb.sda <= 1;
+        vif.driver_cb.scl_host_drive <= 1;
+        vif.driver_cb.sda_host_drive <= 1;
         forever begin
             seq_item_port.get_next_item(req);
             drive_transaction(req);
@@ -45,28 +45,28 @@ class i2c_host_driver extends uvm_driver#(i2c_seq_item);
     task send_start();
 
         //both high -idle
-        vif.driver_cb.sda <= 1;
-        vif.driver_cb.scl <= 1;
+        vif.driver_cb.sda_host_drive <= 1;
+        vif.driver_cb.scl_host_drive <= 1;
         @(vif.driver_cb);
 
         //SDA falls while SCL high - this is START condition
-        vif.driver_cb.sda <= 0;
+        vif.driver_cb.sda_host_drive <= 0;
         @(vif.driver_cb);
 
         //SCL falls - ready for first bit
-        vif.driver_cb.scl <= 0;
+        vif.driver_cb.scl_host_drive <= 0;
         @(vif.driver_cb);
 
     endtask
 
     task send_bit(logic val);
-        vif.driver_cb.sda <= val;
+        vif.driver_cb.sda_host_drive <= val;
         @(vif.driver_cb);
 
-        vif.driver_cb.scl <= 1;
+        vif.driver_cb.scl_host_drive <= 1;
         @(vif.driver_cb);
 
-        vif.driver_cb.scl <= 0;
+        vif.driver_cb.scl_host_drive <= 0;
         @(vif.driver_cb);
 
     endtask
@@ -81,45 +81,45 @@ class i2c_host_driver extends uvm_driver#(i2c_seq_item);
 
     task get_ack();
 
-        vif.driver_cb.sda <= 1;
+        vif.driver_cb.sda_host_drive <= 1;
         @(vif.driver_cb);
 
-        vif.driver_cb.scl <= 1;
+        vif.driver_cb.scl_host_drive <= 1;
         @(vif.driver_cb);
 
         // sample SDA - target should be pulling it low
         if(vif.monitor_cb.sda !== 1'b0)
             `uvm_warning("ACK", "NACK received or no response on SDA")
 
-        vif.driver_cb.scl <= 0;
+        vif.driver_cb.scl_host_drive <= 0;
         @(vif.driver_cb);
 
     endtask
 
     task send_stop();
 
-        vif.driver_cb.sda <= 0;
+        vif.driver_cb.sda_host_drive <= 0;
         @(vif.driver_cb);
 
-        vif.driver_cb.scl <= 1;
+        vif.driver_cb.scl_host_drive <= 1;
         @(vif.driver_cb);
 
-        vif.driver_cb.sda <= 1;
+        vif.driver_cb.sda_host_drive <= 1;
         @(vif.driver_cb);
 
     endtask
 
     task send_repeated_start();
-        vif.driver_cb.sda <= 1;
+        vif.driver_cb.sda_host_drive <= 1;
         @(vif.driver_cb);
 
-        vif.driver_cb.scl <= 1;
+        vif.driver_cb.scl_host_drive <= 1;
         @(vif.driver_cb);
 
-        vif.driver_cb.sda <= 0;
+        vif.driver_cb.sda_host_drive <= 0;
         @(vif.driver_cb);
 
-        vif.driver_cb.scl <= 0;
+        vif.driver_cb.scl_host_drive <= 0;
         @(vif.driver_cb);
     endtask
 

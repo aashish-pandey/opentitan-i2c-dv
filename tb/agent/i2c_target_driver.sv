@@ -101,19 +101,19 @@ class i2c_target_driver extends uvm_driver #(i2c_seq_item);
 
     task automatic send_ack();
 
-        vif.sda <= 0;
+        vif.sda_target_drive <= 0;
 
         @(posedge vif.scl);
 
         @(negedge vif.scl);
 
-        vif.sda <= 1;
+        vif.sda_target_drive <= 1;
 
 
     endtask
 
     task automatic send_nack();
-        vif.sda <= 1;
+        vif.sda_target_drive <= 1;
         @(posedge vif.scl);
 
         @(negedge vif.scl);
@@ -121,7 +121,7 @@ class i2c_target_driver extends uvm_driver #(i2c_seq_item);
 
     task automatic send_bit_target(logic val);
 
-        vif.sda <= val;
+        vif.sda_target_drive <= val;
 
         @(posedge vif.scl);
         @(negedge vif.scl);
