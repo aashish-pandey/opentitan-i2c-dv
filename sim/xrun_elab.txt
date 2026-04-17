@@ -1,0 +1,261 @@
+xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 00:29:23 EDT
+xrun
+	-uvm
+	-uvmhome CDNS-1.2
+	-sv
+	-access +rwc
+	-incdir ../prim/rtl
+	-incdir ../tlul/rtl
+	-incdir ../rtl
+	-incdir ../tb/agent
+	-incdir ../tb/env
+	-incdir ../tb/sequences
+	-incdir ../tb/tests
+	-incdir ../tb/top
+	-incdir ../tb/coverage
+	-incdir ../tb/sva
+	-f ./filelist.f
+		../tb/top/stub_pkgs.sv
+		../prim/rtl/prim_util_pkg.sv
+		../prim/rtl/prim_mubi_pkg.sv
+		../prim/rtl/prim_subreg_pkg.sv
+		../prim/rtl/prim_pkg.sv
+		../prim/rtl/prim_assert.sv
+		../prim/rtl/prim_count_pkg.sv
+		../prim/rtl/prim_secded_pkg.sv
+		../prim/rtl/prim_alert_pkg.sv
+		../prim/rtl/prim_esc_pkg.sv
+		../prim/rtl/prim_subreg.sv
+		../prim/rtl/prim_subreg_arb.sv
+		../prim/rtl/prim_subreg_ext.sv
+		../prim/rtl/prim_subreg_shadow.sv
+		../prim/rtl/prim_reg_we_check.sv
+		../prim/rtl/prim_intr_hw.sv
+		../prim/rtl/prim_fifo_sync.sv
+		../prim/rtl/prim_fifo_sync_cnt.sv
+		../prim/rtl/prim_arbiter_tree.sv
+		../prim/rtl/prim_ram_1p_adv.sv
+		../tlul/rtl/tlul_pkg.sv
+		../tlul/rtl/tlul_adapter_reg.sv
+		../tlul/rtl/tlul_cmd_intg_chk.sv
+		../tlul/rtl/tlul_cmd_intg_gen.sv
+		../tlul/rtl/tlul_rsp_intg_gen.sv
+		../tlul/rtl/tlul_rsp_intg_chk.sv
+		../tlul/rtl/tlul_err.sv
+		../tlul/rtl/tlul_data_integ_dec.sv
+		../tlul/rtl/tlul_data_integ_enc.sv
+		../rtl/i2c_pkg.sv
+		../rtl/i2c_reg_pkg.sv
+		../rtl/i2c_reg_top.sv
+		../rtl/i2c_fifos.sv
+		../rtl/i2c_fifo_sync_sram_adapter.sv
+		../rtl/i2c_bus_monitor.sv
+		../rtl/i2c_controller_fsm.sv
+		../rtl/i2c_target_fsm.sv
+		../rtl/i2c_core.sv
+		../rtl/i2c.sv
+		../tb/env/i2c_tb_pkg.sv
+		../tb/top/i2c_if.sv
+		../tb/top/tb_top.sv
+	-elaborate
+	-xmlibdirname xcelium.d
+	-log xrun_elab.log
+file: ../prim/rtl/prim_ram_1p_adv.sv
+module prim_ram_1p_adv import prim_ram_1p_pkg::*; #(
+                                            |
+xmvlog: *E,NOPBIND (../prim/rtl/prim_ram_1p_adv.sv,18|44): Package prim_ram_1p_pkg could not be bound.
+  input  ram_1p_cfg_t     [NumRamInst-1:0] cfg_i,
+                    |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_ram_1p_adv.sv,56|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  ram_1p_cfg_t     [NumRamInst-1:0] cfg_i,
+                                               |
+xmvlog: *E,EXPCORP (../prim/rtl/prim_ram_1p_adv.sv,56|47): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output ram_1p_cfg_rsp_t [NumRamInst-1:0] cfg_rsp_o,
+                        |
+xmvlog: *E,SVNOTY (../prim/rtl/prim_ram_1p_adv.sv,57|24): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output ram_1p_cfg_rsp_t [NumRamInst-1:0] cfg_rsp_o,
+                                                   |
+xmvlog: *E,EXPCORP (../prim/rtl/prim_ram_1p_adv.sv,57|51): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  mubi4_t                  req_q,     req_d,    req_buf_d ;
+                               |
+xmvlog: *E,ILLPDL (../prim/rtl/prim_ram_1p_adv.sv,96|31): Mixing of ansi & non-ansi style port declaration is not legal.
+  mubi4_t                  write_q,   write_d,  write_buf_d ;
+                                 |
+xmvlog: *E,ILLPDL (../prim/rtl/prim_ram_1p_adv.sv,99|33): Mixing of ansi & non-ansi style port declaration is not legal.
+  mubi4_t                  rvalid_q,  rvalid_d, rvalid_sram_q, rvalid_sram_d ;
+                                  |
+xmvlog: *E,ILLPDL (../prim/rtl/prim_ram_1p_adv.sv,105|34): Mixing of ansi & non-ansi style port declaration is not legal.
+	module worklib.prim_ram_1p_adv:sv
+		errors: 8, warnings: 0
+file: ../rtl/i2c_reg_top.sv
+    parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[i2c_reg_pkg::NumRegs] =
+                         |
+xmvlog: *E,SVNOTY (../rtl/i2c_reg_top.sv,12|25): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+    parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[i2c_reg_pkg::NumRegs] =
+                           |
+xmvlog: *E,ILLHIN (../rtl/i2c_reg_top.sv,12|27): illegal location for a hierarchical name (top_racl_pkg).
+    parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[i2c_reg_pkg::NumRegs] =
+                                                             |
+xmvlog: *E,SVVMAP (../rtl/i2c_reg_top.sv,12|61): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
+    parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[i2c_reg_pkg::NumRegs] =
+                                                              |
+xmvlog: *E,SVARPY (../rtl/i2c_reg_top.sv,12|62): Array parameter requires explicit element datatype.
+    parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[i2c_reg_pkg::NumRegs] =
+                                                                           |
+xmvlog: *E,ILLHIN (../rtl/i2c_reg_top.sv,12|75): illegal location for a hierarchical name (i2c_reg_pkg).
+    parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[i2c_reg_pkg::NumRegs] =
+                                                                                   |
+xmvlog: *E,SVVMAP (../rtl/i2c_reg_top.sv,12|83): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
+  input  top_racl_pkg::racl_policy_vec_t racl_policies_i,
+                    |
+xmvlog: *E,SVNOTY (../rtl/i2c_reg_top.sv,24|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  top_racl_pkg::racl_policy_vec_t racl_policies_i,
+                      |
+xmvlog: *E,ILLHIN (../rtl/i2c_reg_top.sv,24|22): illegal location for a hierarchical name (top_racl_pkg).
+  input  top_racl_pkg::racl_policy_vec_t racl_policies_i,
+                                                       |
+xmvlog: *E,EXPCORP (../rtl/i2c_reg_top.sv,24|55): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output top_racl_pkg::racl_error_log_t  racl_error_o,
+                    |
+xmvlog: *E,SVNOTY (../rtl/i2c_reg_top.sv,25|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output top_racl_pkg::racl_error_log_t  racl_error_o,
+                      |
+xmvlog: *E,ILLHIN (../rtl/i2c_reg_top.sv,25|22): illegal location for a hierarchical name (top_racl_pkg).
+  output top_racl_pkg::racl_error_log_t  racl_error_o,
+                                                    |
+xmvlog: *E,EXPCORP (../rtl/i2c_reg_top.sv,25|52): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  top_racl_pkg::racl_role_vec_t racl_role_vec;
+             |
+xmvlog: *E,SVNOTY (../rtl/i2c_reg_top.sv,3398|13): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  top_racl_pkg::racl_role_t racl_role;
+             |
+xmvlog: *E,SVNOTY (../rtl/i2c_reg_top.sv,3399|13): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+	module worklib.i2c_reg_top:sv
+		errors: 14, warnings: 0
+file: ../rtl/i2c_fifos.sv
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                       |
+xmvlog: *E,SVNOTY (../rtl/i2c_fifos.sv,15|23): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                         |
+xmvlog: *E,ILLHIN (../rtl/i2c_fifos.sv,15|25): illegal location for a hierarchical name (prim_ram_1p_pkg).
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                                                   |
+xmvlog: *E,EXPCORP (../rtl/i2c_fifos.sv,15|51): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                       |
+xmvlog: *E,SVNOTY (../rtl/i2c_fifos.sv,16|23): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                         |
+xmvlog: *E,ILLHIN (../rtl/i2c_fifos.sv,16|25): illegal location for a hierarchical name (prim_ram_1p_pkg).
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                                                       |
+xmvlog: *E,EXPCORP (../rtl/i2c_fifos.sv,16|55): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+	module worklib.i2c_fifos:sv
+		errors: 6, warnings: 0
+file: ../rtl/i2c_core.sv
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                       |
+xmvlog: *E,SVNOTY (../rtl/i2c_core.sv,13|23): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                         |
+xmvlog: *E,ILLHIN (../rtl/i2c_core.sv,13|25): illegal location for a hierarchical name (prim_ram_1p_pkg).
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                                                   |
+xmvlog: *E,EXPCORP (../rtl/i2c_core.sv,13|51): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                       |
+xmvlog: *E,SVNOTY (../rtl/i2c_core.sv,14|23): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                         |
+xmvlog: *E,ILLHIN (../rtl/i2c_core.sv,14|25): illegal location for a hierarchical name (prim_ram_1p_pkg).
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                                                       |
+xmvlog: *E,EXPCORP (../rtl/i2c_core.sv,14|55): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+	module worklib.i2c_core:sv
+		errors: 6, warnings: 0
+file: ../rtl/i2c.sv
+  parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[NumRegs] = '{NumRegs{0}}
+                       |
+xmvlog: *E,SVNOTY (../rtl/i2c.sv,16|23): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[NumRegs] = '{NumRegs{0}}
+                         |
+xmvlog: *E,ILLHIN (../rtl/i2c.sv,16|25): illegal location for a hierarchical name (top_racl_pkg).
+  parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[NumRegs] = '{NumRegs{0}}
+                                                           |
+xmvlog: *E,SVVMAP (../rtl/i2c.sv,16|59): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
+  parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[NumRegs] = '{NumRegs{0}}
+                                                            |
+xmvlog: *E,SVARPY (../rtl/i2c.sv,16|60): Array parameter requires explicit element datatype.
+  parameter top_racl_pkg::racl_policy_sel_t RaclPolicySelVec[NumRegs] = '{NumRegs{0}}
+                                                                    |
+xmvlog: *E,SVVMAP (../rtl/i2c.sv,16|68): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                       |
+xmvlog: *E,SVNOTY (../rtl/i2c.sv,20|23): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                         |
+xmvlog: *E,ILLHIN (../rtl/i2c.sv,20|25): illegal location for a hierarchical name (prim_ram_1p_pkg).
+  input  prim_ram_1p_pkg::ram_1p_cfg_t     ram_cfg_i,
+                                                   |
+xmvlog: *E,EXPCORP (../rtl/i2c.sv,20|51): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                       |
+xmvlog: *E,SVNOTY (../rtl/i2c.sv,21|23): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                         |
+xmvlog: *E,ILLHIN (../rtl/i2c.sv,21|25): illegal location for a hierarchical name (prim_ram_1p_pkg).
+  output prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o,
+                                                       |
+xmvlog: *E,EXPCORP (../rtl/i2c.sv,21|55): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  input  top_racl_pkg::racl_policy_vec_t racl_policies_i,
+                    |
+xmvlog: *E,SVNOTY (../rtl/i2c.sv,32|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  input  top_racl_pkg::racl_policy_vec_t racl_policies_i,
+                      |
+xmvlog: *E,ILLHIN (../rtl/i2c.sv,32|22): illegal location for a hierarchical name (top_racl_pkg).
+  input  top_racl_pkg::racl_policy_vec_t racl_policies_i,
+                                                       |
+xmvlog: *E,EXPCORP (../rtl/i2c.sv,32|55): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+  output top_racl_pkg::racl_error_log_t  racl_error_o,
+                    |
+xmvlog: *E,SVNOTY (../rtl/i2c.sv,33|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+  output top_racl_pkg::racl_error_log_t  racl_error_o,
+                      |
+xmvlog: *E,ILLHIN (../rtl/i2c.sv,33|22): illegal location for a hierarchical name (top_racl_pkg).
+  output top_racl_pkg::racl_error_log_t  racl_error_o,
+                                                    |
+xmvlog: *E,EXPCORP (../rtl/i2c.sv,33|52): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
+	module worklib.i2c:sv
+		errors: 17, warnings: 0
+file: ../tb/env/i2c_tb_pkg.sv
+        host_cfg.mode = HOST;
+                           |
+xmvlog: *W,ENUMERR (../tb/env/i2c_env.sv,24|27): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
+        target_cfg.mode = TARGET;
+                               |
+xmvlog: *W,ENUMERR (../tb/env/i2c_env.sv,30|31): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
+file: ../tb/top/tb_top.sv
+    prim_ram_1p_pkg::ram_1p_cfg_t ram_cfg_i;
+                  |
+xmvlog: *E,SVNOTY (../tb/top/tb_top.sv,27|18): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+    prim_ram_1p_pkg::ram_1p_cfg_rsp_t ram_cfg_rsp_o;
+                  |
+xmvlog: *E,SVNOTY (../tb/top/tb_top.sv,28|18): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+    top_racl_pkg::racl_policy_vec_t racl_policies_i;
+               |
+xmvlog: *E,SVNOTY (../tb/top/tb_top.sv,39|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+    top_racl_pkg::racl_error_log_t racl_error_o;
+               |
+xmvlog: *E,SVNOTY (../tb/top/tb_top.sv,40|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+	module worklib.tb_top:sv
+		errors: 4, warnings: 0
+xmvlog: *W,SPDUSD: Include directory ../tlul/rtl given but not used.
+xmvlog: *W,SPDUSD: Include directory ../rtl given but not used.
+xmvlog: *W,SPDUSD: Include directory ../tb/top given but not used.
+xmvlog: *W,SPDUSD: Include directory ../tb/sva given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 4
+xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
+TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 00:29:24 EDT  (total: 00:00:01)

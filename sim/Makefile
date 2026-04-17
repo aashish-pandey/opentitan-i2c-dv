@@ -32,7 +32,11 @@ TEST ?= i2c_base_test
 compile:
 	$(XRUN) $(UVM_ARGS) $(COMP_ARGS) \
 	-f $(SIM_DIR)/filelist.f \
-	-elaborate 
+	-elaborate \
+	-xmlibdirname xcelium.d \
+	-log xrun_elab.log \ 
+	-messages \
+	-status
 
 sim:
 	$(XRUN) $(UVM_ARGS) $(COMP_ARGS) \

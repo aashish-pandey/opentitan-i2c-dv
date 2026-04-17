@@ -6,6 +6,8 @@
 ./xcelium.d/run.lnx86.23.09.d
 -RUNMODE
 -UVMNOSINGLESTEP
+-amsdlibdir
+./xcelium.d/AMSD
 -define
 UVM_PLI
 -sv
@@ -71,6 +73,8 @@ UVM_PLI
 ../tb/env/i2c_tb_pkg.sv
 ../tb/top/i2c_if.sv
 ../tb/top/tb_top.sv
+-XMLIBDIRNAME
+xcelium.d
 -CDSLIB
 ./xcelium.d/run.lnx86.23.09.d/cdsrun.lib
 -HDLVAR

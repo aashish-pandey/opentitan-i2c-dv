@@ -31,3 +31,7 @@ CDNS-1.2
 -f
 ./filelist.f
 -elaborate
+-xmlibdirname
+xcelium.d
+-log
+xrun_elab.log
