@@ -91,8 +91,12 @@ endpackage
 
 // Stub modules for OpenTitan primitives
 
-module prim_subreg #(parameter int DW=1, parameter sw_access_e SwAccess=SwAccessRW, 
-    parameter logic [DW-1:0] RESVAL=0, parameter bit Mubi=0) (
+module prim_subreg #(
+    parameter int DW = 1,
+    parameter prim_subreg_pkg::sw_access_e SwAccess = prim_subreg_pkg::SwAccessRW,
+    parameter logic [DW-1:0] RESVAL = 0,
+    parameter bit Mubi = 0
+)(
     input  logic          clk_i, rst_ni, we, de,
     input  logic [DW-1:0] wd, d,
     output logic          qs, err_update, err_storage
