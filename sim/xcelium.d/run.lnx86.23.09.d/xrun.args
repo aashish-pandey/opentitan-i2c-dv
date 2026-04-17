@@ -1,0 +1,33 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-uvm
+-uvmhome
+CDNS-1.2
+-sv
+-access
++rwc
+-incdir
+../prim/rtl
+-incdir
+../tlul/rtl
+-incdir
+../rtl
+-incdir
+../tb/agent
+-incdir
+../tb/env
+-incdir
+../tb/sequences
+-incdir
+../tb/tests
+-incdir
+../tb/top
+-incdir
+../tb/coverage
+-incdir
+../tb/sva
+-f
+./filelist.f
+-elaborate
