@@ -1,5 +1,5 @@
 xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 01:03:43 EDT
+TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 01:13:39 EDT
 xrun
 	-uvm
 	-uvmhome CDNS-1.2
@@ -15,11 +15,26 @@ xrun
 	-incdir ../tb/top
 	-incdir ../tb/coverage
 	-incdir ../tb/sva
+	-timescale 1ns/1ps
 	-f /tmp/prim_files.f
+		../prim/rtl/prim_util_pkg.sv
+		../prim/rtl/prim_ascon_pkg.sv
+		../prim/rtl/prim_pad_wrapper_pkg.sv
+		../prim/rtl/prim_alert_pkg.sv
+		../prim/rtl/prim_subreg_pkg.sv
+		../prim/rtl/prim_esc_pkg.sv
+		../prim/rtl/prim_mubi_pkg.sv
+		../prim/rtl/prim_count_pkg.sv
+		../prim/rtl/prim_cipher_pkg.sv
+		../prim/rtl/prim_pkg.sv
+		../prim/rtl/prim_trivium_pkg.sv
+		../prim/rtl/prim_secded_pkg.sv
+		../prim/rtl/prim_sha2_pkg.sv
+		../prim_generic/rtl/prim_rom_pkg.sv
+		../prim_generic/rtl/prim_ram_1p_pkg.sv
 		../prim/rtl/prim_flop_macros.sv
 		../prim/rtl/prim_secded_64_57_enc.sv
 		../prim/rtl/prim_secded_inv_22_16_enc.sv
-		../prim/rtl/prim_util_pkg.sv
 		../prim/rtl/prim_mubi12_sync.sv
 		../prim/rtl/prim_secded_inv_hamming_39_32_enc.sv
 		../prim/rtl/prim_secded_39_32_enc.sv
@@ -29,19 +44,15 @@ xrun
 		../prim/rtl/prim_multibit_sync.sv
 		../prim/rtl/prim_secded_hamming_39_32_enc.sv
 		../prim/rtl/prim_secded_inv_28_22_dec.sv
-		../prim/rtl/prim_ascon_pkg.sv
 		../prim/rtl/prim_mubi4_sender.sv
 		../prim/rtl/prim_lfsr.sv
-		../prim/rtl/prim_racl_error_arb.sv
 		../prim/rtl/prim_secded_22_16_enc.sv
 		../prim/rtl/prim_secded_inv_28_22_enc.sv
-		../prim/rtl/prim_pad_wrapper_pkg.sv
 		../prim/rtl/prim_mubi4_sync.sv
 		../prim/rtl/prim_mubi20_sender.sv
 		../prim/rtl/prim_secded_inv_hamming_22_16_dec.sv
 		../prim/rtl/prim_secded_inv_hamming_76_68_enc.sv
 		../prim/rtl/prim_diff_decode.sv
-		../prim/rtl/prim_alert_pkg.sv
 		../prim/rtl/prim_sec_anchor_buf.sv
 		../prim/rtl/prim_secded_inv_22_16_dec.sv
 		../prim/rtl/prim_secded_72_64_enc.sv
@@ -61,6 +72,7 @@ xrun
 		../prim/rtl/prim_ram_1p_adv.sv
 		../prim/rtl/prim_sec_anchor_flop.sv
 		../prim/rtl/prim_secded_inv_39_32_dec.sv
+		../prim/rtl/prim_prince.sv
 		../prim/rtl/prim_crc32.sv
 		../prim/rtl/prim_diff_to_alert.sv
 		../prim/rtl/prim_reg_we_check.sv
@@ -90,7 +102,6 @@ xrun
 		../prim/rtl/prim_alert_to_diff.sv
 		../prim/rtl/prim_mubi16_dec.sv
 		../prim/rtl/prim_mubi32_sync.sv
-		../prim/rtl/prim_subreg_pkg.sv
 		../prim/rtl/prim_mubi20_dec.sv
 		../prim/rtl/prim_onehot_check.sv
 		../prim/rtl/prim_filter_ctr.sv
@@ -109,7 +120,6 @@ xrun
 		../prim/rtl/prim_secded_inv_hamming_76_68_dec.sv
 		../prim/rtl/prim_secded_inv_hamming_39_32_dec.sv
 		../prim/rtl/prim_esc_receiver.sv
-		../prim/rtl/prim_esc_pkg.sv
 		../prim/rtl/prim_mubi8_sender.sv
 		../prim/rtl/prim_mubi8_dec.sv
 		../prim/rtl/prim_rst_sync.sv
@@ -131,12 +141,8 @@ xrun
 		../prim/rtl/prim_secded_28_22_dec.sv
 		../prim/rtl/prim_mubi28_sender.sv
 		../prim/rtl/prim_mubi12_sender.sv
-		../prim/rtl/prim_mubi_pkg.sv
-		../prim/rtl/prim_count_pkg.sv
-		../prim/rtl/prim_cipher_pkg.sv
 		../prim/rtl/prim_reg_cdc.sv
 		../prim/rtl/prim_mubi28_dec.sv
-		../prim/rtl/prim_pkg.sv
 		../prim/rtl/prim_pulse_sync.sv
 		../prim/rtl/prim_arbiter_fixed.sv
 		../prim/rtl/prim_secded_28_22_enc.sv
@@ -153,8 +159,6 @@ xrun
 		../prim/rtl/prim_fifo_async_simple.sv
 		../prim/rtl/prim_present.sv
 		../prim/rtl/prim_secded_39_32_dec.sv
-		../prim/rtl/prim_trivium_pkg.sv
-		../prim/rtl/prim_secded_pkg.sv
 		../prim/rtl/prim_cdc_rand_delay.sv
 		../prim/rtl/prim_sync_reqack_data.sv
 		../prim/rtl/prim_subst_perm.sv
@@ -166,11 +170,9 @@ xrun
 		../prim_generic/rtl/prim_flop_en.sv
 		../prim_generic/rtl/prim_clock_gating.sv
 		../prim_generic/rtl/prim_pad_attr.sv
-		../prim_generic/rtl/prim_ram_2p_pkg.sv
 		../prim_generic/rtl/prim_clock_inv.sv
 		../prim_generic/rtl/prim_clock_div.sv
 		../prim_generic/rtl/prim_clock_buf.sv
-		../prim_generic/rtl/prim_rom_pkg.sv
 		../prim_generic/rtl/prim_xnor2.sv
 		../prim_generic/rtl/prim_clock_mux2.sv
 		../prim_generic/rtl/prim_ram_1p.sv
@@ -179,7 +181,6 @@ xrun
 		../prim_generic/rtl/prim_flop.sv
 		../prim_generic/rtl/prim_flop_no_rst.sv
 		../prim_generic/rtl/prim_rom.sv
-		../prim_generic/rtl/prim_ram_1p_pkg.sv
 	-f ./filelist.f
 		../tb/top/stub_pkgs.sv
 		../tlul/rtl/tlul_pkg.sv
@@ -211,7 +212,52 @@ xrun
 	-status
 Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2
 xmvlog: Memory Usage - Current physical: 24.0M, Current virtual: 45.9M
-xmvlog: CPU Usage - 0.0s system + 0.3s user = 0.4s total (0.9s, 42.5% cpu)
+xmvlog: CPU Usage - 0.0s system + 0.4s user = 0.4s total (0.9s, 45.3% cpu)
+file: ../prim/rtl/prim_util_pkg.sv
+	package worklib.prim_util_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_ascon_pkg.sv
+	package worklib.prim_ascon_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_pad_wrapper_pkg.sv
+	package worklib.prim_pad_wrapper_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_alert_pkg.sv
+	package worklib.prim_alert_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_subreg_pkg.sv
+	package worklib.prim_subreg_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_esc_pkg.sv
+	package worklib.prim_esc_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi_pkg.sv
+	package worklib.prim_mubi_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_count_pkg.sv
+	package worklib.prim_count_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_cipher_pkg.sv
+	package worklib.prim_cipher_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_pkg.sv
+	package worklib.prim_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_trivium_pkg.sv
+	package worklib.prim_trivium_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_pkg.sv
+	package worklib.prim_secded_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_sha2_pkg.sv
+	package worklib.prim_sha2_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_rom_pkg.sv
+	package worklib.prim_rom_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim_generic/rtl/prim_ram_1p_pkg.sv
+	package worklib.prim_ram_1p_pkg:sv
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_flop_macros.sv
 file: ../prim/rtl/prim_secded_64_57_enc.sv
 	module worklib.prim_secded_64_57_enc:sv
@@ -219,48 +265,9 @@ file: ../prim/rtl/prim_secded_64_57_enc.sv
 file: ../prim/rtl/prim_secded_inv_22_16_enc.sv
 	module worklib.prim_secded_inv_22_16_enc:sv
 		errors: 0, warnings: 0
-file: ../prim/rtl/prim_util_pkg.sv
-	package worklib.prim_util_pkg:sv
-		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi12_sync.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi12_sync.sv,15|21): Package prim_mubi_pkg could not be bound.
-  parameter mubi12_t ResetValue = MuBi12False
-                   |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi12_sync.sv,33|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter mubi12_t ResetValue = MuBi12False
-                              |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_mubi12_sync.sv,33|30): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
-  input  mubi12_t                 mubi_i,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi12_sync.sv,37|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi12_t [NumCopies-1:0] mubi_o
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi12_sync.sv,38|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi12_t [NumCopies-1:0] mubi_o
-                                       |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_mubi12_sync.sv,38|39): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
-      mubi12_t mubi_in_sva_q;
-             |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi12_sync.sv,115|13): Unrecognized declaration 'mubi12_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-      mubi12_t mubi_in_sva_q;
-             |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi12_sync.sv,115|13): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
-      mubi12_t mubi_in_sva_q;
-             |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi12_sync.sv,126|13): Unrecognized declaration 'mubi12_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-      mubi12_t mubi_in_sva_q;
-             |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi12_sync.sv,126|13): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
-    mubi12_t unused_logic;
-           |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi12_sync.sv,143|11): Unrecognized declaration 'mubi12_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-    mubi12_t unused_logic;
-           |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi12_sync.sv,143|11): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
 	module worklib.prim_mubi12_sync:sv
-		errors: 12, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_secded_inv_hamming_39_32_enc.sv
 	module worklib.prim_secded_inv_hamming_39_32_enc:sv
 		errors: 0, warnings: 0
@@ -268,29 +275,8 @@ file: ../prim/rtl/prim_secded_39_32_enc.sv
 	module worklib.prim_secded_39_32_enc:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi16_sender.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi16_sender.sv,16|21): Package prim_mubi_pkg could not be bound.
-  parameter mubi16_t ResetValue = MuBi16False
-                   |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi16_sender.sv,25|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter mubi16_t ResetValue = MuBi16False
-                              |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_mubi16_sender.sv,25|30): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
-  input  mubi16_t mubi_i,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi16_sender.sv,29|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi16_t mubi_o
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi16_sender.sv,30|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-    mubi16_t unused_logic;
-           |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi16_sender.sv,53|11): Unrecognized declaration 'mubi16_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-    mubi16_t unused_logic;
-           |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi16_sender.sv,53|11): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
 	module worklib.prim_mubi16_sender:sv
-		errors: 7, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_clock_meas.sv
 	module worklib.prim_clock_meas:sv
 		errors: 0, warnings: 0
@@ -306,126 +292,24 @@ file: ../prim/rtl/prim_secded_hamming_39_32_enc.sv
 file: ../prim/rtl/prim_secded_inv_28_22_dec.sv
 	module worklib.prim_secded_inv_28_22_dec:sv
 		errors: 0, warnings: 0
-file: ../prim/rtl/prim_ascon_pkg.sv
-	package worklib.prim_ascon_pkg:sv
-		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi4_sender.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi4_sender.sv,16|21): Package prim_mubi_pkg could not be bound.
-  parameter mubi4_t ResetValue = MuBi4False
-                  |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi4_sender.sv,25|18): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter mubi4_t ResetValue = MuBi4False
-                             |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_mubi4_sender.sv,25|29): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
-  input  mubi4_t mubi_i,
-               |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi4_sender.sv,29|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi4_t mubi_o
-               |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi4_sender.sv,30|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-    mubi4_t unused_logic;
-          |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi4_sender.sv,53|10): Unrecognized declaration 'mubi4_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-    mubi4_t unused_logic;
-          |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi4_sender.sv,53|10): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
 	module worklib.prim_mubi4_sender:sv
-		errors: 7, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_lfsr.sv
-      assign sbox_out[k*4 +: 4] = prim_cipher_pkg::PRINCE_SBOX4[sbox_in];
-                                                |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_lfsr.sv,461|48): Package prim_cipher_pkg could not be bound.
 	module worklib.prim_lfsr:sv
-		errors: 1, warnings: 0
-file: ../prim/rtl/prim_racl_error_arb.sv
-  import top_racl_pkg::*;
-                    |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_racl_error_arb.sv,6|20): Package top_racl_pkg could not be bound.
-  input  racl_error_log_t error_log_i[N],
-                        |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_racl_error_arb.sv,12|24): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output racl_error_log_t error_log_o
-                        |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_racl_error_arb.sv,13|24): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  racl_error_log_t                    racl_error_arb;
-                                                   |
-xmvlog: *E,ILLPDL (../prim/rtl/prim_racl_error_arb.sv,25|51): Mixing of ansi & non-ansi style port declaration is not legal.
-	module worklib.prim_racl_error_arb:sv
-		errors: 4, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_secded_22_16_enc.sv
 	module worklib.prim_secded_22_16_enc:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_secded_inv_28_22_enc.sv
 	module worklib.prim_secded_inv_28_22_enc:sv
 		errors: 0, warnings: 0
-file: ../prim/rtl/prim_pad_wrapper_pkg.sv
-	package worklib.prim_pad_wrapper_pkg:sv
-		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi4_sync.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi4_sync.sv,15|21): Package prim_mubi_pkg could not be bound.
-  parameter mubi4_t ResetValue = MuBi4False
-                  |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi4_sync.sv,33|18): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter mubi4_t ResetValue = MuBi4False
-                             |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_mubi4_sync.sv,33|29): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
-  input  mubi4_t                 mubi_i,
-               |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi4_sync.sv,37|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi4_t [NumCopies-1:0] mubi_o
-               |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi4_sync.sv,38|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi4_t [NumCopies-1:0] mubi_o
-                                      |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_mubi4_sync.sv,38|38): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
-      mubi4_t mubi_in_sva_q;
-            |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi4_sync.sv,115|12): Unrecognized declaration 'mubi4_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-      mubi4_t mubi_in_sva_q;
-            |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi4_sync.sv,115|12): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
-      mubi4_t mubi_in_sva_q;
-            |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi4_sync.sv,126|12): Unrecognized declaration 'mubi4_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-      mubi4_t mubi_in_sva_q;
-            |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi4_sync.sv,126|12): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
-    mubi4_t unused_logic;
-          |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi4_sync.sv,143|10): Unrecognized declaration 'mubi4_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-    mubi4_t unused_logic;
-          |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi4_sync.sv,143|10): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
 	module worklib.prim_mubi4_sync:sv
-		errors: 12, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi20_sender.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi20_sender.sv,16|21): Package prim_mubi_pkg could not be bound.
-  parameter mubi20_t ResetValue = MuBi20False
-                   |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi20_sender.sv,25|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter mubi20_t ResetValue = MuBi20False
-                              |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_mubi20_sender.sv,25|30): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
-  input  mubi20_t mubi_i,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi20_sender.sv,29|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi20_t mubi_o
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi20_sender.sv,30|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-    mubi20_t unused_logic;
-           |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi20_sender.sv,53|11): Unrecognized declaration 'mubi20_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-    mubi20_t unused_logic;
-           |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi20_sender.sv,53|11): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
 	module worklib.prim_mubi20_sender:sv
-		errors: 7, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_secded_inv_hamming_22_16_dec.sv
 	module worklib.prim_secded_inv_hamming_22_16_dec:sv
 		errors: 0, warnings: 0
@@ -434,9 +318,6 @@ file: ../prim/rtl/prim_secded_inv_hamming_76_68_enc.sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_diff_decode.sv
 	module worklib.prim_diff_decode:sv
-		errors: 0, warnings: 0
-file: ../prim/rtl/prim_alert_pkg.sv
-	package worklib.prim_alert_pkg:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_sec_anchor_buf.sv
 	module worklib.prim_sec_anchor_buf:sv
@@ -454,44 +335,8 @@ file: ../prim/rtl/prim_slicer.sv
 	module worklib.prim_slicer:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_ram_1p_scr.sv
-module prim_ram_1p_scr import prim_ram_1p_pkg::*; #(
-                                            |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_ram_1p_scr.sv,26|44): Package prim_ram_1p_pkg could not be bound.
-  input  ram_1p_cfg_t     [NumRamInst-1:0] cfg_i,
-                    |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_ram_1p_scr.sv,89|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  input  ram_1p_cfg_t     [NumRamInst-1:0] cfg_i,
-                                               |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_ram_1p_scr.sv,89|47): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
-  output ram_1p_cfg_rsp_t [NumRamInst-1:0] cfg_rsp_o,
-                        |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_ram_1p_scr.sv,90|24): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output ram_1p_cfg_rsp_t [NumRamInst-1:0] cfg_rsp_o,
-                                                   |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_ram_1p_scr.sv,90|51): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
-  mubi4_t read_en, read_en_buf;
-                |
-xmvlog: *E,ILLPDL (../prim/rtl/prim_ram_1p_scr.sv,133|16): Mixing of ansi & non-ansi style port declaration is not legal.
-  mubi4_t write_en_d, write_en_buf_d, write_en_q;
-                   |
-xmvlog: *E,ILLPDL (../prim/rtl/prim_ram_1p_scr.sv,135|19): Mixing of ansi & non-ansi style port declaration is not legal.
-  mubi4_t write_pending_q;
-                        |
-xmvlog: *E,ILLPDL (../prim/rtl/prim_ram_1p_scr.sv,161|24): Mixing of ansi & non-ansi style port declaration is not legal.
-  mubi4_t addr_collision_d, addr_collision_q;
-                         |
-xmvlog: *E,ILLPDL (../prim/rtl/prim_ram_1p_scr.sv,162|25): Mixing of ansi & non-ansi style port declaration is not legal.
-  mubi4_t addr_match;
-                   |
-xmvlog: *E,ILLPDL (../prim/rtl/prim_ram_1p_scr.sv,165|19): Mixing of ansi & non-ansi style port declaration is not legal.
-  mubi4_t write_scr_pending_d;
-                            |
-xmvlog: *E,ILLPDL (../prim/rtl/prim_ram_1p_scr.sv,365|28): Mixing of ansi & non-ansi style port declaration is not legal.
-  mubi4_t rvalid_q;
-                 |
-xmvlog: *E,ILLPDL (../prim/rtl/prim_ram_1p_scr.sv,377|17): Mixing of ansi & non-ansi style port declaration is not legal.
 	module worklib.prim_ram_1p_scr:sv
-		errors: 12, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_xoshiro256pp.sv
 	module worklib.prim_xoshiro256pp:sv
 		errors: 0, warnings: 0
@@ -505,83 +350,17 @@ file: ../prim/rtl/prim_keccak.sv
 	module worklib.prim_keccak:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi24_sender.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi24_sender.sv,16|21): Package prim_mubi_pkg could not be bound.
-  parameter mubi24_t ResetValue = MuBi24False
-                   |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi24_sender.sv,25|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter mubi24_t ResetValue = MuBi24False
-                              |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_mubi24_sender.sv,25|30): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
-  input  mubi24_t mubi_i,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi24_sender.sv,29|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi24_t mubi_o
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi24_sender.sv,30|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-    mubi24_t unused_logic;
-           |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi24_sender.sv,53|11): Unrecognized declaration 'mubi24_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-    mubi24_t unused_logic;
-           |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi24_sender.sv,53|11): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
 	module worklib.prim_mubi24_sender:sv
-		errors: 7, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_count.sv
-  import prim_count_pkg::*;
-                      |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_count.sv,29|22): Package prim_count_pkg could not be bound.
-  parameter action_mask_t     PossibleActions = {$bits(action_mask_t){1'b1}}
-                        |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_count.sv,47|24): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter action_mask_t     PossibleActions = {$bits(action_mask_t){1'b1}}
-                                            |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_count.sv,47|44): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
 	module worklib.prim_count:sv
-		errors: 3, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_sparse_fsm_flop.sv
 	module worklib.prim_sparse_fsm_flop:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi24_sync.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi24_sync.sv,15|21): Package prim_mubi_pkg could not be bound.
-  parameter mubi24_t ResetValue = MuBi24False
-                   |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi24_sync.sv,33|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter mubi24_t ResetValue = MuBi24False
-                              |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_mubi24_sync.sv,33|30): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
-  input  mubi24_t                 mubi_i,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi24_sync.sv,37|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi24_t [NumCopies-1:0] mubi_o
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi24_sync.sv,38|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi24_t [NumCopies-1:0] mubi_o
-                                       |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_mubi24_sync.sv,38|39): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
-      mubi24_t mubi_in_sva_q;
-             |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi24_sync.sv,115|13): Unrecognized declaration 'mubi24_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-      mubi24_t mubi_in_sva_q;
-             |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi24_sync.sv,115|13): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
-      mubi24_t mubi_in_sva_q;
-             |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi24_sync.sv,126|13): Unrecognized declaration 'mubi24_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-      mubi24_t mubi_in_sva_q;
-             |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi24_sync.sv,126|13): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
-    mubi24_t unused_logic;
-           |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi24_sync.sv,143|11): Unrecognized declaration 'mubi24_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-    mubi24_t unused_logic;
-           |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi24_sync.sv,143|11): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
 	module worklib.prim_mubi24_sync:sv
-		errors: 12, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_secded_inv_hamming_72_64_dec.sv
 	module worklib.prim_secded_inv_hamming_72_64_dec:sv
 		errors: 0, warnings: 0
@@ -589,37 +368,16 @@ file: ../prim/rtl/prim_dom_and_2share.sv
 	module worklib.prim_dom_and_2share:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_ram_1p_adv.sv
-module prim_ram_1p_adv import prim_ram_1p_pkg::*; #(
-                                            |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_ram_1p_adv.sv,18|44): Package prim_ram_1p_pkg could not be bound.
-  input  ram_1p_cfg_t     [NumRamInst-1:0] cfg_i,
-                    |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_ram_1p_adv.sv,56|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  input  ram_1p_cfg_t     [NumRamInst-1:0] cfg_i,
-                                               |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_ram_1p_adv.sv,56|47): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
-  output ram_1p_cfg_rsp_t [NumRamInst-1:0] cfg_rsp_o,
-                        |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_ram_1p_adv.sv,57|24): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output ram_1p_cfg_rsp_t [NumRamInst-1:0] cfg_rsp_o,
-                                                   |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_ram_1p_adv.sv,57|51): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
-  mubi4_t                  req_q,     req_d,    req_buf_d ;
-                               |
-xmvlog: *E,ILLPDL (../prim/rtl/prim_ram_1p_adv.sv,96|31): Mixing of ansi & non-ansi style port declaration is not legal.
-  mubi4_t                  write_q,   write_d,  write_buf_d ;
-                                 |
-xmvlog: *E,ILLPDL (../prim/rtl/prim_ram_1p_adv.sv,99|33): Mixing of ansi & non-ansi style port declaration is not legal.
-  mubi4_t                  rvalid_q,  rvalid_d, rvalid_sram_q, rvalid_sram_d ;
-                                  |
-xmvlog: *E,ILLPDL (../prim/rtl/prim_ram_1p_adv.sv,105|34): Mixing of ansi & non-ansi style port declaration is not legal.
 	module worklib.prim_ram_1p_adv:sv
-		errors: 8, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_sec_anchor_flop.sv
 	module worklib.prim_sec_anchor_flop:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_secded_inv_39_32_dec.sv
 	module worklib.prim_secded_inv_39_32_dec:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_prince.sv
+	module worklib.prim_prince:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_crc32.sv
 	module worklib.prim_crc32:sv
@@ -631,17 +389,8 @@ file: ../prim/rtl/prim_reg_we_check.sv
 	module worklib.prim_reg_we_check:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_esc_sender.sv
-  import prim_esc_pkg::*;
-                    |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_esc_sender.sv,25|20): Package prim_esc_pkg could not be bound.
-  input esc_rx_t  esc_rx_i,
-               |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_esc_sender.sv,40|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output esc_tx_t esc_tx_o
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_esc_sender.sv,42|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
 	module worklib.prim_esc_sender:sv
-		errors: 3, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_clock_gating_sync.sv
 	module worklib.prim_clock_gating_sync:sv
 		errors: 0, warnings: 0
@@ -661,71 +410,14 @@ file: ../prim/rtl/prim_max_tree.sv
 	module worklib.prim_max_tree:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_ascon_duplex.sv
-  output prim_mubi_pkg::mubi4_t idle_o,
-                     |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_ascon_duplex.sv,28|21): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output prim_mubi_pkg::mubi4_t idle_o,
-                       |
-xmvlog: *E,ILLHIN (../prim/rtl/prim_ascon_duplex.sv,28|23): illegal location for a hierarchical name (prim_mubi_pkg).
-  output prim_mubi_pkg::mubi4_t idle_o,
-                                     |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_ascon_duplex.sv,28|37): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
-  input prim_mubi_pkg::mubi4_t no_ad_i,
-                    |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_ascon_duplex.sv,32|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  input prim_mubi_pkg::mubi4_t no_ad_i,
-                      |
-xmvlog: *E,ILLHIN (../prim/rtl/prim_ascon_duplex.sv,32|22): illegal location for a hierarchical name (prim_mubi_pkg).
-  input prim_mubi_pkg::mubi4_t no_ad_i,
-                                     |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_ascon_duplex.sv,32|37): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
-  input prim_mubi_pkg::mubi4_t no_msg_i,
-                    |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_ascon_duplex.sv,33|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  input prim_mubi_pkg::mubi4_t no_msg_i,
-                      |
-xmvlog: *E,ILLHIN (../prim/rtl/prim_ascon_duplex.sv,33|22): illegal location for a hierarchical name (prim_mubi_pkg).
-  input prim_mubi_pkg::mubi4_t no_msg_i,
-                                      |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_ascon_duplex.sv,33|38): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
-  input  prim_mubi_pkg::mubi4_t last_block_ad_i,
-                     |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_ascon_duplex.sv,41|21): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  input  prim_mubi_pkg::mubi4_t last_block_ad_i,
-                       |
-xmvlog: *E,ILLHIN (../prim/rtl/prim_ascon_duplex.sv,41|23): illegal location for a hierarchical name (prim_mubi_pkg).
-  input  prim_mubi_pkg::mubi4_t last_block_ad_i,
-                                              |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_ascon_duplex.sv,41|46): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
-  input  prim_mubi_pkg::mubi4_t last_block_msg_i,
-                     |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_ascon_duplex.sv,42|21): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  input  prim_mubi_pkg::mubi4_t last_block_msg_i,
-                       |
-xmvlog: *E,ILLHIN (../prim/rtl/prim_ascon_duplex.sv,42|23): illegal location for a hierarchical name (prim_mubi_pkg).
-  input  prim_mubi_pkg::mubi4_t last_block_msg_i,
-                                               |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_ascon_duplex.sv,42|47): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
-prim_mubi_pkg::mubi4_t complete_block;
-            |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_ascon_duplex.sv,95|12): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
 	module worklib.prim_ascon_duplex:sv
-		errors: 16, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_secded_inv_hamming_72_64_enc.sv
 	module worklib.prim_secded_inv_hamming_72_64_enc:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_subreg_arb.sv
-  import prim_subreg_pkg::*;
-                       |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_subreg_arb.sv,8|23): Package prim_subreg_pkg could not be bound.
-  parameter sw_access_e SwAccess = SwAccessRW,
-                      |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_subreg_arb.sv,11|22): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter sw_access_e SwAccess = SwAccessRW,
-                               |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_subreg_arb.sv,11|31): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
 	module worklib.prim_subreg_arb:sv
-		errors: 3, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_onehot_mux.sv
 	module worklib.prim_onehot_mux:sv
 		errors: 0, warnings: 0
@@ -736,71 +428,20 @@ file: ../prim/rtl/prim_double_lfsr.sv
 	module worklib.prim_double_lfsr:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi12_dec.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi12_dec.sv,15|21): Package prim_mubi_pkg could not be bound.
-  input  mubi12_t mubi_i,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi12_dec.sv,20|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
 	module worklib.prim_mubi12_dec:sv
-		errors: 2, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_arbiter_tree_dup.sv
 	module worklib.prim_arbiter_tree_dup:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_subreg.sv
-  import prim_subreg_pkg::*;
-                       |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_subreg.sv,8|23): Package prim_subreg_pkg could not be bound.
-  parameter sw_access_e    SwAccess = SwAccessRW,
-                      |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_subreg.sv,11|22): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter sw_access_e    SwAccess = SwAccessRW,
-                                  |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_subreg.sv,11|34): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
 	module worklib.prim_subreg:sv
-		errors: 3, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_secded_72_64_dec.sv
 	module worklib.prim_secded_72_64_dec:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi28_sync.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi28_sync.sv,15|21): Package prim_mubi_pkg could not be bound.
-  parameter mubi28_t ResetValue = MuBi28False
-                   |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi28_sync.sv,33|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter mubi28_t ResetValue = MuBi28False
-                              |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_mubi28_sync.sv,33|30): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
-  input  mubi28_t                 mubi_i,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi28_sync.sv,37|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi28_t [NumCopies-1:0] mubi_o
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi28_sync.sv,38|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi28_t [NumCopies-1:0] mubi_o
-                                       |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_mubi28_sync.sv,38|39): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
-      mubi28_t mubi_in_sva_q;
-             |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi28_sync.sv,115|13): Unrecognized declaration 'mubi28_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-      mubi28_t mubi_in_sva_q;
-             |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi28_sync.sv,115|13): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
-      mubi28_t mubi_in_sva_q;
-             |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi28_sync.sv,126|13): Unrecognized declaration 'mubi28_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-      mubi28_t mubi_in_sva_q;
-             |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi28_sync.sv,126|13): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
-    mubi28_t unused_logic;
-           |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi28_sync.sv,143|11): Unrecognized declaration 'mubi28_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-    mubi28_t unused_logic;
-           |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi28_sync.sv,143|11): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
 	module worklib.prim_mubi28_sync:sv
-		errors: 12, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_leading_one_ppc.sv
 	module worklib.prim_leading_one_ppc:sv
 		errors: 0, warnings: 0
@@ -817,71 +458,17 @@ file: ../prim/rtl/prim_sram_arbiter.sv
 	module worklib.prim_sram_arbiter:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_alert_to_diff.sv
-    .init_trig_i  (prim_mubi_pkg::MuBi4False),
-                               |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_alert_to_diff.sv,41|31): Package prim_mubi_pkg could not be bound.
 	module worklib.prim_alert_to_diff:sv
-		errors: 1, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi16_dec.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi16_dec.sv,15|21): Package prim_mubi_pkg could not be bound.
-  input  mubi16_t mubi_i,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi16_dec.sv,20|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
 	module worklib.prim_mubi16_dec:sv
-		errors: 2, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi32_sync.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi32_sync.sv,15|21): Package prim_mubi_pkg could not be bound.
-  parameter mubi32_t ResetValue = MuBi32False
-                   |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi32_sync.sv,33|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter mubi32_t ResetValue = MuBi32False
-                              |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_mubi32_sync.sv,33|30): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
-  input  mubi32_t                 mubi_i,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi32_sync.sv,37|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi32_t [NumCopies-1:0] mubi_o
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi32_sync.sv,38|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi32_t [NumCopies-1:0] mubi_o
-                                       |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_mubi32_sync.sv,38|39): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
-      mubi32_t mubi_in_sva_q;
-             |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi32_sync.sv,115|13): Unrecognized declaration 'mubi32_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-      mubi32_t mubi_in_sva_q;
-             |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi32_sync.sv,115|13): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
-      mubi32_t mubi_in_sva_q;
-             |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi32_sync.sv,126|13): Unrecognized declaration 'mubi32_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-      mubi32_t mubi_in_sva_q;
-             |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi32_sync.sv,126|13): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
-    mubi32_t unused_logic;
-           |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi32_sync.sv,143|11): Unrecognized declaration 'mubi32_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-    mubi32_t unused_logic;
-           |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi32_sync.sv,143|11): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
 	module worklib.prim_mubi32_sync:sv
-		errors: 12, warnings: 0
-file: ../prim/rtl/prim_subreg_pkg.sv
-	package worklib.prim_subreg_pkg:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi20_dec.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi20_dec.sv,15|21): Package prim_mubi_pkg could not be bound.
-  input  mubi20_t mubi_i,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi20_dec.sv,20|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
 	module worklib.prim_mubi20_dec:sv
-		errors: 2, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_onehot_check.sv
 	module worklib.prim_onehot_check:sv
 		errors: 0, warnings: 0
@@ -892,74 +479,14 @@ file: ../prim/rtl/prim_secded_inv_64_57_dec.sv
 	module worklib.prim_secded_inv_64_57_dec:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi8_sync.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi8_sync.sv,15|21): Package prim_mubi_pkg could not be bound.
-  parameter mubi8_t ResetValue = MuBi8False
-                  |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi8_sync.sv,33|18): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter mubi8_t ResetValue = MuBi8False
-                             |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_mubi8_sync.sv,33|29): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
-  input  mubi8_t                 mubi_i,
-               |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi8_sync.sv,37|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi8_t [NumCopies-1:0] mubi_o
-               |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi8_sync.sv,38|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi8_t [NumCopies-1:0] mubi_o
-                                      |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_mubi8_sync.sv,38|38): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
-      mubi8_t mubi_in_sva_q;
-            |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi8_sync.sv,115|12): Unrecognized declaration 'mubi8_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-      mubi8_t mubi_in_sva_q;
-            |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi8_sync.sv,115|12): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
-      mubi8_t mubi_in_sva_q;
-            |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi8_sync.sv,126|12): Unrecognized declaration 'mubi8_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-      mubi8_t mubi_in_sva_q;
-            |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi8_sync.sv,126|12): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
-    mubi8_t unused_logic;
-          |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi8_sync.sv,143|10): Unrecognized declaration 'mubi8_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-    mubi8_t unused_logic;
-          |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi8_sync.sv,143|10): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
 	module worklib.prim_mubi8_sync:sv
-		errors: 12, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_fifo_sync_cnt.sv
-      .PossibleActions((NeverClears ? 0 : prim_count_pkg::Clr) |
-                                                       |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_fifo_sync_cnt.sv,78|55): Package prim_count_pkg could not be bound.
-                       prim_count_pkg::Set | prim_count_pkg::Incr)
-                                    |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_fifo_sync_cnt.sv,79|36): Package prim_count_pkg could not be bound.
-                       prim_count_pkg::Set | prim_count_pkg::Incr)
-                                                          |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_fifo_sync_cnt.sv,79|58): Package prim_count_pkg could not be bound.
-      .PossibleActions((NeverClears ? 0 : prim_count_pkg::Clr) |
-                                                       |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_fifo_sync_cnt.sv,98|55): Package prim_count_pkg could not be bound.
-                       prim_count_pkg::Set | prim_count_pkg::Incr)
-                                    |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_fifo_sync_cnt.sv,99|36): Package prim_count_pkg could not be bound.
-                       prim_count_pkg::Set | prim_count_pkg::Incr)
-                                                          |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_fifo_sync_cnt.sv,99|58): Package prim_count_pkg could not be bound.
 	module worklib.prim_fifo_sync_cnt:sv
-		errors: 6, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi24_dec.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi24_dec.sv,15|21): Package prim_mubi_pkg could not be bound.
-  input  mubi24_t mubi_i,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi24_dec.sv,20|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
 	module worklib.prim_mubi24_dec:sv
-		errors: 2, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_ascon_sbox.sv
 	module worklib.prim_ascon_sbox:sv
 		errors: 0, warnings: 0
@@ -967,77 +494,23 @@ file: ../prim/rtl/prim_subreg_shadow.sv
 	module worklib.prim_subreg_shadow:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi32_dec.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi32_dec.sv,15|21): Package prim_mubi_pkg could not be bound.
-  input  mubi32_t mubi_i,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi32_dec.sv,20|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
 	module worklib.prim_mubi32_dec:sv
-		errors: 2, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_gf_mult.sv
 	module worklib.prim_gf_mult:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi4_dec.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi4_dec.sv,15|21): Package prim_mubi_pkg could not be bound.
-  input  mubi4_t mubi_i,
-               |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi4_dec.sv,20|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
 	module worklib.prim_mubi4_dec:sv
-		errors: 2, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_alert_receiver.sv
-  import prim_mubi_pkg::mubi4_t;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_alert_receiver.sv,34|21): Package prim_mubi_pkg could not be bound.
-  input mubi4_t     init_trig_i,
-              |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_alert_receiver.sv,45|14): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
 	module worklib.prim_alert_receiver:sv
-		errors: 2, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_secded_inv_hamming_22_16_enc.sv
 	module worklib.prim_secded_inv_hamming_22_16_enc:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi16_sync.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi16_sync.sv,15|21): Package prim_mubi_pkg could not be bound.
-  parameter mubi16_t ResetValue = MuBi16False
-                   |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi16_sync.sv,33|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter mubi16_t ResetValue = MuBi16False
-                              |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_mubi16_sync.sv,33|30): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
-  input  mubi16_t                 mubi_i,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi16_sync.sv,37|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi16_t [NumCopies-1:0] mubi_o
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi16_sync.sv,38|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi16_t [NumCopies-1:0] mubi_o
-                                       |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_mubi16_sync.sv,38|39): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
-      mubi16_t mubi_in_sva_q;
-             |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi16_sync.sv,115|13): Unrecognized declaration 'mubi16_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-      mubi16_t mubi_in_sva_q;
-             |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi16_sync.sv,115|13): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
-      mubi16_t mubi_in_sva_q;
-             |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi16_sync.sv,126|13): Unrecognized declaration 'mubi16_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-      mubi16_t mubi_in_sva_q;
-             |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi16_sync.sv,126|13): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
-    mubi16_t unused_logic;
-           |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi16_sync.sv,143|11): Unrecognized declaration 'mubi16_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-    mubi16_t unused_logic;
-           |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi16_sync.sv,143|11): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
 	module worklib.prim_mubi16_sync:sv
-		errors: 12, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_secded_inv_hamming_76_68_dec.sv
 	module worklib.prim_secded_inv_hamming_76_68_dec:sv
 		errors: 0, warnings: 0
@@ -1045,65 +518,17 @@ file: ../prim/rtl/prim_secded_inv_hamming_39_32_dec.sv
 	module worklib.prim_secded_inv_hamming_39_32_dec:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_esc_receiver.sv
-  import prim_esc_pkg::*;
-                    |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_esc_receiver.sv,22|20): Package prim_esc_pkg could not be bound.
-  output esc_rx_t esc_rx_o,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_esc_receiver.sv,57|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  input esc_tx_t  esc_tx_i
-               |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_esc_receiver.sv,59|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
 	module worklib.prim_esc_receiver:sv
-		errors: 3, warnings: 0
-file: ../prim/rtl/prim_esc_pkg.sv
-	package worklib.prim_esc_pkg:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi8_sender.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi8_sender.sv,16|21): Package prim_mubi_pkg could not be bound.
-  parameter mubi8_t ResetValue = MuBi8False
-                  |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi8_sender.sv,25|18): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter mubi8_t ResetValue = MuBi8False
-                             |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_mubi8_sender.sv,25|29): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
-  input  mubi8_t mubi_i,
-               |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi8_sender.sv,29|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi8_t mubi_o
-               |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi8_sender.sv,30|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-    mubi8_t unused_logic;
-          |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi8_sender.sv,53|10): Unrecognized declaration 'mubi8_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-    mubi8_t unused_logic;
-          |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi8_sender.sv,53|10): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
 	module worklib.prim_mubi8_sender:sv
-		errors: 7, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi8_dec.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi8_dec.sv,15|21): Package prim_mubi_pkg could not be bound.
-  input  mubi8_t mubi_i,
-               |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi8_dec.sv,20|15): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
 	module worklib.prim_mubi8_dec:sv
-		errors: 2, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_rst_sync.sv
-  input prim_mubi_pkg::mubi4_t scanmode_i
-                    |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_rst_sync.sv,24|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  input prim_mubi_pkg::mubi4_t scanmode_i
-                      |
-xmvlog: *E,ILLHIN (../prim/rtl/prim_rst_sync.sv,24|22): illegal location for a hierarchical name (prim_mubi_pkg).
-  input prim_mubi_pkg::mubi4_t scanmode_i
-                                        |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_rst_sync.sv,24|40): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
 	module worklib.prim_rst_sync:sv
-		errors: 3, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_sync_slow_fast.sv
 	module worklib.prim_sync_slow_fast:sv
 		errors: 0, warnings: 0
@@ -1117,68 +542,11 @@ file: ../prim/rtl/prim_secded_inv_64_57_enc.sv
 	module worklib.prim_secded_inv_64_57_enc:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi32_sender.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi32_sender.sv,16|21): Package prim_mubi_pkg could not be bound.
-  parameter mubi32_t ResetValue = MuBi32False
-                   |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi32_sender.sv,25|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter mubi32_t ResetValue = MuBi32False
-                              |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_mubi32_sender.sv,25|30): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
-  input  mubi32_t mubi_i,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi32_sender.sv,29|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi32_t mubi_o
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi32_sender.sv,30|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-    mubi32_t unused_logic;
-           |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi32_sender.sv,53|11): Unrecognized declaration 'mubi32_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-    mubi32_t unused_logic;
-           |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi32_sender.sv,53|11): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
 	module worklib.prim_mubi32_sender:sv
-		errors: 7, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi20_sync.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi20_sync.sv,15|21): Package prim_mubi_pkg could not be bound.
-  parameter mubi20_t ResetValue = MuBi20False
-                   |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi20_sync.sv,33|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter mubi20_t ResetValue = MuBi20False
-                              |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_mubi20_sync.sv,33|30): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
-  input  mubi20_t                 mubi_i,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi20_sync.sv,37|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi20_t [NumCopies-1:0] mubi_o
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi20_sync.sv,38|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi20_t [NumCopies-1:0] mubi_o
-                                       |
-xmvlog: *E,EXPCORP (../prim/rtl/prim_mubi20_sync.sv,38|39): Expecting a ',' or ')' [A.1.4(IEEE-2001)].
-      mubi20_t mubi_in_sva_q;
-             |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi20_sync.sv,115|13): Unrecognized declaration 'mubi20_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-      mubi20_t mubi_in_sva_q;
-             |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi20_sync.sv,115|13): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
-      mubi20_t mubi_in_sva_q;
-             |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi20_sync.sv,126|13): Unrecognized declaration 'mubi20_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-      mubi20_t mubi_in_sva_q;
-             |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi20_sync.sv,126|13): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
-    mubi20_t unused_logic;
-           |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi20_sync.sv,143|11): Unrecognized declaration 'mubi20_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-    mubi20_t unused_logic;
-           |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi20_sync.sv,143|11): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
 	module worklib.prim_mubi20_sync:sv
-		errors: 12, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_fifo_async.sv
 	module worklib.prim_fifo_async:sv
 		errors: 0, warnings: 0
@@ -1208,70 +576,16 @@ file: ../prim/rtl/prim_secded_28_22_dec.sv
 	module worklib.prim_secded_28_22_dec:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi28_sender.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi28_sender.sv,16|21): Package prim_mubi_pkg could not be bound.
-  parameter mubi28_t ResetValue = MuBi28False
-                   |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi28_sender.sv,25|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter mubi28_t ResetValue = MuBi28False
-                              |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_mubi28_sender.sv,25|30): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
-  input  mubi28_t mubi_i,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi28_sender.sv,29|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi28_t mubi_o
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi28_sender.sv,30|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-    mubi28_t unused_logic;
-           |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi28_sender.sv,53|11): Unrecognized declaration 'mubi28_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-    mubi28_t unused_logic;
-           |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi28_sender.sv,53|11): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
 	module worklib.prim_mubi28_sender:sv
-		errors: 7, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi12_sender.sv
-  import prim_mubi_pkg::*;
-                     |
-xmvlog: *E,NOPBIND (../prim/rtl/prim_mubi12_sender.sv,16|21): Package prim_mubi_pkg could not be bound.
-  parameter mubi12_t ResetValue = MuBi12False
-                   |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi12_sender.sv,25|19): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  parameter mubi12_t ResetValue = MuBi12False
-                              |
-xmvlog: *E,SVVMAP (../prim/rtl/prim_mubi12_sender.sv,25|30): Omitting the assignment to constant_param_expression in a param_assignment in a parameter_port_list currently is not supported.
-  input  mubi12_t mubi_i,
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi12_sender.sv,29|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output mubi12_t mubi_o
-                |
-xmvlog: *E,SVNOTY (../prim/rtl/prim_mubi12_sender.sv,30|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-    mubi12_t unused_logic;
-           |
-xmvlog: *E,NOIPRT (../prim/rtl/prim_mubi12_sender.sv,53|11): Unrecognized declaration 'mubi12_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
-    mubi12_t unused_logic;
-           |
-xmvlog: *E,NGITEM (../prim/rtl/prim_mubi12_sender.sv,53|11): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
 	module worklib.prim_mubi12_sender:sv
-		errors: 7, warnings: 0
-file: ../prim/rtl/prim_mubi_pkg.sv
-	package worklib.prim_mubi_pkg:sv
-		errors: 0, warnings: 0
-file: ../prim/rtl/prim_count_pkg.sv
-	package worklib.prim_count_pkg:sv
-		errors: 0, warnings: 0
-file: ../prim/rtl/prim_cipher_pkg.sv
-	package worklib.prim_cipher_pkg:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_reg_cdc.sv
 	module worklib.prim_reg_cdc:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_mubi28_dec.sv
 	module worklib.prim_mubi28_dec:sv
-		errors: 0, warnings: 0
-file: ../prim/rtl/prim_pkg.sv
-	package worklib.prim_pkg:sv
 		errors: 0, warnings: 0
 file: ../prim/rtl/prim_pulse_sync.sv
 	module worklib.prim_pulse_sync:sv
@@ -1321,12 +635,6 @@ file: ../prim/rtl/prim_present.sv
 file: ../prim/rtl/prim_secded_39_32_dec.sv
 	module worklib.prim_secded_39_32_dec:sv
 		errors: 0, warnings: 0
-file: ../prim/rtl/prim_trivium_pkg.sv
-	package worklib.prim_trivium_pkg:sv
-		errors: 0, warnings: 0
-file: ../prim/rtl/prim_secded_pkg.sv
-	package worklib.prim_secded_pkg:sv
-		errors: 0, warnings: 0
 file: ../prim/rtl/prim_cdc_rand_delay.sv
 	module worklib.prim_cdc_rand_delay:sv
 		errors: 0, warnings: 0
@@ -1360,9 +668,6 @@ file: ../prim_generic/rtl/prim_clock_gating.sv
 file: ../prim_generic/rtl/prim_pad_attr.sv
 	module worklib.prim_pad_attr:sv
 		errors: 0, warnings: 0
-file: ../prim_generic/rtl/prim_ram_2p_pkg.sv
-	package worklib.prim_ram_2p_pkg:sv
-		errors: 0, warnings: 0
 file: ../prim_generic/rtl/prim_clock_inv.sv
 	module worklib.prim_clock_inv:sv
 		errors: 0, warnings: 0
@@ -1372,9 +677,6 @@ file: ../prim_generic/rtl/prim_clock_div.sv
 file: ../prim_generic/rtl/prim_clock_buf.sv
 	module worklib.prim_clock_buf:sv
 		errors: 0, warnings: 0
-file: ../prim_generic/rtl/prim_rom_pkg.sv
-	package worklib.prim_rom_pkg:sv
-		errors: 0, warnings: 0
 file: ../prim_generic/rtl/prim_xnor2.sv
 	module worklib.prim_xnor2:sv
 		errors: 0, warnings: 0
@@ -1382,17 +684,8 @@ file: ../prim_generic/rtl/prim_clock_mux2.sv
 	module worklib.prim_clock_mux2:sv
 		errors: 0, warnings: 0
 file: ../prim_generic/rtl/prim_ram_1p.sv
-module prim_ram_1p import prim_ram_1p_pkg::*; #(
-                                        |
-xmvlog: *E,NOPBIND (../prim_generic/rtl/prim_ram_1p.sv,9|40): Package prim_ram_1p_pkg could not be bound.
-  input  ram_1p_cfg_t      cfg_i,
-                    |
-xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_ram_1p.sv,26|20): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-  output ram_1p_cfg_rsp_t  cfg_rsp_o
-                        |
-xmvlog: *E,SVNOTY (../prim_generic/rtl/prim_ram_1p.sv,27|24): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
 	module worklib.prim_ram_1p:sv
-		errors: 3, warnings: 0
+		errors: 0, warnings: 0
 file: ../prim_generic/rtl/prim_buf.sv
 	module worklib.prim_buf:sv
 		errors: 0, warnings: 0
@@ -1408,18 +701,9 @@ file: ../prim_generic/rtl/prim_flop_no_rst.sv
 file: ../prim_generic/rtl/prim_rom.sv
 	module worklib.prim_rom:sv
 		errors: 0, warnings: 0
-file: ../prim_generic/rtl/prim_ram_1p_pkg.sv
-	package worklib.prim_ram_1p_pkg:sv
-		errors: 0, warnings: 0
 file: ../tb/top/stub_pkgs.sv
 	package worklib.top_pkg:sv
 		errors: 0, warnings: 0
-package prim_ram_1p_pkg;
-                      |
-xmvlog: *W,RECOME (../tb/top/stub_pkgs.sv,27|22): recompiling design unit worklib.prim_ram_1p_pkg:sv.
-	First compiled from line 6 of ../prim_generic/rtl/prim_ram_1p_pkg.sv.
-	package worklib.prim_ram_1p_pkg:sv
-		errors: 0, warnings: 1
 	package worklib.top_racl_pkg:sv
 		errors: 0, warnings: 0
 file: ../tlul/rtl/tlul_pkg.sv
@@ -1501,6 +785,152 @@ xmvlog: *W,SPDUSD: Include directory ../tb/sva given but not used.
 	Total errors/warnings found outside modules and primitives:
 		errors: 0, warnings: 4
 xmvlog: Memory Usage - Current physical: 30.3M, Current virtual: 53.3M
-xmvlog: CPU Usage - 0.1s system + 0.4s user = 0.4s total (1.3s, 32.6% cpu)
-xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
-TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 01:03:46 EDT  (total: 00:00:03)
+xmvlog: CPU Usage - 0.0s system + 0.4s user = 0.5s total (1.2s, 40.5% cpu)
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		uvm_pkg
+		cdns_uvmapi
+		cdns_assert2uvm_pkg
+		cdns_uvm_pkg
+		i2c_tb_pkg
+		$unit_0x7ae176a7
+		prim_mubi_pkg
+		prim_util_pkg
+		prim_ram_1p_pkg
+		prim_alert_pkg
+		prim_esc_pkg
+		prim_ascon_pkg
+		prim_count_pkg
+		prim_subreg_pkg
+		prim_cipher_pkg
+		prim_pad_wrapper_pkg
+		prim_rom_pkg
+		top_pkg
+		prim_secded_pkg
+		tlul_pkg
+		top_racl_pkg
+		i2c_reg_pkg
+		i2c_pkg
+		prim_secded_64_57_enc
+		prim_mubi12_sync
+		prim_secded_39_32_enc
+		prim_mubi16_sender
+		prim_clock_meas
+		prim_blanker
+		prim_multibit_sync
+		prim_secded_hamming_39_32_enc
+		prim_secded_inv_28_22_dec
+		prim_mubi4_sender
+		prim_secded_22_16_enc
+		prim_secded_inv_28_22_enc
+		prim_mubi4_sync
+		prim_mubi20_sender
+		prim_secded_inv_hamming_76_68_enc
+		prim_secded_72_64_enc
+		prim_slicer
+		prim_ram_1p_scr
+		prim_xoshiro256pp
+		prim_keccak
+		prim_mubi24_sender
+		prim_mubi24_sync
+		prim_secded_inv_hamming_72_64_dec
+		prim_dom_and_2share
+		prim_crc32
+		prim_diff_to_alert
+		prim_esc_sender
+		prim_clock_gating_sync
+		prim_packer_fifo
+		prim_secded_hamming_22_16_dec
+		prim_secded_hamming_76_68_enc
+		prim_secded_hamming_72_64_dec
+		prim_max_tree
+		prim_ascon_duplex
+		prim_secded_inv_hamming_72_64_enc
+		prim_onehot_mux
+		prim_fifo_async_sram_adapter
+		prim_double_lfsr
+		prim_mubi12_dec
+		prim_arbiter_tree_dup
+		prim_secded_72_64_dec
+		prim_mubi28_sync
+		prim_filter
+		prim_sram_arbiter
+		prim_alert_to_diff
+		prim_mubi16_dec
+		prim_mubi32_sync
+		prim_mubi20_dec
+		prim_filter_ctr
+		prim_mubi8_sync
+		prim_mubi24_dec
+		prim_subreg_shadow
+		prim_mubi32_dec
+		prim_gf_mult
+		prim_mubi4_dec
+		prim_mubi16_sync
+		prim_secded_inv_hamming_76_68_dec
+		prim_esc_receiver
+		prim_mubi8_sender
+		prim_mubi8_dec
+		prim_rst_sync
+		prim_sync_slow_fast
+		prim_secded_inv_72_64_dec
+		prim_secded_hamming_22_16_enc
+		prim_mubi32_sender
+		prim_mubi20_sync
+		prim_fifo_async
+		prim_secded_hamming_39_32_dec
+		prim_secded_28_22_dec
+		prim_mubi28_sender
+		prim_mubi12_sender
+		prim_reg_cdc
+		prim_mubi28_dec
+		prim_secded_28_22_enc
+		prim_packer
+		prim_msb_extend
+		prim_secded_64_57_dec
+		prim_secded_22_16_dec
+		prim_sum_tree
+		prim_secded_hamming_72_64_enc
+		prim_secded_hamming_76_68_dec
+		prim_secded_inv_72_64_enc
+		prim_fifo_async_simple
+		prim_present
+		prim_secded_39_32_dec
+		prim_cdc_rand_delay
+		prim_sync_reqack_data
+		prim_edge_detector
+		prim_usb_diff_rx
+		prim_pad_wrapper
+		prim_pad_attr
+		prim_clock_div
+		prim_flop_no_rst
+		prim_rom
+		tlul_cmd_intg_gen
+		tlul_rsp_intg_chk
+		tb_top
+      .rdata_o   (inst_rdata[i]),
+                           |
+xmelab: *W,CUVMPW (../prim/rtl/prim_ram_1p_adv.sv,166|27): port sizes differ in port connection(32/36) for the instance(prim_ram_1p_scr.u_prim_ram_1p_adv.gen_ram_inst[0]) .
+        vif.sda <= 0;
+          |
+xmelab: *E,WANOTL (../tb/agent/i2c_target_driver.sv,104|10): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+        vif.sda <= 1;
+          |
+xmelab: *E,WANOTL (../tb/agent/i2c_target_driver.sv,110|10): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+        vif.sda <= 1;
+          |
+xmelab: *E,WANOTL (../tb/agent/i2c_target_driver.sv,116|10): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+        vif.sda <= val;
+          |
+xmelab: *E,WANOTL (../tb/agent/i2c_target_driver.sv,124|10): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+        host_cfg.mode = HOST;
+                           |
+xmelab: *W,ENUMERR (../tb/env/i2c_env.sv,24|27): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
+        target_cfg.mode = TARGET;
+                               |
+xmelab: *W,ENUMERR (../tb/env/i2c_env.sv,30|31): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
+xmelab: Memory Usage - Final: 57.9M, Peak: 58.1M, Peak virtual: 130.5M
+xmelab: CPU Usage - 0.0s system + 0.3s user = 0.3s total (0.7s, 49.0% cpu)
+xrun: *E,ELBERR: Error (*E) or soft error (*SE) occurred during elaboration (status 1), exiting.
+TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 01:13:42 EDT  (total: 00:00:03)

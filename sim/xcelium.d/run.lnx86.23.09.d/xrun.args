@@ -28,6 +28,8 @@ CDNS-1.2
 ../tb/coverage
 -incdir
 ../tb/sva
+-timescale
+1ns/1ps
 -f
 /tmp/prim_files.f
 -f

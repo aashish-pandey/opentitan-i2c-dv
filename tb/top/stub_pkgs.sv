@@ -24,35 +24,42 @@ localparam int SecVolatileRawUnlockEn = 0;
 
 endpackage
 
-package prim_ram_1p_pkg;
-  typedef struct packed {
-    logic [3:0] unused;
-  } ram_1p_cfg_t;
 
-  typedef struct packed {
-    logic [3:0] unused;
-  } ram_1p_cfg_rsp_t;
-endpackage
 
 package top_racl_pkg;
   parameter int unsigned NrRaclPolicies = 1;
-  typedef logic [3:0] racl_role_t;
-  typedef logic [3:0] racl_policy_sel_t;
-  typedef racl_role_t  [NrRaclPolicies-1:0] racl_role_vec_t;
-  typedef racl_policy_sel_t [NrRaclPolicies-1:0] racl_policy_vec_t;
+  parameter int unsigned RaclRoleWidth  = 4;
+  parameter int unsigned RaclPolicySelWidth = 4;
+
+  typedef logic [RaclRoleWidth-1:0]      racl_role_t;
+  typedef logic [RaclPolicySelWidth-1:0] racl_policy_sel_t;
+  typedef racl_role_t [NrRaclPolicies-1:0] racl_role_vec_t;
 
   typedef struct packed {
-    logic        valid;
-    logic [31:0] addr;
-    logic [3:0]  role;
-    logic [7:0]  ctn_uid;
+    logic read_perm;
+    logic write_perm;
+  } racl_policy_t;
+
+  typedef racl_policy_t [NrRaclPolicies-1:0] racl_policy_vec_t;
+
+  typedef struct packed {
+    logic [7:0]               ctn_uid;
+    logic [top_pkg::TL_AW-1:0] request_address;
+    racl_role_t               racl_role;
+    logic                     overflow;
+    logic                     read_access;
+    logic                     valid;
   } racl_error_log_t;
 
-  function automatic racl_role_t tlul_extract_racl_role_bits(input logic [top_pkg::TL_AUW-1:0] rsvd);
+  function automatic racl_role_t tlul_extract_racl_role_bits(
+    input logic [top_pkg::TL_AUW-1:0] rsvd
+  );
     return racl_role_t'(rsvd[3:0]);
   endfunction
 
-  function automatic logic [7:0] tlul_extract_ctn_uid_bits(input logic [top_pkg::TL_AUW-1:0] rsvd);
+  function automatic logic [7:0] tlul_extract_ctn_uid_bits(
+    input logic [top_pkg::TL_AUW-1:0] rsvd
+  );
     return rsvd[11:4];
   endfunction
 
