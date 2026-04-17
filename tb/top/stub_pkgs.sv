@@ -93,20 +93,22 @@ endpackage
 
 module prim_subreg #(
     parameter int DW = 1,
-    parameter prim_subreg_pkg::sw_access_e SwAccess = prim_subreg_pkg::SwAccessRW,
+    parameter int SwAccess = 0,
     parameter logic [DW-1:0] RESVAL = 0,
     parameter bit Mubi = 0
-)(
+) (
     input  logic          clk_i, rst_ni, we, de,
     input  logic [DW-1:0] wd, d,
-    output logic          qs, err_update, err_storage
+    output logic          qs,
+    output logic          err_update,
+    output logic          err_storage
 );
     logic [DW-1:0] q;
     always_ff @(posedge clk_i or negedge rst_ni)
         if (!rst_ni) q <= RESVAL;
         else if (we) q <= wd;
         else if (de) q <= d;
-    assign qs = q;
+    assign qs = q[0];
     assign err_update = 0;
     assign err_storage = 0;
 endmodule
