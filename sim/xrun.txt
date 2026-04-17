@@ -1,5 +1,5 @@
 xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun	23.09-s012: Started on Apr 16, 2026 at 23:29:51 EDT
+TOOL:	xrun	23.09-s012: Started on Apr 16, 2026 at 23:34:47 EDT
 xrun
 	-uvm
 	-uvmhome CDNS-1.2
@@ -30,73 +30,26 @@ xrun
 		../tb/top/tb_top.sv
 	-elaborate
 file: ../tb/top/stub_pkgs.sv
-        tl_a_op_e    a_opcode;
-                |
-xmvlog: *E,SVNOTY (../tb/top/stub_pkgs.sv,22|16): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
-        tl_a_op_e    a_opcode;
-                            |
-xmvlog: *E,SVEXTK (../tb/top/stub_pkgs.sv,22|28): expecting a ',' or ';' after 'variable_identifier variable_dimension' (in a struct/union member declaration).
 	package worklib.tlul_pkg:sv
-		errors: 2, warnings: 0
-	package worklib.prim_ram_1p_pkg:sv
-		errors: 0, warnings: 0
-	package worklib.prim_alert_pkg:sv
-		errors: 0, warnings: 0
-	package worklib.top_racl_pkg:sv
-		errors: 0, warnings: 0
-	package worklib.prim_mubi_pkg:sv
-		errors: 0, warnings: 0
-	package worklib.prim_subreg_pkg:sv
-		errors: 0, warnings: 0
-	package worklib.prim_util_pkg:sv
-		errors: 0, warnings: 0
-	package worklib.top_pkg:sv
 		errors: 0, warnings: 0
 file: ../rtl/i2c_reg_top.sv
-    assign racl_error_o.read_access = tl_i.a_opcode == tlul_pkg::Get;
-                                                                   |
-xmvlog: *E,NOSYM (../rtl/i2c_reg_top.sv,3481|67): Get could not be found in package tlul_pkg.
 	module worklib.i2c_reg_top:sv
-		errors: 1, warnings: 0
-file: ../rtl/i2c_fifos.sv
-	module worklib.i2c_fifos:sv
-		errors: 0, warnings: 0
-file: ../rtl/i2c_fifo_sync_sram_adapter.sv
-	module worklib.i2c_fifo_sync_sram_adapter:sv
-		errors: 0, warnings: 0
-file: ../rtl/i2c_core.sv
-	module worklib.i2c_core:sv
 		errors: 0, warnings: 0
 file: ../rtl/i2c.sv
 	module worklib.i2c:sv
 		errors: 0, warnings: 0
 file: ../tb/env/i2c_tb_pkg.sv
-        addr_bytes = receive_byte();
-                                |
-xmvlog: *E,INVCTX (../tb/agent/i2c_target_driver.sv,39|32): The task 'receive_byte' cannot be used in this context.
-                receive_byte();
-                           |
-xmvlog: *W,FAAOP1 (../tb/agent/i2c_target_driver.sv,56|27): task or function call does not specify all formal output arguments [10.2.2][10.3(IEEE)].
-    task receive_byte(output logic [7:0] val);
-                                           |
-xmvlog: *W,FAAOP2 (../tb/agent/i2c_target_driver.sv,92|43): Formal output argument 'val' is absent in the task or function call identified by the previous error message [10.2.2][10.3(IEEE)].
-            data.push_back(d1);
-                         |
-xmvlog: *E,QAANBI (../tb/agent/i2c_monitor.sv,65|25): This is not a valid built in method name for this object. [SystemVerilog].
-            if(agt.mode == HOST) begin
-                              |
-xmvlog: *E,UNDIDN (../tb/agent/i2c_agent.sv,23|30): 'HOST': undeclared identifier [12.5(IEEE)].
-            if(agt.mode == HOST)begin
-                              |
-xmvlog: *E,UNDIDN (../tb/agent/i2c_agent.sv,35|30): 'HOST': undeclared identifier [12.5(IEEE)].
+        val <= vif.sda;
+          |
+xmvlog: *E,NOAUTO (../tb/agent/i2c_target_driver.sv,87|10): Automatic variable Illegal in this context [10.2.3(IEEE 2001)].
         host_cfg.mode = HOST;
                            |
-xmvlog: *E,UNDIDN (../tb/env/i2c_env.sv,24|27): 'HOST': undeclared identifier [12.5(IEEE)].
+xmvlog: *W,ENUMERR (../tb/env/i2c_env.sv,24|27): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
         target_cfg.mode = TARGET;
                                |
-xmvlog: *E,UNDIDN (../tb/env/i2c_env.sv,30|31): 'TARGET': undeclared identifier [12.5(IEEE)].
+xmvlog: *W,ENUMERR (../tb/env/i2c_env.sv,30|31): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
 	package worklib.i2c_tb_pkg:sv
-		errors: 6, warnings: 2
+		errors: 1, warnings: 2
 file: ../tb/top/tb_top.sv
 import i2c_tb_pkg::*;
                 |
@@ -109,4 +62,4 @@ xmvlog: *W,SPDUSD: Include directory ../tb/sva given but not used.
 	Total errors/warnings found outside modules and primitives:
 		errors: 1, warnings: 3
 xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
-TOOL:	xrun	23.09-s012: Exiting on Apr 16, 2026 at 23:29:52 EDT  (total: 00:00:01)
+TOOL:	xrun	23.09-s012: Exiting on Apr 16, 2026 at 23:34:48 EDT  (total: 00:00:01)
