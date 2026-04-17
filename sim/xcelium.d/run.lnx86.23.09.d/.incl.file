@@ -168,6 +168,11 @@
 ../prim/rtl/i2c_seq_item.sv
 ../tlul/rtl/i2c_seq_item.sv
 ../rtl/i2c_seq_item.sv
+./i2c_reg_adapter.sv
+../prim/rtl/i2c_reg_adapter.sv
+../tlul/rtl/i2c_reg_adapter.sv
+../rtl/i2c_reg_adapter.sv
+../tb/agent/i2c_reg_adapter.sv
 ./i2c_agent_cfg.sv
 ../prim/rtl/i2c_agent_cfg.sv
 ../tlul/rtl/i2c_agent_cfg.sv

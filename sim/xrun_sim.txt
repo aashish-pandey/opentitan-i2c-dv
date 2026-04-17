@@ -1,5 +1,5 @@
 xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 14:08:46 EDT
+TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 14:27:19 EDT
 xrun
 	-R
 	-xmlibdirname xcelium.d
@@ -42,8 +42,98 @@ CDNS-UVM-1.2 (23.09-s012)
 
 UVM_INFO @ 0: reporter [RNTST] Running test i2c_smoke_test...
 SDI/Verilog Transaction Recording Facility Version 23.09-s012
-UVM_FATAL @ 0: reporter@@default_parent_seq [SEQ] neither the item's sequencer nor dedicated sequencer has been supplied to start item in default_parent_seq
-UVM_INFO /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_catcher.svh(705) @ 0: reporter [UVM/REPORT/CATCHER] 
+xmsim: *E,ASRTST (../prim/rtl/prim_count.sv,310): (time 1 PS) Assertion prim_ascon_duplex.u_round_counter.AssertConnected_A has failed
+0: (../prim/rtl/prim_count.sv:310) [prim_ascon_duplex.u_round_counter.AssertConnected_A] [ASSERT FAILED] AssertConnected_A
+xmsim: *E,ASRTST (../prim/rtl/prim_sparse_fsm_flop.sv,64): (time 1 PS) Assertion prim_ascon_duplex.u_state_regs.AssertConnected_A has failed
+0: (../prim/rtl/prim_sparse_fsm_flop.sv:64) [prim_ascon_duplex.u_state_regs.AssertConnected_A] [ASSERT FAILED] AssertConnected_A
+xmsim: *E,ASRTST (../prim/rtl/prim_double_lfsr.sv,111): (time 1 PS) Assertion prim_double_lfsr.AssertConnected_A has failed
+0: (../prim/rtl/prim_double_lfsr.sv:111) [prim_double_lfsr.AssertConnected_A] [ASSERT FAILED] AssertConnected_A
+xmsim: *E,ASRTST (../prim/rtl/prim_onehot_check.sv,153): (time 1 PS) Assertion tb_top.dut.u_reg.u_prim_reg_we_check.u_prim_onehot_check.AssertConnected_A has failed
+0: (../prim/rtl/prim_onehot_check.sv:153) [tb_top.dut.u_reg.u_prim_reg_we_check.u_prim_onehot_check.AssertConnected_A] [ASSERT FAILED] AssertConnected_A
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 570000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 1110000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 1770000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 2310000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 2970000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 3510000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 4170000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 4710000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 5370000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 5910000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 6570000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 7110000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 7770000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 8310000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 8850000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 9390000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 9930000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 10470000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 11010000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 11670000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 12210000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 12750000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 13290000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 13830000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 14370000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 14910000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 15450000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 15990000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 16650000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 17190000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 17730000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 18270000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 18810000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 19350000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 19890000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 20430000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 20970000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 21510000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 22050000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 22590000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 23130000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 23670000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 24330000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 24870000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 25410000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 25950000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 26490000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 27030000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 27570000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 28230000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 28770000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 29310000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 29850000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 30390000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 30930000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 31590000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 32130000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 32670000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 33210000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 33750000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 34290000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 34830000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 35370000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 35910000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 36450000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 36990000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 37650000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 38190000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 38730000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 39270000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 39810000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 40350000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 40890000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 41430000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 41970000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 42630000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 43170000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 43710000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 44250000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 44790000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_WARNING ../tb/agent/i2c_host_driver.sv(92) @ 45330000: uvm_test_top.env.host_agent.h_drv [ACK] NACK received or no response on SDA
+UVM_INFO /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_objection.svh(1271) @ 45410000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../tb/env/i2c_scoreboard.sv(54) @ 45410000: uvm_test_top.env.scoreboard [SCB] PASS: 1 FAIL: 0
+UVM_INFO /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_catcher.svh(705) @ 45410000: reporter [UVM/REPORT/CATCHER] 
 --- UVM Report catcher Summary ---
 
 
@@ -54,23 +144,25 @@ Number of caught UVM_FATAL reports   :    0
 Number of caught UVM_ERROR reports   :    0
 Number of caught UVM_WARNING reports :    0
 
-UVM_INFO /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_server.svh(847) @ 0: reporter [UVM/REPORT/SERVER] 
+UVM_INFO /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_server.svh(847) @ 45410000: reporter [UVM/REPORT/SERVER] 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :    3
-UVM_WARNING :    0
+UVM_INFO :    5
+UVM_WARNING :   81
 UVM_ERROR :    0
-UVM_FATAL :    1
+UVM_FATAL :    0
 ** Report counts by id
+[ACK]    81
 [RNTST]     1
-[SEQ]     1
+[SCB]     1
+[TEST_DONE]     1
 [UVM/RELNOTES]     1
 [UVM/REPORT/CATCHER]     1
 
-Simulation complete via $finish(1) at time 0 FS + 47
-/opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh:135     $finish;
+Simulation complete via $finish(1) at time 45410 NS + 69
+/opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh:543     $finish;
 xcelium> exit
-xmsim: Memory Usage - Final: 94.5M, Peak: 94.5M, Peak virtual: 143.2M
-xmsim: CPU Usage - 0.3s system + 0.3s user = 0.6s total (1.2s, 47.4% cpu)
-TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 14:08:48 EDT  (total: 00:00:02)
+xmsim: Memory Usage - Final: 99.4M, Peak: 99.4M, Peak virtual: 148.9M
+xmsim: CPU Usage - 0.1s system + 0.1s user = 0.1s total (0.3s, 50.5% cpu)
+TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 14:27:20 EDT  (total: 00:00:01)

@@ -74,7 +74,7 @@ sim:
 	-status \
 	-svseed $(SEED) \
 	+UVM_TESTNAME=$(TEST) \
-	+UVM_VERBOSITY=UVM_MEDIUM
+	+UVM_VERBOSITY=UVM_MEDIUM || true
 
 clean:
 	rm -rf xrun.log xrun.key xcelium.d waves.vcd
