@@ -1,5 +1,5 @@
 xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun	23.09-s012: Started on Apr 16, 2026 at 23:17:54 EDT
+TOOL:	xrun	23.09-s012: Started on Apr 16, 2026 at 23:21:46 EDT
 xrun
 	-uvm
 	-uvmhome CDNS-1.2
@@ -42,60 +42,35 @@ file: ../tb/top/stub_pkgs.sv
 		errors: 0, warnings: 0
 	package worklib.prim_subreg_pkg:sv
 		errors: 0, warnings: 0
+	package worklib.prim_util_pkg:sv
+		errors: 0, warnings: 0
 file: ../rtl/i2c_reg_top.sv
-    .SwAccess(prim_subreg_pkg::SwAccessRC),
-                                        |
-xmvlog: *E,NOSYM (../rtl/i2c_reg_top.sv,3069|40): SwAccessRC could not be found in package prim_subreg_pkg.
-	module worklib.i2c_reg_top:sv
-		errors: 1, warnings: 0
-file: ../rtl/i2c_fifos.sv
-  localparam int unsigned RamAw = prim_util_pkg::vbits(RamDepth);
+    assign racl_role = top_racl_pkg::tlul_extract_racl_role_bits(tl_i.a_user.rsvd);
+                                                               |
+xmvlog: *E,NOSYM (../rtl/i2c_reg_top.sv,3406|63): tlul_extract_racl_role_bits could not be found in package top_racl_pkg.
+    assign racl_role = top_racl_pkg::tlul_extract_racl_role_bits(tl_i.a_user.rsvd);
+                                                               |
+xmvlog: *E,NOTFXX (../rtl/i2c_reg_top.sv,3406|63): Expecting a function name [10.3.3(IEEE)].
+  assign racl_error_o.request_address = top_pkg::TL_AW'(reg_addr);
                                               |
-xmvlog: *E,NOPBIND (../rtl/i2c_fifos.sv,66|46): Package prim_util_pkg could not be bound.
-  localparam int unsigned RamAw = prim_util_pkg::vbits(RamDepth);
-                                                     |
-xmvlog: *E,NOTFXX (../rtl/i2c_fifos.sv,66|53): Expecting a function name [10.3.3(IEEE)].
-  localparam int unsigned RamArbIdxW = prim_util_pkg::vbits(RamArbN);
-                                                   |
-xmvlog: *E,NOPBIND (../rtl/i2c_fifos.sv,230|51): Package prim_util_pkg could not be bound.
-  localparam int unsigned RamArbIdxW = prim_util_pkg::vbits(RamArbN);
-                                                          |
-xmvlog: *E,NOTFXX (../rtl/i2c_fifos.sv,230|58): Expecting a function name [10.3.3(IEEE)].
+xmvlog: *E,NOPBIND (../rtl/i2c_reg_top.sv,3475|46): Package top_pkg could not be bound.
+    assign racl_error_o.ctn_uid     = top_racl_pkg::tlul_extract_ctn_uid_bits(tl_i.a_user.rsvd);
+                                                                            |
+xmvlog: *E,NOSYM (../rtl/i2c_reg_top.sv,3480|76): tlul_extract_ctn_uid_bits could not be found in package top_racl_pkg.
+    assign racl_error_o.ctn_uid     = top_racl_pkg::tlul_extract_ctn_uid_bits(tl_i.a_user.rsvd);
+                                                                            |
+xmvlog: *E,NOTFXX (../rtl/i2c_reg_top.sv,3480|76): Expecting a function name [10.3.3(IEEE)].
+    assign racl_error_o.read_access = tl_i.a_opcode == tlul_pkg::Get;
+                                                                   |
+xmvlog: *E,NOSYM (../rtl/i2c_reg_top.sv,3481|67): Get could not be found in package tlul_pkg.
+	module worklib.i2c_reg_top:sv
+		errors: 6, warnings: 0
+file: ../rtl/i2c_fifos.sv
 	module worklib.i2c_fifos:sv
-		errors: 4, warnings: 0
+		errors: 0, warnings: 0
 file: ../rtl/i2c_fifo_sync_sram_adapter.sv
-  localparam int unsigned DepthW = prim_util_pkg::vbits(Depth + 1)
-                                               |
-xmvlog: *E,NOPBIND (../rtl/i2c_fifo_sync_sram_adapter.sv,19|47): Package prim_util_pkg could not be bound.
-  localparam int unsigned DepthW = prim_util_pkg::vbits(Depth + 1)
-                                                      |
-xmvlog: *E,NOTFXX (../rtl/i2c_fifo_sync_sram_adapter.sv,19|54): Expecting a function name [10.3.3(IEEE)].
-  localparam int unsigned InpBufDepthW = prim_util_pkg::vbits(InpBufDepth + 1);
-                                                     |
-xmvlog: *E,NOPBIND (../rtl/i2c_fifo_sync_sram_adapter.sv,63|53): Package prim_util_pkg could not be bound.
-  localparam int unsigned InpBufDepthW = prim_util_pkg::vbits(InpBufDepth + 1);
-                                                            |
-xmvlog: *E,NOTFXX (../rtl/i2c_fifo_sync_sram_adapter.sv,63|60): Expecting a function name [10.3.3(IEEE)].
-  localparam int unsigned OupBufDepthW = prim_util_pkg::vbits(OupBufDepth + 1);
-                                                     |
-xmvlog: *E,NOPBIND (../rtl/i2c_fifo_sync_sram_adapter.sv,64|53): Package prim_util_pkg could not be bound.
-  localparam int unsigned OupBufDepthW = prim_util_pkg::vbits(OupBufDepth + 1);
-                                                            |
-xmvlog: *E,NOTFXX (../rtl/i2c_fifo_sync_sram_adapter.sv,64|60): Expecting a function name [10.3.3(IEEE)].
-  localparam int unsigned SramPtrW = prim_util_pkg::vbits(SramFifoDepth);
-                                                 |
-xmvlog: *E,NOPBIND (../rtl/i2c_fifo_sync_sram_adapter.sv,65|49): Package prim_util_pkg could not be bound.
-  localparam int unsigned SramPtrW = prim_util_pkg::vbits(SramFifoDepth);
-                                                        |
-xmvlog: *E,NOTFXX (../rtl/i2c_fifo_sync_sram_adapter.sv,65|56): Expecting a function name [10.3.3(IEEE)].
-  localparam int unsigned SramDepthW = prim_util_pkg::vbits(SramFifoDepth + 1);
-                                                   |
-xmvlog: *E,NOPBIND (../rtl/i2c_fifo_sync_sram_adapter.sv,66|51): Package prim_util_pkg could not be bound.
-  localparam int unsigned SramDepthW = prim_util_pkg::vbits(SramFifoDepth + 1);
-                                                          |
-xmvlog: *E,NOTFXX (../rtl/i2c_fifo_sync_sram_adapter.sv,66|58): Expecting a function name [10.3.3(IEEE)].
 	module worklib.i2c_fifo_sync_sram_adapter:sv
-		errors: 10, warnings: 0
+		errors: 0, warnings: 0
 file: ../rtl/i2c_core.sv
 	module worklib.i2c_core:sv
 		errors: 0, warnings: 0
@@ -103,14 +78,29 @@ file: ../rtl/i2c.sv
 	module worklib.i2c:sv
 		errors: 0, warnings: 0
 file: ../tb/env/i2c_tb_pkg.sv
-        i2c_agent_cfg host_cfg = i2c_agent_cfg::type_id::create("host_cfg");
-                             |
-xmvlog: *E,MISEXX (../tb/env/i2c_env.sv,23|29): expecting an '=' or '<=' sign in an assignment [9.2(IEEE)].
-        i2c_agent_cfg target_cfg = i2c_agent_cfg::type_id::create("target_cfg");
-                               |
-xmvlog: *E,MISEXX (../tb/env/i2c_env.sv,29|31): expecting an '=' or '<=' sign in an assignment [9.2(IEEE)].
+    cp_mode: coverpoint mode {
+                           |
+xmvlog: *E,UNDIDN (../tb/coverage/i2c_coverage.sv,5|27): 'mode': undeclared identifier [12.5(IEEE)].
+        bins host = {HOST};
+                        |
+xmvlog: *E,UNDIDN (../tb/coverage/i2c_coverage.sv,6|24): 'HOST': undeclared identifier [12.5(IEEE)].
+        bins target = {TARGET};
+                            |
+xmvlog: *E,UNDIDN (../tb/coverage/i2c_coverage.sv,7|28): 'TARGET': undeclared identifier [12.5(IEEE)].
+    cp_rw: coverpoint rw{
+                       |
+xmvlog: *E,UNDIDN (../tb/coverage/i2c_coverage.sv,9|23): 'rw': undeclared identifier [12.5(IEEE)].
+    cp_addr: coverpoint addr{
+                           |
+xmvlog: *E,UNDIDN (../tb/coverage/i2c_coverage.sv,17|27): 'addr': undeclared identifier [12.5(IEEE)].
+    cp_rw: coverpoint rw{
+                       |
+xmvlog: *E,UNDIDN (../tb/coverage/i2c_coverage.sv,20|23): 'rw': undeclared identifier [12.5(IEEE)].
+    cp_num_bytes: coverpoint num_bytes{
+                                     |
+xmvlog: *E,UNDIDN (../tb/coverage/i2c_coverage.sv,50|37): 'num_bytes': undeclared identifier [12.5(IEEE)].
 	package worklib.i2c_tb_pkg:sv
-		errors: 2, warnings: 0
+		errors: 7, warnings: 0
 file: ../tb/top/tb_top.sv
 import i2c_tb_pkg::*;
                 |
@@ -123,4 +113,4 @@ xmvlog: *W,SPDUSD: Include directory ../tb/sva given but not used.
 	Total errors/warnings found outside modules and primitives:
 		errors: 1, warnings: 3
 xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
-TOOL:	xrun	23.09-s012: Exiting on Apr 16, 2026 at 23:17:55 EDT  (total: 00:00:01)
+TOOL:	xrun	23.09-s012: Exiting on Apr 16, 2026 at 23:21:47 EDT  (total: 00:00:01)
