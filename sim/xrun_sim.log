@@ -1,0 +1,278 @@
+xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 19:26:30 EDT
+xrun
+	-R
+	-xmlibdirname xcelium.d
+	-log xrun_sim.log
+	-messages
+	-status
+	-svseed 1
+	+UVM_TESTNAME=i2c_smoke_test
+	+UVM_VERBOSITY=UVM_MEDIUM
+
+   User defined plus("+") options:
+	+UVM_VERBOSITY=UVM_MEDIUM
+
+Loading snapshot worklib.prim_secded_64_57_enc:sv .................... Done
+SVSEED set from command line: 1
+xcelium> source /opt/eda/cadence/XCELIUM2309/tools/xcelium/files/xmsimrc
+xcelium> source /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/additions/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+UVM_INFO /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh(412) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+CDNS-UVM-1.2 (23.09-s012)
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test i2c_smoke_test...
+SDI/Verilog Transaction Recording Facility Version 23.09-s012
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(36) @ 190000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] === PHASE 1: TLUL register setup ===
+[TLUL_DRV @250000] WRITE addr=0x3c  d_error=0  d_opcode=0x0
+[TLUL_DRV @330000] WRITE addr=0x40  d_error=0  d_opcode=0x0
+[TLUL_DRV @410000] WRITE addr=0x44  d_error=0  d_opcode=0x0
+[TLUL_DRV @490000] WRITE addr=0x48  d_error=0  d_opcode=0x0
+[TLUL_DRV @570000] WRITE addr=0x4c  d_error=0  d_opcode=0x0
+[TLUL_DRV @650000] READ  addr=0x48  d_data=0x50005  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(19) @ 670000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] [TIMING3 after config] raw=0x00050005  status=UVM_IS_OK
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(58) @ 670000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> tsu_dat=5  thd_dat=5
+[TLUL_DRV @730000] WRITE addr=0x10  d_error=0  d_opcode=0x0
+[TLUL_DRV @810000] READ  addr=0x10  d_data=0x2  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(19) @ 830000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] [CTRL readback] raw=0x00000002  status=UVM_IS_OK
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(64) @ 830000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> enabletarget (bit1) = 1
+[TLUL_DRV @890000] WRITE addr=0x54  d_error=0  d_opcode=0x0
+[TLUL_DRV @970000] READ  addr=0x54  d_data=0x3fd5  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(19) @ 990000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] [TARGET_ID readback] raw=0x00003fd5  status=UVM_IS_OK
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(72) @ 990000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> address0 (bits[6:0]) = 0x55  mask0 (bits[13:7]) = 0x7f
+[TLUL_DRV @1050000] READ  addr=0x48  d_data=0x50005  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(19) @ 1070000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] [TIMING3 (offset 0x48)] raw=0x00050005  status=UVM_IS_OK
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(81) @ 1070000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> tsu_dat (bits[8:0]) = 5   thd_dat (bits[28:16]) = 5
+[TLUL_DRV @1130000] READ  addr=0x14  d_data=0x33c  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(19) @ 1150000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] [STATUS pre-tx] raw=0x0000033c  status=UVM_IS_OK
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(86) @ 1150000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> targetidle=1  acqempty=1  acqfull=0
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(91) @ 1150000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] === PHASE 2: I2C write transactions ===
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(104) @ 1150000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] --- TXN 1: WRITE addr=0x55  data='{'heb, 'hec, 'hc2, 'h36, 'hbe, 'hc3}
+[I2C_HOST @6930000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @12330000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @17730000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @23130000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @28530000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @33930000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @39330000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[TLUL_DRV @40190000] READ  addr=0x14  d_data=0x13c  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(19) @ 40210000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] [STATUS post-txn] raw=0x0000013c  status=UVM_IS_OK
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(111) @ 40210000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> targetidle=1  acqempty=0  acqfull=0
+[TLUL_DRV @40270000] READ  addr=0x30  d_data=0x80000  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(19) @ 40290000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] [TARGET_FIFO_STATUS post-txn] raw=0x00080000  status=UVM_IS_OK
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(116) @ 40290000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> acqlvl (bits[27:16])=8   txlvl (bits[11:0])=0
+[TLUL_DRV @40350000] READ  addr=0x58  d_data=0x1aa  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 40370000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xaa
+[TLUL_DRV @40430000] READ  addr=0x58  d_data=0xeb  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 40450000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xeb
+[TLUL_DRV @40510000] READ  addr=0x58  d_data=0xec  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 40530000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xec
+[TLUL_DRV @40590000] READ  addr=0x58  d_data=0xc2  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 40610000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xc2
+[TLUL_DRV @40670000] READ  addr=0x58  d_data=0x36  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 40690000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x36
+[TLUL_DRV @40750000] READ  addr=0x58  d_data=0xbe  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 40770000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xbe
+[TLUL_DRV @40830000] READ  addr=0x58  d_data=0xc3  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 40850000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xc3
+[TLUL_DRV @40910000] READ  addr=0x58  d_data=0x286  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 40930000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x86
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(104) @ 40930000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] --- TXN 2: WRITE addr=0x55  data='{'hc2, 'hed, 'hdf, 'hbe, 'h40, 'hcb, 'h13, 'h56}
+[I2C_HOST @46710000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @52110000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @57510000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @62910000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @68310000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @73710000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @79110000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @84510000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @89910000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[TLUL_DRV @90770000] READ  addr=0x14  d_data=0x13c  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(19) @ 90790000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] [STATUS post-txn] raw=0x0000013c  status=UVM_IS_OK
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(111) @ 90790000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> targetidle=1  acqempty=0  acqfull=0
+[TLUL_DRV @90850000] READ  addr=0x30  d_data=0xa0000  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(19) @ 90870000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] [TARGET_FIFO_STATUS post-txn] raw=0x000a0000  status=UVM_IS_OK
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(116) @ 90870000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> acqlvl (bits[27:16])=10   txlvl (bits[11:0])=0
+[TLUL_DRV @90930000] READ  addr=0x58  d_data=0x1aa  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 90950000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xaa
+[TLUL_DRV @91010000] READ  addr=0x58  d_data=0xc2  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 91030000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xc2
+[TLUL_DRV @91090000] READ  addr=0x58  d_data=0xed  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 91110000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xed
+[TLUL_DRV @91170000] READ  addr=0x58  d_data=0xdf  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 91190000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xdf
+[TLUL_DRV @91250000] READ  addr=0x58  d_data=0xbe  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 91270000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xbe
+[TLUL_DRV @91330000] READ  addr=0x58  d_data=0x40  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 91350000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x40
+[TLUL_DRV @91410000] READ  addr=0x58  d_data=0xcb  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 91430000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xcb
+[TLUL_DRV @91490000] READ  addr=0x58  d_data=0x13  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 91510000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x13
+[TLUL_DRV @91570000] READ  addr=0x58  d_data=0x56  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 91590000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x56
+[TLUL_DRV @91650000] READ  addr=0x58  d_data=0x2ac  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 91670000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xac
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(104) @ 91670000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] --- TXN 3: WRITE addr=0x55  data='{'h44, 'hc, 'h42, 'h1b, 'h69, 'he, 'hf7, 'hda, 'h76, 'h1f, 'h7e, 'hb8, 'h99}
+[I2C_HOST @97450000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @102850000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @108250000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @113650000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @119050000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @124450000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @129850000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @135250000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @140650000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @146050000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @151450000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @156850000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @162250000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @167650000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[TLUL_DRV @168510000] READ  addr=0x14  d_data=0x13c  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(19) @ 168530000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] [STATUS post-txn] raw=0x0000013c  status=UVM_IS_OK
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(111) @ 168530000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> targetidle=1  acqempty=0  acqfull=0
+[TLUL_DRV @168590000] READ  addr=0x30  d_data=0xf0000  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(19) @ 168610000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] [TARGET_FIFO_STATUS post-txn] raw=0x000f0000  status=UVM_IS_OK
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(116) @ 168610000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> acqlvl (bits[27:16])=15   txlvl (bits[11:0])=0
+[TLUL_DRV @168670000] READ  addr=0x58  d_data=0x1aa  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 168690000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xaa
+[TLUL_DRV @168750000] READ  addr=0x58  d_data=0x44  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 168770000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x44
+[TLUL_DRV @168830000] READ  addr=0x58  d_data=0xc  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 168850000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x0c
+[TLUL_DRV @168910000] READ  addr=0x58  d_data=0x42  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 168930000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x42
+[TLUL_DRV @168990000] READ  addr=0x58  d_data=0x1b  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 169010000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x1b
+[TLUL_DRV @169070000] READ  addr=0x58  d_data=0x69  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 169090000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x69
+[TLUL_DRV @169150000] READ  addr=0x58  d_data=0xe  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 169170000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x0e
+[TLUL_DRV @169230000] READ  addr=0x58  d_data=0xf7  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 169250000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xf7
+[TLUL_DRV @169310000] READ  addr=0x58  d_data=0xda  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 169330000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xda
+[TLUL_DRV @169390000] READ  addr=0x58  d_data=0x76  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 169410000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x76
+[TLUL_DRV @169470000] READ  addr=0x58  d_data=0x1f  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 169490000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x1f
+[TLUL_DRV @169550000] READ  addr=0x58  d_data=0x7e  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 169570000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x7e
+[TLUL_DRV @169630000] READ  addr=0x58  d_data=0xb8  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 169650000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xb8
+[TLUL_DRV @169710000] READ  addr=0x58  d_data=0x99  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 169730000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x99
+[TLUL_DRV @169790000] READ  addr=0x58  d_data=0x232  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 169810000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x32
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(104) @ 169810000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] --- TXN 4: WRITE addr=0x55  data='{'h9d, 'h2d, 'hc3, 'hff, 'h15, 'h59}
+[I2C_HOST @175590000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @180990000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @186390000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @191790000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @197190000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @202590000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @207990000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[TLUL_DRV @208850000] READ  addr=0x14  d_data=0x13c  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(19) @ 208870000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] [STATUS post-txn] raw=0x0000013c  status=UVM_IS_OK
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(111) @ 208870000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> targetidle=1  acqempty=0  acqfull=0
+[TLUL_DRV @208930000] READ  addr=0x30  d_data=0x80000  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(19) @ 208950000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] [TARGET_FIFO_STATUS post-txn] raw=0x00080000  status=UVM_IS_OK
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(116) @ 208950000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> acqlvl (bits[27:16])=8   txlvl (bits[11:0])=0
+[TLUL_DRV @209010000] READ  addr=0x58  d_data=0x1aa  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 209030000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xaa
+[TLUL_DRV @209090000] READ  addr=0x58  d_data=0x9d  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 209110000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x9d
+[TLUL_DRV @209170000] READ  addr=0x58  d_data=0x2d  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 209190000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x2d
+[TLUL_DRV @209250000] READ  addr=0x58  d_data=0x43  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 209270000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x43
+[TLUL_DRV @209330000] READ  addr=0x58  d_data=0xff  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 209350000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xff
+[TLUL_DRV @209410000] READ  addr=0x58  d_data=0x15  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 209430000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x15
+[TLUL_DRV @209490000] READ  addr=0x58  d_data=0x59  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 209510000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x59
+[TLUL_DRV @209570000] READ  addr=0x58  d_data=0x2b2  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 209590000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xb2
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(104) @ 209590000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] --- TXN 5: WRITE addr=0x55  data='{'h2b, 'hd7, 'h7e, 'h91, 'h91}
+[I2C_HOST @215370000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @220770000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @226170000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @231570000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @236970000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[I2C_HOST @242370000] ACK sample: sda=0  scl=1  (expect sda=0 for ACK)
+[TLUL_DRV @243230000] READ  addr=0x14  d_data=0x13c  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(19) @ 243250000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] [STATUS post-txn] raw=0x0000013c  status=UVM_IS_OK
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(111) @ 243250000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> targetidle=1  acqempty=0  acqfull=0
+[TLUL_DRV @243310000] READ  addr=0x30  d_data=0x70000  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(19) @ 243330000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] [TARGET_FIFO_STATUS post-txn] raw=0x00070000  status=UVM_IS_OK
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(116) @ 243330000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> acqlvl (bits[27:16])=7   txlvl (bits[11:0])=0
+[TLUL_DRV @243390000] READ  addr=0x58  d_data=0x1aa  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 243410000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xaa
+[TLUL_DRV @243470000] READ  addr=0x58  d_data=0x2b  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 243490000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x2b
+[TLUL_DRV @243550000] READ  addr=0x58  d_data=0xd7  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 243570000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0xd7
+[TLUL_DRV @243630000] READ  addr=0x58  d_data=0x7e  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 243650000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x7e
+[TLUL_DRV @243710000] READ  addr=0x58  d_data=0x91  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 243730000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x91
+[TLUL_DRV @243790000] READ  addr=0x58  d_data=0x91  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 243810000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x91
+[TLUL_DRV @243870000] READ  addr=0x58  d_data=0x222  d_error=0  d_opcode=0x1
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(124) @ 243890000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ]   -> drained ACQDATA=0x22
+UVM_INFO ../tb/sequences/i2c_host_smoke_vseq.sv(129) @ 243890000: uvm_test_top.env.host_agent.seq@@vseq [VSEQ] === All 5 transactions done ===
+UVM_INFO /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_objection.svh(1271) @ 243890000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../tb/env/i2c_scoreboard.sv(54) @ 243890000: uvm_test_top.env.scoreboard [SCB] PASS: 5 FAIL: 0
+UVM_INFO /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_catcher.svh(705) @ 243890000: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_server.svh(847) @ 243890000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   91
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[SCB]     1
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+[VSEQ]    86
+
+Simulation complete via $finish(1) at time 243890 NS + 64
+/opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh:543     $finish;
+xcelium> exit
+xmsim: Memory Usage - Final: 101.0M, Peak: 101.0M, Peak virtual: 150.3M
+xmsim: CPU Usage - 0.6s system + 0.5s user = 1.1s total (1.5s, 75.0% cpu)
+TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 19:26:33 EDT  (total: 00:00:03)

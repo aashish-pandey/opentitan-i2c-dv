@@ -6,6 +6,7 @@
 -uvmhome
 CDNS-1.2
 -sv
++define+ASSERT_OFF
 -access
 +rwc
 -incdir

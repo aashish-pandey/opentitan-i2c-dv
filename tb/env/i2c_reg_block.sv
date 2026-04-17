@@ -293,8 +293,8 @@ class i2c_timing0_reg extends uvm_reg;
         thigh = uvm_reg_field::type_id::create("thigh");
         tlow = uvm_reg_field::type_id::create("tlow");
 
-        thigh.configure(this, 13, 0, "RW", 0, 13'b0, 1, 1, 0);
-        tlow.configure(this, 13, 13, "RW", 0, 13'b0, 1, 1, 0);
+        thigh.configure(this, 13, 0,  "RW", 0, 13'b0, 1, 1, 0);
+        tlow.configure(this,  13, 16, "RW", 0, 13'b0, 1, 1, 0);
 
     endfunction
 
@@ -316,8 +316,8 @@ class i2c_timing1_reg extends uvm_reg;
         t_r = uvm_reg_field::type_id::create("t_r");
         t_f = uvm_reg_field::type_id::create("t_f");
 
-        t_r.configure(this, 10, 0, "RW", 0, 10'b0, 1, 1, 0);
-        t_f.configure(this, 9, 10, "RW", 0, 9'b0, 1, 1, 0);
+        t_r.configure(this, 10, 0,  "RW", 0, 10'b0, 1, 1, 0);
+        t_f.configure(this,  9,  16, "RW", 0, 9'b0,  1, 1, 0);
 
     endfunction
 
@@ -338,8 +338,8 @@ class i2c_timing2_reg extends uvm_reg;
         tsu_sta = uvm_reg_field::type_id::create("tsu_sta");
         thd_sta = uvm_reg_field::type_id::create("thd_sta");
 
-        tsu_sta.configure(this, 13, 0, "RW", 0, 13'b0, 1, 1, 0);
-        thd_sta.configure(this, 13, 13, "RW", 0, 13'b0, 1, 1, 0);
+        tsu_sta.configure(this, 13, 0,  "RW", 0, 13'b0, 1, 1, 0);
+        thd_sta.configure(this, 13, 16, "RW", 0, 13'b0, 1, 1, 0);
 
     endfunction
 
@@ -361,8 +361,8 @@ class i2c_timing3_reg extends uvm_reg;
         tsu_dat = uvm_reg_field::type_id::create("tsu_dat");
         thd_dat = uvm_reg_field::type_id::create("thd_dat");
 
-        tsu_dat.configure(this, 9, 0, "RW", 0, 9'b0, 1, 1, 0);
-        thd_dat.configure(this, 13, 9, "RW", 0, 13'b0, 1, 1, 0);
+        tsu_dat.configure(this, 9,  0,  "RW", 0, 9'b0,  1, 1, 0);
+        thd_dat.configure(this, 13, 16, "RW", 0, 13'b0, 1, 1, 0);
 
     endfunction
 
@@ -384,8 +384,8 @@ class i2c_timing4_reg extends uvm_reg;
         tsu_sto = uvm_reg_field::type_id::create("tsu_sto");
         t_buf = uvm_reg_field::type_id::create("t_buf");
 
-        tsu_sto.configure(this, 13, 0, "RW", 0, 13'b0, 1, 1, 0);
-        t_buf.configure(this, 13, 13, "RW", 0, 13'b0, 1, 1, 0);
+        tsu_sto.configure(this, 13, 0,  "RW", 0, 13'b0, 1, 1, 0);
+        t_buf.configure(this,  13, 16, "RW", 0, 13'b0, 1, 1, 0);
 
     endfunction
 
@@ -570,6 +570,26 @@ class i2c_target_fifo_status_reg extends uvm_reg;
 
 endclass
 
+class i2c_acqdata_reg extends uvm_reg;
+
+    `uvm_object_utils(i2c_acqdata_reg)
+
+    uvm_reg_field abyte;
+    uvm_reg_field signal;
+
+    function new(string name="i2c_acqdata_reg");
+        super.new(name, 32, UVM_NO_COVERAGE);
+    endfunction
+
+    function void build();
+        abyte  = uvm_reg_field::type_id::create("abyte");
+        signal = uvm_reg_field::type_id::create("signal");
+        abyte.configure(this,  8, 0, "RO", 0, 8'b0, 1, 0, 0);
+        signal.configure(this, 2, 8, "RO", 0, 2'b0, 1, 0, 0);
+    endfunction
+
+endclass
+
 class i2c_target_id_reg extends uvm_reg;
 
     `uvm_object_utils(i2c_target_id_reg)
@@ -666,6 +686,7 @@ class i2c_reg_block extends uvm_reg_block;
     i2c_host_fifo_status_reg host_fifo_status;
     i2c_target_fifo_status_reg target_fifo_status;
     i2c_target_id_reg target_id;
+    i2c_acqdata_reg acqdata;
     i2c_timeout_ctrl_reg timeout_ctrl;
     i2c_host_timeout_ctrl_reg host_timeout_ctrl;
 
@@ -772,6 +793,11 @@ class i2c_reg_block extends uvm_reg_block;
         timeout_ctrl = i2c_timeout_ctrl_reg::type_id::create("timeout_ctrl");
         timeout_ctrl.configure(this, null, "");
         timeout_ctrl.build();
+        acqdata = i2c_acqdata_reg::type_id::create("acqdata");
+        acqdata.configure(this, null, "");
+        acqdata.build();
+        default_map.add_reg(acqdata, 32'h58, "RO");
+
         default_map.add_reg(timeout_ctrl, 32'h50, "RW");
 
         host_timeout_ctrl = i2c_host_timeout_ctrl_reg::type_id::create("host_timeout_ctrl");

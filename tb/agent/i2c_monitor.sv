@@ -48,20 +48,23 @@ class i2c_monitor extends uvm_monitor;
         req.rw = rw;
 
         forever begin
-            fork 
-                begin: stop_check
-                    @(posedge vif.sda);
-                    if(vif.scl == 1) stop_detected = 1;
+            // Run receive_byte and STOP detection concurrently.
+            // If the host issues STOP instead of a data byte, receive_byte
+            // will hang inside @(negedge vif.scl). wait_for_stop() wins the
+            // race and kills it, preventing the monitor from deadlocking.
+            fork
+                begin: data_rx
+                    receive_byte(d1);
                 end
-                begin : bit_check
-                    @(negedge vif.scl);
+                begin: stop_det
+                    wait_for_stop();
+                    stop_detected = 1;
                 end
             join_any
             disable fork;
 
             if(stop_detected)
                 break;
-            receive_byte(d1);
             data.push_back(d1);
 
             //sample ack

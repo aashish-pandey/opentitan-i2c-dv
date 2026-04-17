@@ -11,6 +11,8 @@
 -define
 UVM_PLI
 -sv
+-DEFINE
+ASSERT_OFF
 -INCDIR
 ../prim/rtl
 -INCDIR
@@ -217,6 +219,7 @@ UVM_PLI
 ../rtl/i2c.sv
 ../tb/env/i2c_tb_pkg.sv
 ../tb/top/i2c_if.sv
+../tb/top/tlul_if.sv
 ../tb/top/tb_top.sv
 -XMLIBDIRNAME
 xcelium.d

@@ -3,6 +3,8 @@
 // Do not modify this file
 //
 -sv
+-DEFINE
+ASSERT_OFF
 -INCDIR
 ../prim/rtl
 -INCDIR

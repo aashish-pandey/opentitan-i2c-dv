@@ -4,6 +4,8 @@
 //
 -RUNMODE
 -sv
+-DEFINE
+ASSERT_OFF
 -INCDIR
 ../prim/rtl
 -INCDIR

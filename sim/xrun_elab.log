@@ -1,9 +1,10 @@
 xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 14:24:07 EDT
+TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 19:26:20 EDT
 xrun
 	-uvm
 	-uvmhome CDNS-1.2
 	-sv
+	+define+ASSERT_OFF
 	-access +rwc
 	-incdir ../prim/rtl
 	-incdir ../tlul/rtl
@@ -204,6 +205,7 @@ xrun
 		../rtl/i2c.sv
 		../tb/env/i2c_tb_pkg.sv
 		../tb/top/i2c_if.sv
+		../tb/top/tlul_if.sv
 		../tb/top/tb_top.sv
 	-elaborate
 	-xmlibdirname xcelium.d
@@ -211,8 +213,8 @@ xrun
 	-messages
 	-status
 Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2
-xmvlog: Memory Usage - Current physical: 24.0M, Current virtual: 45.9M
-xmvlog: CPU Usage - 0.0s system + 0.4s user = 0.4s total (0.9s, 48.6% cpu)
+xmvlog: Memory Usage - Current physical: 24.1M, Current virtual: 45.9M
+xmvlog: CPU Usage - 0.1s system + 0.4s user = 0.4s total (0.9s, 48.1% cpu)
 file: ../prim/rtl/prim_util_pkg.sv
 	package worklib.prim_util_pkg:sv
 		errors: 0, warnings: 0
@@ -769,6 +771,9 @@ file: ../tb/env/i2c_tb_pkg.sv
 file: ../tb/top/i2c_if.sv
 	interface worklib.i2c_if:sv
 		errors: 0, warnings: 0
+file: ../tb/top/tlul_if.sv
+	interface worklib.tlul_if:sv
+		errors: 0, warnings: 0
 file: ../tb/top/tb_top.sv
 	module worklib.tb_top:sv
 		errors: 0, warnings: 0
@@ -778,8 +783,8 @@ xmvlog: *W,SPDUSD: Include directory ../tb/top given but not used.
 xmvlog: *W,SPDUSD: Include directory ../tb/sva given but not used.
 	Total errors/warnings found outside modules and primitives:
 		errors: 0, warnings: 4
-xmvlog: Memory Usage - Current physical: 30.2M, Current virtual: 53.3M
-xmvlog: CPU Usage - 0.0s system + 0.6s user = 0.6s total (1.4s, 43.7% cpu)
+xmvlog: Memory Usage - Current physical: 30.3M, Current virtual: 53.4M
+xmvlog: CPU Usage - 0.1s system + 0.6s user = 0.6s total (1.5s, 43.6% cpu)
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Top level design units:
@@ -787,9 +792,12 @@ xmvlog: CPU Usage - 0.0s system + 0.6s user = 0.6s total (1.4s, 43.7% cpu)
 		cdns_uvmapi
 		cdns_assert2uvm_pkg
 		cdns_uvm_pkg
-		i2c_tb_pkg
-		$unit_0x7ae176a7
 		prim_mubi_pkg
+		top_pkg
+		prim_secded_pkg
+		tlul_pkg
+		i2c_tb_pkg
+		$unit_0x2cd794c6
 		prim_util_pkg
 		prim_ram_1p_pkg
 		prim_alert_pkg
@@ -800,9 +808,6 @@ xmvlog: CPU Usage - 0.0s system + 0.6s user = 0.6s total (1.4s, 43.7% cpu)
 		prim_cipher_pkg
 		prim_pad_wrapper_pkg
 		prim_rom_pkg
-		top_pkg
-		prim_secded_pkg
-		tlul_pkg
 		top_racl_pkg
 		i2c_reg_pkg
 		i2c_pkg
@@ -908,530 +913,528 @@ xmvlog: CPU Usage - 0.0s system + 0.6s user = 0.6s total (1.4s, 43.7% cpu)
 xmelab: *W,CUVMPW (../prim/rtl/prim_ram_1p_adv.sv,166|27): port sizes differ in port connection(32/36) for the instance(prim_ram_1p_scr.u_prim_ram_1p_adv.gen_ram_inst[0]) .
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.prim_intr_hw:sv <0x102c2ff1>
+		worklib.prim_intr_hw:sv <0x11f10c2b>
 			streams:   7, words:  1566
-		worklib.prim_intr_hw:sv <0x2de3f753>
+		worklib.prim_intr_hw:sv <0x2c3ed489>
 			streams:   9, words:  2034
-		worklib.i2c_target_fsm:sv <0x06471e68>
-			streams:  47, words: 38402
-		worklib.i2c_controller_fsm:sv <0x5e1ce8e6>
-			streams:  36, words: 43036
-		worklib.i2c_bus_monitor:sv <0x659fbe12>
+		worklib.i2c_target_fsm:sv <0x5d528b30>
+			streams:  61, words: 50432
+		worklib.i2c_controller_fsm:sv <0x191efe9b>
+			streams:  41, words: 47312
+		worklib.i2c_bus_monitor:sv <0x328903fa>
 			streams:  24, words: 10381
-		worklib.prim_fifo_sync_cnt:sv <0x679f43a4>
+		worklib.prim_fifo_sync_cnt:sv <0x0eb78fd2>
 			streams:  13, words:  5516
-		worklib.i2c_fifo_sync_sram_adapter:sv <0x0e6ebf01>
-			streams:  40, words: 16292
-		worklib.i2c_fifo_sync_sram_adapter:sv <0x71b0f973>
-			streams:  40, words: 16292
-		worklib.i2c_fifo_sync_sram_adapter:sv <0x1875d9b3>
-			streams:  40, words: 16286
-		worklib.prim_fifo_sync_cnt:sv <0x3ea17876>
+		worklib.i2c_fifo_sync_sram_adapter:sv <0x55064798>
+			streams:  65, words: 35842
+		worklib.i2c_fifo_sync_sram_adapter:sv <0x494a86e2>
+			streams:  65, words: 35842
+		worklib.i2c_fifo_sync_sram_adapter:sv <0x450bff4f>
+			streams:  65, words: 35836
+		worklib.prim_fifo_sync_cnt:sv <0x5789b400>
 			streams:  13, words:  5429
-		worklib.prim_fifo_sync_cnt:sv <0x1654ce84>
+		worklib.prim_fifo_sync_cnt:sv <0x7f7c02f2>
 			streams:  13, words:  5447
-		worklib.prim_fifo_sync:sv <0x2e3a5199>
+		worklib.prim_fifo_sync:sv <0x5217b3d8>
 			streams:  53, words: 30766
-		worklib.i2c_fifo_sync_sram_adapter:sv <0x3f36c60c>
-			streams:  40, words: 16280
-		worklib.i2c_fifos:sv <0x3b36bca4>
-			streams:  81, words: 28229
-		worklib.i2c_core:sv <0x228958ce>
-			streams: 302, words: 104287
-		worklib.prim_subreg_ext:sv <0x3c91d92e>
+		worklib.i2c_fifo_sync_sram_adapter:sv <0x081bd5eb>
+			streams:  65, words: 35830
+		worklib.i2c_fifos:sv <0x7eb7fdcb>
+			streams:  96, words: 41729
+		worklib.i2c_core:sv <0x5c11fd1e>
+			streams: 303, words: 104983
+		worklib.prim_subreg_ext:sv <0x5679c76b>
 			streams:   4, words:   526
-		worklib.prim_subreg_ext:sv <0x4377402c>
+		worklib.prim_subreg_ext:sv <0x299f5e69>
 			streams:   4, words:   714
-		worklib.prim_subreg_arb:sv <0x6528d13a>
+		worklib.prim_subreg_arb:sv <0x3d40480f>
 			streams:   3, words:   664
-		worklib.prim_subreg:sv <0x6bc902a6>
+		worklib.prim_subreg:sv <0x0aca993f>
 			streams:   8, words:  2298
-		worklib.prim_subreg_arb:sv <0x4466a959>
+		worklib.prim_subreg_arb:sv <0x1c0e306c>
 			streams:   3, words:   524
-		worklib.prim_subreg:sv <0x54c15349>
+		worklib.prim_subreg:sv <0x35c2c8d0>
 			streams:   8, words:  2047
-		worklib.prim_subreg_arb:sv <0x57fe8295>
+		worklib.prim_subreg_arb:sv <0x0f961ba0>
 			streams:   3, words:   524
-		worklib.prim_subreg:sv <0x4f6ef9b0>
+		worklib.prim_subreg:sv <0x2e6d6229>
 			streams:   8, words:  2047
-		worklib.prim_subreg_ext:sv <0x01633aa3>
+		worklib.prim_subreg_ext:sv <0x6b8b24e6>
 			streams:   4, words:   693
-		worklib.prim_subreg_arb:sv <0x325f1d22>
+		worklib.prim_subreg_arb:sv <0x6a378417>
 			streams:   3, words:   512
-		worklib.prim_subreg:sv <0x5addc93f>
+		worklib.prim_subreg:sv <0x3bde52a6>
 			streams:   8, words:  2011
-		worklib.prim_subreg_arb:sv <0x51be16cf>
+		worklib.prim_subreg_arb:sv <0x09d68ffa>
 			streams:   3, words:   524
-		worklib.prim_subreg:sv <0x19e5ce8f>
+		worklib.prim_subreg:sv <0x78e65516>
 			streams:   8, words:  2047
-		worklib.prim_subreg_arb:sv <0x2f8ddc9a>
+		worklib.prim_subreg_arb:sv <0x77e545af>
 			streams:   3, words:   524
-		worklib.prim_subreg:sv <0x03516670>
+		worklib.prim_subreg:sv <0x6252fde9>
 			streams:   8, words:  2047
-		worklib.prim_subreg_arb:sv <0x1c9b7889>
+		worklib.prim_subreg_arb:sv <0x44f3e1bc>
 			streams:   3, words:   524
-		worklib.prim_subreg:sv <0x50f719c2>
+		worklib.prim_subreg:sv <0x31f4825b>
 			streams:   8, words:  2047
-		worklib.prim_subreg_arb:sv <0x0fa968b1>
+		worklib.prim_subreg_arb:sv <0x57c1f184>
 			streams:   3, words:   524
-		worklib.prim_subreg:sv <0x3e54a299>
+		worklib.prim_subreg:sv <0x5f573900>
 			streams:   8, words:  2047
-		worklib.prim_subreg_ext:sv <0x78c6dc7e>
+		worklib.prim_subreg_ext:sv <0x122ec23b>
 			streams:   4, words:   546
-		worklib.prim_subreg_ext:sv <0x52520bd9>
+		worklib.prim_subreg_ext:sv <0x38ba159c>
 			streams:   4, words:   535
-		worklib.prim_subreg_arb:sv <0x21c736ee>
+		worklib.prim_subreg_arb:sv <0x79afafdb>
 			streams:   3, words:   524
-		worklib.prim_subreg:sv <0x292bf6a2>
+		worklib.prim_subreg:sv <0x48286d3b>
 			streams:   8, words:  2121
-		worklib.prim_subreg_arb:sv <0x5caa66f0>
+		worklib.prim_subreg_arb:sv <0x04c2ffc5>
 			streams:   3, words:   529
-		worklib.prim_subreg:sv <0x459cea31>
+		worklib.prim_subreg:sv <0x249f71a8>
 			streams:   8, words:  2049
-		worklib.prim_subreg_arb:sv <0x1adbc023>
+		worklib.prim_subreg_arb:sv <0x42b35916>
 			streams:   3, words:   518
-		worklib.prim_subreg:sv <0x16ca96bf>
+		worklib.prim_subreg:sv <0x77c90d26>
 			streams:   8, words:  2038
-		worklib.prim_subreg_ext:sv <0x24550ec2>
+		worklib.prim_subreg_ext:sv <0x4ebd1087>
 			streams:   4, words:   705
-		worklib.prim_subreg_ext:sv <0x5f91304c>
+		worklib.prim_subreg_ext:sv <0x35792e09>
 			streams:   4, words:   457
-		worklib.prim_subreg_ext:sv <0x04a2756c>
+		worklib.prim_subreg_ext:sv <0x6e4a6b29>
 			streams:   4, words:   533
-		worklib.prim_subreg_arb:sv <0x5d4764a4>
+		worklib.prim_subreg_arb:sv <0x052ffd91>
 			streams:   3, words:   529
-		worklib.prim_subreg:sv <0x105464d2>
+		worklib.prim_subreg:sv <0x7157ff4b>
 			streams:   8, words:  2055
-		worklib.prim_subreg_arb:sv <0x2bd34882>
+		worklib.prim_subreg_arb:sv <0x73bbd1b7>
 			streams:   2, words:   546
-		worklib.prim_subreg:sv <0x3709446f>
+		worklib.prim_subreg:sv <0x560adff6>
 			streams:   8, words:  2055
-		worklib.prim_subreg_arb:sv <0x7b3d6fcf>
+		worklib.prim_subreg_arb:sv <0x2355f6fa>
 			streams:   5, words:   611
-		worklib.prim_subreg:sv <0x1f27f866>
+		worklib.prim_subreg:sv <0x7e2463ff>
 			streams:   8, words:  2055
-		worklib.tlul_err:sv <0x415f48be>
+		worklib.tlul_err:sv <0x712c623e>
 			streams:   7, words:  5068
-		worklib.tlul_rsp_intg_gen:sv <0x10ad3b41>
+		worklib.tlul_rsp_intg_gen:sv <0x74c55d1d>
 			streams:   6, words:  6781
-		worklib.tlul_adapter_reg:sv <0x109eaa8b>
+		worklib.tlul_adapter_reg:sv <0x1e4d5957>
 			streams:  25, words:  9683
-		worklib.tlul_data_integ_enc:sv <0x5f6f5bf7>
+		worklib.tlul_data_integ_enc:sv <0x68cecb32>
 			streams:   1, words:   461
-		worklib.tlul_rsp_intg_gen:sv <0x1628e354>
+		worklib.tlul_rsp_intg_gen:sv <0x0f1ad67f>
 			streams:   9, words:  4524
-		worklib.prim_reg_we_check:sv <0x3eefa990>
+		worklib.prim_reg_we_check:sv <0x03892338>
 			streams:   4, words:   886
-		worklib.prim_secded_inv_39_32_dec:sv <0x3dc46fd0>
+		worklib.prim_secded_inv_39_32_dec:sv <0x7637e5e8>
 			streams:   1, words:  8124
-		worklib.tlul_data_integ_dec:sv <0x2458e9d5>
+		worklib.tlul_data_integ_dec:sv <0x13f97910>
 			streams:   2, words:   549
-		worklib.tlul_cmd_intg_chk:sv <0x21f4e382>
+		worklib.tlul_cmd_intg_chk:sv <0x4cc2065e>
 			streams:   8, words:  2586
-		worklib.i2c_reg_top:sv <0x08b428e8>
-			streams: 434, words: 257299
-		worklib.prim_secded_inv_64_57_dec:sv <0x44ba2b56>
+		worklib.i2c_reg_top:sv <0x159b62af>
+			streams: 454, words: 276235
+		worklib.prim_secded_inv_64_57_dec:sv <0x0f49a16e>
 			streams:   1, words: 21025
-		worklib.tlul_rsp_intg_chk:sv <0x7c0fc292>
+		worklib.tlul_rsp_intg_chk:sv <0x0a9fc9f7>
 			streams:   7, words:  2154
-		worklib.prim_secded_inv_39_32_enc:sv <0x6852b1e4>
+		worklib.prim_secded_inv_39_32_enc:sv <0x72a4f10f>
 			streams:   1, words:  4034
-		worklib.prim_secded_inv_64_57_enc:sv <0x5e9b5015>
+		worklib.prim_secded_inv_64_57_enc:sv <0x446d10fe>
 			streams:   1, words:  3886
-		worklib.tlul_cmd_intg_gen:sv <0x003ad29c>
+		worklib.tlul_cmd_intg_gen:sv <0x0d1b1889>
 			streams:   8, words:  3718
-		worklib.prim_rom:sv <0x690639db>
+		worklib.prim_rom:sv <0x6d856a00>
 			streams:  12, words:  6080
-		worklib.prim_flop_no_rst:sv <0x5ddab756>
+		worklib.prim_flop_no_rst:sv <0x51e3d142>
 			streams:   2, words:   235
-		worklib.prim_clock_buf:sv <0x71466502>
+		worklib.prim_clock_buf:sv <0x70564275>
 			streams:   2, words:   317
-		worklib.prim_clock_inv:sv <0x3d11ea85>
+		worklib.prim_clock_inv:sv <0x1f090e21>
 			streams:   2, words:   442
-		worklib.prim_clock_div:sv <0x235aa63a>
+		worklib.prim_clock_div:sv <0x44aef0e4>
 			streams:  17, words:  3820
-		worklib.prim_pad_attr:sv <0x4e34fb67>
+		worklib.prim_pad_attr:sv <0x50a6412e>
 			streams:   1, words:   741
-		worklib.prim_pad_wrapper:sv <0x3be7fccc>
+		worklib.prim_pad_wrapper:sv <0x4a8715be>
 			streams:   9, words:  2545
-		worklib.prim_usb_diff_rx:sv <0x213f8203>
+		worklib.prim_usb_diff_rx:sv <0x1f32c1b1>
 			streams:   5, words:   998
-		worklib.prim_edge_detector:sv <0x270b21a7>
+		worklib.prim_edge_detector:sv <0x58edf458>
 			streams:   5, words:  1147
-		worklib.prim_sync_reqack_data:sv <0x42416f81>
+		worklib.prim_sync_reqack_data:sv <0x4e827932>
 			streams:  14, words:  6547
-		worklib.prim_cdc_rand_delay:sv <0x340734a8>
+		worklib.prim_cdc_rand_delay:sv <0x358ef1a3>
 			streams:   1, words:    88
-		worklib.prim_secded_39_32_dec:sv <0x07352cae>
+		worklib.prim_secded_39_32_dec:sv <0x1dc36c45>
 			streams:   1, words:  7991
-		worklib.prim_fifo_async_simple:sv <0x4798ab03>
+		worklib.prim_fifo_async_simple:sv <0x48563bd4>
 			streams:  17, words:  3860
-		worklib.prim_secded_inv_72_64_enc:sv <0x442e6b97>
+		worklib.prim_secded_inv_72_64_enc:sv <0x5ed82b7c>
 			streams:   1, words:  2224
-		worklib.prim_secded_hamming_76_68_dec:sv <0x138e4b18>
+		worklib.prim_secded_hamming_76_68_dec:sv <0x550cccf6>
 			streams:   1, words: 13537
-		worklib.prim_secded_hamming_72_64_enc:sv <0x5ad97d53>
+		worklib.prim_secded_hamming_72_64_enc:sv <0x112af76b>
 			streams:   1, words:  2052
-		worklib.prim_secded_22_16_dec:sv <0x2e45214b>
+		worklib.prim_secded_22_16_dec:sv <0x34b361a0>
 			streams:   1, words:  4186
-		worklib.prim_secded_64_57_dec:sv <0x3d168eda>
+		worklib.prim_secded_64_57_dec:sv <0x27e0ce31>
 			streams:   1, words: 22363
-		worklib.prim_msb_extend:sv <0x640a8469>
+		worklib.prim_msb_extend:sv <0x23fec991>
 			streams:   2, words:   487
-		worklib.prim_packer:sv <0x59c5512c>
+		worklib.prim_packer:sv <0x05c42c1c>
 			streams:  80, words: 105415
-		worklib.prim_secded_28_22_enc:sv <0x1772e74e>
+		worklib.prim_secded_28_22_enc:sv <0x5eb14f2b>
 			streams:   1, words:  1247
-		worklib.prim_reg_cdc_arb:sv <0x2e633b16>
+		worklib.prim_reg_cdc_arb:sv <0x24a215fb>
 			streams:   6, words:  1462
-		worklib.prim_reg_cdc:sv <0x2e1c00ce>
+		worklib.prim_reg_cdc:sv <0x364bd515>
 			streams:  40, words: 20509
-		worklib.prim_mubi12_sender:sv <0x08f61d45>
+		worklib.prim_mubi12_sender:sv <0x2e90704c>
 			streams:  10, words:  4769
-		worklib.prim_mubi28_sender:sv <0x483aae03>
+		worklib.prim_mubi28_sender:sv <0x6e5cc30a>
 			streams:  10, words:  4769
-		worklib.prim_secded_28_22_dec:sv <0x57024b74>
+		worklib.prim_secded_28_22_dec:sv <0x4df40b9f>
 			streams:   1, words:  5205
-		worklib.prim_secded_hamming_39_32_dec:sv <0x414a66dd>
+		worklib.prim_secded_hamming_39_32_dec:sv <0x07c8e133>
 			streams:   1, words:  8038
-		worklib.prim_flop:sv <0x7fad8fb5>
+		worklib.prim_flop:sv <0x3b7daad7>
 			streams:   2, words:   401
-		worklib.prim_flop_2sync:sv <0x3eae9d84>
+		worklib.prim_flop_2sync:sv <0x72110695>
 			streams:   6, words:  1239
-		worklib.prim_fifo_async:sv <0x21513dab>
+		worklib.prim_fifo_async:sv <0x7c9eef58>
 			streams:  47, words: 20609
-		worklib.prim_flop_2sync:sv <0x3a1915d1>
+		worklib.prim_flop_2sync:sv <0x76a68ec0>
 			streams:   6, words:  1266
-		worklib.prim_mubi32_sender:sv <0x5564d642>
+		worklib.prim_mubi32_sender:sv <0x7302bb4b>
 			streams:  10, words:  4737
-		worklib.prim_secded_hamming_22_16_enc:sv <0x130e423d>
+		worklib.prim_secded_hamming_22_16_enc:sv <0x58fdc805>
 			streams:   1, words:  1247
-		worklib.prim_secded_inv_72_64_dec:sv <0x74872f6d>
+		worklib.prim_secded_inv_72_64_dec:sv <0x3f74a555>
 			streams:   1, words: 24357
-		worklib.prim_sync_slow_fast:sv <0x2897eedc>
+		worklib.prim_sync_slow_fast:sv <0x3482e3b8>
 			streams:   7, words:  1397
-		worklib.prim_clock_mux2:sv <0x53742f3f>
+		worklib.prim_clock_mux2:sv <0x584c1061>
 			streams:  11, words:  7126
-		worklib.prim_rst_sync:sv <0x392e25f7>
+		worklib.prim_rst_sync:sv <0x60df38c0>
 			streams:   9, words:  1764
-		worklib.prim_mubi8_sender:sv <0x454be3d8>
+		worklib.prim_mubi8_sender:sv <0x1f9d16b3>
 			streams:  10, words:  4754
-		worklib.prim_flop:sv <0x62182ea2>
+		worklib.prim_flop:sv <0x26c80bc0>
 			streams:   2, words:   416
-		worklib.prim_flop:sv <0x146b68cc>
+		worklib.prim_flop:sv <0x50bb4dae>
 			streams:   2, words:   435
-		worklib.prim_esc_receiver:sv <0x69537a97>
+		worklib.prim_esc_receiver:sv <0x335018a6>
 			streams:  78, words: 56443
-		worklib.prim_secded_inv_hamming_76_68_dec:sv <0x2ba1b6ab>
+		worklib.prim_secded_inv_hamming_76_68_dec:sv <0x1ba7e5f0>
 			streams:   1, words: 14185
-		worklib.prim_flop_2sync:sv <0x66666b26>
+		worklib.prim_flop_2sync:sv <0x2ad9f037>
 			streams:   6, words:  1266
-		worklib.prim_gf_mult:sv <0x190b3358>
+		worklib.prim_gf_mult:sv <0x15249a2c>
 			streams:  14, words:  9301
-		worklib.prim_subreg:sv <0x2f3f9beb>
+		worklib.prim_subreg:sv <0x4e3c0072>
 			streams:   8, words:  2117
-		worklib.prim_subreg:sv <0x57ac4944>
+		worklib.prim_subreg:sv <0x36afd2dd>
 			streams:   8, words:  1953
-		worklib.prim_subreg_arb:sv <0x04d912f7>
+		worklib.prim_subreg_arb:sv <0x5cb18bc2>
 			streams:   3, words:   504
-		worklib.prim_subreg_shadow:sv <0x7266f4b4>
+		worklib.prim_subreg_shadow:sv <0x6e3e5860>
 			streams:  35, words:  8925
-		worklib.prim_flop:sv <0x0a4db642>
+		worklib.prim_flop:sv <0x4e9d9320>
 			streams:   2, words:   423
-		worklib.prim_flop_2sync:sv <0x58112d39>
+		worklib.prim_flop_2sync:sv <0x14aeb628>
 			streams:   6, words:  1257
-		worklib.prim_filter_ctr:sv <0x641bdb67>
+		worklib.prim_filter_ctr:sv <0x6210b9fe>
 			streams:   9, words:  2287
-		worklib.prim_flop:sv <0x1eceaea5>
+		worklib.prim_flop:sv <0x5a1e8bc7>
 			streams:   2, words:   405
-		worklib.prim_flop_2sync:sv <0x144c53d9>
+		worklib.prim_flop_2sync:sv <0x58f3c8c8>
 			streams:   6, words:  1218
-		worklib.prim_sec_anchor_buf:sv <0x367cc01c>
+		worklib.prim_sec_anchor_buf:sv <0x2ba652bc>
 			streams:   1, words:   432
-		worklib.prim_diff_encode:sv <0x03a739e7>
+		worklib.prim_diff_encode:sv <0x67bf3495>
 			streams:   5, words:  1802
-		worklib.prim_alert_receiver:sv <0x72da77a8>
+		worklib.prim_alert_receiver:sv <0x4f812746>
 			streams: 122, words: 91214
-		worklib.prim_alert_to_diff:sv <0x16347271>
+		worklib.prim_alert_to_diff:sv <0x16c71fe6>
 			streams:   8, words:  2273
-		worklib.prim_fifo_sync_cnt:sv <0x06661251>
+		worklib.prim_fifo_sync_cnt:sv <0x6f4ede27>
 			streams:  18, words:  8938
-		worklib.prim_fifo_sync:sv <0x2bb76fc2>
+		worklib.prim_fifo_sync:sv <0x48dfa0ee>
 			streams:  58, words: 33877
-		worklib.prim_leading_one_ppc:sv <0x7de5f93d>
+		worklib.prim_leading_one_ppc:sv <0x10d31ce1>
 			streams:   3, words:  1273
-		worklib.prim_arbiter_ppc:sv <0x592afe03>
+		worklib.prim_arbiter_ppc:sv <0x7710181e>
 			streams:  91, words: 67198
-		worklib.prim_filter:sv <0x7da16364>
+		worklib.prim_filter:sv <0x4158fd93>
 			streams:   9, words:  1926
-		worklib.prim_flop:sv <0x1c792eb3>
+		worklib.prim_flop:sv <0x58a90bd1>
 			streams:   2, words:   435
-		worklib.prim_flop_2sync:sv <0x2ba19ba2>
+		worklib.prim_flop_2sync:sv <0x671e00b3>
 			streams:   6, words:  1266
-		worklib.prim_secded_72_64_dec:sv <0x470618e9>
+		worklib.prim_secded_72_64_dec:sv <0x5df05802>
 			streams:   1, words: 23709
-		worklib.prim_buf:sv <0x1e3e6610>
+		worklib.prim_buf:sv <0x479b16f5>
 			streams:   2, words:   324
-		worklib.prim_buf:sv <0x4f617940>
+		worklib.prim_buf:sv <0x16c409a5>
 			streams:   2, words:   310
-		worklib.prim_lfsr:sv <0x44136f75>
+		worklib.prim_lfsr:sv <0x34cb884c>
 			streams:  72, words: 45810
-		worklib.prim_buf:sv <0x44b235f1>
+		worklib.prim_buf:sv <0x1d174514>
 			streams:   2, words:   556
-		worklib.prim_flop:sv <0x6af69e95>
+		worklib.prim_flop:sv <0x2e26bbf7>
 			streams:   2, words:   401
-		worklib.prim_flop_2sync:sv <0x290c89f8>
+		worklib.prim_flop_2sync:sv <0x65b312e9>
 			streams:   6, words:  1239
-		worklib.prim_fifo_async_sram_adapter:sv <0x0c564923>
+		worklib.prim_fifo_async_sram_adapter:sv <0x008d149d>
 			streams: 109, words: 57713
-		worklib.prim_and2:sv <0x11842733>
+		worklib.prim_and2:sv <0x5fe4d38b>
 			streams:   1, words:   171
-		worklib.prim_secded_inv_hamming_72_64_enc:sv <0x61213e13>
+		worklib.prim_secded_inv_hamming_72_64_enc:sv <0x27a3b9fd>
 			streams:   1, words:  2224
-		worklib.prim_ascon_sbox:sv <0x1f6e3350>
+		worklib.prim_ascon_sbox:sv <0x17b2091e>
 			streams:   5, words:  2061
-		worklib.prim_flop:sv <0x6aac3cc1>
+		worklib.prim_flop:sv <0x2e7c19a3>
 			streams:   2, words:   435
-		worklib.prim_sparse_fsm_flop:sv <0x2b8c3c3d>
-			streams:   6, words:  3594
-		worklib.prim_flop:sv <0x408fd9f6>
+		worklib.prim_sparse_fsm_flop:sv <0x1a97c2ec>
+			streams:   5, words:  1429
+		worklib.prim_flop:sv <0x045ffc94>
 			streams:   2, words:   401
-		worklib.prim_flop:sv <0x18fd5215>
+		worklib.prim_flop:sv <0x5c2d7777>
 			streams:   2, words:   420
-		worklib.prim_secded_hamming_72_64_dec:sv <0x4125cee9>
+		worklib.prim_secded_hamming_72_64_dec:sv <0x07a74907>
 			streams:   1, words: 23842
-		worklib.prim_secded_hamming_76_68_enc:sv <0x5c6013f0>
+		worklib.prim_secded_hamming_76_68_enc:sv <0x179399c8>
 			streams:   1, words:  2011
-		worklib.prim_secded_hamming_22_16_dec:sv <0x6788792e>
+		worklib.prim_secded_hamming_22_16_dec:sv <0x210afec0>
 			streams:   1, words:  4194
-		worklib.prim_packer_fifo:sv <0x6c43109d>
+		worklib.prim_packer_fifo:sv <0x36d07e56>
 			streams:  30, words: 14854
-		worklib.prim_clock_gating:sv <0x13406119>
+		worklib.prim_clock_gating:sv <0x0975ad30>
 			streams:   2, words:   455
-		worklib.prim_flop:sv <0x58b5d6f9>
+		worklib.prim_flop:sv <0x1c65f39b>
 			streams:   2, words:   416
-		worklib.prim_flop_2sync:sv <0x27d24fa3>
+		worklib.prim_flop_2sync:sv <0x6b6dd4b2>
 			streams:   6, words:  1254
-		worklib.prim_clock_gating_sync:sv <0x73e9b9b4>
+		worklib.prim_clock_gating_sync:sv <0x76acad98>
 			streams:   3, words:   679
-		worklib.prim_xnor2:sv <0x655b15fb>
+		worklib.prim_xnor2:sv <0x1374ff7c>
 			streams:   1, words:   177
-		worklib.prim_diff_decode:sv <0x2b92c2a3>
+		worklib.prim_diff_decode:sv <0x24041818>
 			streams:  55, words: 38470
-		worklib.prim_esc_sender:sv <0x57b86566>
+		worklib.prim_esc_sender:sv <0x043d06b9>
 			streams:  96, words: 73787
-		worklib.prim_sec_anchor_flop:sv <0x22a33848>
+		worklib.prim_sec_anchor_flop:sv <0x3a900efc>
 			streams:   1, words:   344
-		worklib.prim_sec_anchor_buf:sv <0x609a11d5>
+		worklib.prim_sec_anchor_buf:sv <0x7d408375>
 			streams:   1, words:   364
-		worklib.prim_flop:sv <0x4066c83d>
+		worklib.prim_flop:sv <0x04b6ed5f>
 			streams:   2, words:   435
-		worklib.prim_flop_2sync:sv <0x17db9330>
+		worklib.prim_flop_2sync:sv <0x5b640821>
 			streams:   6, words:  1254
-		worklib.prim_buf:sv <0x48978a82>
+		worklib.prim_buf:sv <0x1132fa67>
 			streams:   2, words:   370
-		worklib.prim_sec_anchor_buf:sv <0x1de10563>
+		worklib.prim_sec_anchor_buf:sv <0x003b97c3>
 			streams:   1, words:   344
-		worklib.prim_alert_sender:sv <0x061b507d>
+		worklib.prim_alert_sender:sv <0x5b2b9a96>
 			streams:  99, words: 68532
-		worklib.prim_buf:sv <0x67d122e4>
+		worklib.prim_buf:sv <0x3e745201>
 			streams:   2, words:   318
-		worklib.prim_sec_anchor_buf:sv <0x5a71be21>
+		worklib.prim_sec_anchor_buf:sv <0x47ab2c81>
 			streams:   1, words:   344
-		worklib.prim_flop:sv <0x4835fb6b>
+		worklib.prim_flop:sv <0x0ce5de09>
 			streams:   2, words:   420
-		worklib.prim_flop_2sync:sv <0x68a48595>
+		worklib.prim_flop_2sync:sv <0x241b1e84>
 			streams:   6, words:  1290
-		worklib.prim_diff_to_alert:sv <0x759c8810>
+		worklib.prim_diff_to_alert:sv <0x060d8c49>
 			streams:   7, words:  2301
-		worklib.prim_flop_en:sv <0x64466a5f>
+		worklib.prim_flop_en:sv <0x31b7d7d6>
 			streams:   3, words:   946
-		worklib.prim_xor2:sv <0x17ec766d>
+		worklib.prim_xor2:sv <0x598c82d5>
 			streams:   1, words:   323
-		worklib.prim_dom_and_2share:sv <0x71d7c2c8>
+		worklib.prim_dom_and_2share:sv <0x22cd80a9>
 			streams:  25, words: 21722
-		worklib.prim_secded_inv_hamming_72_64_dec:sv <0x6f1db528>
+		worklib.prim_secded_inv_hamming_72_64_dec:sv <0x5f1be673>
 			streams:   1, words: 24490
-		worklib.prim_flop_2sync:sv <0x756b906b>
+		worklib.prim_flop_2sync:sv <0x39d40b7a>
 			streams:   6, words:  1266
-		worklib.prim_flop:sv <0x5b2f0c0d>
+		worklib.prim_flop:sv <0x1fff296f>
 			streams:   2, words:   435
-		worklib.prim_mubi24_sender:sv <0x15516ad1>
+		worklib.prim_mubi24_sender:sv <0x333707d8>
 			streams:  10, words:  4769
-		worklib.prim_subst_perm:sv <0x70126802>
+		worklib.prim_subst_perm:sv <0x3d8e1f70>
 			streams:   2, words:   331
-		worklib.prim_subst_perm:sv <0x3658a8ba>
+		worklib.prim_subst_perm:sv <0x7bc4dfc8>
 			streams:   2, words:   331
-		worklib.prim_buf:sv <0x6be39fa8>
+		worklib.prim_buf:sv <0x3246ef4d>
 			streams:   2, words:   318
-		worklib.prim_slicer:sv <0x1f594bdd>
+		worklib.prim_slicer:sv <0x5428aaa8>
 			streams:   3, words:   856
-		worklib.prim_secded_72_64_enc:sv <0x633e6b6d>
+		worklib.prim_secded_72_64_enc:sv <0x2afdc308>
 			streams:   1, words:  2052
-		worklib.prim_secded_inv_hamming_76_68_enc:sv <0x59d64568>
+		worklib.prim_secded_inv_hamming_76_68_enc:sv <0x1f54c286>
 			streams:   1, words:  2183
-		worklib.prim_flop:sv <0x645f54d7>
+		worklib.prim_flop:sv <0x208f71b5>
 			streams:   2, words:   435
-		worklib.prim_mubi20_sender:sv <0x1552379f>
+		worklib.prim_mubi20_sender:sv <0x33345a96>
 			streams:  10, words:  4769
-		worklib.prim_flop_2sync:sv <0x4ca7671a>
+		worklib.prim_flop_2sync:sv <0x0018fc0b>
 			streams:   6, words:  1239
-		worklib.prim_secded_inv_28_22_enc:sv <0x2ff82be8>
+		worklib.prim_secded_inv_28_22_enc:sv <0x350e6b03>
 			streams:   1, words:  1310
-		worklib.prim_secded_22_16_enc:sv <0x60c9858f>
+		worklib.prim_secded_22_16_enc:sv <0x290a2dea>
 			streams:   1, words:  1247
-		worklib.prim_flop:sv <0x3d94814b>
+		worklib.prim_flop:sv <0x7944a429>
 			streams:   2, words:   420
-		worklib.prim_mubi4_sender:sv <0x78d0f278>
+		worklib.prim_mubi4_sender:sv <0x22060713>
 			streams:  10, words:  4748
-		worklib.prim_secded_inv_28_22_dec:sv <0x6a76fc24>
+		worklib.prim_secded_inv_28_22_dec:sv <0x2185761c>
 			streams:   1, words:  5211
-		worklib.prim_secded_hamming_39_32_enc:sv <0x67246bd9>
+		worklib.prim_secded_hamming_39_32_enc:sv <0x2cd7e1e1>
 			streams:   1, words:  3144
-		worklib.prim_flop:sv <0x4cdd7fb9>
+		worklib.prim_flop:sv <0x080d5adb>
 			streams:   2, words:   407
-		worklib.prim_flop_2sync:sv <0x0627f0c7>
+		worklib.prim_flop_2sync:sv <0x4a986bd6>
 			streams:   6, words:  1257
-		worklib.prim_and2:sv <0x5fc5fb1b>
+		worklib.prim_and2:sv <0x11a50fa3>
 			streams:   1, words:   179
-		worklib.prim_blanker:sv <0x14baa182>
+		worklib.prim_blanker:sv <0x575fe0d6>
 			streams:   2, words:   399
-		worklib.prim_clock_timeout:sv <0x162f339d>
+		worklib.prim_clock_timeout:sv <0x1653fb55>
 			streams:   9, words:  2345
-		worklib.prim_sync_reqack:sv <0x41e6426d>
+		worklib.prim_sync_reqack:sv <0x3f2c07e3>
 			streams:  32, words: 15617
-		worklib.prim_clock_timeout:sv <0x79a21e37>
+		worklib.prim_clock_timeout:sv <0x79ded6ff>
 			streams:   9, words:  2345
-		worklib.prim_pulse_sync:sv <0x3e32ad51>
+		worklib.prim_pulse_sync:sv <0x33312c9a>
 			streams:  21, words:  9611
-		worklib.prim_flop:sv <0x31f9d308>
+		worklib.prim_flop:sv <0x7529f66a>
 			streams:   2, words:   416
-		worklib.prim_flop_2sync:sv <0x316c9f0d>
+		worklib.prim_flop_2sync:sv <0x7dd3041c>
 			streams:   6, words:  1254
-		worklib.prim_clock_meas:sv <0x0f2faa00>
+		worklib.prim_clock_meas:sv <0x6e2784eb>
 			streams:  26, words: 10574
-		worklib.prim_flop:sv <0x5d56fd93>
+		worklib.prim_flop:sv <0x1986d8f1>
 			streams:   2, words:   435
-		worklib.prim_mubi16_sender:sv <0x35e025b7>
+		worklib.prim_mubi16_sender:sv <0x138648be>
 			streams:  10, words:  4769
-		worklib.prim_secded_39_32_enc:sv <0x46975590>
+		worklib.prim_secded_39_32_enc:sv <0x0f54fdf5>
 			streams:   1, words:  3139
-		worklib.prim_buf:sv <0x27422829>
+		worklib.prim_buf:sv <0x7ee758cc>
 			streams:   2, words:   331
-		worklib.prim_flop:sv <0x4c9aeb69>
+		worklib.prim_flop:sv <0x084ace0b>
 			streams:   2, words:   435
-		worklib.prim_flop_2sync:sv <0x46520a12>
+		worklib.prim_flop_2sync:sv <0x0aed9103>
 			streams:   6, words:  1266
-		worklib.prim_secded_64_57_enc:sv <0x0e087a3e>
+		worklib.prim_secded_64_57_enc:sv <0x47cbd25b>
 			streams:   1, words:  3122
-		worklib.prim_ascon_duplex:sv <0x4a7c9ac1>
+		worklib.prim_ascon_duplex:sv <0x2cd24b9b>
 			streams:  43, words: 42020
 		worklib.prim_ascon_pkg:sv <0x4ab3f7ca>
 			streams:   3, words:  1438
 		worklib.prim_pad_wrapper_pkg:sv <0x162a3fc7>
 			streams:   0, words:     0
-		worklib.prim_mubi12_sync:sv <0x7248ed2b>
+		worklib.prim_mubi12_sync:sv <0x2eca1793>
 			streams:  19, words: 10590
-		worklib.prim_multibit_sync:sv <0x4a96f0e7>
+		worklib.prim_multibit_sync:sv <0x2fed8d9a>
 			streams:  21, words: 12448
-		worklib.prim_mubi4_sync:sv <0x68d58f03>
+		worklib.prim_mubi4_sync:sv <0x52a5419c>
 			streams:  19, words: 10536
-		worklib.prim_ram_1p_adv:sv <0x2f104c5d>
+		worklib.prim_ram_1p_adv:sv <0x5efb629e>
 			streams:  47, words: 21807
-		worklib.prim_ram_1p_scr:sv <0x5babeec7>
+		worklib.prim_ram_1p_scr:sv <0x0ef11b87>
 			streams:  71, words: 25939
-		worklib.prim_xoshiro256pp:sv <0x0f4f2d2a>
+		worklib.prim_xoshiro256pp:sv <0x7394809f>
 			streams:  11, words:  8930
-		worklib.prim_keccak:sv <0x460b3a28>
+		worklib.prim_keccak:sv <0x6010e6d7>
 			streams:  39, words: 48011
-		worklib.prim_mubi24_sync:sv <0x74bec26f>
+		worklib.prim_mubi24_sync:sv <0x1b6885b3>
 			streams:  19, words: 10590
-		worklib.prim_crc32:sv <0x5ca5dee2>
+		worklib.prim_crc32:sv <0x047497ab>
 			streams:   7, words:  8145
-		worklib.prim_max_tree:sv <0x48764d00>
+		worklib.prim_max_tree:sv <0x34e8adb0>
 			streams:  56, words: 46912
-		worklib.prim_count:sv <0x5a130f47>
-			streams: 112, words: 85319
-		worklib.prim_ascon_round:sv <0x4adc2dd1>
+		worklib.prim_count:sv <0x08216dfc>
+			streams: 111, words: 83151
+		worklib.prim_ascon_round:sv <0x18d82472>
 			streams:  14, words: 12682
-		worklib.prim_onehot_mux:sv <0x4ac0d37a>
+		worklib.prim_onehot_mux:sv <0x4dfc6bfc>
 			streams:  11, words:  5358
-		worklib.prim_double_lfsr:sv <0x4ddfbd43>
-			streams:  12, words:  5612
-		worklib.prim_mubi12_dec:sv <0x364f3a89>
+		worklib.prim_double_lfsr:sv <0x66d74434>
+			streams:  11, words:  3483
+		worklib.prim_mubi12_dec:sv <0x2915deb9>
 			streams:   4, words:   971
-		worklib.prim_arbiter_tree_dup:sv <0x3659a4d3>
+		worklib.prim_arbiter_tree_dup:sv <0x43e8848d>
 			streams:  18, words:  6380
-		worklib.prim_mubi28_sync:sv <0x67773a61>
+		worklib.prim_mubi28_sync:sv <0x653815b2>
 			streams:  19, words: 10590
-		worklib.prim_sram_arbiter:sv <0x041bc7cf>
+		worklib.prim_sram_arbiter:sv <0x594ea159>
 			streams:  15, words:  6121
-		worklib.prim_mubi16_dec:sv <0x5317a652>
+		worklib.prim_mubi16_dec:sv <0x43bc1ddf>
 			streams:   4, words:   971
-		worklib.prim_mubi32_sync:sv <0x05746b36>
+		worklib.prim_mubi32_sync:sv <0x16c8acb2>
 			streams:  19, words: 10551
-		worklib.prim_mubi20_dec:sv <0x5a9e65ee>
+		worklib.prim_mubi20_dec:sv <0x08de5dcf>
 			streams:   4, words:   971
-		worklib.prim_mubi8_sync:sv <0x753538f5>
+		worklib.prim_mubi8_sync:sv <0x23b3b23a>
 			streams:  19, words: 10542
-		worklib.prim_mubi24_dec:sv <0x3fc7364f>
+		worklib.prim_mubi24_dec:sv <0x2926230e>
 			streams:   4, words:   971
-		worklib.prim_mubi32_dec:sv <0x2cb5e47d>
+		worklib.prim_mubi32_dec:sv <0x6a85bc59>
 			streams:   4, words:  1004
-		worklib.prim_mubi4_dec:sv <0x075de57c>
+		worklib.prim_mubi4_dec:sv <0x43d9b97b>
 			streams:   4, words:   959
-		worklib.prim_mubi16_sync:sv <0x08a1a542>
+		worklib.prim_mubi16_sync:sv <0x4b74cdd2>
 			streams:  19, words: 10590
-		worklib.prim_count:sv <0x124e8779>
-			streams:  90, words: 68218
-		worklib.prim_mubi8_dec:sv <0x5f867d22>
+		worklib.prim_count:sv <0x72c864e9>
+			streams:  89, words: 67750
+		worklib.prim_mubi8_dec:sv <0x5f39a4fd>
 			streams:   4, words:   965
-		worklib.prim_mubi20_sync:sv <0x2137e953>
+		worklib.prim_mubi20_sync:sv <0x317f4d80>
 			streams:  19, words: 10590
-		worklib.prim_mubi28_dec:sv <0x5ca01848>
+		worklib.prim_mubi28_dec:sv <0x2e8ca7bf>
 			streams:   4, words:   971
-		worklib.prim_sum_tree:sv <0x7909d9d9>
+		worklib.prim_sum_tree:sv <0x66edb5cf>
 			streams:  47, words: 32776
-		worklib.prim_present:sv <0x24f743f3>
+		worklib.prim_present:sv <0x43a3d6f0>
 			streams:  12, words:  8072
-		worklib.prim_onehot_check:sv <0x26c17a05>
-			streams:  35, words: 34261
-		worklib.prim_ram_1p_adv:sv <0x08c5c630>
+		worklib.prim_ram_1p_adv:sv <0x6af95127>
 			streams:  48, words: 17726
-		worklib.i2c:sv <0x11b89dbc>
-			streams:  34, words: 11856
-		worklib.prim_ram_1p:sv <0x2f31d800>
+		worklib.i2c:sv <0x23a9de7d>
+			streams: 160, words: 104160
+		worklib.prim_onehot_check:sv <0x74700b75>
+			streams:  34, words: 32357
+		worklib.prim_ram_1p:sv <0x3afe6836>
 			streams:  16, words:  9952
-		worklib.prim_subst_perm:sv <0x756a86f4>
+		worklib.prim_subst_perm:sv <0x73866da7>
 			streams:   3, words:  3755
-		worklib.prim_prince:sv <0x187f0d7c>
+		worklib.prim_prince:sv <0x605e5544>
 			streams:  30, words: 26832
 		worklib.prim_cipher_pkg:sv <0x63b9332c>
 			streams:  22, words: 25416
-		worklib.prim_arbiter_tree:sv <0x126a39e6>
+		worklib.prim_arbiter_tree:sv <0x3c9efefd>
 			streams: 110, words: 79561
-		worklib.prim_ram_1p:sv <0x08e54c60>
+		worklib.prim_ram_1p:sv <0x1436fda2>
 			streams:  16, words:  8614
-		worklib.prim_arbiter_tree:sv <0x1059ec13>
+		worklib.prim_arbiter_tree:sv <0x6f505d40>
 			streams: 119, words: 87377
-		worklib.prim_diff_decode:sv <0x11b38e63>
+		worklib.prim_diff_decode:sv <0x4d0b6215>
 			streams:  85, words: 71326
-		worklib.prim_diff_decode:sv <0x6114c2c2>
+		worklib.prim_diff_decode:sv <0x3dac2eb4>
 			streams:  85, words: 71324
 		worklib.prim_util_pkg:sv <0x7f6640bf>
 			streams:   2, words:   941
-		worklib.i2c_if:sv <0x0bda6299>
-			streams: 1401, words: 1420683
-		worklib.tlul_pkg:sv <0x7cfd04cd>
-			streams:   7, words:  3579
-		worklib.prim_mubi_pkg:sv <0x615ea226>
-			streams: 112, words: 29374
-		worklib.prim_secded_pkg:sv <0x50754e94>
-			streams:  41, words: 192179
+		worklib.i2c_if:sv <0x083623c9>
+			streams: 1849, words: 1871949
 		worklib.top_racl_pkg:sv <0x57167666>
 			streams:   2, words:   206
+		worklib.tlul_pkg:sv <0x7cfd04cd>
+			streams:   7, words:  3579
 		worklib.top_pkg:sv <0x2ccb2fe0>
 			streams:   0, words:     0
+		worklib.prim_secded_pkg:sv <0x50754e94>
+			streams:  41, words: 192179
 		worklib.cdns_uvm_pkg:sv <0x1ee93ac2>
 			streams: 237, words: 313857
 		worklib.cdns_uvmapi:svp <0x7059a7a7>
@@ -1440,33 +1443,35 @@ xmelab: *W,CUVMPW (../prim/rtl/prim_ram_1p_adv.sv,166|27): port sizes differ in 
 			streams:   3, words:  1352
 		worklib.uvm_pkg:sv <0x687a56d9>
 			streams: 5295, words: 6631806
+		worklib.prim_mubi_pkg:sv <0x615ea226>
+			streams: 112, words: 29374
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                       Instances  Unique
 		Modules:                    1039     164
-		Interfaces:                    1       1
+		Interfaces:                    2       2
 		Verilog packages:             22      22
-		Registers:                 26320   16729
-		Scalar wires:               6408       -
+		Registers:                 27498   17009
+		Scalar wires:               6410       -
 		Expanded wires:              658       4
-		Vectored wires:             3135       -
-		Named events:                422     296
-		Always blocks:              2236    1420
-		Initial blocks:              951     579
-		Clocking blocks:               2       2
-		Clocking items:                4       4
+		Vectored wires:             3134       -
+		Named events:                478     337
+		Always blocks:              2459    1583
+		Initial blocks:             1025     622
+		Clocking blocks:               4       4
+		Clocking items:                8       8
 		Parallel blocks:              29      30
 		Cont. assignments:          4465    1339
 		Pseudo assignments:         2468       -
-		Assertions:                  528     381
+		Assertions:                  581     419
 		Covergroup Instances:          0       4
 		Compilation units:             1       1
-		SV Class declarations:       261     376
-		SV Class specializations:    508     508
-		Process Clocks:              815     128
+		SV Class declarations:       266     381
+		SV Class specializations:    542     542
+		Process Clocks:              871     128
 		Simulation timescale:        1ps
 	Writing initial simulation snapshot: worklib.prim_secded_64_57_enc:sv
-xmelab: Memory Usage - Final: 76.3M, Peak: 78.1M, Peak virtual: 145.3M
-xmelab: CPU Usage - 0.9s system + 2.8s user = 3.7s total (4.3s, 87.3% cpu)
-TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 14:24:14 EDT  (total: 00:00:07)
+xmelab: Memory Usage - Final: 77.5M, Peak: 79.2M, Peak virtual: 146.6M
+xmelab: CPU Usage - 0.9s system + 2.9s user = 3.8s total (4.5s, 84.6% cpu)
+TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 19:26:28 EDT  (total: 00:00:08)

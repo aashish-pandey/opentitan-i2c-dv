@@ -4,6 +4,7 @@
 //
 -INPUT
 "@source /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2/additions/sv/files/tcl/uvm_sim.tcl"
++define+ASSERT_OFF
 -amsdlibdir
 ./xcelium.d/AMSD
 -uvmhome
@@ -18,7 +19,7 @@
 +EMGRLOG
 xrun_elab.log
 -XLSTIME
-1776450247
+1776468380
 -XLKEEP
 -XLMODE
 ./xcelium.d/run.lnx86.23.09.d
