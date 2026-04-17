@@ -25,7 +25,7 @@ class i2c_target_driver extends uvm_driver #(i2c_seq_item);
         end
     endtask
 
-    task drive_transaction();
+    task automatic drive_transaction();
         logic [7:0] addr_bytes;
         logic [6:0] address;
         logic rw;
@@ -72,7 +72,7 @@ class i2c_target_driver extends uvm_driver #(i2c_seq_item);
 
     endtask
 
-    task wait_for_start();
+    task automatic wait_for_start();
         forever begin
             @(negedge vif.sda); 
             if(vif.scl == 1)
@@ -80,18 +80,18 @@ class i2c_target_driver extends uvm_driver #(i2c_seq_item);
         end
     endtask
 
-    task receive_bit(output logic val);
+    task automatic receive_bit(output logic val);
 
         @(posedge vif.scl);
 
-        val <= vif.sda;
+        val = vif.sda;
 
         @(negedge vif.scl);
         
 
     endtask
 
-    task receive_byte(output logic [7:0] val);
+    task automatic receive_byte(output logic [7:0] val);
 
         for(int i = 7; i >= 0; i--)begin
             receive_bit(val[i]);
@@ -99,7 +99,7 @@ class i2c_target_driver extends uvm_driver #(i2c_seq_item);
 
     endtask
 
-    task send_ack();
+    task automatic send_ack();
 
         vif.sda <= 0;
 
@@ -112,14 +112,14 @@ class i2c_target_driver extends uvm_driver #(i2c_seq_item);
 
     endtask
 
-    task send_nack();
+    task automatic send_nack();
         vif.sda <= 1;
         @(posedge vif.scl);
 
         @(negedge vif.scl);
     endtask
 
-    task send_bit_target(logic val);
+    task automatic send_bit_target(logic val);
 
         vif.sda <= val;
 
@@ -129,7 +129,7 @@ class i2c_target_driver extends uvm_driver #(i2c_seq_item);
 
     endtask
 
-    task wait_for_stop();
+    task automatic wait_for_stop();
         forever begin
             @(posedge vif.sda);
             if(vif.scl == 1)
