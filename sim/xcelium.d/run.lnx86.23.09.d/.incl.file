@@ -2,6 +2,7 @@
 ./prim_assert_standard_macros.svh
 ./prim_assert_sec_cm.svh
 ./prim_flop_macros.sv
+./prim_util_get_scramble_params.svh
 ./prim_fifo_assert.svh
 ./prim_util_memload.svh
 ./uvm_macros.svh

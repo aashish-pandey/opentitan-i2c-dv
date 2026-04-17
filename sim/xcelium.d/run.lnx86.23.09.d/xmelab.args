@@ -10,6 +10,7 @@
 +rwc
 -XMLIBDIRNAME
 xcelium.d
+-STATUS
 -no_analogsolver
 -MESSAGES
 -XLMODE

@@ -6,6 +6,8 @@
 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_assert_sec_cm.svh
 ../prim/rtl/prim_flop_macros.sv
 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_flop_macros.sv
+../prim/rtl/prim_util_get_scramble_params.svh
+/home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_util_get_scramble_params.svh
 ../prim/rtl/prim_fifo_assert.svh
 /home/pandeyap/Desktop/personal_projects/opentitan-i2c-dv/prim/rtl/prim_fifo_assert.svh
 ../prim/rtl/prim_util_memload.svh
