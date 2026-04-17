@@ -1,0 +1,256 @@
+xrun: 23.09-s012: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun	23.09-s012: Started on Apr 17, 2026 at 00:03:43 EDT
+xrun
+	-uvm
+	-uvmhome CDNS-1.2
+	-sv
+	-access +rwc
+	-incdir ../prim/rtl
+	-incdir ../tlul/rtl
+	-incdir ../rtl
+	-incdir ../tb/agent
+	-incdir ../tb/env
+	-incdir ../tb/sequences
+	-incdir ../tb/tests
+	-incdir ../tb/top
+	-incdir ../tb/coverage
+	-incdir ../tb/sva
+	-f ./filelist.f
+		../tb/top/stub_pkgs.sv
+		../prim/rtl/prim_util_pkg.sv
+		../prim/rtl/prim_mubi_pkg.sv
+		../prim/rtl/prim_subreg_pkg.sv
+		../prim/rtl/prim_pkg.sv
+		../prim/rtl/prim_assert.sv
+		../prim/rtl/prim_count_pkg.sv
+		../prim/rtl/prim_secded_pkg.sv
+		../prim/rtl/prim_alert_pkg.sv
+		../prim/rtl/prim_esc_pkg.sv
+		../prim/rtl/prim_subreg.sv
+		../prim/rtl/prim_subreg_arb.sv
+		../prim/rtl/prim_subreg_ext.sv
+		../prim/rtl/prim_subreg_shadow.sv
+		../prim/rtl/prim_reg_we_check.sv
+		../prim/rtl/prim_intr_hw.sv
+		../prim/rtl/prim_fifo_sync.sv
+		../prim/rtl/prim_fifo_sync_cnt.sv
+		../prim/rtl/prim_arbiter_tree.sv
+		../prim/rtl/prim_ram_1p_adv.sv
+		../tlul/rtl/tlul_pkg.sv
+		../tlul/rtl/tlul_adapter_reg.sv
+		../tlul/rtl/tlul_cmd_intg_chk.sv
+		../tlul/rtl/tlul_cmd_intg_gen.sv
+		../tlul/rtl/tlul_rsp_intg_gen.sv
+		../tlul/rtl/tlul_rsp_intg_chk.sv
+		../tlul/rtl/tlul_err.sv
+		../tlul/rtl/tlul_data_integ_dec.sv
+		../tlul/rtl/tlul_data_integ_enc.sv
+		../rtl/i2c_pkg.sv
+		../rtl/i2c_reg_pkg.sv
+		../rtl/i2c_reg_top.sv
+		../rtl/i2c_fifos.sv
+		../rtl/i2c_fifo_sync_sram_adapter.sv
+		../rtl/i2c_bus_monitor.sv
+		../rtl/i2c_controller_fsm.sv
+		../rtl/i2c_target_fsm.sv
+		../rtl/i2c_core.sv
+		../rtl/i2c.sv
+		../tb/env/i2c_tb_pkg.sv
+		../tb/top/i2c_if.sv
+		../tb/top/tb_top.sv
+	-elaborate
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /opt/eda/cadence/XCELIUM2309/tools/methodology/UVM/CDNS-1.2
+file: ../tb/top/stub_pkgs.sv
+	package worklib.top_pkg:sv
+		errors: 0, warnings: 0
+	package worklib.top_racl_pkg:sv
+		errors: 0, warnings: 0
+	package worklib.prim_ram_1p_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_util_pkg.sv
+	package worklib.prim_util_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_mubi_pkg.sv
+	package worklib.prim_mubi_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_subreg_pkg.sv
+	package worklib.prim_subreg_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_pkg.sv
+	package worklib.prim_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_assert.sv
+file: ../prim/rtl/prim_count_pkg.sv
+	package worklib.prim_count_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_secded_pkg.sv
+	package worklib.prim_secded_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_alert_pkg.sv
+	package worklib.prim_alert_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_esc_pkg.sv
+	package worklib.prim_esc_pkg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_subreg.sv
+	module worklib.prim_subreg:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_subreg_arb.sv
+	module worklib.prim_subreg_arb:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_subreg_ext.sv
+	module worklib.prim_subreg_ext:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_subreg_shadow.sv
+	module worklib.prim_subreg_shadow:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_reg_we_check.sv
+	module worklib.prim_reg_we_check:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_intr_hw.sv
+	module worklib.prim_intr_hw:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_fifo_sync.sv
+	module worklib.prim_fifo_sync:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_fifo_sync_cnt.sv
+	module worklib.prim_fifo_sync_cnt:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_arbiter_tree.sv
+	module worklib.prim_arbiter_tree:sv
+		errors: 0, warnings: 0
+file: ../prim/rtl/prim_ram_1p_adv.sv
+	module worklib.prim_ram_1p_adv:sv
+		errors: 0, warnings: 0
+file: ../tlul/rtl/tlul_pkg.sv
+  parameter int RsvdWidth       = top_pkg::TL_AUW - prim_mubi_pkg::MuBi4Width -
+                                                |
+xmvlog: *E,NOSYM (../tlul/rtl/tlul_pkg.sv,36|48): TL_AUW could not be found in package top_pkg.
+    logic  [top_pkg::TL_DBW-1:0]  mask;
+                          |
+xmvlog: *E,NOSYM (../tlul/rtl/tlul_pkg.sv,64|26): TL_DBW could not be found in package top_pkg.
+    logic  [top_pkg::TL_SZW-1:0]  a_size;
+                          |
+xmvlog: *E,NOSYM (../tlul/rtl/tlul_pkg.sv,71|26): TL_SZW could not be found in package top_pkg.
+    logic  [top_pkg::TL_AIW-1:0]  a_source;
+                          |
+xmvlog: *E,NOSYM (../tlul/rtl/tlul_pkg.sv,72|26): TL_AIW could not be found in package top_pkg.
+    logic  [top_pkg::TL_DBW-1:0]  a_mask;
+                          |
+xmvlog: *E,NOSYM (../tlul/rtl/tlul_pkg.sv,74|26): TL_DBW could not be found in package top_pkg.
+    logic  [top_pkg::TL_SZW-1:0]  d_size;   // Bouncing back a_size
+                          |
+xmvlog: *E,NOSYM (../tlul/rtl/tlul_pkg.sv,111|26): TL_SZW could not be found in package top_pkg.
+    logic  [top_pkg::TL_AIW-1:0]  d_source;
+                          |
+xmvlog: *E,NOSYM (../tlul/rtl/tlul_pkg.sv,112|26): TL_AIW could not be found in package top_pkg.
+    logic  [top_pkg::TL_DIW-1:0]  d_sink;
+                          |
+xmvlog: *E,NOSYM (../tlul/rtl/tlul_pkg.sv,113|26): TL_DIW could not be found in package top_pkg.
+    logic  [top_pkg::TL_SZW-1:0]  size;
+                          |
+xmvlog: *E,NOSYM (../tlul/rtl/tlul_pkg.sv,124|26): TL_SZW could not be found in package top_pkg.
+	package worklib.tlul_pkg:sv
+		errors: 9, warnings: 0
+file: ../tlul/rtl/tlul_adapter_reg.sv
+  tl_d_op_e       rspop_q;
+                        |
+xmvlog: *E,ILLPDL (../tlul/rtl/tlul_adapter_reg.sv,148|24): Mixing of ansi & non-ansi style port declaration is not legal.
+	module worklib.tlul_adapter_reg:sv
+		errors: 1, warnings: 0
+file: ../tlul/rtl/tlul_cmd_intg_chk.sv
+  tl_h2d_cmd_intg_t cmd;
+                      |
+xmvlog: *E,ILLPDL (../tlul/rtl/tlul_cmd_intg_chk.sv,21|22): Mixing of ansi & non-ansi style port declaration is not legal.
+	module worklib.tlul_cmd_intg_chk:sv
+		errors: 1, warnings: 0
+file: ../tlul/rtl/tlul_cmd_intg_gen.sv
+  tl_h2d_cmd_intg_t cmd;
+                      |
+xmvlog: *E,ILLPDL (../tlul/rtl/tlul_cmd_intg_gen.sv,19|22): Mixing of ansi & non-ansi style port declaration is not legal.
+	module worklib.tlul_cmd_intg_gen:sv
+		errors: 1, warnings: 0
+file: ../tlul/rtl/tlul_rsp_intg_gen.sv
+    tl_d2h_rsp_intg_t rsp;
+                    |
+xmvlog: *E,NOIPRT (../tlul/rtl/tlul_rsp_intg_gen.sv,37|20): Unrecognized declaration 'tl_d2h_rsp_intg_t' could be an unsupported keyword, a spelling mistake or missing instance port list '()' [SystemVerilog].
+    tl_d2h_rsp_intg_t rsp;
+                    |
+xmvlog: *E,NGITEM (../tlul/rtl/tlul_rsp_intg_gen.sv,37|20): Not a valid generate item: 'interface_declaration' [12.1.3(IEEE 2001)].
+	module worklib.tlul_rsp_intg_gen:sv
+		errors: 2, warnings: 0
+file: ../tlul/rtl/tlul_rsp_intg_chk.sv
+  tl_d2h_rsp_intg_t rsp;
+                      |
+xmvlog: *E,ILLPDL (../tlul/rtl/tlul_rsp_intg_chk.sv,22|22): Mixing of ansi & non-ansi style port declaration is not legal.
+	module worklib.tlul_rsp_intg_chk:sv
+		errors: 1, warnings: 0
+file: ../tlul/rtl/tlul_err.sv
+	module worklib.tlul_err:sv
+		errors: 0, warnings: 0
+file: ../tlul/rtl/tlul_data_integ_dec.sv
+  input        [DataMaxWidth+DataIntgWidth-1:0] data_intg_i,
+                           |
+xmvlog: *E,UNDIDN (../tlul/rtl/tlul_data_integ_dec.sv,13|27): 'DataMaxWidth': undeclared identifier [12.5(IEEE)].
+  input        [DataMaxWidth+DataIntgWidth-1:0] data_intg_i,
+                                         |
+xmvlog: *E,UNDIDN (../tlul/rtl/tlul_data_integ_dec.sv,13|41): 'DataIntgWidth': undeclared identifier [12.5(IEEE)].
+	module worklib.tlul_data_integ_dec:sv
+		errors: 2, warnings: 0
+file: ../tlul/rtl/tlul_data_integ_enc.sv
+  input        [DataMaxWidth-1:0]               data_i,
+                           |
+xmvlog: *E,UNDIDN (../tlul/rtl/tlul_data_integ_enc.sv,13|27): 'DataMaxWidth': undeclared identifier [12.5(IEEE)].
+  output logic [DataMaxWidth+DataIntgWidth-1:0] data_intg_o
+                           |
+xmvlog: *E,UNDIDN (../tlul/rtl/tlul_data_integ_enc.sv,14|27): 'DataMaxWidth': undeclared identifier [12.5(IEEE)].
+  output logic [DataMaxWidth+DataIntgWidth-1:0] data_intg_o
+                                         |
+xmvlog: *E,UNDIDN (../tlul/rtl/tlul_data_integ_enc.sv,14|41): 'DataIntgWidth': undeclared identifier [12.5(IEEE)].
+	module worklib.tlul_data_integ_enc:sv
+		errors: 3, warnings: 0
+file: ../rtl/i2c_reg_top.sv
+	module worklib.i2c_reg_top:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_fifos.sv
+	module worklib.i2c_fifos:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_fifo_sync_sram_adapter.sv
+	module worklib.i2c_fifo_sync_sram_adapter:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_bus_monitor.sv
+	module worklib.i2c_bus_monitor:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_controller_fsm.sv
+	module worklib.i2c_controller_fsm:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_target_fsm.sv
+	module worklib.i2c_target_fsm:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c_core.sv
+	module worklib.i2c_core:sv
+		errors: 0, warnings: 0
+file: ../rtl/i2c.sv
+	module worklib.i2c:sv
+		errors: 0, warnings: 0
+file: ../tb/env/i2c_tb_pkg.sv
+        host_cfg.mode = HOST;
+                           |
+xmvlog: *W,ENUMERR (../tb/env/i2c_env.sv,24|27): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
+        target_cfg.mode = TARGET;
+                               |
+xmvlog: *W,ENUMERR (../tb/env/i2c_env.sv,30|31): This assignment is a violation of SystemVerilog strong typing rules for enumeration datatypes.
+file: ../tb/top/i2c_if.sv
+	interface worklib.i2c_if:sv
+		errors: 0, warnings: 0
+file: ../tb/top/tb_top.sv
+	module worklib.tb_top:sv
+		errors: 0, warnings: 0
+xmvlog: *W,SPDUSD: Include directory ../tlul/rtl given but not used.
+xmvlog: *W,SPDUSD: Include directory ../rtl given but not used.
+xmvlog: *W,SPDUSD: Include directory ../tb/top given but not used.
+xmvlog: *W,SPDUSD: Include directory ../tb/sva given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 4
+xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
+TOOL:	xrun	23.09-s012: Exiting on Apr 17, 2026 at 00:03:46 EDT  (total: 00:00:03)

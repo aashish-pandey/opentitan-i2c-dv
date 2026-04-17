@@ -9,6 +9,10 @@ CDNS-1.2
 -access
 +rwc
 -incdir
+../prim/rtl
+-incdir
+../tlul/rtl
+-incdir
 ../rtl
 -incdir
 ../tb/agent

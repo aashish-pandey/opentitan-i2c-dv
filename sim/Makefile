@@ -12,8 +12,8 @@ UVM_ARGS = -uvm -uvmhome CDNS-1.2
 # compile
 COMP_ARGS = -sv \
 			-access +rwc \
-			-incdir ../prim/rtl 
-			-incdir ../tlul/rtl
+			-incdir ../prim/rtl \
+			-incdir ../tlul/rtl \
 			-incdir $(RTL_DIR) \
 			-incdir $(TB_DIR)/agent \
 			-incdir $(TB_DIR)/env \

@@ -4,6 +4,10 @@
 //
 -sv
 -INCDIR
+../prim/rtl
+-INCDIR
+../tlul/rtl
+-INCDIR
 ../rtl
 -INCDIR
 ../tb/agent
